@@ -21,5 +21,7 @@ namespace Player {
         public float getMagicArmor() {
             throw new System.NotImplementedException();
         }
+        
+        
     }
 }

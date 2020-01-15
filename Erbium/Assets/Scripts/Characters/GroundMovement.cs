@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Characters {
     public class GroundMovement : IMovement {
         private Rigidbody rbd;
-
+        
         public GroundMovement(Rigidbody rbd) {
             this.rbd = rbd;
         }
