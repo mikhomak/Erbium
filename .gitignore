@@ -2,6 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+Erbium/.idea
 Erbium/Library/
 Erbium/Temp/
 /[Tt]emp/
