@@ -1,5 +1,4 @@
 ﻿using System;
-using Camera;
 using General;
 using UnityEngine;
 
@@ -14,10 +13,7 @@ namespace Characters {
         }
 
         public void move() {
-            Vector3 forward = CameraManager.getCameraForwardDirectionNormalized();
-            Vector3 right = CameraManager.getCameraRightDirectionNormalized();
-            Vector3 direction = forward * InputManager.getVerInput() + right * InputManager.getHorInput();
-            rbd.velocity = direction * character.getStats().getSpeed();
+            rbd.velocity = MovementDirection.getCameraForwardDirection() * character.getStats().getSpeed();
         }
 
         public void jump() {
