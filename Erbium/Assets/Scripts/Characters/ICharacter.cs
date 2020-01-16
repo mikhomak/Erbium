@@ -2,5 +2,6 @@
     public interface ICharacter {
         IMovement getMovement();
         void die();
+        Stats getStats();
     }
 }

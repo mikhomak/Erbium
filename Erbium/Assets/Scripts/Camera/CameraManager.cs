@@ -6,7 +6,7 @@ namespace Camera {
         private new static UnityEngine.Camera camera;
 
         private void Start() {
-            camera = UnityEngine.Camera.current;
+            camera = UnityEngine.Camera.main;
         }
 
         public static Vector3 getCameraForwardDirection() {

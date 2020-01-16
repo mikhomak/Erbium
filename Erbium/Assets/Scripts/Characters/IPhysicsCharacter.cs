@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Characters {
-    public interface IPhysicsCharacter {
+    public interface IPhysicsCharacter : ICharacter {
         Rigidbody getRigidbody();
     }
 }

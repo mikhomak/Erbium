@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-namespace Characters {
+﻿namespace Characters {
     public interface IMovement {
-        void move(Vector3 direction);
+        void move();
         void jump();
         void changeMovement(IMovement movement);
     }

@@ -3,13 +3,21 @@ using Characters;
 using UnityEngine;
 
 namespace Player {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Stats))]
     public class Player : MonoBehaviour, IPhysicsCharacter {
-
         private IMovement movement;
-        private Rigidbody rbd;
+        [SerializeField] private Rigidbody rbd;
+        [SerializeField] private Stats stats;
 
         private void Start() {
-            
+            rbd = GetComponent<Rigidbody>();
+            stats = GetComponent<Stats>();
+            movement = new GroundMovement(this);
+        }
+
+        private void FixedUpdate() {
+            movement.move();
         }
 
         public IMovement getMovement() {
@@ -17,7 +25,11 @@ namespace Player {
         }
 
         public void die() {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        public Stats getStats() {
+            return stats;
         }
 
         public Rigidbody getRigidbody() {
