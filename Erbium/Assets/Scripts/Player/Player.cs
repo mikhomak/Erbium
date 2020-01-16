@@ -1,11 +1,17 @@
-﻿using Characters;
+﻿using System;
+using Characters;
 using UnityEngine;
 
 namespace Player {
-    public class Player : MonoBehaviour, ICharacter {
+    public class Player : MonoBehaviour, IPhysicsCharacter {
 
         private IMovement movement;
-        
+        private Rigidbody rbd;
+
+        private void Start() {
+            
+        }
+
         public IMovement getMovement() {
             return movement;
         }
@@ -21,7 +27,10 @@ namespace Player {
         public float getMagicArmor() {
             throw new System.NotImplementedException();
         }
-        
-        
+
+
+        public Rigidbody getRigidbody() {
+            return rbd;
+        }
     }
 }

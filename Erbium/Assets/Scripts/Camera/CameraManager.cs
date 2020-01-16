@@ -9,22 +9,22 @@ namespace Camera {
             camera = UnityEngine.Camera.current;
         }
 
-        static Vector3 getCameraForwardDirection() {
+        public static Vector3 getCameraForwardDirection() {
             return camera.transform.forward;
         }
 
-        static Vector3 getCameraRightDirectino() {
+        public static Vector3 getCameraRightDirection() {
             return camera.transform.right;
         }
 
-        static Vector3 getCameraForwardDirectionNormalized() {
+        public static Vector3 getCameraForwardDirectionNormalized() {
             Vector3 forward = getCameraForwardDirection();
             forward.y = 0;
             return forward.normalized;
         }
 
-        static Vector3 getCameraRightDirectionNormalized() {
-            Vector3 right = getCameraRightDirectino();
+        public static Vector3 getCameraRightDirectionNormalized() {
+            Vector3 right = getCameraRightDirection();
             right.y = 0;
             return right.normalized;
         }
