@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
 
 namespace Characters {
-    public class Stats : MonoBehaviour {
+    public class Stats : MonoBehaviour, IStats {
         private static float speed;
         private static float health;
 
-        public static float getSpeed() {
+        public float getSpeed() {
             return speed;
         }
 
-        public static float getHealth() {
+        public float getHealth() {
             return health;
         }
 
-        public static void setSpeed(float newSpeed) {
+        public void setSpeed(float newSpeed) {
             speed = speed;
         }
 
-        public static void setHealth(float newHealth) {
+        public void setHealth(float newHealth) {
             health = health;
         }
     }
