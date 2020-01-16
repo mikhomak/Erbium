@@ -20,15 +20,6 @@ namespace Player {
             throw new System.NotImplementedException();
         }
 
-        public float getPhysicArmor() {
-            throw new System.NotImplementedException();
-        }
-
-        public float getMagicArmor() {
-            throw new System.NotImplementedException();
-        }
-
-
         public Rigidbody getRigidbody() {
             return rbd;
         }
