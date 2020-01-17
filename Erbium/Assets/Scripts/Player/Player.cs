@@ -53,11 +53,4 @@ namespace Player {
             }
         }
     }
-
-
-    enum CameraView {
-        AlwaysForward,
-        TopView,
-        SideView
-    }
 }

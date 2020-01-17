@@ -620,7 +620,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512965514}
-  m_LocalRotation: {x: 0.2536779, y: -0.000024486188, z: 0.0000064217174, w: 0.9672888}
+  m_LocalRotation: {x: 0.2536779, y: -0.000024771376, z: 0.000006496506, w: 0.9672888}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -786,7 +786,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817280601}
-  m_LocalRotation: {x: 0.16244932, y: -0.000024994893, z: 0.0000041146777, w: 0.9867169}
+  m_LocalRotation: {x: 0.16244932, y: -0.000025251855, z: 0.000004156983, w: 0.9867169}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -920,7 +920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819665360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00016808651, y: 2.976, z: -3.32}
+  m_LocalPosition: {x: 0.00017004421, y: 2.976, z: -3.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 512965516}
@@ -1132,8 +1132,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.16244933, y: -0.000025011937, z: 0.000004117871, w: 0.9867169}
-  m_LocalPosition: {x: 0.00016808651, y: 2.976, z: -3.32}
+  m_LocalRotation: {x: 0.16244933, y: -0.000025234947, z: 0.000004154586, w: 0.9867169}
+  m_LocalPosition: {x: 0.00017004421, y: 2.976, z: -3.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1239,7 +1239,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050748493}
-  m_LocalRotation: {x: 0.27689707, y: -0.000024300987, z: 0.0000070025076, w: 0.9608996}
+  m_LocalRotation: {x: 0.27689707, y: -0.00002463107, z: 0.000007097626, w: 0.9608996}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1394,7 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rotationSpeed: 0
+  rotationSpeed: 10
   health: 0
 --- !u!114 &1762202329
 MonoBehaviour:
