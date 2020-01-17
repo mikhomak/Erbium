@@ -23,6 +23,7 @@ namespace Characters {
         private void updateAnimParameters() {
             character.getAnimatorFacade().setInputs(InputManager.getHorInput(), InputManager.getVerInput(),
                 InputManager.getMagnitude());
+            character.getAnimatorFacade().setGroundVelocity(rbd.velocity.z);
         }
 
 

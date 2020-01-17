@@ -3,6 +3,6 @@
         void setHorInput(float horInput);
         void setVerInput(float verInput);
         void setInputMagnitude(float inputMagnitude);
-        void setVelocity(float velocity);
+        void setGroundVelocity(float groundVelocity);
     }
 }

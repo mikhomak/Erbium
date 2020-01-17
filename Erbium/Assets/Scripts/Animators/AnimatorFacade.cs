@@ -12,5 +12,9 @@
             characterAnimator.setVerInput(verInput);
             characterAnimator.setInputMagnitude(inputMagnitude);
         }
+
+        public void setGroundVelocity(float groundVelocity) {
+            characterAnimator.setGroundVelocity(groundVelocity);
+        }
     }
 }

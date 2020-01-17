@@ -204,7 +204,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: velocity
+  - m_Name: groundVelocity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -231,9 +231,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: velocity
-    m_EventTreshold: 0.1
+  - m_ConditionMode: 4
+    m_ConditionEvent: groundVelocity
+    m_EventTreshold: 5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8224678334485594678}
   m_Solo: 0
@@ -241,7 +241,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.3389937
+  m_TransitionOffset: 0.5067784
   m_ExitTime: 0.6808511
   m_HasExitTime: 0
   m_HasFixedDuration: 1
