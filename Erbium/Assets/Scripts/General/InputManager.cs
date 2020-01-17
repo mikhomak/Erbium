@@ -1,15 +1,12 @@
-﻿using System;
-using Characters;
+﻿using Characters;
 using UnityEngine;
 
 namespace General {
     public class InputManager : MonoBehaviour {
-
-
         private ICharacter player;
-        
+
         private void Update() {
-            if (Input.GetButtonDown("Jump")){
+            if (Input.GetButtonDown("Jump")) {
                 player.getMovement().jump();
             }
         }
@@ -27,6 +24,8 @@ namespace General {
             return Input.GetAxis("Vertical");
         }
 
-        public static 
+        public static float getMagnitude() {
+            return Mathf.Clamp01(new Vector2(getHorInput(), getVerInput()).magnitude);
+        }
     }
 }
