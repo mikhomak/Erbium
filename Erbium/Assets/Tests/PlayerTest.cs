@@ -11,7 +11,7 @@ namespace Tests
     {
 
         [UnityTest]
-        public IEnumerator NewTestScriptWithEnumeratorPasses()
+        public IEnumerator initalizePlayer()
         {
             GameObject player = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/Player/Player"));
             yield return new WaitForEndOfFrame();
