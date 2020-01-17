@@ -38,6 +38,10 @@ namespace Player {
             return rbd;
         }
 
+        public Transform getTransform() {
+            return transform;
+        }
+
         private Vector3 findDirection() {
             switch (cameraView) {
                 case CameraView.AlwaysForward:

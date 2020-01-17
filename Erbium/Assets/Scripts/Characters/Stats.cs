@@ -2,8 +2,8 @@
 
 namespace Characters {
     public class Stats : MonoBehaviour {
-        [SerializeField] private float speed;
-        [SerializeField] private float rotationSpeed;
+        [SerializeField] private float speed = 10f;
+        [SerializeField] private float rotationSpeed = 0.1f;
         [SerializeField] private float health;
 
         public float RotationSpeed {

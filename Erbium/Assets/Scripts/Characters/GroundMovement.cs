@@ -1,4 +1,5 @@
 ﻿using System;
+using Camera;
 using General;
 using UnityEngine;
 
@@ -6,16 +7,26 @@ namespace Characters {
     public class GroundMovement : IMovement {
         private readonly Rigidbody rbd;
         private readonly IPhysicsCharacter character;
-
+        private readonly Transform transform;
         public GroundMovement(IPhysicsCharacter character) {
             this.character = character;
             rbd = character.getRigidbody();
+            transform = character.getTransform();
         }
 
         public void move(Vector3 direction) {
-            rbd.velocity = direction * character.getStats().getSpeed();
+            rbd.velocity = direction * character.getStats().Speed;
+            rotate(direction);
         }
 
+
+        private void rotate(Vector3 direction) {
+            if (direction != Vector3.zero) {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
+                    character.getStats().RotationSpeed);
+            }
+        }
+        
         public void jump() {
             throw new NotImplementedException();
         }
