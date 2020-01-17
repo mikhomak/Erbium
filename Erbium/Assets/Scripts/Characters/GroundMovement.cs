@@ -12,8 +12,8 @@ namespace Characters {
             rbd = character.getRigidbody();
         }
 
-        public void move() {
-            rbd.velocity = MovementDirection.getCameraForwardDirection() * character.getStats().getSpeed();
+        public void move(Vector3 direction) {
+            rbd.velocity = direction * character.getStats().getSpeed();
         }
 
         public void jump() {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Characters;
+using General;
 using UnityEngine;
 
 namespace Player {
@@ -9,6 +10,7 @@ namespace Player {
         private IMovement movement;
         [SerializeField] private Rigidbody rbd;
         [SerializeField] private Stats stats;
+        [SerializeField] private CameraView cameraView;
 
         private void Start() {
             rbd = GetComponent<Rigidbody>();
@@ -17,7 +19,7 @@ namespace Player {
         }
 
         private void FixedUpdate() {
-            movement.move();
+            movement.move(findDirection());
         }
 
         public IMovement getMovement() {
@@ -35,5 +37,21 @@ namespace Player {
         public Rigidbody getRigidbody() {
             return rbd;
         }
+
+        private Vector3 findDirection() {
+            switch (cameraView) {
+                case CameraView.AlwaysForward:
+                    return MovementDirection.getCameraForwardDirection();
+                    break;
+                default:
+                    return MovementDirection.getCameraForwardDirection();
+                    break;
+            }
+        }
+    }
+
+
+    enum CameraView {
+        AlwaysForward
     }
 }

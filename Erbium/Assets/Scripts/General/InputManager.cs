@@ -27,6 +27,6 @@ namespace General {
             return Input.GetAxis("Vertical");
         }
 
-        
+        public static 
     }
 }
