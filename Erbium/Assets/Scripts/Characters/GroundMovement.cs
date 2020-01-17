@@ -1,5 +1,4 @@
 ﻿using System;
-using Camera;
 using General;
 using UnityEngine;
 
@@ -8,6 +7,7 @@ namespace Characters {
         private readonly Rigidbody rbd;
         private readonly IPhysicsCharacter character;
         private readonly Transform transform;
+
         public GroundMovement(IPhysicsCharacter character) {
             this.character = character;
             rbd = character.getRigidbody();
@@ -17,6 +17,12 @@ namespace Characters {
         public void move(Vector3 direction) {
             rbd.velocity = direction * character.getStats().Speed;
             rotate(direction);
+            updateAnimParameters();
+        }
+
+        private void updateAnimParameters() {
+            character.getAnimatorFacade().setInputs(InputManager.getHorInput(), InputManager.getVerInput(),
+                InputManager.getMagnitude());
         }
 
 
@@ -26,7 +32,7 @@ namespace Characters {
                     character.getStats().RotationSpeed);
             }
         }
-        
+
         public void jump() {
             throw new NotImplementedException();
         }

@@ -25,7 +25,7 @@ namespace General {
         }
 
         public static float getMagnitude() {
-            return Mathf.Clamp01(new Vector2(getHorInput(), getVerInput()).magnitude);
+            return CommonMethods.calculateMagnitude(getHorInput(), getVerInput());
         }
     }
 }
