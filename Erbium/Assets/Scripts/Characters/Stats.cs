@@ -1,24 +1,26 @@
 ﻿using UnityEngine;
 
 namespace Characters {
-    public class Stats : MonoBehaviour, IStats {
+    public class Stats : MonoBehaviour {
         [SerializeField] private float speed;
+        [SerializeField] private float rotationSpeed;
         [SerializeField] private float health;
 
-        public float getSpeed() {
-            return speed;
+        public float RotationSpeed {
+            get => rotationSpeed;
+            set => rotationSpeed = value;
         }
 
-        public float getHealth() {
-            return health;
+        public float Speed {
+            get => speed;
+            set => speed = value;
         }
 
-        public void setSpeed(float newSpeed) {
-            speed = speed;
+        public float Health {
+            get => health;
+            set => health = value;
         }
 
-        public void setHealth(float newHealth) {
-            health = health;
-        }
+
     }
 }
