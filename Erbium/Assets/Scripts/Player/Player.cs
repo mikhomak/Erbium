@@ -29,7 +29,6 @@ namespace Player {
             return movement;
         }
 
-
         public void die() {
             throw new NotImplementedException();
         }

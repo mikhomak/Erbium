@@ -6,6 +6,7 @@
             this.characterAnimator = characterAnimator;
         }
 
+
         public void setInputs(float horInput, float verInput, float inputMagnitude) {
             characterAnimator.setHorInput(horInput);
             characterAnimator.setVerInput(verInput);

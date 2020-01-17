@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 namespace Animators {
     public class CharacterAnimator : MonoBehaviour, ICharacterAnimator {
         private Animator animator;
@@ -26,7 +24,7 @@ namespace Animators {
         }
 
         public void setVelocity(float velocity) {
-            animator.SetFloat(Velocity,velocity);
+            animator.SetFloat(Velocity, velocity);
         }
     }
 }
