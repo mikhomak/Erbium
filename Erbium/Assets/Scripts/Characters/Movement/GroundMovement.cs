@@ -20,9 +20,6 @@ namespace Characters.Movement {
             updateAnimParameters();
         }
 
-        public bool canJump() {
-            throw new NotImplementedException();
-        }
 
         private void updateAnimParameters() {
             character.getAnimatorFacade().setInputs(InputManager.getHorInput(), InputManager.getVerInput(),

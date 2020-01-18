@@ -6,13 +6,10 @@ namespace General {
     public class InputManager : MonoBehaviour {
         private ICharacter player;
 
-        
+
         private void Update() {
             if (Input.GetButtonDown("Jump")) {
-                IMovement playerMovement = player.getMovement();
-                if (playerMovement.canJump()) {
-                    (playerMovement as IJumpable)?.jump();
-                }
+                (player.getMovement() as IJumpable)?.jump();
             }
         }
 
