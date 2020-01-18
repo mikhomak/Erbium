@@ -1,11 +1,16 @@
-﻿using Characters;
+﻿using System;
+using Characters;
 using Characters.Movement;
 using UnityEngine;
 
 namespace General {
     public class InputManager : MonoBehaviour {
+        [SerializeField] private GameObject playerGameObject;
         private ICharacter player;
 
+        private void Start() {
+            player = playerGameObject.GetComponent<ICharacter>();
+        }
 
         private void Update() {
             if (Input.GetButtonDown("Jump")) {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Animators;
 using General;
 using UnityEngine;
 
@@ -16,8 +17,10 @@ namespace Characters.Movement {
 
         public void move(Vector3 direction) {
             if (isFalling()) {
-                
+                character.getAnimatorFacade().setIsFalling(true);
+                return;
             }
+            character.getAnimatorFacade().setIsFalling(false);
             rbd.velocity = direction * character.getStats().Speed;
             rotate(direction);
             updateAnimParameters();
@@ -39,7 +42,7 @@ namespace Characters.Movement {
         }
 
         public void jump() {
-            throw new NotImplementedException();
+            rbd.AddForce(Vector3.up * 10f, ForceMode.Impulse);
         }
 
         public void changeMovement(IMovement movement) {
