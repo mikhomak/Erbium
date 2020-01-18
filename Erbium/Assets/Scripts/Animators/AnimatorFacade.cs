@@ -19,6 +19,6 @@
 
         public void setIsFalling(bool isFalling) {
             characterAnimator.setIsFalling(isFalling);
-        }s
+        }
     }
 }
