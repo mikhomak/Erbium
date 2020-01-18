@@ -6,6 +6,7 @@ namespace Animators {
         private static readonly int VerInput = Animator.StringToHash("verInput");
         private static readonly int HorInput = Animator.StringToHash("horInput");
         private static readonly int GroundVelocity = Animator.StringToHash("groundVelocity");
+        private static readonly int IsFalling = Animator.StringToHash("isFalling");
 
         private void Start() {
             animator = GetComponent<Animator>();
@@ -25,6 +26,10 @@ namespace Animators {
         
         public void setGroundVelocity(float groundVelocity) {
             animator.SetFloat(GroundVelocity, groundVelocity);
+        }
+
+        public void setIsFalling(bool isFalling) {
+            animator.SetBool(IsFalling, isFalling);
         }
     }
 }

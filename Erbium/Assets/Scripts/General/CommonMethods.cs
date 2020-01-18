@@ -10,7 +10,6 @@ namespace General {
         }
 
         public static bool onGround(Transform transform) {
-            Debug.DrawRay(transform.position, Vector3.down * groundRayDistance, Color.red);
             return Physics.Raycast(transform.position, new Vector3(0,-1), out _, groundRayDistance);
         }
 

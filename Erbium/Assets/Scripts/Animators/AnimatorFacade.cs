@@ -16,5 +16,9 @@
         public void setGroundVelocity(float groundVelocity) {
             characterAnimator.setGroundVelocity(groundVelocity);
         }
+
+        public void setIsFalling(bool isFalling) {
+            characterAnimator.setIsFalling(isFalling);
+        }s
     }
 }
