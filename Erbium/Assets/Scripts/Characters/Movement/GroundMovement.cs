@@ -3,7 +3,7 @@ using General;
 using UnityEngine;
 
 namespace Characters.Movement {
-    public class GroundMovement : IMovement, IJumpable {
+    public class GroundMovement : IMovement, IJumpable, IFallable {
         private readonly Rigidbody rbd;
         private readonly IPhysicsCharacter character;
         private readonly Transform transform;
@@ -15,6 +15,9 @@ namespace Characters.Movement {
         }
 
         public void move(Vector3 direction) {
+            if (isFalling()) {
+                
+            }
             rbd.velocity = direction * character.getStats().Speed;
             rotate(direction);
             updateAnimParameters();
@@ -41,6 +44,10 @@ namespace Characters.Movement {
 
         public void changeMovement(IMovement movement) {
             throw new NotImplementedException();
+        }
+
+        public bool isFalling() {
+            return CommonMethods.onGround(transform);
         }
     }
 }
