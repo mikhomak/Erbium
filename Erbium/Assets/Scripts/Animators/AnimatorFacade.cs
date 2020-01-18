@@ -20,5 +20,9 @@
         public void setIsFalling(bool isFalling) {
             characterAnimator.setIsFalling(isFalling);
         }
+
+        public void setIsAboutToLand(bool isAboutToLand) {
+            characterAnimator.setIsAboutToLand(isAboutToLand);
+        }
     }
 }

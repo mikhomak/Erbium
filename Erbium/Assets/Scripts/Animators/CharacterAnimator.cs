@@ -7,6 +7,7 @@ namespace Animators {
         private static readonly int HorInput = Animator.StringToHash("horInput");
         private static readonly int GroundVelocity = Animator.StringToHash("groundVelocity");
         private static readonly int IsFalling = Animator.StringToHash("isFalling");
+        private static readonly int IsAboutToLand = Animator.StringToHash("isAboutToLand");
 
         private void Start() {
             animator = GetComponent<Animator>();
@@ -30,6 +31,10 @@ namespace Animators {
 
         public void setIsFalling(bool isFalling) {
             animator.SetBool(IsFalling, isFalling);
+        }
+
+        public void setIsAboutToLand(bool isAboutToLand) {
+            animator.SetBool(IsAboutToLand, isAboutToLand);
         }
     }
 }

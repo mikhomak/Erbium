@@ -2,16 +2,32 @@
 
 namespace General {
     public static class CommonMethods {
+        private const float GROUND_RAT_DISTANCE = 0.3f;
+        private const float LANDING_RAT_DISTANCE = 2.4f;
+        private const float TRANSFORM_RAYCAST_LIFT = 0.2f;
+        private const int GROUND_LAYER = 1 << 8;
 
-        private static readonly float groundRayDistance = 0.2f;
-        
         public static float calculateMagnitude(float value1, float value2) {
             return Mathf.Clamp01(new Vector2(value1, value2).magnitude);
         }
 
         public static bool onGround(Transform transform) {
-            return Physics.Raycast(transform.position, new Vector3(0,-1), out _, groundRayDistance);
+            var position = getPositionRaycastLifted(transform);
+            Debug.DrawRay(position, Vector3.down * GROUND_RAT_DISTANCE);
+            return Physics.Raycast(position, Vector3.down, out _, GROUND_RAT_DISTANCE, GROUND_LAYER);
         }
 
+        public static bool isAboutToLand(Transform transform) {
+            var position = getPositionRaycastLifted(transform);
+            
+            Debug.DrawRay(position, Vector3.down * LANDING_RAT_DISTANCE + MovementDirection.getCameraForwardDirection() * LANDING_RAT_DISTANCE , Color.cyan);
+            return Physics.Raycast(position, Vector3.down, out _, LANDING_RAT_DISTANCE, GROUND_LAYER);
+        }
+
+        public static Vector3 getPositionRaycastLifted(Transform transform) {
+            var position = transform.position;
+            position.y += TRANSFORM_RAYCAST_LIFT;
+            return position;
+        }
     }
 }

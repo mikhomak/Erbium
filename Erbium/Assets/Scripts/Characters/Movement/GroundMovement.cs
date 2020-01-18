@@ -1,5 +1,4 @@
 ﻿using System;
-using Animators;
 using General;
 using UnityEngine;
 
@@ -18,9 +17,18 @@ namespace Characters.Movement {
         public void move(Vector3 direction) {
             if (isFalling()) {
                 character.getAnimatorFacade().setIsFalling(true);
+                if (CommonMethods.isAboutToLand(transform)) {
+                    character.getAnimatorFacade().setIsAboutToLand(true);
+                }
+                else {
+                    character.getAnimatorFacade().setIsAboutToLand(false);
+                }
+
                 return;
             }
+
             character.getAnimatorFacade().setIsFalling(false);
+            character.getAnimatorFacade().setIsAboutToLand(false);
             rbd.velocity = direction * character.getStats().Speed;
             rotate(direction);
             updateAnimParameters();
@@ -50,7 +58,7 @@ namespace Characters.Movement {
         }
 
         public bool isFalling() {
-            return CommonMethods.onGround(transform);
+            return !CommonMethods.onGround(transform);
         }
     }
 }
