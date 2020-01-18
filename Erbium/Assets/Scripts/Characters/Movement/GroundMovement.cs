@@ -2,8 +2,8 @@
 using General;
 using UnityEngine;
 
-namespace Characters {
-    public class GroundMovement : IMovement {
+namespace Characters.Movement {
+    public class GroundMovement : IMovement, IJumpable {
         private readonly Rigidbody rbd;
         private readonly IPhysicsCharacter character;
         private readonly Transform transform;
@@ -18,6 +18,10 @@ namespace Characters {
             rbd.velocity = direction * character.getStats().Speed;
             rotate(direction);
             updateAnimParameters();
+        }
+
+        public bool canJump() {
+            throw new NotImplementedException();
         }
 
         private void updateAnimParameters() {

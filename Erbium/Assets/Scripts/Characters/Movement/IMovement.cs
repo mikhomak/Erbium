@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Characters {
+namespace Characters.Movement {
     public interface IMovement {
         void move(Vector3 direction);
-        void jump();
+        bool canJump();
         void changeMovement(IMovement movement);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using Animators;
 using Characters;
+using Characters.Movement;
 using General;
 using UnityEngine;
 

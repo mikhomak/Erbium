@@ -1,4 +1,5 @@
 ﻿using Animators;
+using Characters.Movement;
 
 namespace Characters {
     public interface ICharacter {
