@@ -29,6 +29,14 @@ namespace Characters.Movement {
 
             rbd.velocity = direction * character.getStats().AirSpeed;
             rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
+            rotate(direction);
+        }
+        
+        private void rotate(Vector3 direction) {
+            if (direction != Vector3.zero) {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
+                    character.getStats().RotationSpeed);
+            }
         }
 
         public void jump() {

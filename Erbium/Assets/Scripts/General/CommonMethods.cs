@@ -19,8 +19,10 @@ namespace General {
 
         public static bool isAboutToLand(Transform transform) {
             var position = getPositionRaycastLifted(transform);
-            
-            Debug.DrawRay(position, Vector3.down * LANDING_RAT_DISTANCE + MovementDirection.getCameraForwardDirection() * LANDING_RAT_DISTANCE , Color.cyan);
+
+            Debug.DrawRay(position,
+                Vector3.down * LANDING_RAT_DISTANCE +
+                MovementDirection.getCameraForwardDirection() * LANDING_RAT_DISTANCE, Color.cyan);
             return Physics.Raycast(position, Vector3.down, out _, LANDING_RAT_DISTANCE, GROUND_LAYER);
         }
 
