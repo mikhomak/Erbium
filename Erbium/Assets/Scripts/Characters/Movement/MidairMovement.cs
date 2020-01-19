@@ -27,7 +27,7 @@ namespace Characters.Movement {
 
             animatorFacade.setIsFalling(true);
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
-            if (CommonMethods.isAboutToLand(transform) != oldAboutToLand) {
+            if (rbd.velocity.y < 0 && CommonMethods.isAboutToLand(transform) != oldAboutToLand) {
                 oldAboutToLand = !oldAboutToLand;
                 animatorFacade.setIsAboutToLand(oldAboutToLand);
             }
