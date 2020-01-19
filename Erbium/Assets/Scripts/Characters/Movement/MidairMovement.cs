@@ -27,11 +27,12 @@ namespace Characters.Movement {
             animatorFacade.setIsFalling(true);
             animatorFacade.setIsAboutToLand(CommonMethods.isAboutToLand(transform)); // TODO cache the old variable
 
-            rbd.velocity = direction * character.getStats().AirSpeed;
+            var newDirection = new Vector3(direction.x, 0, direction.y) {y = rbd.velocity.y};
+            rbd.velocity = newDirection;
             rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
             rotate(direction);
         }
-        
+
         private void rotate(Vector3 direction) {
             if (direction != Vector3.zero) {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),

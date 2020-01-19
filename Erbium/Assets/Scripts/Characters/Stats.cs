@@ -5,8 +5,8 @@ namespace Characters {
         [SerializeField] private float speed = 10f;
         [SerializeField] private float airSpeed = 5f;
         [SerializeField] private float rotationSpeed = 0.1f;
-        [SerializeField] private float jumpForce = 200f;
-        [SerializeField] private float additionalGravityForce = 50f;
+        [SerializeField] private float jumpForce = 270f;
+        [SerializeField] private float additionalGravityForce = 20f;
         [SerializeField] private float health;
 
         

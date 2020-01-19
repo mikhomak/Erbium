@@ -15,7 +15,6 @@ namespace Characters.Movement {
             transform = character.getTransform();
             animatorFacade = character.getAnimatorFacade();
             animatorFacade.untoggleAirAnimations();
-            Debug.Log("now grounded");
         }
 
         public void move(Vector3 direction) {
