@@ -9,6 +9,7 @@ namespace Characters.Movement {
         private readonly IPhysicsCharacter character;
         private readonly Transform transform;
         private readonly IAnimatorFacade animatorFacade;
+        private bool oldAboutToLand = false;
 
         public MidairMovement(IPhysicsCharacter character) {
             this.character = character;
@@ -24,8 +25,13 @@ namespace Characters.Movement {
                 return;
             }
 
+            // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
+            if (CommonMethods.isAboutToLand(transform) != oldAboutToLand) {
+                oldAboutToLand = !oldAboutToLand;
+                animatorFacade.setIsAboutToLand(oldAboutToLand);
+            }
+
             animatorFacade.setIsFalling(true);
-            animatorFacade.setIsAboutToLand(CommonMethods.isAboutToLand(transform)); // TODO cache the old variable
 
             var newDirection = new Vector3(direction.x, rbd.velocity.y, direction.y);
             rbd.velocity = newDirection;
