@@ -3,6 +3,7 @@
 namespace Characters {
     public class Stats : MonoBehaviour {
         [SerializeField] private float speed = 10f;
+        [SerializeField] private float airSpeed = 5f;
         [SerializeField] private float rotationSpeed = 0.1f;
         [SerializeField] private float health;
 
@@ -21,6 +22,9 @@ namespace Characters {
             set => health = value;
         }
 
-
+        public float AirSpeed {
+            get => airSpeed;
+            set => airSpeed = value;
+        }
     }
 }
