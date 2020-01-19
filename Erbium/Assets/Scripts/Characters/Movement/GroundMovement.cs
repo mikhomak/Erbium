@@ -23,7 +23,8 @@ namespace Characters.Movement {
                 changeMovement(new MidairMovement(character));
             }
 
-            rbd.velocity = direction * character.getStats().Speed;
+            var newDirection = new Vector3( direction.x * character.getStats().Speed, rbd.velocity.y, direction.z * character.getStats().Speed);
+            rbd.velocity = newDirection;
             rotate(direction);
             updateAnimParameters();
         }

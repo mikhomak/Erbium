@@ -33,7 +33,7 @@ namespace Characters.Movement {
             }
 
 
-            var newDirection = new Vector3(direction.x, rbd.velocity.y, direction.y);
+            var newDirection = new Vector3( direction.x * character.getStats().AirSpeed, rbd.velocity.y, direction.z * character.getStats().AirSpeed);
             rbd.velocity = newDirection;
             rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
             rotate(direction);
@@ -47,7 +47,7 @@ namespace Characters.Movement {
         }
 
         public void jump() {
-            throw new NotImplementedException();
+            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
         }
 
         public void changeMovement(IMovement movement) {
