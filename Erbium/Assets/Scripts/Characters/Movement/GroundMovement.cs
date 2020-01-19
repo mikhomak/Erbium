@@ -19,6 +19,7 @@ namespace Characters.Movement {
         }
 
         public void move(Vector3 direction) {
+
             if (isFalling()) {
                 changeMovement(new MidairMovement(character));
             }

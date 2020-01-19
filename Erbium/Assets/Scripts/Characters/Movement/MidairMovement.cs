@@ -21,13 +21,14 @@ namespace Characters.Movement {
             if (!isFalling()) {
                 animatorFacade.untoggleAirAnimations();
                 changeMovement(new GroundMovement(character));
+                return;
             }
 
             animatorFacade.setIsFalling(true);
             animatorFacade.setIsAboutToLand(CommonMethods.isAboutToLand(transform)); // TODO cache the old variable
 
             rbd.velocity = direction * character.getStats().AirSpeed;
-            rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce);
+            rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
         }
 
         public void jump() {
