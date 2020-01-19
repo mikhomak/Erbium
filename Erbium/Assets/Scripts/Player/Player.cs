@@ -18,12 +18,11 @@ namespace Player {
         private void Start() {
             rbd = GetComponent<Rigidbody>();
             stats = GetComponent<Stats>();
-            movement = new GroundMovement(this);
             animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>());
+            movement = new GroundMovement(this);
         }
 
         private void FixedUpdate() {
-            Debug.Log(movement);
             movement.move(findDirection());
         }
 

@@ -24,10 +24,10 @@ namespace Characters.Movement {
             }
 
             animatorFacade.setIsFalling(true);
-            animatorFacade.setIsAboutToLand(CommonMethods.isAboutToLand(transform));   // TODO cache the old variable
+            animatorFacade.setIsAboutToLand(CommonMethods.isAboutToLand(transform)); // TODO cache the old variable
 
             rbd.velocity = direction * character.getStats().AirSpeed;
-            rbd.AddForce(Vector3.down * 5f);
+            rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce);
         }
 
         public void jump() {

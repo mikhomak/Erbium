@@ -9,7 +9,7 @@ namespace Animators {
         private static readonly int IsFalling = Animator.StringToHash("isFalling");
         private static readonly int IsAboutToLand = Animator.StringToHash("isAboutToLand");
 
-        private void Start() {
+        private void Awake() {
             animator = GetComponent<Animator>();
         }
 

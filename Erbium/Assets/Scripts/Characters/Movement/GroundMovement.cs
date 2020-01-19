@@ -15,6 +15,7 @@ namespace Characters.Movement {
             transform = character.getTransform();
             animatorFacade = character.getAnimatorFacade();
             animatorFacade.untoggleAirAnimations();
+            Debug.Log("now grounded");
         }
 
         public void move(Vector3 direction) {
@@ -43,7 +44,7 @@ namespace Characters.Movement {
         }
 
         public void jump() {
-            rbd.AddForce(Vector3.up * 150f, ForceMode.Impulse);
+            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
         }
 
         public void changeMovement(IMovement movement) {
