@@ -23,6 +23,9 @@
 
         public void setIsAboutToLand(bool isAboutToLand) {
             characterAnimator.setIsAboutToLand(isAboutToLand);
+            if (isAboutToLand) {
+                setIsFalling(false);
+            }
         }
 
         public void untoggleAirAnimations() {

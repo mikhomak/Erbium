@@ -25,13 +25,13 @@ namespace Characters.Movement {
                 return;
             }
 
+            animatorFacade.setIsFalling(true);
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
             if (CommonMethods.isAboutToLand(transform) != oldAboutToLand) {
                 oldAboutToLand = !oldAboutToLand;
                 animatorFacade.setIsAboutToLand(oldAboutToLand);
             }
 
-            animatorFacade.setIsFalling(true);
 
             var newDirection = new Vector3(direction.x, rbd.velocity.y, direction.y);
             rbd.velocity = newDirection;
