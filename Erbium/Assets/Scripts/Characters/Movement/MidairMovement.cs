@@ -27,7 +27,7 @@ namespace Characters.Movement {
             animatorFacade.setIsFalling(true);
             animatorFacade.setIsAboutToLand(CommonMethods.isAboutToLand(transform)); // TODO cache the old variable
 
-            var newDirection = new Vector3(direction.x, 0, direction.y) {y = rbd.velocity.y};
+            var newDirection = new Vector3(direction.x, rbd.velocity.y, direction.y);
             rbd.velocity = newDirection;
             rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
             rotate(direction);
