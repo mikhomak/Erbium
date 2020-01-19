@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Animators;
 using General;
 using UnityEngine;
 
@@ -7,28 +7,21 @@ namespace Characters.Movement {
         private readonly Rigidbody rbd;
         private readonly IPhysicsCharacter character;
         private readonly Transform transform;
+        private readonly IAnimatorFacade animatorFacade;
 
         public GroundMovement(IPhysicsCharacter character) {
             this.character = character;
             rbd = character.getRigidbody();
             transform = character.getTransform();
+            animatorFacade = character.getAnimatorFacade();
+            animatorFacade.untoggleAirAnimations();
         }
 
         public void move(Vector3 direction) {
             if (isFalling()) {
-                character.getAnimatorFacade().setIsFalling(true);
-                if (CommonMethods.isAboutToLand(transform)) {
-                    character.getAnimatorFacade().setIsAboutToLand(true);
-                }
-                else {
-                    character.getAnimatorFacade().setIsAboutToLand(false);
-                }
-
-                return;
+                changeMovement(new MidairMovement(character));
             }
 
-            character.getAnimatorFacade().setIsFalling(false);
-            character.getAnimatorFacade().setIsAboutToLand(false);
             rbd.velocity = direction * character.getStats().Speed;
             rotate(direction);
             updateAnimParameters();
@@ -36,9 +29,9 @@ namespace Characters.Movement {
 
 
         private void updateAnimParameters() {
-            character.getAnimatorFacade().setInputs(InputManager.getHorInput(), InputManager.getVerInput(),
+            animatorFacade.setInputs(InputManager.getHorInput(), InputManager.getVerInput(),
                 InputManager.getMagnitude());
-            character.getAnimatorFacade().setGroundVelocity(Mathf.Abs(rbd.velocity.z));
+            animatorFacade.setGroundVelocity(Mathf.Abs(rbd.velocity.z));
         }
 
 
@@ -50,11 +43,11 @@ namespace Characters.Movement {
         }
 
         public void jump() {
-            rbd.AddForce(Vector3.up * 10f, ForceMode.Impulse);
+            rbd.AddForce(Vector3.up * 150f, ForceMode.Impulse);
         }
 
         public void changeMovement(IMovement movement) {
-            throw new NotImplementedException();
+            character.changeMovement(movement);
         }
 
         public bool isFalling() {

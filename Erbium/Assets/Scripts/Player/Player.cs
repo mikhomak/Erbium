@@ -23,19 +23,13 @@ namespace Player {
         }
 
         private void FixedUpdate() {
+            Debug.Log(movement);
             movement.move(findDirection());
         }
 
-        public IMovement getMovement() {
-            return movement;
-        }
 
         public void die() {
             throw new NotImplementedException();
-        }
-
-        public Stats getStats() {
-            return stats;
         }
 
 
@@ -60,6 +54,19 @@ namespace Player {
 
         public Transform getTransform() {
             return transform;
+        }
+
+        public IMovement getMovement() {
+            return movement;
+        }
+
+        public void changeMovement(IMovement movement) {
+            this.movement = movement;
+        }
+
+
+        public Stats getStats() {
+            return stats;
         }
     }
 }

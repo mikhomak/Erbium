@@ -4,5 +4,6 @@
         void setGroundVelocity(float groundVelocity);
         void setIsFalling(bool isFalling);
         void setIsAboutToLand(bool isAboutToLand);
+        void untoggleAirAnimations();
     }
 }
