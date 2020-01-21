@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 namespace Animators {
     public class CharacterAnimator : MonoBehaviour, ICharacterAnimator {
         private Animator animator;
@@ -8,6 +9,7 @@ namespace Animators {
         private static readonly int GroundVelocity = Animator.StringToHash("groundVelocity");
         private static readonly int IsFalling = Animator.StringToHash("isFalling");
         private static readonly int IsAboutToLand = Animator.StringToHash("isAboutToLand");
+        private static readonly int Jumping = Animator.StringToHash("jumping");
 
         private void OnEnable() {
             animator = GetComponent<Animator>();
@@ -28,7 +30,7 @@ namespace Animators {
         public void setInputMagnitude(float inputMagnitude) {
             animator.SetFloat(InputMagnitude, inputMagnitude);
         }
-        
+
         public void setGroundVelocity(float groundVelocity) {
             animator.SetFloat(GroundVelocity, groundVelocity);
         }
@@ -39,6 +41,14 @@ namespace Animators {
 
         public void setIsAboutToLand(bool isAboutToLand) {
             animator.SetBool(IsAboutToLand, isAboutToLand);
+        }
+
+        public void setJumping(bool jumping) {
+            if (jumping) {
+                animator.CrossFade("jump", 0f);
+            }
+
+            animator.SetBool(Jumping, jumping);
         }
     }
 }

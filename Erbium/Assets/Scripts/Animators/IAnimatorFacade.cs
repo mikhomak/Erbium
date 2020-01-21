@@ -5,5 +5,6 @@
         void setIsFalling(bool isFalling);
         void setIsAboutToLand(bool isAboutToLand);
         void untoggleAirAnimations();
+        void setJumping(bool jumping);
     }
 }

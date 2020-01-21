@@ -45,6 +45,7 @@ namespace Characters.Movement {
         }
 
         public void jump() {
+            animatorFacade.setJumping(true);
             rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
         }
 

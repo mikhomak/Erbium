@@ -1,11 +1,12 @@
 ﻿using Animators;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Animations {
     public abstract class AnimationStateData : ScriptableObject {
         public float Duration;
-        public abstract void update(ICharacterAnimator characterAnimator);
-        public abstract void enter(ICharacterAnimator characterAnimator);
-        public abstract void exit(ICharacterAnimator characterAnimator);
+        public abstract void update(AnimationStateBase animatorState, Animator animator);
+        public abstract void enter(AnimationStateBase animatorState, Animator animator);
+        public abstract void exit(AnimationStateBase animatorState, Animator animator);
     }
 }
