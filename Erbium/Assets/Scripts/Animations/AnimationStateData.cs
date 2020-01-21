@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Animators;
 using UnityEngine;
 
-public class AnimationStateData : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+namespace Animations {
+    public abstract class AnimationStateData : ScriptableObject {
+        public float Duration;
+        public abstract void update(ICharacterAnimator characterAnimator);
+        public abstract void enter(ICharacterAnimator characterAnimator);
+        public abstract void exit(ICharacterAnimator characterAnimator);
     }
 }

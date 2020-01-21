@@ -13,6 +13,10 @@ namespace Animators {
             animator = GetComponent<Animator>();
         }
 
+        public Animator getAnimator() {
+            return animator;
+        }
+
         public void setHorInput(float horInput) {
             animator.SetFloat(HorInput, horInput);
         }
