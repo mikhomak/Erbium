@@ -2,9 +2,8 @@
 using UnityEngine;
 
 namespace Animations.States {
-    public class StateJump : AnimationStateData
-    {
-        
+    [CreateAssetMenu(fileName = "New Animation State", menuName = "AnimationStates/Jump")]
+    public class StateJump : AnimationStateData {
         public override void update(ICharacterAnimator characterAnimator) {
             throw new System.NotImplementedException();
         }
