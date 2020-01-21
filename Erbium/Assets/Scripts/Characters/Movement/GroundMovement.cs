@@ -18,12 +18,13 @@ namespace Characters.Movement {
         }
 
         public void move(Vector3 direction) {
-
             if (isFalling()) {
                 changeMovement(new MidairMovement(character));
             }
 
-            var newDirection = new Vector3( direction.x * character.getStats().Speed, rbd.velocity.y, direction.z * character.getStats().Speed);
+            var newDirection =
+                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().Speed);
+
             rbd.velocity = newDirection;
             rotate(direction);
             updateAnimParameters();
@@ -31,8 +32,7 @@ namespace Characters.Movement {
 
 
         private void updateAnimParameters() {
-            animatorFacade.setInputs(InputManager.getHorInput(), InputManager.getVerInput(),
-                InputManager.getMagnitude());
+            animatorFacade.updateInputs();
             animatorFacade.setGroundVelocity(Mathf.Abs(rbd.velocity.z));
         }
 

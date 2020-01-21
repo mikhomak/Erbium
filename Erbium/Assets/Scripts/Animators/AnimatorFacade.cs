@@ -1,13 +1,19 @@
-﻿namespace Animators {
+﻿using General;
+
+namespace Animators {
     public class AnimatorFacade : IAnimatorFacade {
         private readonly ICharacterAnimator characterAnimator;
 
         private bool jumping;
-        
+
         public AnimatorFacade(ICharacterAnimator characterAnimator) {
             this.characterAnimator = characterAnimator;
         }
 
+
+        public void updateInputs() {
+            setInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getVerInput());
+        }
 
         public void setInputs(float horInput, float verInput, float inputMagnitude) {
             characterAnimator.setHorInput(horInput);

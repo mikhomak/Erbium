@@ -25,18 +25,26 @@ namespace Characters.Movement {
                 return;
             }
 
+            updateAnimations();
+            var newDirection =
+                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().AirSpeed);
+            rbd.velocity = newDirection;
+            rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
+            rotate(direction);
+        }
+
+        private void updateAnimations() {
+            animatorFacade.updateInputs();
             animatorFacade.setIsFalling(true);
+            updateLandingAnimation();
+        }
+
+        private void updateLandingAnimation() {
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
             if (rbd.velocity.y < 0 && CommonMethods.isAboutToLand(transform) != oldAboutToLand) {
                 oldAboutToLand = !oldAboutToLand;
                 animatorFacade.setIsAboutToLand(oldAboutToLand);
             }
-
-
-            var newDirection = new Vector3( direction.x * character.getStats().AirSpeed, rbd.velocity.y, direction.z * character.getStats().AirSpeed);
-            rbd.velocity = newDirection;
-            rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
-            rotate(direction);
         }
 
         private void rotate(Vector3 direction) {

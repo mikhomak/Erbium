@@ -31,5 +31,12 @@ namespace General {
             position.y += TRANSFORM_RAYCAST_LIFT;
             return position;
         }
+
+        public static Vector3 createVectorWithoutLoosingY(Vector3 vector, float y, float multiplier) {
+            var result = new Vector3(vector.x, 0, vector.z);
+            result *= multiplier;
+            result.y = y;
+            return result;
+        }
     }
 }
