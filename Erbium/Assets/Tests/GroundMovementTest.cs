@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Camera;
 using Characters;
 using Characters.Movement;
@@ -12,21 +13,31 @@ using static NSubstitute.Substitute;
 
 namespace Tests {
     public class GroundMovementTest {
+        private readonly List<GameObject> gameObjects = new List<GameObject>();
         private GameObject playerGo;
-        private Player.Player player;
+        private Player.IPlayer player;
 
         [SetUp]
         public void setUpTestScene() {
-            MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Main Camera"));
-            MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Always Forward Camera"));
-            MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Camera Manager"));
-            MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/Enviroments/Test Floor"));
-            GameObject inputManagerGO =
-                MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/General/Input Manager"));
-            playerGo = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/Player/Player"));
-            var inputManager = inputManagerGO.GetComponent<InputManager>();
+            gameObjects.Add(Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Main Camera")));
+            gameObjects.Add(
+                Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Always Forward Camera")));
+            gameObjects.Add(Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Camera Manager")));
+            gameObjects.Add(Object.Instantiate(Resources.Load<GameObject>("Prefabs/Enviroments/Test Floor")));
+            GameObject inputManagerGo =
+                Object.Instantiate(Resources.Load<GameObject>("Prefabs/General/Input Manager"));
+            playerGo = Object.Instantiate(Resources.Load<GameObject>("Prefabs/Player/Player"));
+            gameObjects.Add(inputManagerGo);
+            gameObjects.Add(playerGo);
+            var inputManager = inputManagerGo.GetComponent<InputManager>();
             inputManager.playerGameObject = playerGo;
-            player = playerGo.GetComponent<Player.Player>();
+            player = playerGo.GetComponent<Player.IPlayer>();
+        }
+
+        [TearDown]
+        public void afterTest() {
+            gameObjects.ForEach(Object.Destroy);
+            player = null;
         }
 
         [UnityTest]
@@ -48,10 +59,12 @@ namespace Tests {
             player.changeMovementDirection(moveDirection);
             moveDirection.getDirection().Returns(direction);
             Vector3 playerInitPosition = playerGo.transform.position;
+            Assert.True(player.getMovement() is GroundMovement);
             yield return new WaitForSeconds(1f);
 
             Vector3 expectedPosition = playerInitPosition + direction * (player.getStats().Speed * 1f);
             Assert.True(Vector3.Distance(expectedPosition, playerGo.transform.position) <= 0.2f);
+            Assert.True(player.getMovement() is GroundMovement);
         }
     }
 }

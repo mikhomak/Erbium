@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Player {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Stats))]
-    public class Player : MonoBehaviour, IPhysicsCharacter {
+    public class Player : MonoBehaviour, IPlayer {
         private IMovement movement;
         private IAnimatorFacade animatorFacade;
         private IMovementDirection movementDirection;
