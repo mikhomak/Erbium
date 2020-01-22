@@ -19,8 +19,10 @@ namespace General {
                 (player.getMovement() as IJumpable)?.jump();
             }
 
-            if (Input.GetButtonDown($"Crouch")) {
-                player.changeMovement(new CrouchingMovement(player));
+            if (Input.GetButton($"Crouch")) {
+                if (player.getMovement() is GroundMovement) {
+                    player.changeMovement(new CrouchingMovement(player));
+                }
             }
 
             if (Input.GetButtonUp($"Crouch")) {

@@ -15,6 +15,7 @@ namespace Characters.Movement {
             rbd = character.getRigidbody();
             transform = character.getTransform();
             animatorFacade = character.getAnimatorFacade();
+            animatorFacade.setCrouching(true);
         }
 
 
@@ -41,7 +42,6 @@ namespace Characters.Movement {
 
         private void updateAnimParameters() {
             animatorFacade.updateInputs();
-            animatorFacade.setCrouching(true);
         }
 
         public void changeMovement(IMovement movement) {
@@ -49,6 +49,7 @@ namespace Characters.Movement {
         }
 
         public void cleanUp() {
+            Debug.Log("cleanning up");
             animatorFacade.setCrouching(false);
         }
 

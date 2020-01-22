@@ -62,8 +62,6 @@ namespace Player {
         }
 
         public void changeMovement(IMovement movement) {
-            Debug.Log("Current movement " + this.movement);
-            Debug.Log("Next movement " + movement);
             this.movement.cleanUp();
             this.movement = movement;
         }
