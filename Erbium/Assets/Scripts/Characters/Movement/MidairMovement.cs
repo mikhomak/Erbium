@@ -62,6 +62,10 @@ namespace Characters.Movement {
             character.changeMovement(movement);
         }
 
+        public void cleanUp() {
+            animatorFacade.untoggleAirAnimations();
+        }
+
         public bool isFalling() {
             return !CommonMethods.onGround(transform);
         }

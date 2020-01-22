@@ -1,20 +1,22 @@
-﻿using Animators;
+﻿using System;
+using Animators;
 using General;
 using UnityEngine;
 
 namespace Characters.Movement {
-    public class GroundMovement : IMovement, IJumpable, IFallable {
+    public class CrouchingMovement : IMovement, IFallable, IJumpable {
         private readonly Rigidbody rbd;
         private readonly IPhysicsCharacter character;
         private readonly Transform transform;
         private readonly IAnimatorFacade animatorFacade;
 
-        public GroundMovement(IPhysicsCharacter character) {
+        public CrouchingMovement(IPhysicsCharacter character) {
             this.character = character;
             rbd = character.getRigidbody();
             transform = character.getTransform();
             animatorFacade = character.getAnimatorFacade();
         }
+
 
         public void move(Vector3 direction) {
             if (isFalling()) {
@@ -26,13 +28,7 @@ namespace Characters.Movement {
 
             rbd.velocity = velocity;
             rotate(direction);
-            updateAnimParameters(velocity);
-        }
-
-
-        private void updateAnimParameters(Vector3 groundVelocity) {
-            animatorFacade.updateInputs();
-            animatorFacade.setGroundVelocity(CommonMethods.calculateGroundVelocity(groundVelocity));
+            updateAnimParameters();
         }
 
 
@@ -43,9 +39,9 @@ namespace Characters.Movement {
             }
         }
 
-        public void jump() {
-            animatorFacade.setJumping(true);
-            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
+        private void updateAnimParameters() {
+            animatorFacade.updateInputs();
+            animatorFacade.setCrouching(true);
         }
 
         public void changeMovement(IMovement movement) {
@@ -53,11 +49,16 @@ namespace Characters.Movement {
         }
 
         public void cleanUp() {
-            return;
+            animatorFacade.setCrouching(false);
         }
 
         public bool isFalling() {
             return !CommonMethods.onGround(transform);
+        }
+
+        public void jump() {
+            animatorFacade.setJumping(true);
+            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
         }
     }
 }

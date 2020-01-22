@@ -62,6 +62,7 @@ namespace Player {
         }
 
         public void changeMovement(IMovement movement) {
+            this.movement.cleanUp();
             this.movement = movement;
         }
 

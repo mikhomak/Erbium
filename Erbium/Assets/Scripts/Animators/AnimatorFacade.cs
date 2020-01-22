@@ -46,6 +46,10 @@ namespace Animators {
             characterAnimator.setJumping(jumping);
         }
 
+        public void setCrouching(bool crouching) {
+            characterAnimator.setCrouching(crouching);
+        }
+
         private bool checkIfJumping(bool stateToCheck) {
             return !jumping && stateToCheck;
         }

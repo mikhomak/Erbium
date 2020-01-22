@@ -7,5 +7,6 @@
         void setIsAboutToLand(bool isAboutToLand);
         void untoggleAirAnimations();
         void setJumping(bool jumping);
+        void setCrouching(bool crouching);
     }
 }

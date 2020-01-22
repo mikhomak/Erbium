@@ -10,6 +10,7 @@ namespace Animators {
         private static readonly int IsFalling = Animator.StringToHash("isFalling");
         private static readonly int IsAboutToLand = Animator.StringToHash("isAboutToLand");
         private static readonly int Jumping = Animator.StringToHash("jumping");
+        private static readonly int Crouching = Animator.StringToHash("crouching");
 
         private void OnEnable() {
             animator = GetComponent<Animator>();
@@ -49,6 +50,10 @@ namespace Animators {
             }
 
             animator.SetBool(Jumping, jumping);
+        }
+
+        public void setCrouching(bool crouching) {
+            animator.SetBool(Crouching, crouching);
         }
     }
 }
