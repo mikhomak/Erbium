@@ -5,6 +5,7 @@ using Characters.Movement;
 using General;
 using NSubstitute;
 using NUnit.Framework;
+using Player.MovementDirection;
 using UnityEngine;
 using UnityEngine.TestTools;
 using static NSubstitute.Substitute;
@@ -43,10 +44,9 @@ namespace Tests {
         [UnityTest]
         public IEnumerator moveTest() {
             var moveDirection = Substitute.For<IMovementDirection>();
-            var direction = new Vector3(0, 0, 10);
-            player.movementDirection = moveDirection;
-            moveDirection.getCameraForwardDirection().Returns(direction);
-
+            var direction = new Vector3(0, 0, 1);
+            player.changeMovementDirection(moveDirection);
+            moveDirection.getDirection().Returns(direction);
             yield return new WaitForSeconds(2f);
 
             Debug.Log(playerGo.transform.position);

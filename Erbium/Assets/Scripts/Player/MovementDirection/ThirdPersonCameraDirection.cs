@@ -1,7 +1,8 @@
 ﻿using Camera;
+using General;
 using UnityEngine;
 
-namespace General {
+namespace Player.MovementDirection {
     public class ThirdPersonCameraDirection: IMovementDirection  {
         
         public Vector3 getDirection() {

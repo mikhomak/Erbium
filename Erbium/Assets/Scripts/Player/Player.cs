@@ -3,6 +3,7 @@ using Animators;
 using Characters;
 using Characters.Movement;
 using General;
+using Player.MovementDirection;
 using UnityEngine;
 
 namespace Player {
