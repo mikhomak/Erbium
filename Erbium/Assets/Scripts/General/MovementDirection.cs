@@ -2,8 +2,9 @@
 using UnityEngine;
 
 namespace General {
-    public class MovementDirection : MonoBehaviour {
-        public static Vector3 getCameraForwardDirection() {
+    public class ThirdPersonCameraDirection: IMovementDirection  {
+        
+        public Vector3 getDirection() {
             Vector3 forward = CameraManager.getCameraForwardDirectionNormalized();
             Vector3 right = CameraManager.getCameraRightDirectionNormalized();
             return forward * InputManager.getVerInput() + right * InputManager.getHorInput();

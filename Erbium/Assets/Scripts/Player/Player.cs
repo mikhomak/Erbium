@@ -11,6 +11,7 @@ namespace Player {
     public class Player : MonoBehaviour, IPhysicsCharacter {
         private IMovement movement;
         private IAnimatorFacade animatorFacade;
+        private IMovementDirection movementDirection;
         [SerializeField] private Rigidbody rbd;
         [SerializeField] private Stats stats;
         [SerializeField] private CameraView cameraView;
@@ -18,12 +19,13 @@ namespace Player {
         private void Start() {
             rbd = GetComponent<Rigidbody>();
             stats = GetComponent<Stats>();
+            movementDirection = setCameraDirection(cameraView);
             animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>());
             movement = new GroundMovement(this);
         }
 
         private void FixedUpdate() {
-            movement.move(findDirection());
+            movement.move(movementDirection.getDirection());
         }
 
 
@@ -32,14 +34,13 @@ namespace Player {
         }
 
 
-        private Vector3 findDirection() {
+        private IMovementDirection setCameraDirection(CameraView cameraView) {
+            this.cameraView = cameraView;
             switch (cameraView) {
                 case CameraView.AlwaysForward:
-                    return MovementDirection.getCameraForwardDirection();
-                    break;
+                    return new ThirdPersonCameraDirection();
                 default:
-                    return MovementDirection.getCameraForwardDirection();
-                    break;
+                    return new ThirdPersonCameraDirection();
             }
         }
 
@@ -63,9 +64,16 @@ namespace Player {
             this.movement = movement;
         }
 
-
         public Stats getStats() {
             return stats;
+        }
+
+        public void changeMovementDirection(IMovementDirection movementDirection) {
+            this.movementDirection = movementDirection;
+        }
+
+        public void changeMovementDirection(CameraView cameraView) {
+            movementDirection = setCameraDirection(cameraView);
         }
     }
 }
