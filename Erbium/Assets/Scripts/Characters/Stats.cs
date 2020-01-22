@@ -7,6 +7,7 @@ namespace Characters {
         [SerializeField] private float rotationSpeed = 0.1f;
         [SerializeField] private float jumpForce = 10f;
         [SerializeField] private float additionalGravityForce = 20f;
+        [SerializeField] private float crouchSpeed = 6f;
         [SerializeField] private float health;
 
         
@@ -34,6 +35,11 @@ namespace Characters {
         public float AdditionalGravityForce {
             get => additionalGravityForce;
             set => additionalGravityForce = value;
+        }
+
+        public float CrouchSpeed {
+            get => crouchSpeed;
+            set => crouchSpeed = value;
         }
 
         public float Health {
