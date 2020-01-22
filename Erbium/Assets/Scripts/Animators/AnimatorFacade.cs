@@ -12,7 +12,7 @@ namespace Animators {
 
 
         public void updateInputs() {
-            setInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getVerInput());
+            setInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getMagnitude());
         }
 
         public void setInputs(float horInput, float verInput, float inputMagnitude) {

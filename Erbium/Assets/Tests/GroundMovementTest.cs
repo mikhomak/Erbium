@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Camera;
-using Characters;
 using Characters.Movement;
 using General;
 using NSubstitute;
 using NUnit.Framework;
+using Player;
 using Player.MovementDirection;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -15,7 +14,7 @@ namespace Tests {
     public class GroundMovementTest {
         private readonly List<GameObject> gameObjects = new List<GameObject>();
         private GameObject playerGo;
-        private Player.IPlayer player;
+        private IPlayer player;
 
         [SetUp]
         public void setUpTestScene() {
@@ -31,7 +30,7 @@ namespace Tests {
             gameObjects.Add(playerGo);
             var inputManager = inputManagerGo.GetComponent<InputManager>();
             inputManager.playerGameObject = playerGo;
-            player = playerGo.GetComponent<Player.IPlayer>();
+            player = playerGo.GetComponent<IPlayer>();
         }
 
         [TearDown]

@@ -38,5 +38,12 @@ namespace General {
             result.y = y;
             return result;
         }
+
+        public static float calculateGroundVelocity(Vector3 velocity) {
+            Vector3 vel = velocity;
+            vel.y = 0;
+            return vel.magnitude;
+        }
+        
     }
 }

@@ -22,18 +22,18 @@ namespace Characters.Movement {
                 changeMovement(new MidairMovement(character));
             }
 
-            var newDirection =
+            var velocity =
                 CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().Speed);
 
-            rbd.velocity = newDirection;
+            rbd.velocity = velocity;
             rotate(direction);
-            updateAnimParameters();
+            updateAnimParameters(velocity);
         }
 
 
-        private void updateAnimParameters() {
+        private void updateAnimParameters(Vector3 groundVelocity) {
             animatorFacade.updateInputs();
-            animatorFacade.setGroundVelocity(Mathf.Abs(rbd.velocity.z));
+            animatorFacade.setGroundVelocity(CommonMethods.calculateGroundVelocity(groundVelocity));
         }
 
 
