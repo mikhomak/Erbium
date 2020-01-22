@@ -49,7 +49,6 @@ namespace Characters.Movement {
         }
 
         public void cleanUp() {
-            Debug.Log("cleanning up");
             animatorFacade.setCrouching(false);
         }
 
