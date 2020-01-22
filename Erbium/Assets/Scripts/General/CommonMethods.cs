@@ -17,12 +17,12 @@ namespace General {
             return Physics.Raycast(position, Vector3.down, out _, GROUND_RAT_DISTANCE, GROUND_LAYER);
         }
 
-        public static bool isAboutToLand(Transform transform) {
+        public static bool isAboutToLand(Transform transform, Vector3 direction) {
             var position = getPositionRaycastLifted(transform);
 
             Debug.DrawRay(position,
                 Vector3.down * LANDING_RAT_DISTANCE +
-                MovementDirection.getCameraForwardDirection() * LANDING_RAT_DISTANCE, Color.cyan);
+                direction * LANDING_RAT_DISTANCE, Color.red);
             return Physics.Raycast(position, Vector3.down, out _, LANDING_RAT_DISTANCE, GROUND_LAYER);
         }
 

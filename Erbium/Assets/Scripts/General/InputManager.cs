@@ -5,8 +5,9 @@ using UnityEngine;
 
 namespace General {
     public class InputManager : MonoBehaviour {
-        [SerializeField] private GameObject playerGameObject;
+        [SerializeField] public GameObject playerGameObject;
         private ICharacter player;
+
 
         private void Start() {
             player = playerGameObject.GetComponent<ICharacter>();

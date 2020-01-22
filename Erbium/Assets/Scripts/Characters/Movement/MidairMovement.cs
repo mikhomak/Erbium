@@ -25,7 +25,7 @@ namespace Characters.Movement {
                 return;
             }
 
-            updateAnimations();
+            updateAnimations(direction);
             var newDirection =
                 CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().AirSpeed);
             rbd.velocity = newDirection;
@@ -33,15 +33,15 @@ namespace Characters.Movement {
             rotate(direction);
         }
 
-        private void updateAnimations() {
+        private void updateAnimations(Vector3 direction) {
             animatorFacade.updateInputs();
             animatorFacade.setIsFalling(true);
-            updateLandingAnimation();
+            updateLandingAnimation(direction);
         }
 
-        private void updateLandingAnimation() {
+        private void updateLandingAnimation(Vector3 direction) {
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
-            if (rbd.velocity.y < 0 && CommonMethods.isAboutToLand(transform) != oldAboutToLand) {
+            if (rbd.velocity.y < 0 && CommonMethods.isAboutToLand(transform, direction) != oldAboutToLand) {
                 oldAboutToLand = !oldAboutToLand;
                 animatorFacade.setIsAboutToLand(oldAboutToLand);
             }

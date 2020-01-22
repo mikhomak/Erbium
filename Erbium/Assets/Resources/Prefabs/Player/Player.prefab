@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1926743910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529214202081752662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8519bd063dd2c5145840d5e757d5e563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5780510845307315397
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +91,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  airSpeed: 5
   rotationSpeed: 10
+  jumpForce: 15
+  additionalGravityForce: 20
   health: 0
 --- !u!136 &5780510845307315399
 CapsuleCollider:
@@ -102,6 +117,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5780510845307315398}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 956a930d312c44548ab061588a533269,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c4aadaf9c6d619245b2c29ff98654637, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 956a930d312c44548ab061588a533269,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 956a930d312c44548ab061588a533269,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -174,6 +199,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c1376d5aa1b69274d9cad4a999d6f41f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 956a930d312c44548ab061588a533269, type: 3}
+--- !u!1 &2529214202081752662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 956a930d312c44548ab061588a533269,
+    type: 3}
+  m_PrefabInstance: {fileID: 5780510846165446495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1532010240820790341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 956a930d312c44548ab061588a533269,
