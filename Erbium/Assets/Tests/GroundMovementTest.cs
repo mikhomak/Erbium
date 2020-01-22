@@ -43,14 +43,15 @@ namespace Tests {
 
         [UnityTest]
         public IEnumerator moveTest() {
-            var moveDirection = Substitute.For<IMovementDirection>();
+            IMovementDirection moveDirection = For<IMovementDirection>();
             var direction = new Vector3(0, 0, 1);
             player.changeMovementDirection(moveDirection);
             moveDirection.getDirection().Returns(direction);
-            yield return new WaitForSeconds(2f);
+            Vector3 playerInitPosition = playerGo.transform.position;
+            yield return new WaitForSeconds(1f);
 
-            Debug.Log(playerGo.transform.position);
-            Assert.Equals(1, 1);
+            Vector3 expectedPosition = playerInitPosition + direction * (player.getStats().Speed * 1f);
+            Assert.True(Vector3.Distance(expectedPosition, playerGo.transform.position) <= 0.2f);
         }
     }
 }
