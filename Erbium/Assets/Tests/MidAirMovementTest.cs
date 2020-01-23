@@ -40,11 +40,15 @@ namespace Tests {
             Assert.True(movement is GroundMovement);
 
             yield return new WaitForSeconds(1f);
-
             movement = player.getMovement();
             Assert.NotNull(movement);
 
             Assert.True(movement is MidairMovement);
+        }
+
+        [UnityTest]
+        public IEnumerator fallingTest() {
+            yield return new WaitForSeconds(1f);
         }
     }
 }
