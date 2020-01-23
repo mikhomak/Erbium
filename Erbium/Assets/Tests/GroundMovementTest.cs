@@ -12,24 +12,18 @@ using static NSubstitute.Substitute;
 
 namespace Tests {
     public class GroundMovementTest {
-        private readonly List<GameObject> gameObjects = new List<GameObject>();
+        private List<GameObject> gameObjects = new List<GameObject>();
         private GameObject playerGo;
         private IPlayer player;
 
         [SetUp]
         public void setUpTestScene() {
-            gameObjects.Add(Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Main Camera")));
-            gameObjects.Add(
-                Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Always Forward Camera")));
-            gameObjects.Add(Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Camera Manager")));
-            gameObjects.Add(Object.Instantiate(Resources.Load<GameObject>("Prefabs/Enviroments/Test Floor")));
-            GameObject inputManagerGo =
-                Object.Instantiate(Resources.Load<GameObject>("Prefabs/General/Input Manager"));
-            playerGo = Object.Instantiate(Resources.Load<GameObject>("Prefabs/Player/Player"));
+            gameObjects = TestCommonMethods.init();
+            GameObject inputManagerGo = TestCommonMethods.initInputManager();
+            InputManager inputManager = inputManagerGo.GetComponent<InputManager>();
+            playerGo = TestCommonMethods.initPlayer(inputManager);
             gameObjects.Add(inputManagerGo);
             gameObjects.Add(playerGo);
-            var inputManager = inputManagerGo.GetComponent<InputManager>();
-            inputManager.playerGameObject = playerGo;
             player = playerGo.GetComponent<IPlayer>();
         }
 
