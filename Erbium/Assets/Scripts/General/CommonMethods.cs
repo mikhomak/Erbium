@@ -2,10 +2,10 @@
 
 namespace General {
     public static class CommonMethods {
-        private const float GROUND_RAT_DISTANCE = 0.3f;
-        private const float LANDING_RAT_DISTANCE = 3f;
-        private const float TRANSFORM_RAYCAST_LIFT = 0.2f;
-        private const int GROUND_LAYER = 1 << 8;
+        public const float GROUND_RAT_DISTANCE = 0.3f;
+        public const float LANDING_RAT_DISTANCE = 3f;
+        public const float TRANSFORM_RAYCAST_LIFT = 0.2f;
+        public const int GROUND_LAYER = 1 << 8;
 
         public static float calculateMagnitude(float value1, float value2) {
             return Mathf.Clamp01(new Vector2(value1, value2).magnitude);
