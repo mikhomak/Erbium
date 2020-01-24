@@ -48,7 +48,13 @@ namespace Tests {
 
         [UnityTest]
         public IEnumerator fallingTest() {
+            var initPos = playerGo.transform.position;
+            initPos.y = 100f;
+            playerGo.transform.position = initPos;
             yield return new WaitForSeconds(1f);
+            Vector3 yPos = initPos;
+            yPos.y -= player.getStats().AdditionalGravityForce;
+            Assert.True(Vector3.Distance(playerGo.transform.position, yPos)< 5f);
         }
     }
 }
