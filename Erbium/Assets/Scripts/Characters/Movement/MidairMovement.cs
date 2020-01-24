@@ -11,11 +11,14 @@ namespace Characters.Movement {
         private readonly IAnimatorFacade animatorFacade;
         private bool oldAboutToLand = false;
 
+        private int currentJumps;
+
         public MidairMovement(IPhysicsCharacter character) {
             this.character = character;
             rbd = character.getRigidbody();
             transform = character.getTransform();
             animatorFacade = character.getAnimatorFacade();
+            currentJumps = character.getStats().MaxJumps;
         }
 
         public void move(Vector3 direction) {
@@ -55,7 +58,10 @@ namespace Characters.Movement {
         }
 
         public void jump() {
-            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
+            if (currentJumps == 0) {
+                rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
+                currentJumps--;
+            }
         }
 
         public void changeMovement(IMovement movement) {
