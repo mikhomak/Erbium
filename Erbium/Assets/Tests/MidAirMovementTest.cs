@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using Characters.Movement;
 using General;
 using NUnit.Framework;
 using Player;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Tests {
     public class MidAirMovementTest {
@@ -66,7 +64,8 @@ namespace Tests {
             playerGo.transform.position = initPos;
             yield return new WaitForSeconds(0.1f);
             IMovement movement = player.getMovement();
-            Assert.True(CommonMethods.isAboutToLand(playerGo.transform, Vector3.zero));
+            Assert.True(CommonMethods.isAboutToLand(playerGo.transform, Vector3.zero,
+                CommonMethods.normalizeValue(player.getRigidbody().velocity.y, player.getStats().MaxDownVelocity)));
             Assert.True(movement is MidairMovement);
             yield return new WaitForSeconds(1f);
             movement = player.getMovement();

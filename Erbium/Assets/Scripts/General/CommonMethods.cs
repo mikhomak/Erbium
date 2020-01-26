@@ -3,9 +3,9 @@
 namespace General {
     public static class CommonMethods {
         public const float GROUND_RAT_DISTANCE = 0.3f;
-        public const float LANDING_RAT_DISTANCE_MIN = 3f;
+        public const float LANDING_RAT_DISTANCE_MIN = 1.5f;
         public const float LANDING_RAT_DISTANCE = 5f;
-        public const float LANDING_RAT_DISTANCE_MAX = 6f;
+        public const float LANDING_RAT_DISTANCE_MAX = 2f;
         public const float TRANSFORM_RAYCAST_LIFT = 0.2f;
         public const int GROUND_LAYER = 1 << 8;
 
@@ -19,13 +19,14 @@ namespace General {
             return Physics.Raycast(position, Vector3.down, out _, GROUND_RAT_DISTANCE, GROUND_LAYER);
         }
 
-        public static bool isAboutToLand(Transform transform, Vector3 direction) {
+        public static bool isAboutToLand(Transform transform, Vector3 direction, float normalizedValue) {
             var position = getPositionRaycastLifted(transform);
-
+            var length = getValueInRange(normalizedValue, LANDING_RAT_DISTANCE_MIN, LANDING_RAT_DISTANCE_MAX);
             Debug.DrawRay(position,
-                Vector3.down * LANDING_RAT_DISTANCE +
-                direction * LANDING_RAT_DISTANCE, Color.red);
-            return Physics.Raycast(position, Vector3.down, out _, LANDING_RAT_DISTANCE, GROUND_LAYER);
+                Vector3.down * length +
+                direction * length, Color.red);
+            
+            return Physics.Raycast(position, Vector3.down * length + direction.normalized * length, out _, length, GROUND_LAYER);
         }
 
         public static Vector3 getPositionRaycastLifted(Transform transform) {
@@ -56,6 +57,10 @@ namespace General {
 
         public static float getValueInRange(float multiplier, float min, float max) {
             return multiplier * (max - min) + max;
+        }
+
+        public static float normalizeValue(float value, float max) {
+            return Mathf.Abs(value / max);
         }
     }
 }

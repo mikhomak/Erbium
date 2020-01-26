@@ -36,7 +36,7 @@ namespace Characters.Movement {
         }
 
         private void checkMaxDownVelocity() {
-            if (rbd.velocity.y > character.getStats().MaxDownVelocity) {
+            if (rbd.velocity.y < character.getStats().MaxDownVelocity) {
                 rbd.velocity = CommonMethods.modifyYinVector(rbd.velocity, character.getStats().MaxDownVelocity);
             }
             else {
@@ -53,7 +53,9 @@ namespace Characters.Movement {
 
         private void updateLandingAnimation(Vector3 direction) {
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
-            if (rbd.velocity.y < 0 && CommonMethods.isAboutToLand(transform, direction) != oldAboutToLand) {
+            float yValue = rbd.velocity.y;
+            if (yValue < 0 && CommonMethods.isAboutToLand(transform, direction,
+                    CommonMethods.normalizeValue(yValue, character.getStats().MaxDownVelocity)) != oldAboutToLand) {
                 oldAboutToLand = !oldAboutToLand;
                 animatorFacade.setIsAboutToLand(oldAboutToLand);
             }

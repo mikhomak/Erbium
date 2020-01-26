@@ -9,7 +9,7 @@ namespace Characters {
         [SerializeField] private float additionalGravityForce = 20f;
         [SerializeField] private float crouchSpeed = 6f;
         [SerializeField] private int maxJumps = 2;
-        [SerializeField] private float maxDownVelocity = 30f;
+        [SerializeField] private float maxDownVelocity = -20f;
         [SerializeField] private float health;
 
         
