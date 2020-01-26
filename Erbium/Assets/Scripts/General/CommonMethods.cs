@@ -3,7 +3,9 @@
 namespace General {
     public static class CommonMethods {
         public const float GROUND_RAT_DISTANCE = 0.3f;
-        public const float LANDING_RAT_DISTANCE = 3f;
+        public const float LANDING_RAT_DISTANCE_MIN = 3f;
+        public const float LANDING_RAT_DISTANCE = 5f;
+        public const float LANDING_RAT_DISTANCE_MAX = 6f;
         public const float TRANSFORM_RAYCAST_LIFT = 0.2f;
         public const int GROUND_LAYER = 1 << 8;
 
@@ -44,6 +46,10 @@ namespace General {
             vel.y = 0;
             return vel.magnitude;
         }
-        
+
+
+        public static float getValueInRange(float multiplier, float min, float max) {
+            return multiplier * (max - min) + max;
+        }
     }
 }

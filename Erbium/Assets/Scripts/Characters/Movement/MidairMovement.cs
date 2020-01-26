@@ -40,6 +40,7 @@ namespace Characters.Movement {
             animatorFacade.updateInputs();
             animatorFacade.setIsFalling(true);
             updateLandingAnimation(direction);
+            Debug.Log(rbd.velocity.y);
         }
 
         private void updateLandingAnimation(Vector3 direction) {
@@ -58,7 +59,7 @@ namespace Characters.Movement {
         }
 
         public void jump() {
-            if (currentJumps == 0) {
+            if (currentJumps != 0) {
                 rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
                 currentJumps--;
             }
