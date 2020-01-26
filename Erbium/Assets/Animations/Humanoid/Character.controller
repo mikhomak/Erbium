@@ -29,7 +29,7 @@ AnimatorStateMachine:
     m_Position: {x: 130, y: 530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7137318717681277079}
-    m_Position: {x: 220, y: 390, z: 0}
+    m_Position: {x: 180, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5821700386525643677}
     m_Position: {x: 560, y: 330, z: 0}
@@ -496,7 +496,7 @@ AnimatorState:
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
+  m_WriteDefaultValues: 0
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
@@ -577,7 +577,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.15
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 1
+  m_InterruptionSource: 4
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
 --- !u!1101 &4613638541542772783

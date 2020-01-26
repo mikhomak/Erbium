@@ -54,7 +54,9 @@ namespace Tests {
             yield return new WaitForSeconds(1f);
             Vector3 yPos = initPos;
             yPos.y -= player.getStats().AdditionalGravityForce;
-            Assert.True(Vector3.Distance(playerGo.transform.position, yPos) < 5f);
+            Debug.Log(yPos);
+            Debug.Log(playerGo.transform.position);
+            Assert.True(Vector3.Distance(playerGo.transform.position, yPos) < 6f);
         }
 
         [UnityTest]
@@ -64,7 +66,7 @@ namespace Tests {
             playerGo.transform.position = initPos;
             yield return new WaitForSeconds(0.1f);
             IMovement movement = player.getMovement();
-            Assert.True(CommonMethods.isAboutToLand(playerGo.transform.position, Vector3.zero,
+            Assert.True(CommonMethods.isAboutToLand(playerGo.transform.position, Vector3.down,
                 CommonMethods.normalizeValue(player.getRigidbody().velocity.y, player.getStats().MaxDownVelocity)));
             Assert.True(movement is MidairMovement);
             yield return new WaitForSeconds(1f);
