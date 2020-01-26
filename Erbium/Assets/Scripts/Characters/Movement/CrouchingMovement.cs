@@ -53,7 +53,7 @@ namespace Characters.Movement {
         }
 
         public bool isFalling() {
-            return !CommonMethods.onGround(transform);
+            return !CommonMethods.onGround(transform.position);
         }
 
         public void jump() {

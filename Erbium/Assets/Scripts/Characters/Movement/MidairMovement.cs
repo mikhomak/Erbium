@@ -48,13 +48,12 @@ namespace Characters.Movement {
             animatorFacade.updateInputs();
             animatorFacade.setIsFalling(true);
             updateLandingAnimation(direction);
-            Debug.Log(rbd.velocity.y);
         }
 
         private void updateLandingAnimation(Vector3 direction) {
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
             float yValue = rbd.velocity.y;
-            if (yValue < 0 && CommonMethods.isAboutToLand(transform, direction,
+            if (yValue < 0 && CommonMethods.isAboutToLand(transform.position, direction,
                     CommonMethods.normalizeValue(yValue, character.getStats().MaxDownVelocity)) != oldAboutToLand) {
                 oldAboutToLand = !oldAboutToLand;
                 animatorFacade.setIsAboutToLand(oldAboutToLand);
@@ -84,7 +83,7 @@ namespace Characters.Movement {
         }
 
         public bool isFalling() {
-            return !CommonMethods.onGround(transform);
+            return !CommonMethods.onGround(transform.position);
         }
     }
 }

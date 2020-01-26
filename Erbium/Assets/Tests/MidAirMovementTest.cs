@@ -60,11 +60,11 @@ namespace Tests {
         [UnityTest]
         public IEnumerator landingTest() {
             var initPos = playerGo.transform.position;
-            initPos.y += CommonMethods.LANDING_RAT_DISTANCE;
+            initPos.y += CommonMethods.LANDING_RAT_DISTANCE_MAX;
             playerGo.transform.position = initPos;
             yield return new WaitForSeconds(0.1f);
             IMovement movement = player.getMovement();
-            Assert.True(CommonMethods.isAboutToLand(playerGo.transform, Vector3.zero,
+            Assert.True(CommonMethods.isAboutToLand(playerGo.transform.position, Vector3.zero,
                 CommonMethods.normalizeValue(player.getRigidbody().velocity.y, player.getStats().MaxDownVelocity)));
             Assert.True(movement is MidairMovement);
             yield return new WaitForSeconds(1f);
