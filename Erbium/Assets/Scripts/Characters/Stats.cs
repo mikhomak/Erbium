@@ -49,6 +49,11 @@ namespace Characters {
             set => maxJumps = value;
         }
 
+        public float MaxDownVelocity {
+            get => maxDownVelocity;
+            set => maxDownVelocity = value;
+        }
+
         public float Health {
             get => health;
             set => health = value;

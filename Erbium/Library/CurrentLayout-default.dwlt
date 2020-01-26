@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 521}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 521}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 707, y: 471}
-  m_MaxSize: {x: 18003, y: 14021}
+  m_MinSize: {x: 677, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 7320
+  controlID: 117
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 0
     width: 902
     height: 947
-  m_MinSize: {x: 200, y: 321}
-  m_MaxSize: {x: 4001, y: 8021}
+  m_MinSize: {x: 201, y: 342}
+  m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 7445
+  controlID: 74
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,10 +222,10 @@ MonoBehaviour:
     y: 0
     width: 459
     height: 947
-  m_MinSize: {x: 232, y: 471}
-  m_MaxSize: {x: 10002, y: 14021}
+  m_MinSize: {x: 200, y: 321}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 7424
+  controlID: 118
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -271,14 +271,14 @@ MonoBehaviour:
     y: 517
     width: 459
     height: 430
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 21}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 21}
   - {fileID: 22}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -298,8 +298,8 @@ MonoBehaviour:
     y: 0
     width: 559
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -602,11 +602,11 @@ MonoBehaviour:
     - e00: 0.57692796
       e01: 0
       e02: 0
-      e03: -77.390045
+      e03: 75.00064
       e10: 0
       e11: 0.57692796
       e12: 0
-      e13: 129.65085
+      e13: 129.07394
       e20: 0
       e21: 0
       e22: 1
@@ -699,7 +699,7 @@ MonoBehaviour:
       name: Erbium
       fullName: Erbium
       resultStatus: 1
-      duration: 4.0931263
+      duration: 2.3608408
       messages: 
       output: 
       stacktrace: 
@@ -715,7 +715,7 @@ MonoBehaviour:
       name: Tests.dll
       fullName: O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll
       resultStatus: 1
-      duration: 4.0020223
+      duration: 2.3270233
       messages: 
       output: 
       stacktrace: 
@@ -731,7 +731,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
-      duration: 3.981092
+      duration: 2.3102758
       messages: 
       output: 
       stacktrace: 
@@ -792,6 +792,77 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.GroundMovementTest][suite]
+    - id: 1004
+      uniqueId: Tests.dll/Tests/[Tests][Tests.MidAirMovementTest][suite]
+      name: MidAirMovementTest
+      fullName: Tests.MidAirMovementTest
+      resultStatus: 1
+      duration: 2.2928672
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1010
+      parentUniqueId: Tests.dll/[Tests][suite]
+    - id: 1006
+      uniqueId: Tests.dll/Tests/MidAirMovementTest/[Tests][Tests.MidAirMovementTest.fallingTest]
+      name: fallingTest
+      fullName: Tests.MidAirMovementTest.fallingTest
+      resultStatus: 1
+      duration: 1.1502658
+      messages: 
+      output: '(0.0, 84.0, 0.0)
+
+        (0.0, 80.0, 0.0)
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.MidAirMovementTest][suite]
+    - id: 1005
+      uniqueId: Tests.dll/Tests/MidAirMovementTest/[Tests][Tests.MidAirMovementTest.initTest]
+      name: initTest
+      fullName: Tests.MidAirMovementTest.initTest
+      resultStatus: 1
+      duration: 1.0606076
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.MidAirMovementTest][suite]
+    - id: 1007
+      uniqueId: Tests.dll/Tests/MidAirMovementTest/[Tests][Tests.MidAirMovementTest.landingTest]
+      name: landingTest
+      fullName: Tests.MidAirMovementTest.landingTest
+      resultStatus: 1
+      duration: 2.2596276
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.MidAirMovementTest][suite]
     - id: 1001
       uniqueId: Tests.dll/Tests/[Tests][Tests.PlayerTest][suite]
       name: PlayerTest
@@ -825,13 +896,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.PlayerTest][suite]
-    m_ResultText: Erbium (4.093s)
+    m_ResultText: landingTest (2.260s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 583a6922
-      m_LastClickedID: 577321560
-      m_ExpandedIDs: 12b088b1fd4c0deb583a6922b20a89258359db417dc7445effffff7f
+      m_SelectedIDs: e4a5d807
+      m_LastClickedID: 131638756
+      m_ExpandedIDs: 12b088b1fd4c0deb583a6922b20a89253354b2268359db417dc7445effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -936,7 +1007,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -159536
+  m_LastSelectedObjectID: -13802
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -966,9 +1037,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 383a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 26e2fbff44e2fbff2ce7fbff309dfdff4e9dfdff32a2fdfffa04feff1805fefffc09feffba0bfeffd80bfefff80dfeff8c14feffaa14feffc816fefffc18feff1a19fefffc1dfeffa21ffeffc01ffeffde21feff0c24feff2a24feff4826feff7e28feff9c28feffba2afeff522dfeff702dfeff8e2ffeffb631feffd431fefff233feff3c36feff5a36feff7838fefff83bfeff163cfeff343efeffd040feffee40feff0c43feff7a47feff9847feffb649feff7c4cfeff9a4cfeffb84efeff7650feff9450feffb252feffe856feff0657feff2459feff8e5cfeffac5cfeffca5efeff0461feff2261feff4063feff9265feffb265feffd267feff0477feff2277feff4079fefffe7afeff1c7bfeff3a7dfeffae7ffeffcc7ffeffea81feff2c84feff4a84feff6886feff0889feff2689feff448bfeff748dfeff928dfeffb08ffeff6a92feff8892feffa694feff6097feff7e97feff9c99feffa09bfeff649efeff829efeffa0a0fefffaa2feff18a3feff36a5feff70a7feff8ea7feffaca9fefff6abfeff14acfeff32aefeff02b1feff20b1feff3eb3feff0ab6feff28b6feff46b8feffb8bffeffd6bffefff4c1feff64c4feff82c4feffa0c6feff64c9feff82c9feffa0cbfeffc0cefeffdecefefffcd0feff28d3feff46d3feff64d5feffe6d8feff04d9feff22dbfeff64e1feff82e1feff9ce3feffd8e5fefff6e5feff10e8fefff4e9feff12eafeff2cecfeffe6edfeff04eefeff1ef0feff86f2feff44f4feff62f4feff7cf6feffa0f8feffbef8feffd8fafeff6efdfeff8cfdfeffa6fffeff4203ffff6003ffff7a05ffffc607ffffe407ffffd408ffff960bffffb40bffffa40cffffe40effff020fffff1c11ffffb013ffffce13ffffe815ffff4819ffff6619ffff561affffc41cffffe21cffffa41efffff820ffff1621ffffd822ffff342bffff522bffff1e2dffff54fbffff943700006c570000605a000002630000c4790000347f0000
+      m_ExpandedIDs: 72caffff90caffffb4ccffffd2cefffff0ceffff14d1ffff74d3ffff92d3ffffb6d5ffffe2d7ffff00d8ffff24daffff48dcffff66dcffff8adeffffc0e0ffffdee0ffff02e3ffff80e6ffff9ee6ffffc2e8ffff00ebffff1eebffff42edffff80efffff9eefffffc2f1ffffeef3ffff0cf4ffffc2f7ffff2efbffff6e410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1031,21 +1102,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations/Humanoid
+    - Assets/Scripts/General
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 44
   m_LastFolders:
-  - Assets/Animations/Humanoid
+  - Assets/Scripts/General
   m_LastFoldersGridSize: 44
   m_LastProjectPath: O:\Projects\Unity\Erbium\Erbium
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 7e3a0000
-    m_LastClickedID: 14974
-    m_ExpandedIDs: 00000000663a0000683a00006a3a00006c3a00006e3a0000703a0000723a0000743a0000883a00008a3a0000903a0000a03a000000ca9a3b
+    scrollPos: {x: 0, y: 27}
+    m_SelectedIDs: f03a0000
+    m_LastClickedID: 15088
+    m_ExpandedIDs: 00000000ae3a0000b03a0000b23a0000b43a0000b63a0000b83a0000ba3a0000bc3a0000e23a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1073,7 +1144,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000663a0000683a00006a3a00006c3a00006e3a0000703a0000723a0000743a000000ca9a3b
+    m_ExpandedIDs: 00000000ae3a0000b03a0000b23a0000b43a0000b63a0000b83a0000ba3a0000bc3a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1098,9 +1169,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 16caffff
+    m_LastClickedInstanceID: -13802
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0236000012380000a634000086460000383c0000343c0000424300005c440000685700006c57000064570000c05a00004a7f000068800000a8370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

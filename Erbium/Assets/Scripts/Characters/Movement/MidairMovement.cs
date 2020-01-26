@@ -1,5 +1,4 @@
-﻿using System;
-using Animators;
+﻿using Animators;
 using General;
 using UnityEngine;
 
@@ -32,8 +31,17 @@ namespace Characters.Movement {
             var newDirection =
                 CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().AirSpeed);
             rbd.velocity = newDirection;
-            rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
+            checkMaxDownVelocity();
             rotate(direction);
+        }
+
+        private void checkMaxDownVelocity() {
+            if (rbd.velocity.y > character.getStats().MaxDownVelocity) {
+                rbd.velocity = CommonMethods.modifyYinVector(rbd.velocity, character.getStats().MaxDownVelocity);
+            }
+            else {
+                rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
+            }
         }
 
         private void updateAnimations(Vector3 direction) {

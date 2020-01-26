@@ -48,6 +48,12 @@ namespace General {
         }
 
 
+        public static Vector3 modifyYinVector(Vector3 vector, float y) {
+            var res = vector;
+            res.y = y;
+            return res;
+        }
+
         public static float getValueInRange(float multiplier, float min, float max) {
             return multiplier * (max - min) + max;
         }
