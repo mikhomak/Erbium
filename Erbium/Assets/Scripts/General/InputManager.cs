@@ -1,6 +1,7 @@
 ﻿using System;
 using Characters;
 using Characters.Movement;
+using Characters.Movement.Behaviours;
 using Player;
 using UnityEngine;
 

@@ -1,4 +1,4 @@
-﻿namespace Characters.Movement {
+﻿namespace Characters.Movement.Behaviours {
     public interface IFallable {
         bool isFalling();
     }
