@@ -1,6 +1,7 @@
 ﻿using System;
 using Animators;
 using Characters;
+using Characters.Health;
 using Characters.Movement;
 using General;
 using Player.MovementDirection;
@@ -13,6 +14,7 @@ namespace Player {
         private IMovement movement;
         private IAnimatorFacade animatorFacade;
         private IMovementDirection movementDirection;
+        private IHealthComponent healthComponent;
         [SerializeField] private Rigidbody rbd;
         [SerializeField] private Stats stats;
         [SerializeField] private CameraView cameraView;
@@ -23,6 +25,7 @@ namespace Player {
             movementDirection = setCameraDirection(cameraView);
             animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>());
             movement = new GroundMovement(this);
+            healthComponent = new HealthComponent(this);
         }
 
         private void FixedUpdate() {
@@ -43,6 +46,10 @@ namespace Player {
                 default:
                     return new ThirdPersonCameraDirection();
             }
+        }
+
+        public IHealthComponent getHealthComponent() {
+            return healthComponent;
         }
 
         public IAnimatorFacade getAnimatorFacade() {
