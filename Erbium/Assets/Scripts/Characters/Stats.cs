@@ -10,6 +10,9 @@ namespace Characters {
         [SerializeField] private float crouchSpeed = 6f;
         [SerializeField] private int maxJumps = 2;
         [SerializeField] private float maxDownVelocity = -20f;
+        [SerializeField] private float physicArmour = 2f;
+        [SerializeField] private float magicArmour = 1f;
+        [SerializeField] private float toxicArmour = 0.5f;
         [SerializeField] private float health;
 
         
@@ -59,6 +62,20 @@ namespace Characters {
             set => health = value;
         }
 
-       
+
+        public float PhysicArmour {
+            get => physicArmour;
+            set => physicArmour = value;
+        }
+
+        public float MagicArmour {
+            get => magicArmour;
+            set => magicArmour = value;
+        }
+
+        public float ToxicArmour {
+            get => toxicArmour;
+            set => toxicArmour = value;
+        }
     }
 }
