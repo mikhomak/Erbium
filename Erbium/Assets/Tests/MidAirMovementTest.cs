@@ -56,13 +56,13 @@ namespace Tests {
             yPos.y -= player.getStats().AdditionalGravityForce;
             Debug.Log(yPos);
             Debug.Log(playerGo.transform.position);
-            Assert.True(Vector3.Distance(playerGo.transform.position, yPos) < 6f);
+            Assert.True(Vector3.Distance(playerGo.transform.position, yPos) <= 6f);
         }
 
         [UnityTest]
         public IEnumerator landingTest() {
             var initPos = playerGo.transform.position;
-            initPos.y += CommonMethods.LANDING_RAT_DISTANCE_MAX;
+            initPos.y += CommonMethods.LANDING_RAT_DISTANCE_MIN;
             playerGo.transform.position = initPos;
             yield return new WaitForSeconds(0.1f);
             IMovement movement = player.getMovement();

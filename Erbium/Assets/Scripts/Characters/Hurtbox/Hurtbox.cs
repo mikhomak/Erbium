@@ -10,7 +10,7 @@ namespace Characters.Hurtbox {
         }
 
 
-        public void takeDamage(DamageInfo damageinfo) {
+        public void takeDamage(DamageInfo damageInfo) {
         }
     }
 }

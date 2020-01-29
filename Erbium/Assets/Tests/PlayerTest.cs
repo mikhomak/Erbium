@@ -18,6 +18,7 @@ namespace Tests {
             Assert.NotNull(player.GetComponent<IPhysicsCharacter>().getRigidbody());
             Assert.NotNull(player.GetComponent<IPhysicsCharacter>().getStats());
             Assert.NotNull(player.GetComponent<IPhysicsCharacter>().getMovement());
+            Assert.NotNull(player.GetComponent<IPhysicsCharacter>().getHealthComponent());
             Object.Destroy(player);
         }
     }
