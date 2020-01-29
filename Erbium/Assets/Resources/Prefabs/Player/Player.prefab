@@ -95,6 +95,9 @@ MonoBehaviour:
   rotationSpeed: 10
   jumpForce: 15
   additionalGravityForce: 20
+  crouchSpeed: 6
+  maxJumps: 2
+  maxDownVelocity: -20
   health: 0
 --- !u!136 &5780510845307315399
 CapsuleCollider:

@@ -1,8 +1,8 @@
 ﻿namespace Characters.Damage {
-    public struct Damage {
-        public float damage;
-        public DamageType damageType;
-        public bool isDot;
-        public float dotDuration;
+    public struct DamageInfo {
+        public float Damage;
+        public DamageType DamageType;
+        public bool IsDot;
+        public float DotDuration;
     }
 }
