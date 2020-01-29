@@ -8,6 +8,7 @@
         public DamageInfo(float damage, DamageType damageType) {
             Damage = damage;
             DamageType = damageType;
+            IsDot = false;
             DotDuration = 0;
         }
     }
