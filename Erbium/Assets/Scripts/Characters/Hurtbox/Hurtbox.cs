@@ -1,8 +1,10 @@
 ﻿using Characters.Damage;
+using UnityEngine;
 
 namespace Characters.Hurtbox {
     public class Hurtbox : IHurtbox {
         private ICharacter character;
+        [SerializeField] private BodyPartHurtbox bodyPart;
 
         public Hurtbox(ICharacter character) {
             this.character = character;

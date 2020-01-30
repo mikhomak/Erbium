@@ -14,6 +14,8 @@ namespace Characters {
         [SerializeField] private float magicArmour = 1f;
         [SerializeField] private float toxicArmour = 0.5f;
         [SerializeField] private float health;
+        [SerializeField] private float headDamageMultiplier = 2f;
+        [SerializeField] private float bodyDamageMultiplier = 1f;
 
         
         
@@ -76,6 +78,16 @@ namespace Characters {
         public float ToxicArmour {
             get => toxicArmour;
             set => toxicArmour = value;
+        }
+
+        public float HeadDamageMultiplier {
+            get => headDamageMultiplier;
+            set => headDamageMultiplier = value;
+        }
+
+        public float BodyDamageMultiplier {
+            get => bodyDamageMultiplier;
+            set => bodyDamageMultiplier = value;
         }
     }
 }
