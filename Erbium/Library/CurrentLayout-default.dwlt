@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 392}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 677, y: 342}
+  m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 112
+  controlID: 59
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 42
+  controlID: 92
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimatorControllerTool
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -164,15 +164,15 @@ MonoBehaviour:
     y: 0
     width: 902
     height: 541
-  m_MinSize: {x: 101, y: 121}
+  m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 2
-  m_LastSelected: 1
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -192,15 +192,15 @@ MonoBehaviour:
     y: 541
     width: 902
     height: 406
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 14}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 14}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,10 +222,10 @@ MonoBehaviour:
     y: 0
     width: 459
     height: 947
-  m_MinSize: {x: 200, y: 321}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 342}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 154
+  controlID: 65
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,8 +245,8 @@ MonoBehaviour:
     y: 0
     width: 459
     height: 517
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -462,9 +462,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.013593912, y: 1.3989327, z: 0.012342632}
+    m_Target: {x: 0.008179788, y: 1.5053571, z: 0.00084570225}
     speed: 2
-    m_Value: {x: 0.013593912, y: 1.3989327, z: 0.012342632}
+    m_Value: {x: 0.008179788, y: 1.5053571, z: 0.00084570225}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -510,13 +510,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0033714292, y: 0.84526736, z: -0.005333393, w: -0.5343058}
+    m_Target: {x: 0.0010746841, y: 0.99832934, z: -0.054272324, w: 0.019770492}
     speed: 2
-    m_Value: {x: -0.00337143, y: 0.8452676, z: -0.0053333943, w: -0.534306}
+    m_Value: {x: 0.0010746847, y: 0.9983299, z: -0.054272354, w: 0.019770503}
   m_Size:
-    m_Target: 4.041635
+    m_Target: 1.8452344
     speed: 2
-    m_Value: 4.041635
+    m_Value: 1.8452344
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -699,7 +699,7 @@ MonoBehaviour:
       name: Erbium
       fullName: Erbium
       resultStatus: 1
-      duration: 1.2199904
+      duration: 1.239402
       messages: 
       output: 
       stacktrace: 
@@ -715,7 +715,7 @@ MonoBehaviour:
       name: Tests.dll
       fullName: O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll
       resultStatus: 1
-      duration: 1.1943172
+      duration: 1.2118646
       messages: 
       output: 
       stacktrace: 
@@ -731,7 +731,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
-      duration: 1.182808
+      duration: 1.1995088
       messages: 
       output: 
       stacktrace: 
@@ -747,7 +747,7 @@ MonoBehaviour:
       name: GroundMovementTest
       fullName: Tests.GroundMovementTest
       resultStatus: 1
-      duration: 1.6775928
+      duration: 1.2170339
       messages: 
       output: 
       stacktrace: 
@@ -763,7 +763,7 @@ MonoBehaviour:
       name: initalizeGroundMovementTest
       fullName: Tests.GroundMovementTest.initalizeGroundMovementTest
       resultStatus: 1
-      duration: 0.398594
+      duration: 0.1274274
       messages: 
       output: 
       stacktrace: 
@@ -780,7 +780,7 @@ MonoBehaviour:
       name: moveTest
       fullName: Tests.GroundMovementTest.moveTest
       resultStatus: 1
-      duration: 1.1929322
+      duration: 1.0593109
       messages: 
       output: 
       stacktrace: 
@@ -797,7 +797,7 @@ MonoBehaviour:
       name: MidAirMovementTest
       fullName: Tests.MidAirMovementTest
       resultStatus: 1
-      duration: 1.1715595
+      duration: 1.1835614
       messages: 
       output: 
       stacktrace: 
@@ -813,7 +813,7 @@ MonoBehaviour:
       name: fallingTest
       fullName: Tests.MidAirMovementTest.fallingTest
       resultStatus: 1
-      duration: 1.1413428
+      duration: 1.1541228
       messages: 
       output: '(0.0, 80.0, 0.0)
 
@@ -834,7 +834,7 @@ MonoBehaviour:
       name: initTest
       fullName: Tests.MidAirMovementTest.initTest
       resultStatus: 1
-      duration: 1.0632952
+      duration: 1.0578282
       messages: 
       output: 
       stacktrace: 
@@ -851,7 +851,7 @@ MonoBehaviour:
       name: landingTest
       fullName: Tests.MidAirMovementTest.landingTest
       resultStatus: 1
-      duration: 1.2754967
+      duration: 1.1819582
       messages: 
       output: 
       stacktrace: 
@@ -868,7 +868,7 @@ MonoBehaviour:
       name: PlayerTest
       fullName: Tests.PlayerTest
       resultStatus: 1
-      duration: 0.0650732
+      duration: 0.0668452
       messages: 
       output: 
       stacktrace: 
@@ -884,7 +884,7 @@ MonoBehaviour:
       name: initalizePlayer
       fullName: Tests.PlayerTest.initalizePlayer
       resultStatus: 1
-      duration: 0.0493316
+      duration: 0.0504738
       messages: 
       output: 
       stacktrace: 
@@ -896,7 +896,7 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.PlayerTest][suite]
-    m_ResultText: 'fallingTest (1.141s)
+    m_ResultText: 'fallingTest (1.154s)
 
       ---
 
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 14162
+  m_LastSelectedObjectID: -21640
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1046,7 +1046,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5a55ffff7855ffff9c57ffff3c59ffff5a59ffff7e5bffff165fffff345fffff5861ffff8c63ffffaa63ffffce65ffff9867ffffb667ffff4871ffff2efbffff52370000
+      m_ExpandedIDs: ac96ffffcc96ffffe098ffff929affffb29affff34a4ffff3ea6ffff5ea6ffff72a8ffff8cabffffacabffffc0adffffbaafffffd6affffff6b1ffffc0b3ffffe0b3fffff4b5ffffb6b7ffffd6b7ffffeab9fffff4bbffff14bcffff28beffff4ec0ffff6ec0ffff82c2ffff44c4ffff64c4ffff94c9ffff6ecbffff8ecbffff10d5ffff9cd7ffffbcd7ffff42e1ffff5cfaffff68faffffc4faffffd8fafffff6faffff54fbffff5c370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1120,10 +1120,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 27}
-    m_SelectedIDs: a84f0000
-    m_LastClickedID: 20392
-    m_ExpandedIDs: 00000000ae3a0000b03a0000b23a0000b43a0000b63a0000b83a0000ba3a0000bc3a0000be3a0000a64f000000ca9a3b
+    scrollPos: {x: 0, y: 91}
+    m_SelectedIDs: 063b0000
+    m_LastClickedID: 15110
+    m_ExpandedIDs: 00000000b83a0000ba3a0000bc3a0000be3a0000c03a0000c23a0000c43a0000c63a0000c83a0000fc3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae3a0000b03a0000b23a0000b43a0000b63a0000b83a0000ba3a0000bc3a0000be3a0000
+    m_ExpandedIDs: 00000000b83a0000ba3a0000bc3a0000be3a0000c03a0000c23a0000c43a0000c63a0000c83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1176,8 +1176,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 40fbffff
+    m_LastClickedInstanceID: -1216
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0236000012380000a634000086460000383c0000343c0000424300005c440000685700006c57000064570000c05a00004a7f000068800000a8370000
     m_RenameOverlay:

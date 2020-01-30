@@ -4,7 +4,7 @@ namespace Animators {
     public class AnimatorFacade : IAnimatorFacade {
         private readonly ICharacterAnimator characterAnimator;
 
-        private bool jumping;
+        private bool unskippable;
 
         public AnimatorFacade(ICharacterAnimator characterAnimator) {
             this.characterAnimator = characterAnimator;
@@ -26,11 +26,11 @@ namespace Animators {
         }
 
         public void setIsFalling(bool isFalling) {
-            characterAnimator.setIsFalling(checkIfJumping(isFalling));
+            characterAnimator.setIsFalling(checkIfUnskippable(isFalling));
         }
 
         public void setIsAboutToLand(bool isAboutToLand) {
-            characterAnimator.setIsAboutToLand(checkIfJumping(isAboutToLand));
+            characterAnimator.setIsAboutToLand(checkIfUnskippable(isAboutToLand));
             if (isAboutToLand) {
                 setIsFalling(false);
             }
@@ -42,7 +42,7 @@ namespace Animators {
         }
 
         public void setJumping(bool jumping) {
-            this.jumping = jumping;
+            unskippable = jumping;
             characterAnimator.setJumping(jumping);
         }
 
@@ -50,8 +50,14 @@ namespace Animators {
             characterAnimator.setCrouching(crouching);
         }
 
-        private bool checkIfJumping(bool stateToCheck) {
-            return !jumping && stateToCheck;
+        public void setUnskippable(bool unskippable) {
+            this.unskippable = unskippable;
+            characterAnimator.setUnskippable(unskippable);
+        }
+
+        
+        private bool checkIfUnskippable(bool stateToCheck) {
+            return !unskippable && stateToCheck;
         }
     }
 }

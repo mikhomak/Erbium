@@ -32,11 +32,11 @@ namespace Characters.Movement {
             var newDirection =
                 CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().AirSpeed);
             rbd.velocity = newDirection;
-            checkMaxDownVelocity();
+            calculateVelocity();
             rotate(direction);
         }
 
-        private void checkMaxDownVelocity() {
+        private void calculateVelocity() {
             if (rbd.velocity.y < character.getStats().MaxDownVelocity) {
                 rbd.velocity = CommonMethods.modifyYinVector(rbd.velocity, character.getStats().MaxDownVelocity);
             }

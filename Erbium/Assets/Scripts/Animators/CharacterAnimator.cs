@@ -9,8 +9,8 @@ namespace Animators {
         private static readonly int GroundVelocity = Animator.StringToHash("groundVelocity");
         private static readonly int IsFalling = Animator.StringToHash("isFalling");
         private static readonly int IsAboutToLand = Animator.StringToHash("isAboutToLand");
-        private static readonly int Jumping = Animator.StringToHash("jumping");
         private static readonly int Crouching = Animator.StringToHash("crouching");
+        private static readonly int Unskippable = Animator.StringToHash("unskippable");
 
         private void OnEnable() {
             animator = GetComponent<Animator>();
@@ -48,12 +48,14 @@ namespace Animators {
             if (jumping) {
                 animator.CrossFade("jump", 0f);
             }
-
-            animator.SetBool(Jumping, jumping);
         }
 
         public void setCrouching(bool crouching) {
             animator.SetBool(Crouching, crouching);
+        }
+
+        public void setUnskippable(bool unskippable) {
+            animator.SetBool(Unskippable, unskippable);
         }
     }
 }

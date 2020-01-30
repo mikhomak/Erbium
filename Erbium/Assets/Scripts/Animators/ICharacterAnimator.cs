@@ -11,5 +11,6 @@ namespace Animators {
         void setIsAboutToLand(bool isAboutToLand);
         void setJumping(bool jumping);
         void setCrouching(bool crouching);
+        void setUnskippable(bool unskippable);
     }
 }
