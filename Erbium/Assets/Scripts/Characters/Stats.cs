@@ -14,6 +14,7 @@ namespace Characters {
         [SerializeField] private float magicArmour = 1f;
         [SerializeField] private float toxicArmour = 0.5f;
         [SerializeField] private float health;
+        [SerializeField] private float invincibilityTime;
         [SerializeField] private float headDamageMultiplier = 2f;
         [SerializeField] private float bodyDamageMultiplier = 1f;
 
@@ -64,6 +65,10 @@ namespace Characters {
             set => health = value;
         }
 
+        public float InvincibilityTime {
+            get => invincibilityTime;
+            set => invincibilityTime = value;
+        }
 
         public float PhysicArmour {
             get => physicArmour;

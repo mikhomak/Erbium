@@ -1,6 +1,7 @@
 ﻿namespace Characters.Health {
     public class HealthComponent: IHealthComponent {
         private readonly ICharacter character;
+        private float invincibilityTimer;
 
         public HealthComponent(ICharacter character) {
             this.character = character;
