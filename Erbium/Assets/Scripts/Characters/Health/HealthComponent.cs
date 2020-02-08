@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using General;
+using UnityEngine;
 
 namespace Characters.Health {
     public class HealthComponent: IHealthComponent {
@@ -22,7 +23,7 @@ namespace Characters.Health {
                 }
 
                 invincibility = true;
-                TimerManager.instance.startTimer(invincibilityTime, resetInvincibility);
+                TimerManager.Instance.startTimer(invincibilityTime, resetInvincibility);
             }
             
         }
