@@ -224,7 +224,10 @@ MonoBehaviour:
   physicArmour: 2
   magicArmour: 1
   toxicArmour: 0.5
-  health: 0
+  health: 100
+  invincibilityTime: 2
+  headDamageMultiplier: 0
+  bodyDamageMultiplier: 1
 --- !u!136 &5780510845307315399
 CapsuleCollider:
   m_ObjectHideFlags: 0

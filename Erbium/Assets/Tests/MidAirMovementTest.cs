@@ -56,7 +56,7 @@ namespace Tests {
             yPos.y -= player.getStats().AdditionalGravityForce;
             Debug.Log(yPos);
             Debug.Log(playerGo.transform.position);
-            Assert.True(Vector3.Distance(playerGo.transform.position, yPos) <= 6f);
+            Assert.True(Vector3.Distance(playerGo.transform.position, yPos) <= 7f);
         }
 
         [UnityTest]

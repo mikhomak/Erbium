@@ -13,8 +13,8 @@ namespace Characters {
         [SerializeField] private float physicArmour = 2f;
         [SerializeField] private float magicArmour = 1f;
         [SerializeField] private float toxicArmour = 0.5f;
-        [SerializeField] private float health;
-        [SerializeField] private float invincibilityTime;
+        [SerializeField] private float health = 100f;
+        [SerializeField] private float invincibilityTime = 2f;
         [SerializeField] private float headDamageMultiplier = 2f;
         [SerializeField] private float bodyDamageMultiplier = 1f;
 

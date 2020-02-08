@@ -34,7 +34,6 @@ namespace Player {
 
 
         public void die() {
-            throw new NotImplementedException();
         }
 
 
