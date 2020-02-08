@@ -42,6 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919691470}
   - component: {fileID: 919691471}
+  - component: {fileID: 1769171433}
   m_Layer: 15
   m_Name: Body Hurtbox
   m_TagString: Untagged
@@ -77,6 +78,19 @@ CapsuleCollider:
   m_Height: 1.37
   m_Direction: 1
   m_Center: {x: 0, y: 1.04, z: 0}
+--- !u!114 &1769171433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919691469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9f52a510bc48578b919b1e70ecc9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPart: 1
 --- !u!1 &1443903608
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1443903609}
   - component: {fileID: 1443903610}
+  - component: {fileID: 2082874045}
   m_Layer: 15
   m_Name: Head HurtBox
   m_TagString: Untagged
@@ -122,6 +137,19 @@ CapsuleCollider:
   m_Height: 0.26
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2082874045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443903608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9f52a510bc48578b919b1e70ecc9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPart: 0
 --- !u!114 &1926743910
 MonoBehaviour:
   m_ObjectHideFlags: 0
