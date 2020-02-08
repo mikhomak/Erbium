@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace Projectiles {
     public class FireProjectile : MonoBehaviour, IProjectile, IDamageDealer {
-        [SerializeField] private float damage;
-        [SerializeField] private DamageType damageType;
+        [SerializeField] private float damage = 0;
+        [SerializeField] private DamageType damageType = DamageType.Physical;
         private DamageInfo damageInfo;
 
 
