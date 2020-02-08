@@ -1,6 +1,4 @@
-﻿using Animators;
-using UnityEditor.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Animations {
     public abstract class AnimationStateData : ScriptableObject {

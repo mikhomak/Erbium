@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919691470}
   - component: {fileID: 919691471}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Body Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919691469}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.19
   m_Height: 1.37
@@ -87,8 +87,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1443903609}
   - component: {fileID: 1443903610}
-  m_Layer: 0
-  m_Name: GameObject
+  m_Layer: 15
+  m_Name: Head HurtBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443903608}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.21
   m_Height: 0.26

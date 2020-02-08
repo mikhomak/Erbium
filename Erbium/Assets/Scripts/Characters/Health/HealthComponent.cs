@@ -30,7 +30,6 @@ namespace Characters.Health {
 
         public void resetInvincibility() {
             invincibility = false;
-            Debug.Log("kek");
         }
     }
 }

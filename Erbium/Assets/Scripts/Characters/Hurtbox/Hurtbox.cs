@@ -1,18 +1,22 @@
 ﻿using Characters.Damage;
+using Characters.Health;
 using UnityEngine;
 
 namespace Characters.Hurtbox {
-    public class Hurtbox : IHurtbox {
+    public class Hurtbox : MonoBehaviour, IHurtbox {
         private ICharacter character;
+        private IHealthComponent healthComponent;
         [SerializeField] private BodyPartHurtbox bodyPart;
 
-        public Hurtbox(ICharacter character) {
-            this.character = character;
+
+        private void Start() {
+            character = GetComponentInParent<ICharacter>();
+            healthComponent = character.getHealthComponent();
         }
 
 
         public void takeDamage(DamageInfo damageInfo) {
-            var healthComponent = character.getHealthComponent();
+            makeSureHealthComponentIsNotNull();
             switch (damageInfo.DamageType) {
                 case DamageType.Physical:
                     healthComponent.takeDamage(damageInfo.Damage - character.getStats().PhysicArmour);
@@ -23,6 +27,12 @@ namespace Characters.Hurtbox {
                 case DamageType.Toxic:
                     healthComponent.takeDamage(damageInfo.Damage - character.getStats().ToxicArmour);
                     break;
+            }
+        }
+
+        private void makeSureHealthComponentIsNotNull() {
+            if (healthComponent == null) {
+                healthComponent = character.getHealthComponent();
             }
         }
     }
