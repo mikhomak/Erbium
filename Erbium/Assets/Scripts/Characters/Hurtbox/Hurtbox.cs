@@ -17,17 +17,7 @@ namespace Characters.Hurtbox {
 
         public void takeDamage(DamageInfo damageInfo) {
             makeSureHealthComponentIsNotNull();
-            switch (damageInfo.DamageType) {
-                case DamageType.Physical:
-                    healthComponent.takeDamage(damageInfo.Damage - character.getStats().PhysicArmour);
-                    break;
-                case DamageType.Magical:
-                    healthComponent.takeDamage(damageInfo.Damage - character.getStats().MagicArmour);
-                    break;
-                case DamageType.Toxic:
-                    healthComponent.takeDamage(damageInfo.Damage - character.getStats().ToxicArmour);
-                    break;
-            }
+            healthComponent.takeDamage(damageInfo);
         }
 
         private void makeSureHealthComponentIsNotNull() {

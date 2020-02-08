@@ -1,4 +1,5 @@
-﻿using General;
+﻿using Characters.Damage;
+using General;
 using UnityEngine;
 
 namespace Characters.Health {
@@ -12,14 +13,14 @@ namespace Characters.Health {
             invincibilityTime = character.getStats().InvincibilityTime;
         }
 
-        public void takeDamage(float damage) {
+        public void takeDamage(DamageInfo damage) {
             if (!invincibility) {
                 float currentHealth = character.getStats().Health;
-                if (currentHealth - damage <= 0) {
+                if (currentHealth - damage.Damage <= 0) {
                     character.die();
                 }
                 else {
-                    character.getStats().Health = currentHealth - damage;
+                    character.getStats().Health = currentHealth - damage.Damage;
                 }
 
                 invincibility = true;

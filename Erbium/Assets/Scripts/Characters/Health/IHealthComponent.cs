@@ -1,6 +1,8 @@
-﻿namespace Characters.Health {
+﻿using Characters.Damage;
+
+namespace Characters.Health {
     public interface IHealthComponent {
-        void takeDamage(float damage);
+        void takeDamage(DamageInfo damage);
         void resetInvincibility();
     }
 }
