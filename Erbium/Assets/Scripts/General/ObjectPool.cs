@@ -22,12 +22,11 @@ namespace General {
                 counter--;
                 return item;
             }
-            else {
-                T obj = new T();
-                items.Add(obj);
-                counter++;
-                return obj;
-            }
+
+            T obj = new T();
+            items.Add(obj);
+            counter++;
+            return obj;
         }
 
         public ConcurrentBag<T> getAll() {
