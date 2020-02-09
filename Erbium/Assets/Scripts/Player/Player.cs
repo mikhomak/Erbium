@@ -29,6 +29,7 @@ namespace Player {
         }
 
         private void FixedUpdate() {
+            Debug.Log(movement);
             movement.move(movementDirection.getDirection());
         }
 

@@ -9,5 +9,6 @@
         void setUnskippable(bool unskippable);
         void setJumping(bool jumping);
         void setCrouching(bool crouching);
+        void setSliding(bool sliding);
     }
 }

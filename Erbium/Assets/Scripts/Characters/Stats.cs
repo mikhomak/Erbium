@@ -8,6 +8,7 @@ namespace Characters {
         [SerializeField] private float jumpForce = 10f;
         [SerializeField] private float additionalGravityForce = 20f;
         [SerializeField] private float crouchSpeed = 6f;
+        [SerializeField] private float slidingSpeed = 15f;
         [SerializeField] private int maxJumps = 2;
         [SerializeField] private float maxDownVelocity = -20f;
         [SerializeField] private float physicArmour = 2f;
@@ -48,6 +49,11 @@ namespace Characters {
         public float CrouchSpeed {
             get => crouchSpeed;
             set => crouchSpeed = value;
+        }
+
+        public float SlidingSpeed {
+            get => slidingSpeed;
+            set => slidingSpeed = value;
         }
 
         public int MaxJumps {

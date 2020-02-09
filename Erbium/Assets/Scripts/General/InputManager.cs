@@ -1,6 +1,4 @@
-﻿using System;
-using Characters;
-using Characters.Movement;
+﻿using Characters.Movement;
 using Characters.Movement.Behaviours;
 using Player;
 using UnityEngine;
@@ -27,7 +25,22 @@ namespace General {
             }
 
             if (Input.GetButtonUp($"Crouch")) {
-                player.changeMovement(new GroundMovement(player));
+                if (player.getMovement() is CrouchingMovement) {
+                    player.changeMovement(new GroundMovement(player));
+                }
+            }
+
+            if (Input.GetButtonDown($"Slide")) {
+                if (player.getMovement() is GroundMovement) {
+                    player.changeMovement(new SlidingMovement(player));
+                }
+            }
+
+
+            if (Input.GetButtonUp($"Slide")) {
+                if (player.getMovement() is SlidingMovement) {
+                    player.changeMovement(new GroundMovement(player));
+                }
             }
         }
 

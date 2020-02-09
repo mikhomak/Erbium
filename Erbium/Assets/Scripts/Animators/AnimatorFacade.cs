@@ -50,6 +50,10 @@ namespace Animators {
             characterAnimator.setCrouching(crouching);
         }
 
+        public void setSliding(bool sliding) {
+            characterAnimator.setSliding(sliding);
+        }
+
         public void setUnskippable(bool unskippable) {
             this.unskippable = unskippable;
             characterAnimator.setUnskippable(unskippable);
