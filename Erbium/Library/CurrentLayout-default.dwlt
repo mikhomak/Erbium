@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -70,8 +70,8 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LoadedToolbars:
-  - {fileID: 24}
-  m_MainToolbar: {fileID: 24}
+  - {fileID: 25}
+  m_MainToolbar: {fileID: 25}
   m_LastLoadedLayoutName: 
 --- !u!114 &4
 MonoBehaviour:
@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 576, y: 321}
+  m_MaxSize: {x: 12003, y: 8042}
   vertical: 0
-  controlID: 59
+  controlID: 118
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 0
     width: 902
     height: 947
-  m_MinSize: {x: 201, y: 342}
+  m_MinSize: {x: 101, y: 242}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 92
+  controlID: 22066
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: AnimatorControllerTool
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -164,15 +164,16 @@ MonoBehaviour:
     y: 0
     width: 902
     height: 541
-  m_MinSize: {x: 201, y: 221}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 15}
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 2
+  - {fileID: 18}
+  - {fileID: 13}
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TestRunnerWindow
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -194,12 +195,12 @@ MonoBehaviour:
     height: 406
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 14}
-  - {fileID: 18}
+  - {fileID: 15}
   - {fileID: 19}
-  m_Selected: 1
+  - {fileID: 20}
+  m_Selected: 2
   m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -222,10 +223,10 @@ MonoBehaviour:
     y: 0
     width: 459
     height: 947
-  m_MinSize: {x: 202, y: 342}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 200, y: 321}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 65
+  controlID: 91
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,11 +246,11 @@ MonoBehaviour:
     y: 0
     width: 459
     height: 517
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 20}
+  - {fileID: 21}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &11
@@ -273,10 +274,10 @@ MonoBehaviour:
     height: 430
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 22}
+  m_ActualView: {fileID: 23}
   m_Panes:
-  - {fileID: 21}
   - {fileID: 22}
+  - {fileID: 23}
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &12
@@ -298,15 +299,543 @@ MonoBehaviour:
     y: 0
     width: 559
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 23}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 24}
   m_Panes:
-  - {fileID: 23}
-  - {fileID: 13}
+  - {fileID: 24}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12070, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 880, y: 216}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Profiler
+    m_Image: {fileID: 248956144125838126, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 73
+    width: 901
+    height: 520
+  m_ViewDataDictionary: {fileID: 0}
+  m_VertSplit:
+    ID: 9215
+    splitterInitialOffset: 212
+    currentActiveSplitter: -1
+    realSizes: c000000033010000
+    relativeSizes:
+    - 0.38476953
+    - 0.61523044
+    minSizes: 6400000064000000
+    maxSizes: 0000000000000000
+    lastTotalSize: 499
+    splitSize: 6
+    xOffset: 0
+  m_Recording: 0
+  m_ActiveNativePlatformSupportModule: 
+  m_CurrentArea: 0
+  m_ProfilerModules:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  m_ClearOnPlay: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: CPUProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+        m_ViewType: 0
+        m_ProfilerViewFilteringOptions: 1
+        m_FrameDataHierarchyView:
+          m_Serialized: 1
+          m_TreeViewState:
+            scrollPos: {x: 0, y: 0}
+            m_SelectedIDs: 32000000
+            m_LastClickedID: 50
+            m_ExpandedIDs: 03000000320000003600000042000000690000007500000079000000b1000000c0000000e3000000e6000000eb000000ee00000037010000
+            m_RenameOverlay:
+              m_UserAcceptedRename: 0
+              m_Name: 
+              m_OriginalName: 
+              m_EditFieldRect:
+                serializedVersion: 2
+                x: 0
+                y: 0
+                width: 0
+                height: 0
+              m_UserData: 0
+              m_IsWaitingForDelay: 0
+              m_IsRenaming: 0
+              m_OriginalEventType: 11
+              m_IsRenamingFilename: 0
+              m_ClientGUIView: {fileID: 0}
+            m_SearchString: 
+          m_MultiColumnHeaderState:
+            m_Columns:
+            - width: 200
+              sortedAscending: 1
+            - width: 80
+              sortedAscending: 0
+            - width: 80
+              sortedAscending: 0
+            - width: 80
+              sortedAscending: 0
+            - width: 80
+              sortedAscending: 0
+            - width: 80
+              sortedAscending: 0
+            - width: 80
+              sortedAscending: 0
+            - width: 25
+              sortedAscending: 0
+            m_VisibleColumns: 0000000001000000020000000300000004000000050000000600000007000000
+            m_SortedColumns: 0400000003000000020000000100000005000000
+          m_ThreadIndex: 0
+          m_DetailedViewType: 0
+          m_DetailedViewSpliterState:
+            ID: 0
+            splitterInitialOffset: 0
+            currentActiveSplitter: -1
+            realSizes: 0000000000000000
+            relativeSizes:
+            - 0.7
+            - 0.3
+            minSizes: c201000032000000
+            maxSizes: 0000000000000000
+            lastTotalSize: 0
+            splitSize: 6
+            xOffset: 0
+          m_DetailedObjectsView:
+            m_SelectedID: 0
+            m_TreeViewState:
+              scrollPos: {x: 0, y: 0}
+              m_SelectedIDs: 
+              m_LastClickedID: 0
+              m_ExpandedIDs: 
+              m_RenameOverlay:
+                m_UserAcceptedRename: 0
+                m_Name: 
+                m_OriginalName: 
+                m_EditFieldRect:
+                  serializedVersion: 2
+                  x: 0
+                  y: 0
+                  width: 0
+                  height: 0
+                m_UserData: 0
+                m_IsWaitingForDelay: 0
+                m_IsRenaming: 0
+                m_OriginalEventType: 11
+                m_IsRenamingFilename: 0
+                m_ClientGUIView: {fileID: 0}
+              m_SearchString: 
+            m_MultiColumnHeaderState:
+              m_Columns: []
+              m_VisibleColumns: 
+              m_SortedColumns: 
+            m_VertSplit:
+              ID: 0
+              splitterInitialOffset: 0
+              currentActiveSplitter: 0
+              realSizes: 
+              relativeSizes: []
+              minSizes: 
+              maxSizes: 
+              lastTotalSize: 0
+              splitSize: 0
+              xOffset: 0
+          m_DetailedCallsView:
+            m_SelectedID: -1
+            m_VertSplit:
+              ID: 0
+              splitterInitialOffset: 0
+              currentActiveSplitter: 0
+              realSizes: 
+              relativeSizes: []
+              minSizes: 
+              maxSizes: 
+              lastTotalSize: 0
+              splitSize: 0
+              xOffset: 0
+            m_CalleesTreeView:
+              m_ViewState:
+                scrollPos: {x: 0, y: 0}
+                m_SelectedIDs: 
+                m_LastClickedID: 0
+                m_ExpandedIDs: 
+                m_RenameOverlay:
+                  m_UserAcceptedRename: 0
+                  m_Name: 
+                  m_OriginalName: 
+                  m_EditFieldRect:
+                    serializedVersion: 2
+                    x: 0
+                    y: 0
+                    width: 0
+                    height: 0
+                  m_UserData: 0
+                  m_IsWaitingForDelay: 0
+                  m_IsRenaming: 0
+                  m_OriginalEventType: 11
+                  m_IsRenamingFilename: 0
+                  m_ClientGUIView: {fileID: 0}
+                m_SearchString: 
+              m_ViewHeaderState:
+                m_Columns:
+                - width: 150
+                  sortedAscending: 1
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                m_VisibleColumns: 0000000001000000020000000300000004000000
+                m_SortedColumns: 03000000
+            m_CallersTreeView:
+              m_ViewState:
+                scrollPos: {x: 0, y: 0}
+                m_SelectedIDs: 
+                m_LastClickedID: 0
+                m_ExpandedIDs: 
+                m_RenameOverlay:
+                  m_UserAcceptedRename: 0
+                  m_Name: 
+                  m_OriginalName: 
+                  m_EditFieldRect:
+                    serializedVersion: 2
+                    x: 0
+                    y: 0
+                    width: 0
+                    height: 0
+                  m_UserData: 0
+                  m_IsWaitingForDelay: 0
+                  m_IsRenaming: 0
+                  m_OriginalEventType: 11
+                  m_IsRenamingFilename: 0
+                  m_ClientGUIView: {fileID: 0}
+                m_SearchString: 
+              m_ViewHeaderState:
+                m_Columns:
+                - width: 150
+                  sortedAscending: 1
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                m_VisibleColumns: 0000000001000000020000000300000004000000
+                m_SortedColumns: 03000000
+          m_ThreadName: Main Thread
+    00000001:
+      type: {class: GPUProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+        m_ViewType: 0
+        m_ProfilerViewFilteringOptions: 1
+        m_FrameDataHierarchyView:
+          m_Serialized: 1
+          m_TreeViewState:
+            scrollPos: {x: 0, y: 0}
+            m_SelectedIDs: 
+            m_LastClickedID: 0
+            m_ExpandedIDs: 
+            m_RenameOverlay:
+              m_UserAcceptedRename: 0
+              m_Name: 
+              m_OriginalName: 
+              m_EditFieldRect:
+                serializedVersion: 2
+                x: 0
+                y: 0
+                width: 0
+                height: 0
+              m_UserData: 0
+              m_IsWaitingForDelay: 0
+              m_IsRenaming: 0
+              m_OriginalEventType: 11
+              m_IsRenamingFilename: 0
+              m_ClientGUIView: {fileID: 0}
+            m_SearchString: 
+          m_MultiColumnHeaderState:
+            m_Columns:
+            - width: 200
+              sortedAscending: 1
+            - width: 80
+              sortedAscending: 0
+            - width: 80
+              sortedAscending: 0
+            - width: 80
+              sortedAscending: 0
+            m_VisibleColumns: 00000000010000000200000003000000
+            m_SortedColumns: 03000000
+          m_ThreadIndex: 0
+          m_DetailedViewType: 0
+          m_DetailedViewSpliterState:
+            ID: 0
+            splitterInitialOffset: 0
+            currentActiveSplitter: -1
+            realSizes: 0000000000000000
+            relativeSizes:
+            - 0.7
+            - 0.3
+            minSizes: c201000032000000
+            maxSizes: 0000000000000000
+            lastTotalSize: 0
+            splitSize: 6
+            xOffset: 0
+          m_DetailedObjectsView:
+            m_SelectedID: 0
+            m_TreeViewState:
+              scrollPos: {x: 0, y: 0}
+              m_SelectedIDs: 
+              m_LastClickedID: 0
+              m_ExpandedIDs: 
+              m_RenameOverlay:
+                m_UserAcceptedRename: 0
+                m_Name: 
+                m_OriginalName: 
+                m_EditFieldRect:
+                  serializedVersion: 2
+                  x: 0
+                  y: 0
+                  width: 0
+                  height: 0
+                m_UserData: 0
+                m_IsWaitingForDelay: 0
+                m_IsRenaming: 0
+                m_OriginalEventType: 11
+                m_IsRenamingFilename: 0
+                m_ClientGUIView: {fileID: 0}
+              m_SearchString: 
+            m_MultiColumnHeaderState:
+              m_Columns: []
+              m_VisibleColumns: 
+              m_SortedColumns: 
+            m_VertSplit:
+              ID: 0
+              splitterInitialOffset: 0
+              currentActiveSplitter: 0
+              realSizes: 
+              relativeSizes: []
+              minSizes: 
+              maxSizes: 
+              lastTotalSize: 0
+              splitSize: 0
+              xOffset: 0
+          m_DetailedCallsView:
+            m_SelectedID: -1
+            m_VertSplit:
+              ID: 0
+              splitterInitialOffset: 0
+              currentActiveSplitter: 0
+              realSizes: 
+              relativeSizes: []
+              minSizes: 
+              maxSizes: 
+              lastTotalSize: 0
+              splitSize: 0
+              xOffset: 0
+            m_CalleesTreeView:
+              m_ViewState:
+                scrollPos: {x: 0, y: 0}
+                m_SelectedIDs: 
+                m_LastClickedID: 0
+                m_ExpandedIDs: 
+                m_RenameOverlay:
+                  m_UserAcceptedRename: 0
+                  m_Name: 
+                  m_OriginalName: 
+                  m_EditFieldRect:
+                    serializedVersion: 2
+                    x: 0
+                    y: 0
+                    width: 0
+                    height: 0
+                  m_UserData: 0
+                  m_IsWaitingForDelay: 0
+                  m_IsRenaming: 0
+                  m_OriginalEventType: 11
+                  m_IsRenamingFilename: 0
+                  m_ClientGUIView: {fileID: 0}
+                m_SearchString: 
+              m_ViewHeaderState:
+                m_Columns:
+                - width: 150
+                  sortedAscending: 1
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                m_VisibleColumns: 0000000001000000020000000300000004000000
+                m_SortedColumns: 03000000
+            m_CallersTreeView:
+              m_ViewState:
+                scrollPos: {x: 0, y: 0}
+                m_SelectedIDs: 
+                m_LastClickedID: 0
+                m_ExpandedIDs: 
+                m_RenameOverlay:
+                  m_UserAcceptedRename: 0
+                  m_Name: 
+                  m_OriginalName: 
+                  m_EditFieldRect:
+                    serializedVersion: 2
+                    x: 0
+                    y: 0
+                    width: 0
+                    height: 0
+                  m_UserData: 0
+                  m_IsWaitingForDelay: 0
+                  m_IsRenaming: 0
+                  m_OriginalEventType: 11
+                  m_IsRenamingFilename: 0
+                  m_ClientGUIView: {fileID: 0}
+                m_SearchString: 
+              m_ViewHeaderState:
+                m_Columns:
+                - width: 150
+                  sortedAscending: 1
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                - width: 60
+                  sortedAscending: 0
+                m_VisibleColumns: 0000000001000000020000000300000004000000
+                m_SortedColumns: 03000000
+          m_ThreadName: Main Thread
+    00000002:
+      type: {class: RenderingProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+    00000003:
+      type: {class: MemoryProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+        m_ViewSplit:
+          ID: 0
+          splitterInitialOffset: 0
+          currentActiveSplitter: -1
+          realSizes: 0000000000000000
+          relativeSizes:
+          - 0.7
+          - 0.3
+          minSizes: c201000032000000
+          maxSizes: 0000000000000000
+          lastTotalSize: 0
+          splitSize: 6
+          xOffset: 0
+    00000004:
+      type: {class: AudioProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+        m_ShowInactiveDSPChains: 0
+        m_HighlightAudibleDSPChains: 1
+        m_DSPGraphZoomFactor: 1
+    00000005:
+      type: {class: VideoProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+    00000006:
+      type: {class: PhysicsProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+    00000007:
+      type: {class: Physics2DProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+    00000008:
+      type: {class: NetworkingMessagesProfilerModule, ns: UnityEditorInternal.Profiling,
+        asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+    00000009:
+      type: {class: NetworkingOperationsProfilerModule, ns: UnityEditorInternal.Profiling,
+        asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+        m_NetworkSplit:
+          ID: 0
+          splitterInitialOffset: 0
+          currentActiveSplitter: -1
+          realSizes: 0000000000000000
+          relativeSizes:
+          - 0.2
+          - 0.8
+          minSizes: 6400000064000000
+          maxSizes: 0000000000000000
+          lastTotalSize: 0
+          splitSize: 6
+          xOffset: 0
+        msgNames:
+        - UserMessage
+        - ObjectDestroy
+        - ClientRpc
+        - ObjectSpawn
+        - Owner
+        - Command
+        - LocalPlayerTransform
+        - SyncEvent
+        - SyncVars
+        - SyncList
+        - ObjectSpawnScene
+        - NetworkInfo
+        - SpawnFinished
+        - ObjectHide
+        - CRC
+        - ClientAuthority
+    0000000A:
+      type: {class: UIProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+    0000000B:
+      type: {class: UIDetailsProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+    0000000C:
+      type: {class: GlobalIlluminationProfilerModule, ns: UnityEditorInternal.Profiling,
+        asm: UnityEditor}
+      data:
+        m_PaneScroll: {x: 0, y: 0}
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,7 +865,7 @@ MonoBehaviour:
   m_PosRight: {x: 0, y: 0}
   m_Scope: 1
   m_SplitterFlex: 0.2
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -394,7 +923,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -425,7 +954,7 @@ MonoBehaviour:
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &15
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,16 +984,16 @@ MonoBehaviour:
   m_WindowGUID: 4a43d6fc325e1db4abbcdce041a423bf
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.008179788, y: 1.5053571, z: 0.00084570225}
+    m_Target: {x: -4.6466827, y: 0.96630335, z: 2.5027027}
     speed: 2
-    m_Value: {x: 0.008179788, y: 1.5053571, z: 0.00084570225}
+    m_Value: {x: -4.6466827, y: 0.96630335, z: 2.5027027}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -474,13 +1003,13 @@ MonoBehaviour:
   m_DoValidateTrueMetals: 0
   m_ExposureSliderValue: 0
   m_SceneViewState:
-    showFog: 1
+    showFog: 0
     showMaterialUpdate: 0
     showSkybox: 0
-    showFlares: 1
-    showImageEffects: 1
-    showParticleSystems: 1
-    showVisualEffectGraphs: 1
+    showFlares: 0
+    showImageEffects: 0
+    showParticleSystems: 0
+    showVisualEffectGraphs: 0
   m_Grid:
     xGrid:
       m_Fade:
@@ -489,7 +1018,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
         m_Target: 1
@@ -510,13 +1039,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0010746841, y: 0.99832934, z: -0.054272324, w: 0.019770492}
+    m_Target: {x: 0.06711661, y: -0.53288263, z: 0.042453665, w: 0.8424546}
     speed: 2
-    m_Value: {x: 0.0010746847, y: 0.9983299, z: -0.054272354, w: 0.019770503}
+    m_Value: {x: 0.06711659, y: -0.53288245, z: 0.04245365, w: 0.8424543}
   m_Size:
-    m_Target: 1.8452344
+    m_Target: 9.659342
     speed: 2
-    m_Value: 1.8452344
+    m_Value: 9.659342
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -534,14 +1063,14 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.0048141293, y: 0.9951839, z: 0.06846728, w: -0.06997591}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
-  m_SceneVisActive: 1
+  m_SceneVisActive: 0
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -567,7 +1096,7 @@ MonoBehaviour:
     width: 901
     height: 520
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -599,14 +1128,14 @@ MonoBehaviour:
     - {fileID: 7592963445202583669, guid: c4aadaf9c6d619245b2c29ff98654637, type: 2}
     - {fileID: 5821700386525643677, guid: c4aadaf9c6d619245b2c29ff98654637, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.57692796
+    - e00: 0.25649536
       e01: 0
       e02: 0
-      e03: 75.00064
+      e03: 60.943085
       e10: 0
-      e11: 0.57692796
+      e11: 0.25649536
       e12: 0
-      e13: 129.07394
+      e13: 211.03996
       e20: 0
       e21: 0
       e22: 1
@@ -665,7 +1194,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &18
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -692,15 +1221,15 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 0
   m_PlayModeTestListGUI:
-    m_Window: {fileID: 18}
+    m_Window: {fileID: 19}
     newResultList:
     - id: 1055
       uniqueId: '[Erbium][suite]'
       name: Erbium
       fullName: Erbium
-      resultStatus: 1
-      duration: 1.239402
-      messages: 
+      resultStatus: 2
+      duration: 26.977262
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -714,9 +1243,9 @@ MonoBehaviour:
       uniqueId: '[O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll][suite]'
       name: Tests.dll
       fullName: O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll
-      resultStatus: 1
-      duration: 1.2118646
-      messages: 
+      resultStatus: 2
+      duration: 26.751986
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -730,9 +1259,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/[Tests][suite]
       name: Tests
       fullName: Tests
-      resultStatus: 1
-      duration: 1.1995088
-      messages: 
+      resultStatus: 2
+      duration: 26.6289
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -743,11 +1272,44 @@ MonoBehaviour:
       parentId: 1004
       parentUniqueId: '[O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll][suite]'
     - id: 1001
+      uniqueId: Tests.dll/Tests/[Tests][Tests.CrouchingMovementTest][suite]
+      name: CrouchingMovementTest
+      fullName: Tests.CrouchingMovementTest
+      resultStatus: 1
+      duration: 1.8080367
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1013
+      parentUniqueId: Tests.dll/[Tests][suite]
+    - id: 1002
+      uniqueId: Tests.dll/Tests/CrouchingMovementTest/[Tests][Tests.CrouchingMovementTest.crouchTest]
+      name: crouchTest
+      fullName: Tests.CrouchingMovementTest.crouchTest
+      resultStatus: 1
+      duration: 1.6579124
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.CrouchingMovementTest][suite]
+    - id: 1001
       uniqueId: Tests.dll/Tests/[Tests][Tests.GroundMovementTest][suite]
       name: GroundMovementTest
       fullName: Tests.GroundMovementTest
       resultStatus: 1
-      duration: 1.2170339
+      duration: 2.4693017
       messages: 
       output: 
       stacktrace: 
@@ -763,7 +1325,7 @@ MonoBehaviour:
       name: initalizeGroundMovementTest
       fullName: Tests.GroundMovementTest.initalizeGroundMovementTest
       resultStatus: 1
-      duration: 0.1274274
+      duration: 1.0408792
       messages: 
       output: 
       stacktrace: 
@@ -780,7 +1342,7 @@ MonoBehaviour:
       name: moveTest
       fullName: Tests.GroundMovementTest.moveTest
       resultStatus: 1
-      duration: 1.0593109
+      duration: 2.131987
       messages: 
       output: 
       stacktrace: 
@@ -797,7 +1359,7 @@ MonoBehaviour:
       name: MidAirMovementTest
       fullName: Tests.MidAirMovementTest
       resultStatus: 1
-      duration: 1.1835614
+      duration: 5.781063
       messages: 
       output: 
       stacktrace: 
@@ -813,11 +1375,11 @@ MonoBehaviour:
       name: fallingTest
       fullName: Tests.MidAirMovementTest.fallingTest
       resultStatus: 1
-      duration: 1.1541228
+      duration: 2.0696025
       messages: 
       output: '(0.0, 80.0, 0.0)
 
-        (0.0, 85.9, 0.0)
+        (0.0, 84.3, 0.0)
 
 '
       stacktrace: 
@@ -834,7 +1396,7 @@ MonoBehaviour:
       name: initTest
       fullName: Tests.MidAirMovementTest.initTest
       resultStatus: 1
-      duration: 1.0578282
+      duration: 1.5484974
       messages: 
       output: 
       stacktrace: 
@@ -851,7 +1413,7 @@ MonoBehaviour:
       name: landingTest
       fullName: Tests.MidAirMovementTest.landingTest
       resultStatus: 1
-      duration: 1.1819582
+      duration: 1.748694
       messages: 
       output: 
       stacktrace: 
@@ -868,7 +1430,7 @@ MonoBehaviour:
       name: PlayerTest
       fullName: Tests.PlayerTest
       resultStatus: 1
-      duration: 0.0668452
+      duration: 0.7044419
       messages: 
       output: 
       stacktrace: 
@@ -884,7 +1446,7 @@ MonoBehaviour:
       name: initalizePlayer
       fullName: Tests.PlayerTest.initalizePlayer
       resultStatus: 1
-      duration: 0.0504738
+      duration: 0.4825286
       messages: 
       output: 
       stacktrace: 
@@ -896,20 +1458,63 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.PlayerTest][suite]
-    m_ResultText: 'fallingTest (1.154s)
+    - id: 1012
+      uniqueId: Tests.dll/Tests/[Tests][Tests.TimerManagerTest][suite]
+      name: TimerManagerTest
+      fullName: Tests.TimerManagerTest
+      resultStatus: 2
+      duration: 26.581076
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1015
+      parentUniqueId: Tests.dll/[Tests][suite]
+    - id: 1013
+      uniqueId: Tests.dll/Tests/TimerManagerTest/[Tests][Tests.TimerManagerTest.timerTest]
+      name: timerTest
+      fullName: Tests.TimerManagerTest.timerTest
+      resultStatus: 2
+      duration: 26.45295
+      messages: "  Expected: True\r\n  But was:  False\r\n"
+      output: 
+      stacktrace: 'at Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x000b5]
+        in O:\Projects\Unity\Erbium\Erbium\Assets\Tests\TimerManagerTest.cs:41
 
-      ---
+        at
+        UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x0004c]
+        in O:\Projects\Unity\Erbium\Erbium\Library\PackageCache\com.unity.test-framework@1.1.5\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:31
 
-      (0.0, 80.0, 0.0)
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.TimerManagerTest][suite]
+    m_ResultText: "timerTest (26.453s)\n---\nExpected: True\r\n  But was:  False\n---\nat
+      Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x000b5] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\TimerManagerTest.cs:41\r\nat
+      UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x0004c] in
+      O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31"
+    m_ResultStacktrace: 'at Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x000b5]
+      in O:\Projects\Unity\Erbium\Erbium\Assets\Tests\TimerManagerTest.cs:41
 
-      (0.0,
-      85.9, 0.0)'
-    m_ResultStacktrace: 
+      at
+      UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x0004c] in
+      O:\Projects\Unity\Erbium\Erbium\Library\PackageCache\com.unity.test-framework@1.1.5\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:31
+
+'
     m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d4da805c
-      m_LastClickedID: 1551948500
-      m_ExpandedIDs: 12b088b1fd4c0deb583a6922b20a89253354b2268359db417dc7445effffff7f
+      scrollPos: {x: 0, y: 24}
+      m_SelectedIDs: 80c20506
+      m_LastClickedID: 101040768
+      m_ExpandedIDs: 12b088b1fd4c0deb39ad96ec583a6922b20a89253354b2268359db417dc7445e2c4f2763ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -936,7 +1541,7 @@ MonoBehaviour:
       availableCategories:
       - Uncategorized
   m_EditModeTestListGUI:
-    m_Window: {fileID: 18}
+    m_Window: {fileID: 19}
     newResultList:
     - id: 1000
       uniqueId: '[Erbium][suite]'
@@ -986,7 +1591,7 @@ MonoBehaviour:
       selectedCategoryMask: 0
       availableCategories:
       - Uncategorized
---- !u!114 &19
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1013,9 +1618,9 @@ MonoBehaviour:
     height: 385
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: -21640
---- !u!114 &20
+    m_IsLocked: 1
+  m_LastSelectedObjectID: -74368
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1044,9 +1649,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 3c3a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: ac96ffffcc96ffffe098ffff929affffb29affff34a4ffff3ea6ffff5ea6ffff72a8ffff8cabffffacabffffc0adffffbaafffffd6affffff6b1ffffc0b3ffffe0b3fffff4b5ffffb6b7ffffd6b7ffffeab9fffff4bbffff14bcffff28beffff4ec0ffff6ec0ffff82c2ffff44c4ffff64c4ffff94c9ffff6ecbffff8ecbffff10d5ffff9cd7ffffbcd7ffff42e1ffff5cfaffff68faffffc4faffffd8fafffff6faffff54fbffff5c370000
+      m_ExpandedIDs: e4ddfeff02defeff90defefffee0feff1ce1feffaae1feffb0e3feffcee3feff5ce4feffe6e6feff04e7feff92e7feff68e9feff86e9feff14eafeff42ecfeff60ecfeffeeecfeff28effeff46effeffd4effeff92f1feffb0f1feff3ef2feff7cf4feff9af4feff28f5feff68f7feff86f7feff14f8feff0afafeff28fafeffb6fafeff00fdfeff1efdfeffaafdfeff5a00ffff7800ffff0601ffffcc02ffffea02ffff7803ffff9605ffffb405ffff4206ffffc208ffffe008ffff7009ffff060cffff240cffffb80cffffcc0effffe60effff7a0fffff3411ffff5211ffff7613ffff3015ffff4e15ffff7217ffff2c19ffff4a19fffff424ffff1831ffff3631ffffb23cffff846fffff1889ffff9a8affffb88affffe48cffff3a95ffff5a95ffff469fffff88a1ffffa8a1ffffcca3ffff96a5ffffb6a5ffff98afffff50b8ffff70b8ffff52c2ffff9ce4ffff54fbffff68370000ce530000ee740000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1070,7 +1675,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: ff9d653b4ed22b44f9fc4e61765b29d1
---- !u!114 &21
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1109,21 +1714,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Characters/Movement
+    - Assets/Tests
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 44
   m_LastFolders:
-  - Assets/Scripts/Characters/Movement
+  - Assets/Tests
   m_LastFoldersGridSize: 44
   m_LastProjectPath: O:\Projects\Unity\Erbium\Erbium
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 91}
-    m_SelectedIDs: 063b0000
-    m_LastClickedID: 15110
-    m_ExpandedIDs: 00000000b83a0000ba3a0000bc3a0000be3a0000c03a0000c23a0000c43a0000c63a0000c83a0000fc3a000000ca9a3b
+    scrollPos: {x: 0, y: 139}
+    m_SelectedIDs: 203b0000
+    m_LastClickedID: 15136
+    m_ExpandedIDs: 00000000c43a0000c83a0000ca3a0000cc3a0000ce3a0000d03a0000d23a0000d43a0000f43a0000f63a00000a3b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1151,7 +1756,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b83a0000ba3a0000bc3a0000be3a0000c03a0000c23a0000c43a0000c63a0000c83a0000
+    m_ExpandedIDs: 00000000c43a0000c63a0000c83a0000ca3a0000cc3a0000ce3a0000d03a0000d23a0000d43a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1176,10 +1781,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 40fbffff
-    m_LastClickedInstanceID: -1216
+    m_SelectedInstanceIDs: 269ffeffca14feff
+    m_LastClickedInstanceID: -125750
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 0236000012380000a634000086460000383c0000343c0000424300005c440000685700006c57000064570000c05a00004a7f000068800000a8370000
+    m_ExpandedInstanceIDs: 0236000012380000a634000086460000383c0000343c0000424300005c440000685700006c57000064570000c05a00004a7f000068800000a83700000000000028770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1207,7 +1812,7 @@ MonoBehaviour:
     m_GridSize: 44
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 176
---- !u!114 &22
+--- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1233,7 +1838,7 @@ MonoBehaviour:
     width: 457
     height: 409
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &23
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1271,7 +1876,7 @@ MonoBehaviour:
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
---- !u!114 &24
+--- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

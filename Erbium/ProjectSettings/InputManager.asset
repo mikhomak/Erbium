@@ -74,7 +74,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left shift
+    positiveButton: left ctrl
     altNegativeButton: 
     altPositiveButton: mouse 2
     gravity: 1000
@@ -283,6 +283,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
+    altNegativeButton: 
+    altPositiveButton: joystick button 1
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Slide
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left shift
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
