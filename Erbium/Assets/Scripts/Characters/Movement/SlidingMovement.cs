@@ -20,10 +20,12 @@ namespace Characters.Movement {
         public void move(Vector3 direction) {
             if (isFalling()) {
                 changeMovement(new MidairMovement(character));
+                return;
             }
 
             if (direction == Vector3.zero) {
                 changeMovement(new GroundMovement(character));
+                return;
             }
             
             var velocity =

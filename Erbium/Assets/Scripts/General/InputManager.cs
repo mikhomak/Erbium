@@ -30,7 +30,7 @@ namespace General {
                 }
             }
 
-            if (Input.GetButtonDown($"Slide")) {
+            if (Input.GetButton($"Slide")) {
                 if (player.getMovement() is GroundMovement) {
                     player.changeMovement(new SlidingMovement(player));
                 }
