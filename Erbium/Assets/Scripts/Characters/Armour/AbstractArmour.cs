@@ -2,12 +2,16 @@
 
 namespace Characters.Armour {
     public class AbstractArmour: IArmour {
-        public float applyArmour(float damage, DamageType damageType) {
-            throw new System.NotImplementedException();
+
+        private IArmour nextArmour;
+        
+        public virtual float applyArmour(float damage, DamageType damageType) {
+            return nextArmour?.applyArmour(damage, damageType) ?? damage;
         }
 
         public IArmour setNext(IArmour armour) {
-            throw new System.NotImplementedException();
+            nextArmour = armour;
+            return armour;
         }
     }
 }
