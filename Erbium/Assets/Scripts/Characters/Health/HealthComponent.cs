@@ -14,9 +14,9 @@ namespace Characters.Health {
 
         public void takeDamage(DamageInfo damage) {
             if (invincibility) return;
-            var currentHealth = character.getStats().Health;
-            character.getStats().Health = currentHealth - damage.Damage;
-            if (currentHealth - damage.Damage <= 0) {
+            var currentHealth = character.getStats().Health =
+                character.getArmour().applyArmour(damage.Damage, damage.DamageType);
+            if (currentHealth <= 0) {
                 character.getStats().Health = 0;
                 character.die();
             }
