@@ -20,9 +20,6 @@ namespace Characters.Armour {
                 case DamageType.Toxic:
                     damageAfterApplyingArmour -= character.getStats().ToxicArmour;
                     break;
-                default:
-
-                    break;
             }
 
             return damageAfterApplyingArmour;
