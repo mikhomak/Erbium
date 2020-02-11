@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 609, y: 492}
+  m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 170
+  controlID: 159
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 0
     width: 902
     height: 947
-  m_MinSize: {x: 201, y: 342}
+  m_MinSize: {x: 101, y: 242}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 104
+  controlID: 5660
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -193,15 +193,15 @@ MonoBehaviour:
     y: 541
     width: 902
     height: 406
-  m_MinSize: {x: 201, y: 221}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 15}
   - {fileID: 19}
   - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     y: 0
     width: 459
     height: 947
-  m_MinSize: {x: 202, y: 342}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 232, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 171
+  controlID: 160
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -272,14 +272,14 @@ MonoBehaviour:
     y: 517
     width: 459
     height: 430
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 23}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
   - {fileID: 23}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -923,7 +923,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1043,9 +1043,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.06711659, y: -0.53288245, z: 0.04245365, w: 0.8424543}
   m_Size:
-    m_Target: 9.659342
+    m_Target: 9.168745
     speed: 2
-    m_Value: 9.659342
+    m_Value: 9.168745
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1128,14 +1128,14 @@ MonoBehaviour:
     - {fileID: 7592963445202583669, guid: c4aadaf9c6d619245b2c29ff98654637, type: 2}
     - {fileID: 5821700386525643677, guid: c4aadaf9c6d619245b2c29ff98654637, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.25649536
+    - e00: 0.34332308
       e01: 0
       e02: 0
-      e03: 60.943085
+      e03: -53.437927
       e10: 0
-      e11: 0.25649536
+      e11: 0.34332308
       e12: 0
-      e13: 211.03996
+      e13: 187.00446
       e20: 0
       e21: 0
       e22: 1
@@ -1499,7 +1499,7 @@ MonoBehaviour:
       parentId: 1012
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.TimerManagerTest][suite]
     m_ResultText: "timerTest (26.453s)\n---\nExpected: True\r\n  But was:  False\n---\nat
-      Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x000b5] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\TimerManagerTest.cs:41\r\nat
+      Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x000b5] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\TimerManagerTest.cs:41\nat
       UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x0004c] in
       O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31"
     m_ResultStacktrace: 'at Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x000b5]
@@ -1618,8 +1618,8 @@ MonoBehaviour:
     height: 385
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: -74368
+    m_IsLocked: 1
+  m_LastSelectedObjectID: -1302
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1649,9 +1649,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: c63a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 2efbffff
+      m_ExpandedIDs: 54fbffff9a370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1714,21 +1714,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Tests
+    - Assets/Animations/Humanoid
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 44
   m_LastFolders:
-  - Assets/Tests
+  - Assets/Animations/Humanoid
   m_LastFoldersGridSize: 44
   m_LastProjectPath: O:\Projects\Unity\Erbium\Erbium
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 139}
-    m_SelectedIDs: 203b0000
-    m_LastClickedID: 15136
-    m_ExpandedIDs: 00000000363b0000383b00003a3b00003c3b00003e3b0000403b0000423b0000443b0000463b0000
+    scrollPos: {x: 0, y: 35}
+    m_SelectedIDs: 5a3b0000
+    m_LastClickedID: 15194
+    m_ExpandedIDs: 00000000363b0000383b00003a3b00003c3b00003e3b0000403b0000423b0000443b0000463b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1781,8 +1781,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 269ffeffca14feff
-    m_LastClickedInstanceID: -125750
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0236000012380000a634000086460000383c0000343c0000424300005c440000685700006c57000064570000c05a00004a7f000068800000a83700000000000028770000
     m_RenameOverlay:

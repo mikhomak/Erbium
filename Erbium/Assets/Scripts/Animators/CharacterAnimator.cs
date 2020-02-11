@@ -47,7 +47,7 @@ namespace Animators {
 
         public void setJumping(bool jumping) {
             if (jumping) {
-                animator.CrossFade("jump", 0f);
+                animator.CrossFade("jump", 0.2f);
             }
         }
 
