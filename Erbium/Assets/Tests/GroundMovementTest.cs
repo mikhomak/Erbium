@@ -50,7 +50,7 @@ namespace Tests {
             IMovementDirection moveDirection = For<IMovementDirection>();
             var direction = new Vector3(0, 0, 1);
             player.changeMovementDirection(moveDirection);
-            moveDirection.getDirection().Returns(direction);
+            moveDirection.getDirection(playerGo.transform).Returns(direction);
             Vector3 playerInitPosition = playerGo.transform.position;
             Assert.True(player.getMovement() is GroundMovement);
             yield return new WaitForSeconds(1f);

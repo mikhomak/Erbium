@@ -32,7 +32,7 @@ namespace Player {
         }
 
         private void FixedUpdate() {
-            movement.move(movementDirection.getDirection());
+            movement.move(movementDirection.getDirection(transform));
         }
 
 
