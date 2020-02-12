@@ -247,6 +247,7 @@ MonoBehaviour:
   jumpForce: 15
   additionalGravityForce: 20
   crouchSpeed: 6
+  slidingSpeed: 15
   maxJumps: 2
   maxDownVelocity: -20
   physicArmour: 2
