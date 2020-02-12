@@ -11,27 +11,7 @@ using UnityEngine.TestTools;
 using static NSubstitute.Substitute;
 
 namespace Tests {
-    public class GroundMovementTest {
-        private List<GameObject> gameObjects = new List<GameObject>();
-        private GameObject playerGo;
-        private IPlayer player;
-
-        [SetUp]
-        public void setUpTestScene() {
-            gameObjects = TestCommonMethods.init();
-            GameObject inputManagerGo = TestCommonMethods.initInputManager();
-            InputManager inputManager = inputManagerGo.GetComponent<InputManager>();
-            playerGo = TestCommonMethods.initPlayer(inputManager);
-            gameObjects.Add(inputManagerGo);
-            gameObjects.Add(playerGo);
-            player = playerGo.GetComponent<IPlayer>();
-        }
-
-        [TearDown]
-        public void afterTest() {
-            gameObjects.ForEach(Object.Destroy);
-            player = null;
-        }
+    public class GroundMovementTest: AbstractTest {
 
         [UnityTest]
         public IEnumerator initalizeGroundMovementTest() {
