@@ -494,37 +494,37 @@ PrefabInstance:
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0003073088
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.036
+      value: 11.511001
       objectReference: {fileID: 0}
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6
+      value: -10.78858
       objectReference: {fileID: 0}
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.08996287
+      value: 0.38663664
       objectReference: {fileID: 0}
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000025505224
+      value: -0.000000035066666
       objectReference: {fileID: 0}
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000002303865
+      value: 0.00000006239014
       objectReference: {fileID: 0}
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99594516
+      value: 0.92223215
       objectReference: {fileID: 0}
     - target: {fileID: 415109596780295772, guid: d726b08528f78f14682d1ec8b2042d18,
         type: 3}
@@ -708,6 +708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Always Forward Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 2631781698211805365, guid: f39bb164a00f3e94c85ce96b6baaac05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2631781698211805367, guid: f39bb164a00f3e94c85ce96b6baaac05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -766,12 +771,12 @@ PrefabInstance:
     - target: {fileID: 2631781698445231914, guid: f39bb164a00f3e94c85ce96b6baaac05,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000025296578
+      value: -0.000025258601
       objectReference: {fileID: 0}
     - target: {fileID: 2631781698445231914, guid: f39bb164a00f3e94c85ce96b6baaac05,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000004109766
+      value: 0.000004103596
       objectReference: {fileID: 0}
     - target: {fileID: 2631781698978831081, guid: f39bb164a00f3e94c85ce96b6baaac05,
         type: 3}
@@ -864,6 +869,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03395560f02fd324b92ef3ad9236e527, type: 3}
+--- !u!1001 &3979790958450875756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.511001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.78858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38663664
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000035066666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000006239014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92223215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779632064833770064, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945392233140196318, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_Name
+      value: Top down camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982663453427373689, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1762202326}
+    - target: {fileID: 8982663453427373689, guid: d3d0a31be42235544824f9991d0b666d,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1762202326}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3d0a31be42235544824f9991d0b666d, type: 3}
 --- !u!1001 &5780510844921902608
 PrefabInstance:
   m_ObjectHideFlags: 0
