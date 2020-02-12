@@ -77,6 +77,17 @@ namespace Tests {
             yield return new WaitForEndOfFrame();
 
             Assert.True(healthBeforeTakingDamage - damageInfo.Damage  + player.getStats().MagicArmour == player.getStats().Health);
+        }    
+        
+        [UnityTest]
+        public IEnumerator playerTakeDamageWithToxicArmour() {
+            float healthBeforeTakingDamage = player.getStats().Health;
+            DamageInfo damageInfo = new DamageInfo(10, DamageType.Toxic);
+            player.getHealthComponent().takeDamage(damageInfo);
+
+            yield return new WaitForEndOfFrame();
+
+            Assert.True(healthBeforeTakingDamage - damageInfo.Damage  + player.getStats().ToxicArmour == player.getStats().Health);
         }
     }
 }
