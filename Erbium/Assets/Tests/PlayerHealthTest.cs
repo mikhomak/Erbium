@@ -1,21 +1,47 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using Characters.Movement;
-using General;
-using NSubstitute;
+using Characters.Damage;
 using NUnit.Framework;
-using Player;
-using Player.MovementDirection;
+using Projectiles;
 using UnityEngine;
 using UnityEngine.TestTools;
-using static NSubstitute.Substitute;
-
 
 namespace Tests {
-    public class PlayerHealthTest : AbstractTest{
+    public class PlayerHealthTest : AbstractTest {
+        private GameObject projectileGo;
+        private IProjectile projectile;
+
+        [SetUp]
+        public new void setUpTestScene() {
+            projectileGo = Object.Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/Projectile"));
+            projectileGo.transform.position = new Vector3(10, 10, 10);
+            gameObjects.Add(projectileGo);
+            projectile = projectileGo.GetComponent<IProjectile>();
+        }
+
+        [TearDown]
+        public new void afterTest() {
+            projectile = null;
+        }
 
 
-        public void playerTakeDamage() {
+        [UnityTest]
+        public IEnumerator playerTakeDamage() {
+            float healthBeforeTakingDamage = player.getStats().Health;
+            DamageInfo damageInfo = new DamageInfo(10, DamageType.Physical);
+            player.getHealthComponent().takeDamage(damageInfo);
+            yield return new WaitForSeconds(1f);
+
+            Assert.True(healthBeforeTakingDamage != player.getStats().Health);
+        }
+
+        [UnityTest]
+        public IEnumerator playerTakeDamageFromProjectile() {
+            float healthBeforeTakingDamage = player.getStats().Health;
+            projectileGo.transform.position = Vector3.zero;
+
+            yield return new WaitForSeconds(1f);
+
+            Assert.True(healthBeforeTakingDamage != player.getStats().Health);
         }
     }
 }

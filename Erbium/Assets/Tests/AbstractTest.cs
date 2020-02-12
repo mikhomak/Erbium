@@ -13,7 +13,7 @@ namespace Tests {
         [SetUp]
         public void setUpTestScene() {
             gameObjects = init();
-            
+
             GameObject inputManagerGo = initInputManager();
             InputManager inputManager = inputManagerGo.GetComponent<InputManager>();
             playerGo = initPlayer(inputManager);
@@ -27,15 +27,15 @@ namespace Tests {
             gameObjects.ForEach(Object.Destroy);
             player = null;
         }
-        
-        
-        
+
+
         protected static List<GameObject> init() {
             List<GameObject> gameObjects = new List<GameObject> {
                 Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Main Camera")),
                 Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Always Forward Camera")),
                 Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Camera Manager")),
-                Object.Instantiate(Resources.Load<GameObject>("Prefabs/Enviroments/Test Floor"))
+                Object.Instantiate(Resources.Load<GameObject>("Prefabs/Enviroments/Test Floor")),
+                Object.Instantiate(Resources.Load<GameObject>("Prefabs/General/Timer Manager"))
             };
             return gameObjects;
         }
