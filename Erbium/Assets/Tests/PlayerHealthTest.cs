@@ -56,5 +56,16 @@ namespace Tests {
 
             Assert.True(0 == player.getStats().Health);
         }
+
+        [UnityTest]
+        public IEnumerator playerTakeDamageWithPhysicArmour() {
+            float healthBeforeTakingDamage = player.getStats().Health;
+            DamageInfo damageInfo = new DamageInfo(10, DamageType.Physical);
+            player.getHealthComponent().takeDamage(damageInfo);
+
+            yield return new WaitForEndOfFrame();
+
+            Assert.True(healthBeforeTakingDamage - damageInfo.Damage  + player.getStats().PhysicArmour == player.getStats().Health);
+        }
     }
 }
