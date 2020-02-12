@@ -29,7 +29,8 @@ namespace Tests {
             float healthBeforeTakingDamage = player.getStats().Health;
             DamageInfo damageInfo = new DamageInfo(10, DamageType.Physical);
             player.getHealthComponent().takeDamage(damageInfo);
-            yield return new WaitForSeconds(1f);
+
+            yield return new WaitForEndOfFrame();
 
             Assert.True(healthBeforeTakingDamage != player.getStats().Health);
         }
@@ -42,6 +43,18 @@ namespace Tests {
             yield return new WaitForSeconds(1f);
 
             Assert.True(healthBeforeTakingDamage != player.getStats().Health);
+        }
+
+        [UnityTest]
+        public IEnumerator die() {
+            player.getStats().Health = 10;
+            player.getStats().PhysicArmour = 0;
+            DamageInfo damageInfo = new DamageInfo(100, DamageType.Physical);
+            player.getHealthComponent().takeDamage(damageInfo);
+
+            yield return new WaitForEndOfFrame();
+
+            Assert.True(0 == player.getStats().Health);
         }
     }
 }
