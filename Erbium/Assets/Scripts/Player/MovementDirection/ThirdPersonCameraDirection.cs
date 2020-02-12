@@ -3,20 +3,23 @@ using General;
 using UnityEngine;
 
 namespace Player.MovementDirection {
-    public class ThirdPersonCameraDirection: IMovementDirection  {
-        Vector3 auxDirection = Vector3.zero;
-        public Vector3 getDirection(Transform transform) {
+    public class ThirdPersonCameraDirection: IMovementDirection {
+        private Transform transform;
+        private Vector3 auxDirection;
+
+        public Vector3 getDirection() {
             Vector3 forward = CameraManager.getCameraForwardDirectionNormalized();
             Vector3 right = CameraManager.getCameraRightDirectionNormalized();
             return forward * InputManager.getVerInput() + right * InputManager.getHorInput();
         }
 
+        public void setPlayerTransform(Transform transform) {
+            this.transform = transform;
+            auxDirection = transform.forward;
+        }
 
 
-
-
-
-        private Vector3 getDirectionPrototype(Transform transform) {
+        private Vector3 getDirectionPrototype() {
             Vector3 forward = CameraManager.getCameraForwardDirectionNormalized();
             Vector3 right = CameraManager.getCameraRightDirectionNormalized();
             var inputVer = InputManager.getVerInput();

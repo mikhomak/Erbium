@@ -25,6 +25,7 @@ namespace Player {
             rbd = GetComponent<Rigidbody>();
             stats = GetComponent<Stats>();
             movementDirection = setCameraDirection(cameraView);
+            movementDirection.setPlayerTransform(transform);
             animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>());
             movement = new GroundMovement(this);
             healthComponent = new HealthComponent(this);
@@ -32,7 +33,7 @@ namespace Player {
         }
 
         private void FixedUpdate() {
-            movement.move(movementDirection.getDirection(transform));
+            movement.move(movementDirection.getDirection());
         }
 
 

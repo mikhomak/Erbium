@@ -54,8 +54,6 @@ namespace Tests {
             yield return new WaitForSeconds(1f);
             Vector3 yPos = initPos;
             yPos.y -= player.getStats().AdditionalGravityForce;
-            Debug.Log(yPos);
-            Debug.Log(playerGo.transform.position);
             Assert.True(Vector3.Distance(playerGo.transform.position, yPos) <= 7f);
         }
 
