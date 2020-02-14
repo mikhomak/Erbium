@@ -17,9 +17,13 @@ namespace Characters.Movement {
             animatorFacade = character.getAnimatorFacade();
         }
 
+        public void setUp() {
+            
+        }
+
         public void move(Vector3 direction) {
             if (isFalling()) {
-                changeMovement(new MidairMovement(character));
+                changeMovement(MovementEnum.Midair);
             }
 
             var velocity =
@@ -49,7 +53,7 @@ namespace Characters.Movement {
             rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
         }
 
-        public void changeMovement(IMovement movement) {
+        public void changeMovement(MovementEnum movement) {
             character.changeMovement(movement);
         }
 

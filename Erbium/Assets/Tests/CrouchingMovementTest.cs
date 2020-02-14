@@ -20,7 +20,7 @@ namespace Tests {
             var direction = new Vector3(0, 0, 1);
             player.changeMovementDirection(moveDirection);
             moveDirection.getDirection().Returns(direction);
-            player.changeMovement(new CrouchingMovement(player));
+            player.changeMovement(MovementEnum.Crouch);
             Vector3 playerInitPosition = playerGo.transform.position;
             Assert.True(player.getMovement() is CrouchingMovement);
             yield return new WaitForSeconds(1f);

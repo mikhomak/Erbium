@@ -21,7 +21,7 @@ namespace Tests {
             var direction = new Vector3(0, 0, 1);
             player.changeMovementDirection(moveDirection);
             moveDirection.getDirection().Returns(direction);
-            player.changeMovement(new SlidingMovement(player));
+            player.changeMovement(MovementEnum.Slide);
             Vector3 playerInitPosition = playerGo.transform.position;
             Assert.True(player.getMovement() is SlidingMovement);
             yield return new WaitForSeconds(1f);

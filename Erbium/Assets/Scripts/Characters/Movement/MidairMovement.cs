@@ -18,13 +18,16 @@ namespace Characters.Movement {
             rbd = character.getRigidbody();
             transform = character.getTransform();
             animatorFacade = character.getAnimatorFacade();
+        }
+
+        public void setUp() {
             currentJumps = character.getStats().MaxJumps;
         }
 
         public void move(Vector3 direction) {
             if (!isFalling()) {
                 animatorFacade.untoggleAirAnimations();
-                changeMovement(new GroundMovement(character));
+                changeMovement(MovementEnum.Ground);
                 return;
             }
 
@@ -75,7 +78,7 @@ namespace Characters.Movement {
             }
         }
 
-        public void changeMovement(IMovement movement) {
+        public void changeMovement(MovementEnum movement) {
             character.changeMovement(movement);
         }
 

@@ -2,7 +2,6 @@
 using Characters.Armour;
 using Characters.Health;
 using Characters.Movement;
-using UnityEngine;
 
 namespace Characters {
     public interface ICharacter {
@@ -10,7 +9,7 @@ namespace Characters {
         IHealthComponent getHealthComponent();
         IAnimatorFacade getAnimatorFacade();
         IArmour getArmour();
-        void changeMovement(IMovement movement);
+        void changeMovement(MovementEnum movementEnum);
         void die();
         Stats getStats();
     }

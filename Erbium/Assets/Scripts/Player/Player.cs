@@ -1,10 +1,9 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Animators;
 using Characters;
 using Characters.Armour;
 using Characters.Health;
 using Characters.Movement;
-using General;
 using Player.MovementDirection;
 using UnityEngine;
 
@@ -12,6 +11,7 @@ namespace Player {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Stats))]
     public class Player : MonoBehaviour, IPlayer {
+        private readonly Dictionary<MovementEnum, IMovement> movements = new Dictionary<MovementEnum, IMovement>();
         private IMovement movement;
         private IAnimatorFacade animatorFacade;
         private IMovementDirection movementDirection;
@@ -20,14 +20,15 @@ namespace Player {
         [SerializeField] private Rigidbody rbd;
         [SerializeField] private Stats stats;
         [SerializeField] private CameraView cameraView;
-
+        
         private void Start() {
             rbd = GetComponent<Rigidbody>();
             stats = GetComponent<Stats>();
             movementDirection = setCameraDirection(cameraView);
             movementDirection.setPlayerTransform(transform);
             animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>());
-            movement = new GroundMovement(this);
+            initMovements();
+            movement = movements[MovementEnum.Ground];
             healthComponent = new HealthComponent(this);
             armour = new Armour(this);
         }
@@ -75,9 +76,10 @@ namespace Player {
             return movement;
         }
 
-        public void changeMovement(IMovement movement) {
-            this.movement.cleanUp();
-            this.movement = movement;
+        public void changeMovement(MovementEnum movementEnum) {
+            movement.cleanUp();
+            movement = movements[movementEnum];
+            movement.setUp();
         }
 
         public Stats getStats() {
@@ -90,6 +92,13 @@ namespace Player {
 
         public void changeMovementDirection(CameraView cameraView) {
             movementDirection = setCameraDirection(cameraView);
+        }
+
+        private void initMovements() {
+            movements.Add(MovementEnum.Ground, new GroundMovement(this));
+            movements.Add(MovementEnum.Midair, new MidairMovement(this));
+            movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
+            movements.Add(MovementEnum.Slide, new SlidingMovement(this));
         }
     }
 }

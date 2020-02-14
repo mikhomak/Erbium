@@ -20,9 +20,13 @@ namespace Characters.Movement {
         }
 
 
+        public void setUp() {
+            animatorFacade.setCrouching(true);
+        }
+
         public void move(Vector3 direction) {
             if (isFalling()) {
-                changeMovement(new MidairMovement(character));
+                changeMovement(MovementEnum.Midair);
                 return;
             }
 
@@ -46,7 +50,7 @@ namespace Characters.Movement {
             animatorFacade.updateInputs();
         }
 
-        public void changeMovement(IMovement movement) {
+        public void changeMovement(MovementEnum movement) {
             character.changeMovement(movement);
         }
 

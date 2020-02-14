@@ -20,26 +20,26 @@ namespace General {
 
             if (Input.GetButton($"Crouch")) {
                 if (player.getMovement() is GroundMovement) {
-                    player.changeMovement(new CrouchingMovement(player));
+                    player.changeMovement(MovementEnum.Crouch);
                 }
             }
 
             if (Input.GetButtonUp($"Crouch")) {
                 if (player.getMovement() is CrouchingMovement) {
-                    player.changeMovement(new GroundMovement(player));
+                    player.changeMovement(MovementEnum.Ground);
                 }
             }
 
             if (Input.GetButton($"Slide")) {
                 if (player.getMovement() is GroundMovement) {
-                    player.changeMovement(new SlidingMovement(player));
+                    player.changeMovement(MovementEnum.Slide);
                 }
             }
 
 
             if (Input.GetButtonUp($"Slide")) {
                 if (player.getMovement() is SlidingMovement) {
-                    player.changeMovement(new GroundMovement(player));
+                    player.changeMovement(MovementEnum.Ground);
                 }
             }
         }

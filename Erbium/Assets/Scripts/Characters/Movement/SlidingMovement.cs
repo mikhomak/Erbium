@@ -17,17 +17,20 @@ namespace Characters.Movement {
             animatorFacade = character.getAnimatorFacade();
         }
 
+        public void setUp() {
+        }
+
         public void move(Vector3 direction) {
             if (isFalling()) {
-                changeMovement(new MidairMovement(character));
+                changeMovement(MovementEnum.Midair);
                 return;
             }
 
             if (direction == Vector3.zero) {
-                changeMovement(new GroundMovement(character));
+                changeMovement(MovementEnum.Ground);
                 return;
             }
-            
+
             var velocity =
                 CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().SlidingSpeed);
 
@@ -52,7 +55,7 @@ namespace Characters.Movement {
         }
 
 
-        public void changeMovement(IMovement movement) {
+        public void changeMovement(MovementEnum movement) {
             character.changeMovement(movement);
         }
 
