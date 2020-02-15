@@ -13,5 +13,6 @@ namespace Animators {
         void setCrouching(bool crouching);
         void setUnskippable(bool unskippable);
         void setSliding(bool sliding);
+        void setAttacking();
     }
 }

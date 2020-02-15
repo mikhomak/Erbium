@@ -12,6 +12,7 @@ namespace Animators {
         private static readonly int Crouching = Animator.StringToHash("crouching");
         private static readonly int Unskippable = Animator.StringToHash("unskippable");
         private static readonly int Sliding = Animator.StringToHash("sliding");
+        private static readonly int Attacking = Animator.StringToHash("attacking");
 
         private void OnEnable() {
             animator = GetComponent<Animator>();
@@ -61,6 +62,10 @@ namespace Animators {
 
         public void setSliding(bool sliding) {
             animator.SetBool(Sliding, sliding);
+        }
+
+        public void setAttacking() {
+            animator.SetTrigger(Attacking);
         }
     }
 }

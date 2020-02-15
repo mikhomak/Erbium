@@ -1,13 +1,15 @@
-﻿using General;
+﻿using Characters;
+using General;
 
 namespace Animators {
     public class AnimatorFacade : IAnimatorFacade {
         private readonly ICharacterAnimator characterAnimator;
-
+        private readonly ICharacter character;
         private bool unskippable;
 
-        public AnimatorFacade(ICharacterAnimator characterAnimator) {
+        public AnimatorFacade(ICharacterAnimator characterAnimator, ICharacter character) {
             this.characterAnimator = characterAnimator;
+            this.character = character;
         }
 
 
@@ -52,6 +54,11 @@ namespace Animators {
 
         public void setSliding(bool sliding) {
             characterAnimator.setSliding(sliding);
+        }
+
+        public void startAttacking() {
+            characterAnimator.setAttacking();
+            character.getStats().CanComboAttack = false;
         }
 
         public void setUnskippable(bool unskippable) {

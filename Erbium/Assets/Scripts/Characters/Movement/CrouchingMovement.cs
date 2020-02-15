@@ -1,11 +1,9 @@
-﻿using Animators;
-using Characters.Movement.Behaviours;
+﻿using Characters.Movement.Behaviours;
 using General;
 using UnityEngine;
 
 namespace Characters.Movement {
     public class CrouchingMovement : AbstractMovement, IFallable, IJumpable {
-
         public CrouchingMovement(IPhysicsCharacter character) : base(character) {
         }
 

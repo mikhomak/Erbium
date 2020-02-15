@@ -6,7 +6,7 @@ using UnityEngine;
 namespace General {
     public class InputManager : MonoBehaviour {
         [SerializeField] public GameObject playerGameObject;
-        private IPlayer player;
+        private static IPlayer player;
 
 
         private void Start() {
@@ -42,8 +42,11 @@ namespace General {
                     player.changeMovement(MovementEnum.Ground);
                 }
             }
-        }
 
+            if (Input.GetButtonDown($"Fire1") && player.getStats().CanComboAttack) {
+                player.getAnimatorFacade().startAttacking();
+            }
+        }
 
         public static Vector2 getAxisVector() {
             return new Vector2(getHorInput(), getVerInput());

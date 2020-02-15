@@ -4,7 +4,6 @@ using Characters;
 using Characters.Armour;
 using Characters.Health;
 using Characters.Movement;
-using General;
 using General.Util;
 using Player.MovementDirection;
 using UnityEngine;
@@ -33,7 +32,7 @@ namespace Player {
             stats = GetComponent<Stats>();
             movementDirection = setCameraDirection(cameraView);
             movementDirection.setPlayerTransform(transform);
-            animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>());
+            animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>(), this);
             initMovements();
             movement = movements[MovementEnum.Ground];
             healthComponent = new HealthComponent(this);
