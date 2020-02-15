@@ -23,7 +23,7 @@ namespace General {
         }
 
 
-        void Update() {
+        void FixedUpdate() {
             foreach (var timer in timerPool.getAll()) {
                 timer.updateTimer(Time.deltaTime);
             }
@@ -42,7 +42,7 @@ namespace General {
             timer.TimerManager = this;
         }
 
-        private class Timer {
+        private struct Timer {
             private float endTime;
             private Action action;
             private TimerManager timerManager;
@@ -78,4 +78,3 @@ namespace General {
         }
     }
 }
-
