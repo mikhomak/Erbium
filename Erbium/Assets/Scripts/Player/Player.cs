@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Animators;
 using Characters;
 using Characters.Armour;
@@ -13,8 +12,12 @@ namespace Player {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Stats))]
     public class Player : MonoBehaviour, IPlayer {
-        private static readonly FastEnumIntEqualityComparer<MovementEnum> FastEnumIntEqualityComparer = new FastEnumIntEqualityComparer<MovementEnum>();
-        private readonly Dictionary<MovementEnum, IMovement> movements = new Dictionary<MovementEnum, IMovement>(FastEnumIntEqualityComparer);
+        private static readonly FastEnumIntEqualityComparer<MovementEnum> FastEnumIntEqualityComparer =
+            new FastEnumIntEqualityComparer<MovementEnum>();
+
+        private readonly Dictionary<MovementEnum, IMovement> movements =
+            new Dictionary<MovementEnum, IMovement>(FastEnumIntEqualityComparer);
+
         private IMovement movement;
         private IAnimatorFacade animatorFacade;
         private IMovementDirection movementDirection;
@@ -96,7 +99,7 @@ namespace Player {
                     break;
             }*/
 
-           movement = movements[movementEnum];
+            movement = movements[movementEnum];
             movement.setUp();
         }
 
