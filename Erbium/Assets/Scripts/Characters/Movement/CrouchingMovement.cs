@@ -30,10 +30,9 @@ namespace Characters.Movement {
                 return;
             }
 
-            var velocity =
-                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().CrouchSpeed);
 
-            rbd.velocity = velocity;
+            rbd.velocity =
+                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().CrouchSpeed);
             rotate(direction);
             updateAnimParameters();
         }

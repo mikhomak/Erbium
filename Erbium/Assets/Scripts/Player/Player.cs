@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Animators;
 using Characters;
 using Characters.Armour;
 using Characters.Health;
 using Characters.Movement;
+using General;
 using Player.MovementDirection;
 using UnityEngine;
 
@@ -11,7 +13,8 @@ namespace Player {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Stats))]
     public class Player : MonoBehaviour, IPlayer {
-        private readonly Dictionary<MovementEnum, IMovement> movements = new Dictionary<MovementEnum, IMovement>();
+        private static readonly FastEnumIntEqualityComparer<MovementEnum> FastEnumIntEqualityComparer = new FastEnumIntEqualityComparer<MovementEnum>();
+        private readonly Dictionary<MovementEnum, IMovement> movements = new Dictionary<MovementEnum, IMovement>(FastEnumIntEqualityComparer);
         private IMovement movement;
         private IAnimatorFacade animatorFacade;
         private IMovementDirection movementDirection;
@@ -20,7 +23,7 @@ namespace Player {
         [SerializeField] private Rigidbody rbd;
         [SerializeField] private Stats stats;
         [SerializeField] private CameraView cameraView;
-        
+
         private void Start() {
             rbd = GetComponent<Rigidbody>();
             stats = GetComponent<Stats>();
@@ -78,7 +81,22 @@ namespace Player {
 
         public void changeMovement(MovementEnum movementEnum) {
             movement.cleanUp();
-            movement = movements[movementEnum];
+            /*switch (movementEnum) {
+                case MovementEnum.Crouch:
+                    movement = new CrouchingMovement(this);
+                    break;
+                case MovementEnum.Ground:
+                    movement = new GroundMovement(this);
+                    break;
+                case MovementEnum.Midair:
+                    movement = new MidairMovement(this);
+                    break;
+                case MovementEnum.Slide:
+                    movement = new SlidingMovement(this);
+                    break;
+            }*/
+
+           movement = movements[movementEnum];
             movement.setUp();
         }
 
