@@ -1,26 +1,16 @@
-﻿using Animators;
-using Characters.Movement.Behaviours;
+﻿using Characters.Movement.Behaviours;
 using General;
 using UnityEngine;
 
 namespace Characters.Movement {
-    public class SlidingMovement : IMovement, IFallable, IJumpable {
-        private readonly Rigidbody rbd;
-        private readonly IPhysicsCharacter character;
-        private readonly Transform transform;
-        private readonly IAnimatorFacade animatorFacade;
-
-        public SlidingMovement(IPhysicsCharacter character) {
-            this.character = character;
-            rbd = character.getRigidbody();
-            transform = character.getTransform();
-            animatorFacade = character.getAnimatorFacade();
+    public class SlidingMovement : AbstractMovement, IFallable, IJumpable {
+        public SlidingMovement(IPhysicsCharacter character) : base(character) {
         }
 
-        public void setUp() {
+        public override void setUp() {
         }
 
-        public void move(Vector3 direction) {
+        public override void move(Vector3 direction) {
             if (isFalling()) {
                 changeMovement(MovementEnum.Midair);
                 return;
@@ -46,20 +36,7 @@ namespace Characters.Movement {
             animatorFacade.setSliding(true);
         }
 
-
-        private void rotate(Vector3 direction) {
-            if (direction != Vector3.zero) {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
-                    character.getStats().RotationSpeed);
-            }
-        }
-
-
-        public void changeMovement(MovementEnum movement) {
-            character.changeMovement(movement);
-        }
-
-        public void cleanUp() {
+        public override void cleanUp() {
             animatorFacade.setSliding(false);
         }
 

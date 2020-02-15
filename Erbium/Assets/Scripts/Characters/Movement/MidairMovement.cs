@@ -4,27 +4,20 @@ using General;
 using UnityEngine;
 
 namespace Characters.Movement {
-    public class MidairMovement : IMovement, IJumpable, IFallable {
-        private readonly Rigidbody rbd;
-        private readonly IPhysicsCharacter character;
-        private readonly Transform transform;
-        private readonly IAnimatorFacade animatorFacade;
+    public class MidairMovement : AbstractMovement, IJumpable, IFallable {
+
         private bool oldAboutToLand = false;
 
         private int currentJumps;
 
-        public MidairMovement(IPhysicsCharacter character) {
-            this.character = character;
-            rbd = character.getRigidbody();
-            transform = character.getTransform();
-            animatorFacade = character.getAnimatorFacade();
+        public MidairMovement(IPhysicsCharacter character): base(character) {
         }
 
-        public void setUp() {
+        public override void setUp() {
             currentJumps = character.getStats().MaxJumps;
         }
 
-        public void move(Vector3 direction) {
+        public override void move(Vector3 direction) {
             if (!isFalling()) {
                 animatorFacade.untoggleAirAnimations();
                 changeMovement(MovementEnum.Ground);
@@ -64,12 +57,6 @@ namespace Characters.Movement {
             }
         }
 
-        private void rotate(Vector3 direction) {
-            if (direction != Vector3.zero) {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
-                    character.getStats().RotationSpeed);
-            }
-        }
 
         public void jump() {
             if (currentJumps != 0) {
@@ -78,11 +65,7 @@ namespace Characters.Movement {
             }
         }
 
-        public void changeMovement(MovementEnum movement) {
-            character.changeMovement(movement);
-        }
-
-        public void cleanUp() {
+        public override void cleanUp() {
             animatorFacade.untoggleAirAnimations();
         }
 

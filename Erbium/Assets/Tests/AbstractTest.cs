@@ -5,7 +5,7 @@ using Player;
 using UnityEngine;
 
 namespace Tests {
-    public class AbstractTest {
+    public abstract class AbstractTest {
         protected List<GameObject> gameObjects = new List<GameObject>();
         protected GameObject playerGo;
         protected IPlayer player;

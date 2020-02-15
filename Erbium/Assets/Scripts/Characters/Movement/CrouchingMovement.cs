@@ -1,30 +1,20 @@
-﻿using System;
-using Animators;
+﻿using Animators;
 using Characters.Movement.Behaviours;
 using General;
 using UnityEngine;
 
 namespace Characters.Movement {
-    public class CrouchingMovement : IMovement, IFallable, IJumpable {
-        private readonly Rigidbody rbd;
-        private readonly IPhysicsCharacter character;
-        private readonly Transform transform;
-        private readonly IAnimatorFacade animatorFacade;
+    public class CrouchingMovement : AbstractMovement, IFallable, IJumpable {
 
-        public CrouchingMovement(IPhysicsCharacter character) {
-            this.character = character;
-            rbd = character.getRigidbody();
-            transform = character.getTransform();
-            animatorFacade = character.getAnimatorFacade();
-            animatorFacade.setCrouching(true);
+        public CrouchingMovement(IPhysicsCharacter character) : base(character) {
         }
 
 
-        public void setUp() {
+        public override void setUp() {
             animatorFacade.setCrouching(true);
         }
 
-        public void move(Vector3 direction) {
+        public override void move(Vector3 direction) {
             if (isFalling()) {
                 changeMovement(MovementEnum.Midair);
                 return;
@@ -37,23 +27,11 @@ namespace Characters.Movement {
             updateAnimParameters();
         }
 
-
-        private void rotate(Vector3 direction) {
-            if (direction != Vector3.zero) {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
-                    character.getStats().RotationSpeed);
-            }
-        }
-
         private void updateAnimParameters() {
             animatorFacade.updateInputs();
         }
 
-        public void changeMovement(MovementEnum movement) {
-            character.changeMovement(movement);
-        }
-
-        public void cleanUp() {
+        public override void cleanUp() {
             animatorFacade.setCrouching(false);
         }
 
