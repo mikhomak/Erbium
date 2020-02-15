@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace General {
+namespace General.Util {
     struct FastEnumIntEqualityComparer<TEnum> : IEqualityComparer<TEnum>
         where TEnum : struct {
         static class BoxAvoidance {

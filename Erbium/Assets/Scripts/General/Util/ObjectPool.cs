@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace General {
+namespace General.Util {
     public class ObjectPool<T> where T : new() {
         private readonly ConcurrentBag<T> items = new ConcurrentBag<T>();
         private int counter = 0;
