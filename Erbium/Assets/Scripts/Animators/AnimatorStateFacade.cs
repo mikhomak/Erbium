@@ -20,6 +20,16 @@ namespace Animators {
             attackManager.resetCombo();
         }
 
+        public void makeSureTheCharacterCanComboAttack() {
+            if (!inCombo()) {
+                attackManager.setCombo(true);
+            }
+        }
+
+        public bool inCombo() {
+            return attackManager.inCombo();
+        }
+
         private void makeSureAttackManagerIsNotNull() {
             attackManager = attackManager ?? GetComponentInParent<ICharacter>().getAttackManager();
         }
