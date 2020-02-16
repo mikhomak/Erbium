@@ -3,6 +3,7 @@
         Ground,
         Midair,
         Crouch,
-        Slide
+        Slide,
+        Attack
     }
 }

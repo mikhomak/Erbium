@@ -10,22 +10,10 @@ namespace Animators {
             attackManager = GetComponentInParent<ICharacter>().getAttackManager();
         }
 
-        public void startRangeForAttack() {
-            makeSureAttackManagerIsNotNull();
-            attackManager.addCombo();
-        }
-
-        public void finishRangeForAttack() {
+        public void finishTimeForCombo() {
             makeSureAttackManagerIsNotNull();
             attackManager.resetCombo();
         }
-
-        public void makeSureTheCharacterCanComboAttack() {
-            if (!attackManager.inCombo()) {
-                attackManager.setCombo(true);
-            }
-        }
-
 
         private void makeSureAttackManagerIsNotNull() {
             attackManager = attackManager ?? GetComponentInParent<ICharacter>().getAttackManager();

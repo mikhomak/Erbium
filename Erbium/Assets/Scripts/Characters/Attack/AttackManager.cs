@@ -1,9 +1,11 @@
 ﻿using Animators;
+using Characters.Movement;
+using UnityEngine;
 
 namespace Characters.Attack {
     public class AttackManager : IAttackManager {
         private int currentCombo;
-        private bool canAttack = true;
+        private bool canAttack = true; // ?????
         private bool combo;
         private readonly IAnimatorFacade animatorFacade;
         private readonly ICharacter character;
@@ -15,6 +17,9 @@ namespace Characters.Attack {
 
         public void attack() {
             if (canAttack) {
+                if (character.getMovement() is AttackingMovement == false) {
+                    character.changeMovement(MovementEnum.Attack);
+                }
                 if (combo == false) {
                     animatorFacade.startAttacking(false);
                     canAttack = false;
@@ -37,14 +42,8 @@ namespace Characters.Attack {
             currentCombo = 0;
             canAttack = true;
             animatorFacade.resetAttacks();
+            character.changeMovement(MovementEnum.Ground);
         }
 
-        public void setCombo(bool combo) {
-            this.combo = combo;
-        }
-
-        public bool inCombo() {
-            return combo;
-        }
     }
 }

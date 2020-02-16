@@ -6,16 +6,11 @@ using UnityEngine;
 namespace Animations {
     public class AnimationStateBase : StateMachineBehaviour {
         private IAnimatorFacade animatorFacade;
-        private IAnimatorStateFacade animatorStateFacade;
         [SerializeField] private List<AnimationStateData> animationStatesDatas = new List<AnimationStateData>();
 
 
         public IAnimatorFacade getAnimatorFacade(Animator animator) {
             return animatorFacade ?? (animatorFacade = animator.GetComponentInParent<ICharacter>().getAnimatorFacade());
-        }
-
-        public IAnimatorStateFacade getAnimatorStateFacade(Animator animator) {
-            return animatorStateFacade ?? (animatorStateFacade = animator.GetComponent<IAnimatorStateFacade>());
         }
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

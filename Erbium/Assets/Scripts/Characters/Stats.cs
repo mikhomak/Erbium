@@ -18,6 +18,7 @@ namespace Characters {
         [SerializeField] private float invincibilityTime = 2f;
         [SerializeField] private float headDamageMultiplier = 2f;
         [SerializeField] private float bodyDamageMultiplier = 1f;
+        [SerializeField] private float attackingSpeed = 3f;
 
         
         
@@ -54,6 +55,11 @@ namespace Characters {
         public float SlidingSpeed {
             get => slidingSpeed;
             set => slidingSpeed = value;
+        }
+
+        public float AttackingSpeed {
+            get => attackingSpeed;
+            set => attackingSpeed = value;
         }
 
         public int MaxJumps {

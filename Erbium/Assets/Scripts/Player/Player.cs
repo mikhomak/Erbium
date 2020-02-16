@@ -127,6 +127,7 @@ namespace Player {
             movements.Add(MovementEnum.Midair, new MidairMovement(this));
             movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
             movements.Add(MovementEnum.Slide, new SlidingMovement(this));
+            movements.Add(MovementEnum.Attack, new AttackingMovement(this));
         }
     }
 }
