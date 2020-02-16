@@ -2,6 +2,7 @@
 using Animators;
 using Characters;
 using Characters.Armour;
+using Characters.Attack;
 using Characters.Health;
 using Characters.Movement;
 using General.Util;
@@ -23,6 +24,7 @@ namespace Player {
         private IMovementDirection movementDirection;
         private IHealthComponent healthComponent;
         private IArmour armour;
+        private IAttackManager attackManager;
         [SerializeField] private Rigidbody rbd;
         [SerializeField] private Stats stats;
         [SerializeField] private CameraView cameraView;
@@ -37,6 +39,7 @@ namespace Player {
             movement = movements[MovementEnum.Ground];
             healthComponent = new HealthComponent(this);
             armour = new Armour(this);
+            attackManager = new AttackManager(animatorFacade, this);
         }
 
         private void FixedUpdate() {
@@ -68,6 +71,10 @@ namespace Player {
 
         public IArmour getArmour() {
             return armour;
+        }
+
+        public IAttackManager getAttackManager() {
+            return attackManager;
         }
 
         public Rigidbody getRigidbody() {

@@ -43,8 +43,8 @@ namespace General {
                 }
             }
 
-            if (Input.GetButtonDown($"Fire1") && player.getStats().CanComboAttack) {
-                player.getAnimatorFacade().startAttacking();
+            if (Input.GetButtonDown($"Fire1")) {
+                player.getAttackManager().attack();
             }
         }
 

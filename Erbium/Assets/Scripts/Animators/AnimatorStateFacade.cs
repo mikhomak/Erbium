@@ -1,20 +1,27 @@
 ﻿using Characters;
+using Characters.Attack;
 using UnityEngine;
 
 namespace Animators {
     public class AnimatorStateFacade : MonoBehaviour, IAnimatorStateFacade {
-        private ICharacter character;
+        private IAttackManager attackManager;
 
         private void Start() {
-            character = GetComponentInParent<ICharacter>();
+            attackManager = GetComponentInParent<ICharacter>().getAttackManager();
         }
 
         public void startRangeForAttack() {
-            character.getStats().CanComboAttack = true;
+            makeSureAttackManagerIsNotNull();
+            attackManager.addCombo();
         }
 
         public void finishRangeForAttack() {
-            character.getStats().CanComboAttack = false;
+            makeSureAttackManagerIsNotNull();
+            attackManager.resetCombo();
+        }
+
+        private void makeSureAttackManagerIsNotNull() {
+            attackManager = attackManager ?? GetComponentInParent<ICharacter>().getAttackManager();
         }
     }
 }

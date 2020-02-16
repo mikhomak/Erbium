@@ -1,20 +1,35 @@
-﻿namespace Characters.Attack {
+﻿using Animators;
+
+namespace Characters.Attack {
     public class AttackManager: IAttackManager {
 
         private int currentCombo;
-        private bool attacking;
-        
+        private bool canAttack;
+        private bool combo;
+        private readonly IAnimatorFacade animatorFacade;
+        private readonly ICharacter character;
+
+        public AttackManager(IAnimatorFacade animatorFacade, ICharacter character) {
+            this.animatorFacade = animatorFacade;
+            this.character = character;
+        }
+
         public void attack() {
-            
+            if (!combo) {
+                animatorFacade.startAttacking();
+            }
+            else {
+                animatorFacade.
+            }
         }
 
         public void addCombo() {
-            attacking = true;
+            combo = true;
             currentCombo++;
         }
 
         public void resetCombo() {
-            attacking = false;
+            combo = false;
             currentCombo = 0;
         }
     }
