@@ -18,7 +18,6 @@ namespace Characters {
         [SerializeField] private float invincibilityTime = 2f;
         [SerializeField] private float headDamageMultiplier = 2f;
         [SerializeField] private float bodyDamageMultiplier = 1f;
-        [SerializeField] private bool canComboAttack = false;
 
         
         
@@ -102,9 +101,6 @@ namespace Characters {
             set => bodyDamageMultiplier = value;
         }
 
-        public bool CanComboAttack {
-            get => canComboAttack;
-            set => canComboAttack = value;
-        }
+
     }
 }
