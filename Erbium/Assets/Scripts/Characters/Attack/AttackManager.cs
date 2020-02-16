@@ -1,10 +1,10 @@
 ﻿using Animators;
 
 namespace Characters.Attack {
-    public class AttackManager: IAttackManager {
-
+    public class AttackManager : IAttackManager {
         private int currentCombo;
-        private bool canAttack;
+        private bool canAttack = true;
+        private bool attacking;
         private bool combo;
         private readonly IAnimatorFacade animatorFacade;
         private readonly ICharacter character;
@@ -15,22 +15,31 @@ namespace Characters.Attack {
         }
 
         public void attack() {
-            if (!combo) {
-                animatorFacade.startAttacking();
-            }
-            else {
-                animatorFacade.
+            if (canAttack) {
+                if (attacking == false && combo == false) {
+                    animatorFacade.startAttacking(false);
+                    attacking = true;
+                    canAttack = false;
+                }
+                else {
+                    animatorFacade.startAttacking(true);
+                    canAttack = false;
+                }
             }
         }
 
         public void addCombo() {
             combo = true;
             currentCombo++;
+            attacking = true;
+            canAttack = true;
         }
 
         public void resetCombo() {
             combo = false;
             currentCombo = 0;
+            attacking = false;
+            canAttack = true;
         }
     }
 }

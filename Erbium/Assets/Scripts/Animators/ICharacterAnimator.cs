@@ -14,5 +14,6 @@ namespace Animators {
         void setUnskippable(bool unskippable);
         void setSliding(bool sliding);
         void setAttacking();
+        void setComboAttack();
     }
 }

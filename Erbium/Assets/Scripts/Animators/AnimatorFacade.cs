@@ -56,9 +56,13 @@ namespace Animators {
             characterAnimator.setSliding(sliding);
         }
 
-        public void startAttacking() {
-            characterAnimator.setAttacking();
-            character.getStats().CanComboAttack = false;
+        public void startAttacking(bool combo) {
+            if (combo) {
+                characterAnimator.setComboAttack();
+            }
+            else {
+                characterAnimator.setAttacking();
+            }
         }
 
         public void setUnskippable(bool unskippable) {

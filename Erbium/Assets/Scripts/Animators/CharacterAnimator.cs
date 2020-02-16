@@ -13,6 +13,7 @@ namespace Animators {
         private static readonly int Unskippable = Animator.StringToHash("unskippable");
         private static readonly int Sliding = Animator.StringToHash("sliding");
         private static readonly int Attacking = Animator.StringToHash("attacking");
+        private static readonly int ComboAttack = Animator.StringToHash("comboAttack");
 
         private void OnEnable() {
             animator = GetComponent<Animator>();
@@ -66,6 +67,10 @@ namespace Animators {
 
         public void setAttacking() {
             animator.SetTrigger(Attacking);
+        }
+
+        public void setComboAttack() {
+            animator.SetTrigger(ComboAttack);
         }
     }
 }
