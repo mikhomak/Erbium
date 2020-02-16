@@ -65,6 +65,11 @@ namespace Animators {
             }
         }
 
+        public void resetAttacks() {
+            characterAnimator.resetAttacking();
+            characterAnimator.resetComboAttack();
+        }
+
         public void setUnskippable(bool unskippable) {
             this.unskippable = unskippable;
             characterAnimator.setUnskippable(unskippable);

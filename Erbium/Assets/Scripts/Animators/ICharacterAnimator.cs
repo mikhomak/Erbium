@@ -15,5 +15,7 @@ namespace Animators {
         void setSliding(bool sliding);
         void setAttacking();
         void setComboAttack();
+        void resetComboAttack();
+        void resetAttacking();
     }
 }

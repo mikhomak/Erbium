@@ -36,6 +36,7 @@ namespace Characters.Attack {
             combo = false;
             currentCombo = 0;
             canAttack = true;
+            animatorFacade.resetAttacks();
         }
 
         public void setCombo(bool combo) {

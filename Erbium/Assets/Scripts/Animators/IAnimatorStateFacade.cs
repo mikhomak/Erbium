@@ -3,6 +3,5 @@
         void startRangeForAttack();
         void finishRangeForAttack();
         void makeSureTheCharacterCanComboAttack();
-        bool inCombo();
     }
 }

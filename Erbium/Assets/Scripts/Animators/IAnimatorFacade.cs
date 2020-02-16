@@ -11,5 +11,6 @@
         void setCrouching(bool crouching);
         void setSliding(bool sliding);
         void startAttacking(bool combo);
+        void resetAttacks();
     }
 }

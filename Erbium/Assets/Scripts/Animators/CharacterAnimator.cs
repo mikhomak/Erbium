@@ -72,5 +72,13 @@ namespace Animators {
         public void setComboAttack() {
             animator.SetTrigger(ComboAttack);
         }
+
+        public void resetComboAttack() {
+            animator.ResetTrigger(ComboAttack);
+        }
+
+        public void resetAttacking() {
+            animator.ResetTrigger(Attacking);
+        }
     }
 }
