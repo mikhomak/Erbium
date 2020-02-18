@@ -23,6 +23,10 @@ namespace Characters.Movement {
             
         }
 
+        protected virtual void addVelocity(Vector3 movementVector) {
+            rbd.velocity = movementVector;
+        }
+        
         protected virtual void rotate(Vector3 direction) {
             if (direction != Vector3.zero) {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),

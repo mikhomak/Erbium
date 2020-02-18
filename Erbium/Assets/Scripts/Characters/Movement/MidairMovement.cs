@@ -25,9 +25,9 @@ namespace Characters.Movement {
             }
 
             updateAnimations(direction);
-            var newDirection =
-                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().AirSpeed);
-            rbd.velocity = newDirection;
+            addVelocity(
+                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().AirSpeed));
+            
             calculateVelocity();
             rotate(direction);
         }
