@@ -2,26 +2,27 @@
 
 namespace Characters {
     public class Stats : MonoBehaviour {
+        [Header("Movement speed")]
         [SerializeField] private float speed = 10f;
         [SerializeField] private float airSpeed = 5f;
         [SerializeField] private float rotationSpeed = 0.1f;
-        [SerializeField] private float jumpForce = 10f;
-        [SerializeField] private float additionalGravityForce = 20f;
         [SerializeField] private float crouchSpeed = 6f;
         [SerializeField] private float slidingSpeed = 15f;
+        [SerializeField] private float movementSpeedAttacking = 3f;
+        [Header("Jumping/falling")]
+        [SerializeField] private float jumpForce = 10f;
+        [SerializeField] private float additionalGravityForce = 20f;
         [SerializeField] private int maxJumps = 2;
         [SerializeField] private float maxDownVelocity = -20f;
-        [SerializeField] private float physicArmour = 2f;
+        [Header("Armour")] [SerializeField] private float physicArmour = 2f;
         [SerializeField] private float magicArmour = 1f;
         [SerializeField] private float toxicArmour = 0.5f;
-        [SerializeField] private float health = 100f;
+        [Header("Health")] [SerializeField] private float health = 100f;
         [SerializeField] private float invincibilityTime = 2f;
         [SerializeField] private float headDamageMultiplier = 2f;
         [SerializeField] private float bodyDamageMultiplier = 1f;
-        [SerializeField] private float attackingSpeed = 3f;
 
-        
-        
+
         public float JumpForce {
             get => jumpForce;
             set => jumpForce = value;
@@ -57,9 +58,9 @@ namespace Characters {
             set => slidingSpeed = value;
         }
 
-        public float AttackingSpeed {
-            get => attackingSpeed;
-            set => attackingSpeed = value;
+        public float MovementSpeedAttacking {
+            get => movementSpeedAttacking;
+            set => movementSpeedAttacking = value;
         }
 
         public int MaxJumps {
@@ -106,7 +107,5 @@ namespace Characters {
             get => bodyDamageMultiplier;
             set => bodyDamageMultiplier = value;
         }
-
-
     }
 }

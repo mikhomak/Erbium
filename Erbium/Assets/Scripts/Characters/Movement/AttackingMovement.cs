@@ -8,6 +8,7 @@ namespace Characters.Movement {
         }
 
         public override void setUp() {
+            rbd.AddForce(rbd.velocity.normalized, ForceMode.Impulse);
         }
 
         public override void move(Vector3 direction) {
@@ -17,8 +18,8 @@ namespace Characters.Movement {
             }
 
 
-            rbd.velocity =
-                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().AttackingSpeed);
+            rbd.AddForce(
+                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().MovementSpeedAttacking));
             rotate(direction);
             updateAnimParameters();
         }
