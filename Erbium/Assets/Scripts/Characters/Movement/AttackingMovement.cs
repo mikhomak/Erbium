@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace Characters.Movement {
     public class AttackingMovement: AbstractMovement, IFallable {
+        private readonly Animator animator;
+        
         public AttackingMovement(IPhysicsCharacter character) : base(character) {
+            animator = character.getAnimatorFacade().getAnimator();
         }
 
         public override void setUp() {
-            rbd.AddForce(rbd.velocity.normalized, ForceMode.Impulse);
+            animator.applyRootMotion = true;
         }
 
         public override void move(Vector3 direction) {
@@ -18,8 +21,7 @@ namespace Characters.Movement {
             }
 
 
-            rbd.AddForce(
-                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().MovementSpeedAttacking));
+            
             rotate(direction);
             updateAnimParameters();
         }
@@ -29,6 +31,7 @@ namespace Characters.Movement {
         }
 
         public override void cleanUp() {
+            animator.applyRootMotion = false;
         }
 
         public bool isFalling() {

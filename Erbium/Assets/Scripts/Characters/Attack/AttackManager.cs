@@ -14,15 +14,15 @@ namespace Characters.Attack {
             this.character = character;
         }
 
-        public void attack() {
+        public void attack(bool fast) {
                 if (character.getMovement() is AttackingMovement == false) {
                     character.changeMovement(MovementEnum.Attack);
                 }
                 if (combo == false) {
-                    animatorFacade.startAttacking(false);
+                    animatorFacade.startAttacking(fast,false);
                 }
                 else {
-                    animatorFacade.startAttacking(true);
+                    animatorFacade.startAttacking(fast,true);
                 }
         }
 

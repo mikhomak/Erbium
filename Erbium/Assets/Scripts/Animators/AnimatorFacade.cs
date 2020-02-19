@@ -1,5 +1,6 @@
 ﻿using Characters;
 using General;
+using UnityEngine;
 
 namespace Animators {
     public class AnimatorFacade : IAnimatorFacade {
@@ -12,6 +13,10 @@ namespace Animators {
             this.character = character;
         }
 
+
+        public Animator getAnimator() {
+            return characterAnimator.getAnimator();
+        }
 
         public void updateInputs() {
             setInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getMagnitude());
@@ -56,12 +61,17 @@ namespace Animators {
             characterAnimator.setSliding(sliding);
         }
 
-        public void startAttacking(bool combo) {
+        public void startAttacking(bool fast, bool combo) {
             if (combo) {
                 characterAnimator.setComboAttack();
             }
             else {
-                characterAnimator.setAttacking();
+                if (fast) {
+                    characterAnimator.triggerFastAttack();
+                }
+                else {
+                    characterAnimator.setAttacking();
+                }
             }
         }
 
@@ -75,7 +85,7 @@ namespace Animators {
             characterAnimator.setUnskippable(unskippable);
         }
 
-        
+
         private bool checkIfUnskippable(bool stateToCheck) {
             return !unskippable && stateToCheck;
         }

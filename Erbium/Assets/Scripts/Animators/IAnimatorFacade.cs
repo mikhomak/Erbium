@@ -1,5 +1,8 @@
-﻿namespace Animators {
+﻿using UnityEngine;
+
+namespace Animators {
     public interface IAnimatorFacade {
+        Animator getAnimator();
         void updateInputs();
         void setInputs(float horInput, float verInput, float inputMagnitude);
         void setGroundVelocity(float groundVelocity);
@@ -10,7 +13,7 @@
         void setJumping(bool jumping);
         void setCrouching(bool crouching);
         void setSliding(bool sliding);
-        void startAttacking(bool combo);
+        void startAttacking(bool fast, bool combo);
         void resetAttacks();
     }
 }

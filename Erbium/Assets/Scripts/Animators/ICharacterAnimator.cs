@@ -14,6 +14,7 @@ namespace Animators {
         void setUnskippable(bool unskippable);
         void setSliding(bool sliding);
         void setAttacking();
+        void triggerFastAttack();
         void setComboAttack();
         void resetComboAttack();
         void resetAttacking();
