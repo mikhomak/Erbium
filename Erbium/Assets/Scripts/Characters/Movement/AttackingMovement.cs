@@ -11,7 +11,7 @@ namespace Characters.Movement {
         }
 
         public override void setUp() {
-            animator.applyRootMotion = true;
+            animator.applyRootMotion = false;
         }
 
         public override void move(Vector3 direction) {

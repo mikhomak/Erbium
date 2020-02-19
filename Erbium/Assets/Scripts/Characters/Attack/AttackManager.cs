@@ -15,6 +15,8 @@ namespace Characters.Attack {
         }
 
         public void attack(bool fast) {
+            Debug.Log(currentCombo);
+            Debug.Log(combo);
                 if (character.getMovement() is AttackingMovement == false) {
                     character.changeMovement(MovementEnum.Attack);
                 }
