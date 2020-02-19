@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -116,8 +116,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 609, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 679, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
   controlID: 74
 --- !u!114 &6
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 0
     width: 924
     height: 947
-  m_MinSize: {x: 101, y: 242}
+  m_MinSize: {x: 201, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 187
+  controlID: 186
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TestRunnerWindow
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -193,15 +193,15 @@ MonoBehaviour:
     y: 541
     width: 924
     height: 406
-  m_MinSize: {x: 101, y: 121}
+  m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,8 +223,8 @@ MonoBehaviour:
     y: 0
     width: 439
     height: 947
-  m_MinSize: {x: 232, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 202, y: 342}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
   controlID: 103
 --- !u!114 &10
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -272,14 +272,14 @@ MonoBehaviour:
     y: 517
     width: 439
     height: 430
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 21}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 21}
   - {fileID: 22}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -433,9 +433,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 1.4655025, z: 0.07350001}
+    m_Target: {x: -1.6439217, y: 0.85084254, z: -0.65418863}
     speed: 2
-    m_Value: {x: 0, y: 1.4655025, z: 0.07350001}
+    m_Value: {x: -1.6439217, y: 0.85084254, z: -0.65418863}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -481,13 +481,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0026282135, y: 0.81171626, z: 0.00365229, w: -0.5840418}
+    m_Target: {x: -0.0877066, y: 0.86860144, z: -0.16614956, w: -0.4585192}
     speed: 2
-    m_Value: {x: 0.0026282026, y: 0.81171286, z: 0.0036522748, w: -0.58403933}
+    m_Value: {x: -0.08770632, y: 0.86859864, z: -0.16614902, w: -0.4585177}
   m_Size:
-    m_Target: 3.1419864
+    m_Target: 4.941987
     speed: 2
-    m_Value: 3.1419864
+    m_Value: 4.941987
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -573,14 +573,14 @@ MonoBehaviour:
     - {fileID: 284827282178879496, guid: c4aadaf9c6d619245b2c29ff98654637, type: 2}
     - {fileID: -3640240180003046783, guid: c4aadaf9c6d619245b2c29ff98654637, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.29353318
+    - e00: 0.60485256
       e01: 0
       e02: 0
-      e03: 175.0639
+      e03: -297.036
       e10: 0
-      e11: 0.29353318
+      e11: 0.60485256
       e12: 0
-      e13: -7.388962
+      e13: -59.667175
       e20: 0
       e21: 0
       e22: 1
@@ -621,14 +621,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.6347682
+    - e00: 0.6368155
       e01: 0
       e02: 0
-      e03: 5.363037
+      e03: -12.736206
       e10: 0
-      e11: 0.6347682
+      e11: 0.6368155
       e12: 0
-      e13: 97.61832
+      e13: -24.054688
       e20: 0
       e21: 0
       e22: 1
@@ -637,14 +637,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.6990397
+    - e00: 0.41019672
       e01: 0
       e02: 0
-      e03: -70.1069
+      e03: -41.99176
       e10: 0
-      e11: 0.6990397
+      e11: 0.41019672
       e12: 0
-      e13: 151.02701
+      e13: 193.1557
       e20: 0
       e21: 0
       e22: 1
@@ -653,14 +653,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.7365151
+    - e00: 0.6159057
       e01: 0
       e02: 0
-      e03: -134.79236
+      e03: -23.587463
       e10: 0
-      e11: 0.7365151
+      e11: 0.6159057
       e12: 0
-      e13: 182.38562
+      e13: 156.58766
       e20: 0
       e21: 0
       e22: 1
@@ -676,14 +676,11 @@ MonoBehaviour:
   - m_Target: {fileID: -9199580218652229691, guid: c4aadaf9c6d619245b2c29ff98654637,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
-  - m_Target: {fileID: -3640240180003046783, guid: c4aadaf9c6d619245b2c29ff98654637,
-      type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
   blendTreeGraphGUI: {fileID: 0}
-  m_AutoLiveLink: 0
+  m_AutoLiveLink: 1
   m_MiniTool: 0
   m_LockTracker:
     m_IsLocked: 1
@@ -717,7 +714,7 @@ MonoBehaviour:
     height: 520
   m_ViewDataDictionary: {fileID: 0}
   m_VertSplit:
-    ID: 32979
+    ID: 5918
     splitterInitialOffset: 212
     currentActiveSplitter: -1
     realSizes: c000000033010000
@@ -1252,7 +1249,7 @@ MonoBehaviour:
       name: Erbium
       fullName: Erbium
       resultStatus: 2
-      duration: 12.400958
+      duration: 35.876904
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1268,7 +1265,7 @@ MonoBehaviour:
       name: Tests.dll
       fullName: O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll
       resultStatus: 2
-      duration: 12.359897
+      duration: 35.756493
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1284,7 +1281,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 2
-      duration: 12.339453
+      duration: 35.713852
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1300,7 +1297,7 @@ MonoBehaviour:
       name: CrouchingMovementTest
       fullName: Tests.CrouchingMovementTest
       resultStatus: 1
-      duration: 1.2772052
+      duration: 5.9074445
       messages: 
       output: 
       stacktrace: 
@@ -1316,7 +1313,7 @@ MonoBehaviour:
       name: crouchTest
       fullName: Tests.CrouchingMovementTest.crouchTest
       resultStatus: 1
-      duration: 1.2458484
+      duration: 5.8013387
       messages: 
       output: 
       stacktrace: 
@@ -1333,7 +1330,7 @@ MonoBehaviour:
       name: GroundMovementTest
       fullName: Tests.GroundMovementTest
       resultStatus: 1
-      duration: 1.114811
+      duration: 1.2282706
       messages: 
       output: 
       stacktrace: 
@@ -1349,7 +1346,7 @@ MonoBehaviour:
       name: initalizeGroundMovementTest
       fullName: Tests.GroundMovementTest.initalizeGroundMovementTest
       resultStatus: 1
-      duration: 0.0403054
+      duration: 0.0918499
       messages: 
       output: 
       stacktrace: 
@@ -1366,7 +1363,7 @@ MonoBehaviour:
       name: moveTest
       fullName: Tests.GroundMovementTest.moveTest
       resultStatus: 1
-      duration: 1.0643247
+      duration: 1.1084611
       messages: 
       output: 
       stacktrace: 
@@ -1383,7 +1380,7 @@ MonoBehaviour:
       name: MidAirMovementTest
       fullName: Tests.MidAirMovementTest
       resultStatus: 1
-      duration: 3.312853
+      duration: 19.740042
       messages: 
       output: 
       stacktrace: 
@@ -1399,7 +1396,7 @@ MonoBehaviour:
       name: fallingTest
       fullName: Tests.MidAirMovementTest.fallingTest
       resultStatus: 1
-      duration: 1.0649141
+      duration: 17.392916
       messages: 
       output: 
       stacktrace: 
@@ -1416,7 +1413,7 @@ MonoBehaviour:
       name: initTest
       fullName: Tests.MidAirMovementTest.initTest
       resultStatus: 1
-      duration: 1.048492
+      duration: 1.118237
       messages: 
       output: 
       stacktrace: 
@@ -1433,7 +1430,7 @@ MonoBehaviour:
       name: landingTest
       fullName: Tests.MidAirMovementTest.landingTest
       resultStatus: 1
-      duration: 1.1824135
+      duration: 1.2152092
       messages: 
       output: 
       stacktrace: 
@@ -1450,7 +1447,7 @@ MonoBehaviour:
       name: PlayerHealthTest
       fullName: Tests.PlayerHealthTest
       resultStatus: 1
-      duration: 1.3658578
+      duration: 3.0209417
       messages: 
       output: 
       stacktrace: 
@@ -1466,7 +1463,7 @@ MonoBehaviour:
       name: die
       fullName: Tests.PlayerHealthTest.die
       resultStatus: 1
-      duration: 0.0847524
+      duration: 0.2443693
       messages: 
       output: 
       stacktrace: 
@@ -1483,7 +1480,7 @@ MonoBehaviour:
       name: playerTakeDamage
       fullName: Tests.PlayerHealthTest.playerTakeDamage
       resultStatus: 1
-      duration: 0.0493921
+      duration: 0.0464252
       messages: 
       output: 
       stacktrace: 
@@ -1500,7 +1497,7 @@ MonoBehaviour:
       name: playerTakeDamageFromProjectile
       fullName: Tests.PlayerHealthTest.playerTakeDamageFromProjectile
       resultStatus: 1
-      duration: 1.0641183
+      duration: 2.1901836
       messages: 
       output: 
       stacktrace: 
@@ -1517,7 +1514,7 @@ MonoBehaviour:
       name: playerTakeDamageWithMagicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithMagicArmour
       resultStatus: 1
-      duration: 0.0512119
+      duration: 0.4345344
       messages: 
       output: 
       stacktrace: 
@@ -1534,7 +1531,7 @@ MonoBehaviour:
       name: playerTakeDamageWithPhysicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithPhysicArmour
       resultStatus: 1
-      duration: 0.0486383
+      duration: 0.0371384
       messages: 
       output: 
       stacktrace: 
@@ -1551,7 +1548,7 @@ MonoBehaviour:
       name: playerTakeDamageWithToxicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithToxicArmour
       resultStatus: 1
-      duration: 0.0504134
+      duration: 0.0516767
       messages: 
       output: 
       stacktrace: 
@@ -1568,7 +1565,7 @@ MonoBehaviour:
       name: PlayerTest
       fullName: Tests.PlayerTest
       resultStatus: 1
-      duration: 0.0653376
+      duration: 0.061852
       messages: 
       output: 
       stacktrace: 
@@ -1584,7 +1581,7 @@ MonoBehaviour:
       name: initalizePlayer
       fullName: Tests.PlayerTest.initalizePlayer
       resultStatus: 1
-      duration: 0.0504646
+      duration: 0.0493093
       messages: 
       output: 
       stacktrace: 
@@ -1601,7 +1598,7 @@ MonoBehaviour:
       name: SlidingMovementTest
       fullName: Tests.SlidingMovementTest
       resultStatus: 1
-      duration: 1.080854
+      duration: 1.6020849
       messages: 
       output: 
       stacktrace: 
@@ -1617,7 +1614,7 @@ MonoBehaviour:
       name: slideTest
       fullName: Tests.SlidingMovementTest.slideTest
       resultStatus: 1
-      duration: 1.064978
+      duration: 1.5848637
       messages: 
       output: 
       stacktrace: 
@@ -1634,7 +1631,7 @@ MonoBehaviour:
       name: TimerManagerTest
       fullName: Tests.TimerManagerTest
       resultStatus: 2
-      duration: 4.102011
+      duration: 4.135456
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1650,7 +1647,7 @@ MonoBehaviour:
       name: timerTest
       fullName: Tests.TimerManagerTest.timerTest
       resultStatus: 2
-      duration: 4.0850906
+      duration: 4.1219587
       messages: "  Expected: True\r\n  But was:  False\r\n"
       output: 
       stacktrace: 'at Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x00098]
@@ -1669,10 +1666,10 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1012
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.TimerManagerTest][suite]
-    m_ResultText: playerTakeDamageWithToxicArmour (0.050s)
+    m_ResultText: playerTakeDamageWithToxicArmour (0.052s)
     m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 168}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: bb080d85
       m_LastClickedID: -2062743365
       m_ExpandedIDs: 12b088b1fd4c0deb39ad96ec8513a0f3583a6922b20a89253354b2268359db417dc7445e2c4f276393e5576cffffff7f
@@ -1780,7 +1777,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 14252
+  m_LastSelectedObjectID: 14256
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1810,9 +1807,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: fedaffff1cdbffff68f3ffff42fbffffb0370000
+      m_SelectedIDs: e882feff
+      m_LastClickedID: -97560
+      m_ExpandedIDs: f082feff0e83feff7e9bfeff54fbffffb0370000728b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1875,21 +1872,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Characters/Movement
+    - Assets/Animation states
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 44
   m_LastFolders:
-  - Assets/Scripts/Characters/Movement
+  - Assets/Animation states
   m_LastFoldersGridSize: 44
   m_LastProjectPath: O:\Projects\Unity\Erbium\Erbium
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 063c0000
-    m_LastClickedID: 15366
-    m_ExpandedIDs: 00000000b43b0000b63b0000b83b0000ba3b0000bc3b0000be3b0000c03b0000c23b0000c43b0000ce3b000000ca9a3b
+    m_SelectedIDs: cc3b0000
+    m_LastClickedID: 15308
+    m_ExpandedIDs: 00000000b43b0000b63b0000b83b0000ba3b0000bc3b0000be3b0000c03b0000c23b0000c43b0000063c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1942,8 +1939,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: e83a0000
+    m_LastClickedInstanceID: 15080
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0236000012380000a634000086460000383c0000343c0000424300005c440000685700006c57000064570000c05a00004a7f000068800000a83700000000000028770000
     m_RenameOverlay:
