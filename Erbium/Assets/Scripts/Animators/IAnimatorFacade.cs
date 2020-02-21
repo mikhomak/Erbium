@@ -13,7 +13,8 @@ namespace Animators {
         void setJumping(bool jumping);
         void setCrouching(bool crouching);
         void setSliding(bool sliding);
-        void startAttacking(bool fast, bool combo);
+        void startAttacking(bool combo);
+        void fastAttack(bool combo);
         void resetAttacks();
     }
 }

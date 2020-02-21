@@ -61,17 +61,21 @@ namespace Animators {
             characterAnimator.setSliding(sliding);
         }
 
-        public void startAttacking(bool fast, bool combo) {
+        public void startAttacking(bool combo) {
             if (combo) {
                 characterAnimator.setComboAttack();
             }
             else {
-                if (fast) {
-                    characterAnimator.triggerFastAttack();
-                }
-                else {
-                    characterAnimator.setAttacking();
-                }
+                characterAnimator.setAttacking();
+            }
+        }
+
+        public void fastAttack(bool combo) {
+            if (combo) {
+                characterAnimator.setComboAttack();
+            }
+            else {
+                characterAnimator.triggerFastAttack();
             }
         }
 

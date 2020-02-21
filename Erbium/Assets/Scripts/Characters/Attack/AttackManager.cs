@@ -1,6 +1,5 @@
 ﻿using Animators;
 using Characters.Movement;
-using UnityEngine;
 
 namespace Characters.Attack {
     public class AttackManager : IAttackManager {
@@ -14,24 +13,22 @@ namespace Characters.Attack {
             this.character = character;
         }
 
-        public void attack(bool fast) {
-            Debug.Log(currentCombo);
-            Debug.Log(combo);
-                if (character.getMovement() is AttackingMovement == false) {
-                    character.changeMovement(MovementEnum.Attack);
-                }
-                if (combo == false) {
-                    animatorFacade.startAttacking(fast,false);
-                }
-                else {
-                    animatorFacade.startAttacking(fast,true);
-                }
+        public void attack() {
+            makeSureItsAttackingMovement();
+            animatorFacade.startAttacking(combo);
         }
+
+        public void fastAttack() {
+            makeSureItsAttackingMovement();
+            animatorFacade.fastAttack(combo);
+        }
+
 
         public void addCombo() {
             combo = true;
             currentCombo++;
         }
+
 
         public void resetCombo() {
             combo = false;
@@ -40,5 +37,10 @@ namespace Characters.Attack {
             character.changeMovement(MovementEnum.Ground);
         }
 
+        private void makeSureItsAttackingMovement() {
+            if (character.getMovement() is AttackingMovement == false) {
+                character.changeMovement(MovementEnum.Attack);
+            }
+        }
     }
 }
