@@ -16,7 +16,7 @@ namespace Characters.Movement {
             }
 
             var velocity =
-                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().Speed);
+                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, character.getStats().Speed);
 
             rbd.velocity = velocity;
             rotate(direction);

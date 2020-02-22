@@ -22,7 +22,7 @@ namespace Characters.Movement {
             }
 
             var velocity =
-                CommonMethods.createVectorWithoutLoosingY(direction, rbd.velocity.y, character.getStats().SlidingSpeed);
+                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, character.getStats().SlidingSpeed);
 
             rbd.velocity = velocity;
             rotate(direction);

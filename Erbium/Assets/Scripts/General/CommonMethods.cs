@@ -26,8 +26,9 @@ namespace General {
             Debug.DrawRay(origin,
                 Vector3.down * length +
                 direction * length, Color.red);
-            
-            return Physics.Raycast(origin, Vector3.down * length + direction.normalized * length, out _, length, GROUND_LAYER);
+
+            return Physics.Raycast(origin, Vector3.down * length + direction.normalized * length, out _, length,
+                GROUND_LAYER);
         }
 
         public static Vector3 getPositionRaycastLifted(Vector3 position) {
@@ -42,11 +43,15 @@ namespace General {
             return res;
         }
 
-        public static Vector3 createVectorWithoutLoosingY(Vector3 vector, float y, float multiplier) {
+        public static Vector3 createVectorWithoutLoosingYWithMultiplier(Vector3 vector, float y, float multiplier) {
             var result = new Vector3(vector.x, 0, vector.z);
             result *= multiplier;
             result.y = y;
             return result;
+        }
+
+        public static Vector3 createVectorWithoutLoosingY(Vector3 vector, float y) {
+            return new Vector3(vector.x, y, vector.z);
         }
 
         public static float calculateGroundVelocity(Vector3 velocity) {
@@ -60,6 +65,11 @@ namespace General {
             var res = vector;
             res.y = y;
             return res;
+        }
+
+
+        public static Vector3 createVectorWith0InY(Vector3 vector3) {
+            return new Vector3(vector3.x, 0, vector3.z);
         }
 
         public static float getValueInRange(float multiplier, float min, float max) {

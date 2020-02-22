@@ -3,15 +3,16 @@ using General;
 using UnityEngine;
 
 namespace Characters.Movement {
-    public class AttackingMovement: AbstractMovement, IFallable {
+    public class AttackingMovement : AbstractMovement, IFallable, IRootMotion {
         private readonly Animator animator;
-        
+        private Vector3 rootMotionAdditionalPosition;
+
         public AttackingMovement(IPhysicsCharacter character) : base(character) {
             animator = character.getAnimatorFacade().getAnimator();
         }
 
         public override void setUp() {
-            animator.applyRootMotion = false;
+            startRootMotion();
         }
 
         public override void move(Vector3 direction) {
@@ -20,8 +21,10 @@ namespace Characters.Movement {
                 return;
             }
 
+            var position = rbd.position;
+            rbd.MovePosition(
+                CommonMethods.createVectorWithoutLoosingY(position + rootMotionAdditionalPosition, position.y));
 
-            
             rotate(direction);
             updateAnimParameters();
         }
@@ -31,11 +34,24 @@ namespace Characters.Movement {
         }
 
         public override void cleanUp() {
-            animator.applyRootMotion = false;
+            finishRootMotion();
         }
 
         public bool isFalling() {
             return !CommonMethods.onGround(transform.position);
+        }
+
+        public void startRootMotion() {
+            animator.applyRootMotion = true;
+        }
+
+
+        public void setRootMotionAdditionalPosition(Vector3 position) {
+            rootMotionAdditionalPosition = position;
+        }
+
+        public void finishRootMotion() {
+            animator.applyRootMotion = false;
         }
     }
 }

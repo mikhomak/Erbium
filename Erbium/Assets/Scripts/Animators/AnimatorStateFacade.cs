@@ -1,13 +1,19 @@
 ﻿using Characters;
 using Characters.Attack;
+using Characters.Movement;
+using Characters.Movement.Behaviours;
 using UnityEngine;
 
 namespace Animators {
     public class AnimatorStateFacade : MonoBehaviour, IAnimatorStateFacade {
         private IAttackManager attackManager;
+        private Animator animator;
+        private ICharacter character;
 
         private void Start() {
-            attackManager = GetComponentInParent<ICharacter>().getAttackManager();
+            character = GetComponentInParent<ICharacter>();
+            attackManager = character.getAttackManager();
+            animator = GetComponent<Animator>();
         }
 
         public void finishTimeForCombo() {
@@ -16,7 +22,14 @@ namespace Animators {
         }
 
         private void makeSureAttackManagerIsNotNull() {
-            attackManager = attackManager ?? GetComponentInParent<ICharacter>().getAttackManager();
+            attackManager = attackManager ?? character.getAttackManager();
+        }
+
+
+        private void OnAnimatorMove() {
+            var movement = character.getMovement();
+            if (!animator || !(movement is AttackingMovement) || !(movement is IRootMotion)) return;
+            ((IRootMotion) movement).setRootMotionAdditionalPosition(animator.deltaPosition);
         }
     }
 }
