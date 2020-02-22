@@ -12,7 +12,7 @@ namespace Animators {
         private static readonly int Crouching = Animator.StringToHash("crouching");
         private static readonly int Unskippable = Animator.StringToHash("unskippable");
         private static readonly int Sliding = Animator.StringToHash("sliding");
-        private static readonly int Attacking = Animator.StringToHash("attacking");
+        private static readonly int StrongAttack = Animator.StringToHash("strongAttack");
         private static readonly int ComboAttack = Animator.StringToHash("comboAttack");
         private static readonly int FastAttack = Animator.StringToHash("fastAttack");
 
@@ -66,8 +66,8 @@ namespace Animators {
             animator.SetBool(Sliding, sliding);
         }
 
-        public void setAttacking() {
-            animator.SetTrigger(Attacking);
+        public void triggerStrongAttack() {
+            animator.SetTrigger(StrongAttack);
         }
 
         public void triggerFastAttack() {
@@ -82,8 +82,14 @@ namespace Animators {
             animator.ResetTrigger(ComboAttack);
         }
 
-        public void resetAttacking() {
-            animator.ResetTrigger(Attacking);
+        public void resetStrongAttack() {
+            animator.ResetTrigger(StrongAttack);
         }
+
+        public void resetFastAttack() {
+            animator.ResetTrigger(FastAttack);
+        }
+
+
     }
 }

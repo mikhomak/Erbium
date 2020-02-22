@@ -61,12 +61,12 @@ namespace Animators {
             characterAnimator.setSliding(sliding);
         }
 
-        public void startAttacking(bool combo) {
+        public void strongAttack(bool combo) {
             if (combo) {
                 characterAnimator.setComboAttack();
             }
             else {
-                characterAnimator.setAttacking();
+                characterAnimator.triggerStrongAttack();
             }
         }
 
@@ -80,7 +80,8 @@ namespace Animators {
         }
 
         public void resetAttacks() {
-            characterAnimator.resetAttacking();
+            characterAnimator.resetFastAttack();
+            characterAnimator.resetStrongAttack();
             characterAnimator.resetComboAttack();
         }
 

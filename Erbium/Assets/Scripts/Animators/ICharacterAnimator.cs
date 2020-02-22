@@ -13,10 +13,11 @@ namespace Animators {
         void setCrouching(bool crouching);
         void setUnskippable(bool unskippable);
         void setSliding(bool sliding);
-        void setAttacking();
+        void triggerStrongAttack();
         void triggerFastAttack();
         void setComboAttack();
         void resetComboAttack();
-        void resetAttacking();
+        void resetStrongAttack();
+        void resetFastAttack();
     }
 }

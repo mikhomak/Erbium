@@ -45,7 +45,7 @@ namespace General {
 
             if (Input.GetButtonDown($"Fire1")) {
                 if (player.getMovement() is GroundMovement || player.getMovement() is AttackingMovement) {
-                    player.getAttackManager().attack();
+                    player.getAttackManager().strongAttack();
                 }
             }
             if (Input.GetButtonDown($"Fire2")) {

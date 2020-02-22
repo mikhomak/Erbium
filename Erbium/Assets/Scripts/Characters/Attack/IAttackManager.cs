@@ -1,6 +1,6 @@
 ﻿namespace Characters.Attack {
     public interface IAttackManager {
-        void attack();
+        void strongAttack();
         void addCombo();
         void fastAttack();
         void resetCombo();

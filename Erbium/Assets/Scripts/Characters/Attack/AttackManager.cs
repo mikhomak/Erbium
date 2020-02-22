@@ -13,9 +13,9 @@ namespace Characters.Attack {
             this.character = character;
         }
 
-        public void attack() {
+        public void strongAttack() {
             makeSureItsAttackingMovement();
-            animatorFacade.startAttacking(combo);
+            animatorFacade.strongAttack(combo);
         }
 
         public void fastAttack() {
