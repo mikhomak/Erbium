@@ -25,8 +25,12 @@ namespace Animators {
             attackManager = attackManager ?? character.getAttackManager();
         }
 
+        private void makeSureCharacterIsNotNull() {
+            character = character ?? GetComponentInParent<ICharacter>();
+        }
 
         private void OnAnimatorMove() {
+            makeSureCharacterIsNotNull();
             var movement = character.getMovement();
             if (!animator || !(movement is AttackingMovement) || !(movement is IRootMotion)) return;
             ((IRootMotion) movement).setRootMotionAdditionalPosition(animator.deltaPosition);

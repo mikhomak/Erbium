@@ -150,18 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPart: 0
---- !u!114 &8423112213303577555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2529214202081752662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8519bd063dd2c5145840d5e757d5e563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1782214601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +160,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dcfb1126f2446d0a11f2eabcb8fd05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8423112213303577555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529214202081752662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8519bd063dd2c5145840d5e757d5e563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5780510845307315397
@@ -256,10 +256,11 @@ MonoBehaviour:
   speed: 10
   airSpeed: 5
   rotationSpeed: 10
-  jumpForce: 15
-  additionalGravityForce: 20
   crouchSpeed: 6
   slidingSpeed: 15
+  movementSpeedAttacking: 3
+  jumpForce: 15
+  additionalGravityForce: 20
   maxJumps: 2
   maxDownVelocity: -20
   physicArmour: 2
@@ -269,7 +270,6 @@ MonoBehaviour:
   invincibilityTime: 2
   headDamageMultiplier: 0
   bodyDamageMultiplier: 1
-  attackingSpeed: 3
 --- !u!136 &5780510845307315399
 CapsuleCollider:
   m_ObjectHideFlags: 0
