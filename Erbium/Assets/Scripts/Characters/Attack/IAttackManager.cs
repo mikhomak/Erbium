@@ -4,5 +4,6 @@
         void addCombo();
         void fastAttack();
         void resetCombo();
+        int getCurrentCombo();
     }
 }

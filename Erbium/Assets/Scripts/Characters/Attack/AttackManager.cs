@@ -37,6 +37,10 @@ namespace Characters.Attack {
             character.changeMovement(MovementEnum.Ground);
         }
 
+        public int getCurrentCombo() {
+            return currentCombo;
+        }
+
         private void makeSureItsAttackingMovement() {
             if (character.getMovement() is AttackingMovement == false) {
                 character.changeMovement(MovementEnum.Attack);

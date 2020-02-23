@@ -42,5 +42,19 @@ namespace Tests {
             yield return new WaitForSeconds(1);
             Assert.IsFalse(Equals(initPos, player.getRigidbody().position));
         }
+
+        [UnityTest]
+        public IEnumerator fastAttackTest() {
+            player.getAttackManager().fastAttack();
+            yield return new WaitForEndOfFrame();
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 1);
+        }
+
+        [UnityTest]
+        public IEnumerator strongAttackTest() {
+            player.getAttackManager().strongAttack();
+            yield return new WaitForEndOfFrame();
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 1);
+        }
     }
 }
