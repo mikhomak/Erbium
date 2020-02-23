@@ -45,16 +45,49 @@ namespace Tests {
 
         [UnityTest]
         public IEnumerator fastAttackTest() {
+            player.getAttackManager().resetCombo();
             player.getAttackManager().fastAttack();
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
             Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 1);
         }
 
         [UnityTest]
         public IEnumerator strongAttackTest() {
+            player.getAttackManager().resetCombo();
             player.getAttackManager().strongAttack();
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
             Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 1);
+        }
+
+        [UnityTest]
+        public IEnumerator combo3() {
+            player.getAttackManager().resetCombo();
+            player.getAttackManager().addCombo();
+            player.getAttackManager().addCombo();
+            player.getAttackManager().addCombo();
+            yield return new WaitForFixedUpdate();
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 4);
+        }
+
+
+        [UnityTest]
+        public IEnumerator comboFastAttacks() {
+            player.getAttackManager().resetCombo();
+            player.getAttackManager().fastAttack();
+            player.getAttackManager().addCombo();
+            player.getAttackManager().addCombo();
+            yield return new WaitForFixedUpdate();
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 3);
+        }   
+        
+        [UnityTest]
+        public IEnumerator comboStrongAttacks() {
+            player.getAttackManager().resetCombo();
+            player.getAttackManager().strongAttack();
+            player.getAttackManager().addCombo();
+            player.getAttackManager().addCombo();
+            yield return new WaitForFixedUpdate();
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 3);
         }
     }
 }
