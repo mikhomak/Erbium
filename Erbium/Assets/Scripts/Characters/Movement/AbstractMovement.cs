@@ -16,12 +16,9 @@ namespace Characters.Movement {
             animatorFacade = character.getAnimatorFacade();
         }
 
-        public virtual void setUp() {
-        }
+        public abstract void setUp();
 
-        public virtual void move(Vector3 direction) {
-            
-        }
+        public abstract void move(Vector3 direction);
 
         protected virtual void addVelocity(Vector3 movementVector) {
             rbd.velocity = movementVector;
@@ -39,7 +36,6 @@ namespace Characters.Movement {
             character.changeMovement(movement);
         }
 
-        public virtual void cleanUp() {
-        }
+        public abstract void cleanUp();
     }
 }

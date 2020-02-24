@@ -15,12 +15,26 @@ namespace Characters.Movement {
                 changeMovement(MovementEnum.Midair);
             }
 
-            var velocity =
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, character.getStats().Speed);
+            var velocity = accelerateAndMove(direction);
 
-            rbd.velocity = velocity;
             rotate(direction);
             updateAnimParameters(velocity);
+        }
+
+        private Vector3 accelerateAndMove(Vector3 direction) {
+            var velocity =
+                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+                    character.getStats().Speed);
+            if (rbd.velocity.magnitude < velocity.magnitude) {
+                var acceleration = CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+                    character.getStats().Acceleration);
+                rbd.AddForce(acceleration);
+            }
+            else {
+                rbd.velocity = velocity;
+            }
+
+            return velocity;
         }
 
 

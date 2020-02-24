@@ -4,6 +4,7 @@ namespace Characters {
     public class Stats : MonoBehaviour {
         [Header("Movement speed")]
         [SerializeField] private float speed = 10f;
+        [SerializeField] private float acceleration = 30f;
         [SerializeField] private float airSpeed = 5f;
         [SerializeField] private float rotationSpeed = 0.1f;
         [SerializeField] private float crouchSpeed = 6f;
@@ -36,6 +37,11 @@ namespace Characters {
         public float Speed {
             get => speed;
             set => speed = value;
+        }
+
+        public float Acceleration {
+            get => acceleration;
+            set => acceleration = value;
         }
 
         public float AirSpeed {
