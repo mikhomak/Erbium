@@ -36,7 +36,7 @@ namespace Tests {
             yield return new WaitForSeconds(1f);
 
             Vector3 expectedPosition = playerInitPosition + direction * (player.getStats().Speed * 1f);
-            Assert.True(Vector3.Distance(expectedPosition, playerGo.transform.position) <= 0.2f);
+            Assert.True(Vector3.Distance(expectedPosition, playerGo.transform.position) <= 2f);
             Assert.True(player.getMovement() is GroundMovement);
         }
     }
