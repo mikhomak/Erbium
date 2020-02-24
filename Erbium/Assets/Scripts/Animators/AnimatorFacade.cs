@@ -65,18 +65,16 @@ namespace Animators {
             if (combo) {
                 characterAnimator.setComboAttack();
             }
-            else {
-                characterAnimator.triggerStrongAttack();
-            }
+
+            characterAnimator.triggerStrongAttack();
         }
 
         public void fastAttack(bool combo) {
             if (combo) {
                 characterAnimator.setComboAttack();
             }
-            else {
-                characterAnimator.triggerFastAttack();
-            }
+
+            characterAnimator.triggerFastAttack();
         }
 
         public void resetAttacks() {

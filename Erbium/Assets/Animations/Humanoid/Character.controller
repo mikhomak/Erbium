@@ -244,6 +244,34 @@ AnimatorStateTransition:
   m_InterruptionSource: 1
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &-6945745522622585454
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: comboAttack
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: strongAttack
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 81830021793846318}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.29887712
+  m_TransitionOffset: 0.03301184
+  m_ExitTime: 0.67345583
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-6427046453349221470
 AnimatorState:
   serializedVersion: 5
@@ -312,6 +340,7 @@ AnimatorState:
   - {fileID: -1905283112567392681}
   - {fileID: -7266327434024612348}
   - {fileID: 4288928720271705948}
+  - {fileID: 8590225111783351133}
   m_StateMachineBehaviours:
   - {fileID: -8232970751812194832}
   m_Position: {x: 50, y: 50, z: 0}
@@ -681,6 +710,34 @@ BlendTree:
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!1101 &-4211260631209147652
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: fastAttack
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: comboAttack
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -1943087603072167407}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.29109234
+  m_TransitionOffset: 0
+  m_ExitTime: 0.6495571
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-4052373683877387239
 AnimatorState:
   serializedVersion: 5
@@ -746,13 +803,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6296587361441173722}
-    m_Position: {x: 230, y: -80, z: 0}
+    m_Position: {x: 220, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 81830021793846318}
-    m_Position: {x: 490, y: -80, z: 0}
+    m_Position: {x: 480, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3515663462102158718}
-    m_Position: {x: 760, y: -80, z: 0}
+    m_Position: {x: 750, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1659881910845946042}
     m_Position: {x: 230, y: 330, z: 0}
@@ -770,7 +827,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 500, y: -140, z: 0}
-  m_ParentStateMachinePosition: {x: 470, y: 160, z: 0}
+  m_ParentStateMachinePosition: {x: 460, y: -50, z: 0}
   m_DefaultState: {fileID: -6296587361441173722}
 --- !u!1102 &-3515663462102158718
 AnimatorState:
@@ -820,6 +877,34 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.42160857
   m_TransitionOffset: 0
   m_ExitTime: 0.8790322
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-2886915651693491499
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: strongAttack
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: comboAttack
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -3515663462102158718}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.49729788
+  m_TransitionOffset: 0.02305892
+  m_ExitTime: 0.7193683
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -995,6 +1080,7 @@ AnimatorState:
   - {fileID: -3887693237607928833}
   - {fileID: -7768156433653211327}
   - {fileID: -5681752462534453278}
+  - {fileID: -6945745522622585454}
   m_StateMachineBehaviours:
   - {fileID: 6573674909837982185}
   m_Position: {x: 50, y: 50, z: 0}
@@ -1194,79 +1280,79 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: verInput
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: inputMagnitude
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: groundVelocity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isFalling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isAboutToLand
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: crouching
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: unskippable
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: sliding
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: attacking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: comboAttack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: fastAttack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: strongAttack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1308,6 +1394,7 @@ AnimatorState:
   - {fileID: 4173780204991043285}
   - {fileID: -6994083623945440484}
   - {fileID: -1893246441298359570}
+  - {fileID: -4211260631209147652}
   m_StateMachineBehaviours:
   - {fileID: 81181082016096066}
   m_Position: {x: 50, y: 50, z: 0}
@@ -1422,6 +1509,7 @@ AnimatorState:
   - {fileID: -5048555401887405147}
   - {fileID: -2903591780538060954}
   - {fileID: 9205642373522490655}
+  - {fileID: -2886915651693491499}
   m_StateMachineBehaviours:
   - {fileID: 3379066255544051204}
   m_Position: {x: 50, y: 50, z: 0}
@@ -2056,6 +2144,34 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.03347761
   m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &8590225111783351133
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: fastAttack
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: comboAttack
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1544502722152013358}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.36169308
+  m_TransitionOffset: 0.022082236
+  m_ExitTime: 0.59961003
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
