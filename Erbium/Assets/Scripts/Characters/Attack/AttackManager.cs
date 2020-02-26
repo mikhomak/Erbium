@@ -14,11 +14,17 @@ namespace Characters.Attack {
         }
 
         public void strongAttack() {
+            if (!isItPossibleToAttackWithCurrentMovement()) {
+                return;
+            }
             makeSureItsAttackingMovement();
             animatorFacade.strongAttack(combo);
         }
 
         public void fastAttack() {
+            if (!isItPossibleToAttackWithCurrentMovement()) {
+                return;
+            }
             makeSureItsAttackingMovement();
             animatorFacade.fastAttack(combo);
         }
@@ -42,9 +48,13 @@ namespace Characters.Attack {
         }
 
         private void makeSureItsAttackingMovement() {
-            if (character.getMovement() is AttackingMovement == false) {
+            if (character.getMovement() is GroundMovement) {
                 character.changeMovement(MovementEnum.Attack);
             }
+        }
+
+        private bool isItPossibleToAttackWithCurrentMovement() {
+            return character.getMovement() is GroundMovement || character.getMovement() is AttackingMovement;
         }
     }
 }
