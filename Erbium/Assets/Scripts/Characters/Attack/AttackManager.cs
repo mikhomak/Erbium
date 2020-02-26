@@ -32,7 +32,7 @@ namespace Characters.Attack {
 
         public void resetCombo() {
             combo = false;
-            currentCombo = 1;
+            currentCombo = 0;
             animatorFacade.resetAttacks();
             character.changeMovement(MovementEnum.Ground);
         }

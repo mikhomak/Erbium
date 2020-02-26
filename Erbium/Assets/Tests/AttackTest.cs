@@ -66,7 +66,7 @@ namespace Tests {
             player.getAttackManager().addCombo();
             player.getAttackManager().addCombo();
             yield return new WaitForFixedUpdate();
-            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 4);
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 3);
         }
 
 
@@ -88,6 +88,26 @@ namespace Tests {
             player.getAttackManager().addCombo();
             yield return new WaitForFixedUpdate();
             Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 3);
+        }
+
+        [UnityTest]
+        public IEnumerator fastStrongAttack() {
+            player.getAttackManager().resetCombo();
+            player.getAttackManager().fastAttack();
+            yield return new WaitForSeconds(0.5f);
+            player.getAttackManager().strongAttack();
+            yield return new WaitForSeconds(0.5f);
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 2);
+        }
+
+        [UnityTest]
+        public IEnumerator strongFastAttack() {
+            player.getAttackManager().resetCombo();
+            player.getAttackManager().strongAttack();
+            yield return new WaitForSeconds(0.4f);
+            player.getAttackManager().fastAttack();
+            yield return new WaitForSeconds(0.6f);
+            Assert.IsTrue(player.getAttackManager().getCurrentCombo() == 2);
         }
     }
 }
