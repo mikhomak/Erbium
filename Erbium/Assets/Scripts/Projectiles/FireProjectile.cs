@@ -20,7 +20,6 @@ namespace Projectiles {
             throw new NotImplementedException();
         }
 
-
         public void dealDamage(IHurtbox hurtbox) {
             hurtbox.takeDamage(damageInfo);
         }

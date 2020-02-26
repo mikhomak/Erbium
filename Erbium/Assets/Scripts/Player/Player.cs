@@ -3,7 +3,9 @@ using Animators;
 using Characters;
 using Characters.Armour;
 using Characters.Attack;
+using Characters.Damage;
 using Characters.Health;
+using Characters.Hurtbox;
 using Characters.Movement;
 using General.Util;
 using Player.MovementDirection;
@@ -12,7 +14,7 @@ using UnityEngine;
 namespace Player {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Stats))]
-    public class Player : MonoBehaviour, IPlayer {
+    public class Player : MonoBehaviour, IPlayer, IDamageDealer {
         private static readonly FastEnumIntEqualityComparer<MovementEnum> FastEnumIntEqualityComparer =
             new FastEnumIntEqualityComparer<MovementEnum>();
 
@@ -128,6 +130,10 @@ namespace Player {
             movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
             movements.Add(MovementEnum.Slide, new SlidingMovement(this));
             movements.Add(MovementEnum.Attack, new AttackingMovement(this));
+        }
+
+        public void dealDamage(IHurtbox hurtbox) {
+            throw new System.NotImplementedException();
         }
     }
 }
