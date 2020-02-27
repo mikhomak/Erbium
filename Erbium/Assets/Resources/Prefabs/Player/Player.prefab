@@ -150,6 +150,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPart: 0
+--- !u!114 &1698317345593325463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461628127481580303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85f85922b804a958a62a011f01274c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6264496597283960745
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461628127481580303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18
+  m_Height: 2.02
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1782214601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +200,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8519bd063dd2c5145840d5e757d5e563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3988980997630913502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564690630346176704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85f85922b804a958a62a011f01274c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &7264363899636957961
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564690630346176704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.18
+  m_Height: 2.02
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5780510845307315397
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  acceleration: 30
   airSpeed: 5
   rotationSpeed: 10
   crouchSpeed: 6
@@ -382,6 +435,18 @@ GameObject:
 --- !u!4 &1532010240820790341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 956a930d312c44548ab061588a533269,
+    type: 3}
+  m_PrefabInstance: {fileID: 5780510846165446495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3564690630346176704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7007650227998529439, guid: 956a930d312c44548ab061588a533269,
+    type: 3}
+  m_PrefabInstance: {fileID: 5780510846165446495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2461628127481580303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8219362072142390352, guid: 956a930d312c44548ab061588a533269,
     type: 3}
   m_PrefabInstance: {fileID: 5780510846165446495}
   m_PrefabAsset: {fileID: 0}
