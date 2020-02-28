@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 676, y: 342}
+  m_MaxSize: {x: 12003, y: 8042}
   vertical: 0
-  controlID: 17335
+  controlID: 1036
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 17316
+  controlID: 1112
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimatorControllerTool
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -164,16 +164,16 @@ MonoBehaviour:
     y: 0
     width: 924
     height: 541
-  m_MinSize: {x: 101, y: 121}
+  m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 15}
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -193,15 +193,15 @@ MonoBehaviour:
     y: 541
     width: 924
     height: 406
-  m_MinSize: {x: 201, y: 221}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     y: 0
     width: 440
     height: 947
-  m_MinSize: {x: 202, y: 342}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 200, y: 321}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 17336
+  controlID: 1042
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -246,8 +246,8 @@ MonoBehaviour:
     y: 0
     width: 440
     height: 517
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 517
     width: 440
     height: 430
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 21}
@@ -299,8 +299,8 @@ MonoBehaviour:
     y: 0
     width: 556
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_VSyncEnabled: 1
   m_Gizmos: 0
   m_Stats: 0
@@ -433,9 +433,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.2164316, y: -0.011559248, z: -0.49506044}
+    m_Target: {x: 0.739679, y: 1.97863, z: -0.08779647}
     speed: 2
-    m_Value: {x: -4.2164316, y: -0.011559248, z: -0.49506044}
+    m_Value: {x: 0.739679, y: 1.97863, z: -0.08779647}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -481,13 +481,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08601648, y: 0.8158626, z: -0.12581101, w: -0.5578067}
+    m_Target: {x: -0.07482444, y: 0.83468425, z: -0.1172005, w: -0.5328933}
     speed: 2
-    m_Value: {x: -0.08601616, y: 0.81585956, z: -0.12581055, w: -0.5578046}
+    m_Value: {x: -0.074824154, y: 0.8346811, z: -0.117200054, w: -0.5328913}
   m_Size:
-    m_Target: 13.469967
+    m_Target: 2.7452343
     speed: 2
-    m_Value: 13.469967
+    m_Value: 3.0452342
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -683,7 +683,7 @@ MonoBehaviour:
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
   blendTreeGraphGUI: {fileID: 0}
-  m_AutoLiveLink: 0
+  m_AutoLiveLink: 1
   m_MiniTool: 0
   m_LockTracker:
     m_IsLocked: 1
@@ -1251,8 +1251,8 @@ MonoBehaviour:
       uniqueId: '[Erbium][suite]'
       name: Erbium
       fullName: Erbium
-      resultStatus: 1
-      duration: 1.2629834
+      resultStatus: 0
+      duration: 0.3508009
       messages: 
       output: 
       stacktrace: 
@@ -1267,8 +1267,8 @@ MonoBehaviour:
       uniqueId: '[O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll][suite]'
       name: Tests.dll
       fullName: O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll
-      resultStatus: 1
-      duration: 1.2323416
+      resultStatus: 0
+      duration: 0.3183888
       messages: 
       output: 
       stacktrace: 
@@ -1283,8 +1283,8 @@ MonoBehaviour:
       uniqueId: Tests.dll/[Tests][suite]
       name: Tests
       fullName: Tests
-      resultStatus: 1
-      duration: 1.2210566
+      resultStatus: 0
+      duration: 0.2940332
       messages: 
       output: 
       stacktrace: 
@@ -1299,8 +1299,8 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/[Tests][Tests.AttackTest][suite]
       name: AttackTest
       fullName: Tests.AttackTest
-      resultStatus: 1
-      duration: 2.9101522
+      resultStatus: 0
+      duration: 0.2787022
       messages: 
       output: 
       stacktrace: 
@@ -1316,7 +1316,7 @@ MonoBehaviour:
       name: attackingMovementTest
       fullName: Tests.AttackTest.attackingMovementTest
       resultStatus: 1
-      duration: 0.3597876
+      duration: 0.257088
       messages: 
       output: 
       stacktrace: 
@@ -1333,7 +1333,7 @@ MonoBehaviour:
       name: attackManagerTest
       fullName: Tests.AttackTest.attackManagerTest
       resultStatus: 1
-      duration: 0.0649801
+      duration: 0.1903149
       messages: 
       output: 
       stacktrace: 
@@ -1350,7 +1350,7 @@ MonoBehaviour:
       name: characterHasMovedDuringFastAttack
       fullName: Tests.AttackTest.characterHasMovedDuringFastAttack
       resultStatus: 1
-      duration: 1.056189
+      duration: 1.1259584
       messages: 
       output: 
       stacktrace: 
@@ -1367,7 +1367,7 @@ MonoBehaviour:
       name: characterHasMovedDuringStrongAttack
       fullName: Tests.AttackTest.characterHasMovedDuringStrongAttack
       resultStatus: 1
-      duration: 1.0491763
+      duration: 1.6965429
       messages: 
       output: 
       stacktrace: 
@@ -1384,7 +1384,7 @@ MonoBehaviour:
       name: combo3
       fullName: Tests.AttackTest.combo3
       resultStatus: 1
-      duration: 0.0498326
+      duration: 2.069762
       messages: 
       output: 
       stacktrace: 
@@ -1401,7 +1401,7 @@ MonoBehaviour:
       name: comboFastAttacks
       fullName: Tests.AttackTest.comboFastAttacks
       resultStatus: 1
-      duration: 0.0515443
+      duration: 0.2093542
       messages: 
       output: 
       stacktrace: 
@@ -1418,7 +1418,7 @@ MonoBehaviour:
       name: comboStrongAttacks
       fullName: Tests.AttackTest.comboStrongAttacks
       resultStatus: 1
-      duration: 0.06508
+      duration: 0.2535533
       messages: 
       output: 
       stacktrace: 
@@ -1435,7 +1435,24 @@ MonoBehaviour:
       name: fastAttackTest
       fullName: Tests.AttackTest.fastAttackTest
       resultStatus: 1
-      duration: 0.0656024
+      duration: 0.1944797
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.AttackTest][suite]
+    - id: 1012
+      uniqueId: Tests.dll/Tests/AttackTest/[Tests][Tests.AttackTest.fastStrongAttack]
+      name: fastStrongAttack
+      fullName: Tests.AttackTest.fastStrongAttack
+      resultStatus: 1
+      duration: 0
       messages: 
       output: 
       stacktrace: 
@@ -1452,7 +1469,7 @@ MonoBehaviour:
       name: rootMotionTest
       fullName: Tests.AttackTest.rootMotionTest
       resultStatus: 1
-      duration: 0.0485278
+      duration: 0.2431916
       messages: 
       output: 
       stacktrace: 
@@ -1468,8 +1485,36 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/AttackTest/[Tests][Tests.AttackTest.strongAttackTest]
       name: strongAttackTest
       fullName: Tests.AttackTest.strongAttackTest
+      resultStatus: 0
+      duration: 2.146191
+      messages: 'UnityEngine.Assertions.AssertionException : Assertion failure. Value
+        was False
+
+        Expected: True'
+      output: 
+      stacktrace: "  at UnityEngine.Assertions.Assert.Fail (System.String message,
+        System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
+        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition,
+        System.String message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0
+        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition)
+        [0x00009] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at Tests.AttackTest+<strongAttackTest>d__6.MoveNext
+        () [0x00084] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:61
+        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
+        in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.AttackTest][suite]
+    - id: 1013
+      uniqueId: Tests.dll/Tests/AttackTest/[Tests][Tests.AttackTest.strongFastAttack]
+      name: strongFastAttack
+      fullName: Tests.AttackTest.strongFastAttack
       resultStatus: 1
-      duration: 0.0505272
+      duration: 1.206009
       messages: 
       output: 
       stacktrace: 
@@ -1486,7 +1531,7 @@ MonoBehaviour:
       name: CrouchingMovementTest
       fullName: Tests.CrouchingMovementTest
       resultStatus: 1
-      duration: 1.0779885
+      duration: 1.2040476
       messages: 
       output: 
       stacktrace: 
@@ -1502,7 +1547,7 @@ MonoBehaviour:
       name: crouchTest
       fullName: Tests.CrouchingMovementTest.crouchTest
       resultStatus: 1
-      duration: 1.065663
+      duration: 1.1678356
       messages: 
       output: 
       stacktrace: 
@@ -1519,7 +1564,7 @@ MonoBehaviour:
       name: GroundMovementTest
       fullName: Tests.GroundMovementTest
       resultStatus: 1
-      duration: 1.2090702
+      duration: 1.2804506
       messages: 
       output: 
       stacktrace: 
@@ -1535,7 +1580,7 @@ MonoBehaviour:
       name: initalizeGroundMovementTest
       fullName: Tests.GroundMovementTest.initalizeGroundMovementTest
       resultStatus: 1
-      duration: 0.0509726
+      duration: 0.1172244
       messages: 
       output: 
       stacktrace: 
@@ -1552,7 +1597,7 @@ MonoBehaviour:
       name: moveTest
       fullName: Tests.GroundMovementTest.moveTest
       resultStatus: 1
-      duration: 1.1761335
+      duration: 1.1303881
       messages: 
       output: 
       stacktrace: 
@@ -1569,7 +1614,7 @@ MonoBehaviour:
       name: MidAirMovementTest
       fullName: Tests.MidAirMovementTest
       resultStatus: 1
-      duration: 3.3255794
+      duration: 3.592209
       messages: 
       output: 
       stacktrace: 
@@ -1585,7 +1630,7 @@ MonoBehaviour:
       name: fallingTest
       fullName: Tests.MidAirMovementTest.fallingTest
       resultStatus: 1
-      duration: 1.0651335
+      duration: 1.116275
       messages: 
       output: 
       stacktrace: 
@@ -1602,7 +1647,7 @@ MonoBehaviour:
       name: initTest
       fullName: Tests.MidAirMovementTest.initTest
       resultStatus: 1
-      duration: 1.068581
+      duration: 1.1277514
       messages: 
       output: 
       stacktrace: 
@@ -1619,7 +1664,7 @@ MonoBehaviour:
       name: landingTest
       fullName: Tests.MidAirMovementTest.landingTest
       resultStatus: 1
-      duration: 1.1799304
+      duration: 1.2655325
       messages: 
       output: 
       stacktrace: 
@@ -1636,7 +1681,7 @@ MonoBehaviour:
       name: PlayerHealthTest
       fullName: Tests.PlayerHealthTest
       resultStatus: 1
-      duration: 1.3225392
+      duration: 1.8180673
       messages: 
       output: 
       stacktrace: 
@@ -1652,7 +1697,7 @@ MonoBehaviour:
       name: die
       fullName: Tests.PlayerHealthTest.die
       resultStatus: 1
-      duration: 0.0534258
+      duration: 0.1297977
       messages: 
       output: 
       stacktrace: 
@@ -1669,7 +1714,7 @@ MonoBehaviour:
       name: playerTakeDamage
       fullName: Tests.PlayerHealthTest.playerTakeDamage
       resultStatus: 1
-      duration: 0.0398813
+      duration: 0.1211914
       messages: 
       output: 
       stacktrace: 
@@ -1686,7 +1731,7 @@ MonoBehaviour:
       name: playerTakeDamageFromProjectile
       fullName: Tests.PlayerHealthTest.playerTakeDamageFromProjectile
       resultStatus: 1
-      duration: 1.0628699
+      duration: 1.1444709
       messages: 
       output: 
       stacktrace: 
@@ -1703,7 +1748,7 @@ MonoBehaviour:
       name: playerTakeDamageWithMagicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithMagicArmour
       resultStatus: 1
-      duration: 0.0518935
+      duration: 0.1192583
       messages: 
       output: 
       stacktrace: 
@@ -1720,7 +1765,7 @@ MonoBehaviour:
       name: playerTakeDamageWithPhysicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithPhysicArmour
       resultStatus: 1
-      duration: 0.0475598
+      duration: 0.1210155
       messages: 
       output: 
       stacktrace: 
@@ -1737,7 +1782,7 @@ MonoBehaviour:
       name: playerTakeDamageWithToxicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithToxicArmour
       resultStatus: 1
-      duration: 0.0498698
+      duration: 0.1449769
       messages: 
       output: 
       stacktrace: 
@@ -1754,7 +1799,7 @@ MonoBehaviour:
       name: PlayerTest
       fullName: Tests.PlayerTest
       resultStatus: 1
-      duration: 0.063145
+      duration: 0.155169
       messages: 
       output: 
       stacktrace: 
@@ -1770,7 +1815,7 @@ MonoBehaviour:
       name: initalizePlayer
       fullName: Tests.PlayerTest.initalizePlayer
       resultStatus: 1
-      duration: 0.0492614
+      duration: 0.1223148
       messages: 
       output: 
       stacktrace: 
@@ -1787,7 +1832,7 @@ MonoBehaviour:
       name: SlidingMovementTest
       fullName: Tests.SlidingMovementTest
       resultStatus: 1
-      duration: 1.0642402
+      duration: 1.1832734
       messages: 
       output: 
       stacktrace: 
@@ -1803,7 +1848,7 @@ MonoBehaviour:
       name: slideTest
       fullName: Tests.SlidingMovementTest.slideTest
       resultStatus: 1
-      duration: 1.0476294
+      duration: 1.1501802
       messages: 
       output: 
       stacktrace: 
@@ -1820,7 +1865,7 @@ MonoBehaviour:
       name: TimerManagerTest
       fullName: Tests.TimerManagerTest
       resultStatus: 2
-      duration: 4.063525
+      duration: 4.1660542
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1836,7 +1881,7 @@ MonoBehaviour:
       name: timerTest
       fullName: Tests.TimerManagerTest.timerTest
       resultStatus: 2
-      duration: 4.0446014
+      duration: 4.1275125
       messages: "  Expected: True\r\n  But was:  False\r\n"
       output: 
       stacktrace: 'at Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x00098]
@@ -1855,12 +1900,27 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1012
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.TimerManagerTest][suite]
-    m_ResultText: moveTest (1.176s)
-    m_ResultStacktrace: 
+    m_ResultText: "strongAttackTest (2.146s)\n---\nUnityEngine.Assertions.AssertionException
+      : Assertion failure. Value was False\r\nExpected: True\n---\nat UnityEngine.Assertions.Assert.Fail
+      (System.String message, System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
+      \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition, System.String
+      message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at UnityEngine.Assertions.Assert.IsTrue
+      (System.Boolean condition) [0x00009] in <a3d417b16c80486ca3272865b9417295>:0
+      \r\n  at Tests.AttackTest+<strongAttackTest>d__6.MoveNext () [0x00084] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:61
+      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
+      in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31"
+    m_ResultStacktrace: "  at UnityEngine.Assertions.Assert.Fail (System.String message,
+      System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
+      \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition, System.String
+      message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at UnityEngine.Assertions.Assert.IsTrue
+      (System.Boolean condition) [0x00009] in <a3d417b16c80486ca3272865b9417295>:0
+      \r\n  at Tests.AttackTest+<strongAttackTest>d__6.MoveNext () [0x00084] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:61
+      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
+      in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31 "
     m_TestListState:
-      scrollPos: {x: 0, y: 344}
-      m_SelectedIDs: 886c1a2a
-      m_LastClickedID: 706374792
+      scrollPos: {x: 0, y: 70.49927}
+      m_SelectedIDs: 72e03c44
+      m_LastClickedID: 1144840306
       m_ExpandedIDs: 12b088b1fd4c0deb39ad96ec8513a0f3583a6922b20a89253354b22638c66d3e8359db417dc7445e2c4f276393e5576cffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1966,7 +2026,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 25424
+  m_LastSelectedObjectID: 21088
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1996,9 +2056,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: ea09fdff080afdff540cfdffde0efdfffc0efdff4811fdffd213fdfff013fdff6e3dfdff4851fdff6651fdfff07afdff5a7dfdff787dfdff4ca7fdffda47fefff847feff8659feff125cfeff305cfeffbe6dfeff4270feff6070feffac72feffbe74feffdc74feff6a86feff6689feff8489feff129bfeffb09dfeffce9dfeff5caffeff18b2feff36b2feff82b4feff7cb6feff9ab6feff28c8feff76cafeff94cafeffe0ccfefff2cefeff10cffeff5cd1feff7ed3feff9cd3feffe8d5fefff2d7feff10d8feff5cdafeff5edcfeff7cdcfeff0aeefeff14f0feff32f0feff7ef2feff1af5feff38f5feff84f7feff16fafeff34fafeffc20bffff4c0effff660effff840effff9a10ffffb810ffff423affff583dffff763dffffc23fffff5e42ffff7c42ffffc844ffff4048ffff5e48ffffaa4affff2c4dffff4a4dffff964fffff2252ffff4052ffff8c54ffff1e57ffff3c57ffff8859ffff9c5cffffba5cffff525effff4c5fffff4e62ffff6c62ffffba64ffff5067ffff6e67ffffbc69ffff946effffb26effff0071ffff8c73ffffaa73fffff875ffff7e78ffff9c78ffffea7affff927dffffb07dfffffe7fffff0883ffff2683ffff7485ffff9288ffffb088fffffe8affff9e8dffffbc8dffff0a90ffff1293ffff3093ffff7e95ffff8897ffffa697fffff499ffff729cffff909cffffde9effff32a2ffff50a2ffff4abeffff4cc0ffff6ac0ffff6ac4ffff5ac7ffff74c7ffff6ee3fffffce5ffff1ae6ffff1aeaffff50f0ffff6ef0ffff6ef4ffff54fbffff78450000244c0000aa520000
+      m_SelectedIDs: 60520000
+      m_LastClickedID: 21088
+      m_ExpandedIDs: c040feff1e41feff2241feff2841feff4841feff5c41feffec41feff0a42feff5644feff7046feff8e46feffda48feffec4afeff0a4bfeff564dfeff684ffeff864ffeffd251feffee53feff0c54feff5856feff6258feff8058feffcc5afeffe85cfeff065dfeff525ffeff5c61feff7a61feffc663feffd065feffee65feff3a68feffa26cfeffbc6cfeff607cfefff27efeff107ffeff5c81feff7e83feff9c83feff0285fefffa85feff1488feff3288feff7e8afeff888cfeffa68cfeff98a1feffb8a4feffd6a4feff22a7feff1ca9feff3aa9feff86abfeff90adfeffaeadfefffaaffefff4b1feff12b2feff5eb4feff60b6feff7eb6feffcab8feffd4bafefff2bafeffe4cffeff60d2feff7ed2feffcad4feffccd6feffead6feff36d9feff48dbfeff66dbfeff58f0fefff4f2feff12f3feff5ef5feff70f7feff8ef7feffdaf9feffe4fbfeff02fcfeff4efefeff6400ffff8200ffff642dffff1e30ffff3c30ffff1e5dffff205fffff3e5fffff8a61ffffe667ffff0468ffff506affffca6cffffe86cffff346fffff9675ffffb475ffff0078ffff767effff947effffe080ffff6283ffff8083ffffcc85ffff4888ffff6688ffffb28affff1891ffff3691ffff8293ffff949dffffb29dfffffe9fffff8ca2ffffaaa2fffff6a4ffff8cabffffaaabfffff6adffff92b0ffffb0b0fffffcb2ffff76b5ffff94b5ffffe0b7ffff64baffff82baffffcebcffffbabfffffd8bfffff24c2ffffb6c5ffffd4c5ffff20c8ffffaacaffffc8caffff14cdffff1ecfffff3ccfffff88d1ffff9ad3ffffb8d3ffff04d6ffffb4d8ffffd2d8ffff1edbffff38ddffff56ddffffa2dfffff24e2ffff42e2ffff8ee4ffffa8e6ffffc6e6ffff14e9ffff46ebffff64ebffff08eeffff02f0ffff20f0ffffc4f2ffffbef4ffffdcf4ffff82f7ffff54fbfffff4ffffff60520000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2073,9 +2133,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 91}
-    m_SelectedIDs: 363c0000
-    m_LastClickedID: 15414
-    m_ExpandedIDs: 00000000da3b0000dc3b0000de3b0000e03b0000e23b0000e43b0000e63b0000e83b0000ea3b000000ca9a3b
+    m_SelectedIDs: 4e3c0000
+    m_LastClickedID: 15438
+    m_ExpandedIDs: 00000000e43b0000e63b0000e83b0000ea3b0000ec3b0000ee3b0000f03b0000f23b0000f43b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2103,7 +2163,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000da3b0000dc3b0000de3b0000e03b0000e23b0000e43b0000e63b0000e83b0000ea3b000000ca9a3b
+    m_ExpandedIDs: 00000000e43b0000e63b0000e83b0000ea3b0000ec3b0000ee3b0000f03b0000f23b0000f43b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2130,7 +2190,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 0236000012380000a634000086460000383c0000343c0000424300005c440000685700006c57000064570000c05a00004a7f000068800000a83700000000000028770000f43b0000f03b0000ec3b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
