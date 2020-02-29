@@ -18,13 +18,15 @@ namespace Characters.Movement {
 
         public abstract void setUp();
 
+        public abstract void cleanUp();
+        
         public abstract void move(Vector3 direction);
 
-        protected virtual void addVelocity(Vector3 movementVector) {
+        protected void addVelocity(Vector3 movementVector) {
             rbd.velocity = movementVector;
         }
         
-        protected virtual void rotate(Vector3 direction) {
+        protected void rotate(Vector3 direction) {
             if (direction != Vector3.zero) {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
                     character.getStats().RotationSpeed);
@@ -36,6 +38,6 @@ namespace Characters.Movement {
             character.changeMovement(movement);
         }
 
-        public abstract void cleanUp();
+
     }
 }

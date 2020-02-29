@@ -13,6 +13,7 @@ namespace Characters.Movement {
         public override void move(Vector3 direction) {
             if (isFalling()) {
                 changeMovement(MovementEnum.Midair);
+                return;
             }
 
             var velocity = accelerateAndMove(direction);
