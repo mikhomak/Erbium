@@ -16,5 +16,16 @@ No need of any assets from the asset store. All created in pure C#
 | **Code was built with an idea to be expanded** | ![Code](https://github.com/mikhomak/Images/blob/master/Erbium/Abstract%20movement.PNG?raw=true) |
 
 
+## Features:
+* Cameras: 3rd person action, top-down, side-view
+* Movements: ground, midair, crouch, slide, attack
+* Root motion
+* Jump
+* Combo system
+* Timer manager
+* Invincibility time after taking damage
+* Armour calculation(not the meshes)
+* Tests
+
 Work still in progress,   
 [See the progress on Trello](https://trello.com/b/w7ypD4fJ/erbium)
