@@ -2,9 +2,10 @@
 
 ![Erbium](https://raw.githubusercontent.com/mikhomak/Images/master/Erbium/erbium%20main.png)
 
+
 Highly customizable third person character for quick set up for prototyping your game  
 No need of any assets from the asset store. All created in pure C#   
-
+[Check wiki if you want to know more](https://github.com/mikhomak/Erbium/wiki)    
 
 |Physic-based character that uses rigidbody |![Physic-based character](https://raw.githubusercontent.com/mikhomak/Images/master/Erbium/erbium%203d%20person%20camera.png)  |
 |--|--|
