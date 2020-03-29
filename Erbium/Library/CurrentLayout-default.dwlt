@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 392}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 392}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 709, y: 492}
+  m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 52
+  controlID: 152
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 0
     width: 924
     height: 947
-  m_MinSize: {x: 201, y: 342}
+  m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 60
+  controlID: 77
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimationWindow
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -193,15 +193,15 @@ MonoBehaviour:
     y: 542
     width: 924
     height: 405
-  m_MinSize: {x: 101, y: 121}
+  m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     y: 0
     width: 440
     height: 947
-  m_MinSize: {x: 202, y: 342}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 232, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 86
+  controlID: 103
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -272,14 +272,14 @@ MonoBehaviour:
     y: 517
     width: 440
     height: 430
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
   - {fileID: 22}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -329,9 +329,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 614
+    y: 615
     width: 923
-    height: 385
+    height: 384
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -339,11 +339,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 647, y: 364}
+  m_TargetSize: {x: 645, y: 363}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 0
+  m_MaximizeOnPlay: 1
   m_VSyncEnabled: 1
   m_Gizmos: 0
   m_Stats: 0
@@ -353,10 +353,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -342
-    m_HBaseRangeMax: 342
-    m_VBaseRangeMin: -192.5
-    m_VBaseRangeMax: 192.5
+    m_HBaseRangeMin: -322.5
+    m_HBaseRangeMax: 322.5
+    m_VBaseRangeMin: -181.5
+    m_VBaseRangeMax: 181.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -373,11 +373,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 923
-      height: 385
+      height: 363
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 461.5, y: 192.5}
+    m_Translation: {x: 461.5, y: 181.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -385,12 +385,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -461.5
-      y: -192.5
+      y: -181.5
       width: 923
-      height: 385
+      height: 363
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 923, y: 385}
+  m_LastWindowPixelSize: {x: 923, y: 384}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.1584696, y: -0.65239924, z: 0.14212331, w: -0.7274044}
     speed: 2
-    m_Value: {x: -0.15846537, y: -0.65238184, z: 0.14211951, w: -0.727385}
+    m_Value: {x: 0.15846962, y: 0.65239924, z: -0.14212331, w: 0.7274045}
   m_Size:
     m_Target: 40.63678
     speed: 2
@@ -1239,9 +1239,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 614
+    y: 615
     width: 923
-    height: 385
+    height: 384
   m_ViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 0
   m_PlayModeTestListGUI:
@@ -1251,9 +1251,9 @@ MonoBehaviour:
       uniqueId: '[Erbium][suite]'
       name: Erbium
       fullName: Erbium
-      resultStatus: 0
-      duration: 0.3508009
-      messages: 
+      resultStatus: 2
+      duration: 1.4940405
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1267,9 +1267,9 @@ MonoBehaviour:
       uniqueId: '[O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll][suite]'
       name: Tests.dll
       fullName: O:/Projects/Unity/Erbium/Erbium/Library/ScriptAssemblies/Tests.dll
-      resultStatus: 0
-      duration: 0.3183888
-      messages: 
+      resultStatus: 2
+      duration: 1.4565399
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1283,9 +1283,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/[Tests][suite]
       name: Tests
       fullName: Tests
-      resultStatus: 0
-      duration: 0.2940332
-      messages: 
+      resultStatus: 2
+      duration: 1.4373844
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1299,9 +1299,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/[Tests][Tests.AttackTest][suite]
       name: AttackTest
       fullName: Tests.AttackTest
-      resultStatus: 0
-      duration: 0.2787022
-      messages: 
+      resultStatus: 2
+      duration: 1.4242435
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1316,7 +1316,7 @@ MonoBehaviour:
       name: attackingMovementTest
       fullName: Tests.AttackTest.attackingMovementTest
       resultStatus: 1
-      duration: 0.257088
+      duration: 0.9142975
       messages: 
       output: 
       stacktrace: 
@@ -1333,7 +1333,7 @@ MonoBehaviour:
       name: attackManagerTest
       fullName: Tests.AttackTest.attackManagerTest
       resultStatus: 1
-      duration: 0.1903149
+      duration: 0.0803278
       messages: 
       output: 
       stacktrace: 
@@ -1350,7 +1350,7 @@ MonoBehaviour:
       name: characterHasMovedDuringFastAttack
       fullName: Tests.AttackTest.characterHasMovedDuringFastAttack
       resultStatus: 1
-      duration: 1.1259584
+      duration: 1.0620935
       messages: 
       output: 
       stacktrace: 
@@ -1367,7 +1367,7 @@ MonoBehaviour:
       name: characterHasMovedDuringStrongAttack
       fullName: Tests.AttackTest.characterHasMovedDuringStrongAttack
       resultStatus: 1
-      duration: 1.6965429
+      duration: 1.0633789
       messages: 
       output: 
       stacktrace: 
@@ -1384,7 +1384,7 @@ MonoBehaviour:
       name: combo3
       fullName: Tests.AttackTest.combo3
       resultStatus: 1
-      duration: 2.069762
+      duration: 0.0527283
       messages: 
       output: 
       stacktrace: 
@@ -1401,7 +1401,7 @@ MonoBehaviour:
       name: comboFastAttacks
       fullName: Tests.AttackTest.comboFastAttacks
       resultStatus: 1
-      duration: 0.2093542
+      duration: 0.2022669
       messages: 
       output: 
       stacktrace: 
@@ -1418,7 +1418,7 @@ MonoBehaviour:
       name: comboStrongAttacks
       fullName: Tests.AttackTest.comboStrongAttacks
       resultStatus: 1
-      duration: 0.2535533
+      duration: 0.2230379
       messages: 
       output: 
       stacktrace: 
@@ -1435,7 +1435,7 @@ MonoBehaviour:
       name: fastAttackTest
       fullName: Tests.AttackTest.fastAttackTest
       resultStatus: 1
-      duration: 0.1944797
+      duration: 0.2553089
       messages: 
       output: 
       stacktrace: 
@@ -1451,11 +1451,22 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/AttackTest/[Tests][Tests.AttackTest.fastStrongAttack]
       name: fastStrongAttack
       fullName: Tests.AttackTest.fastStrongAttack
-      resultStatus: 1
-      duration: 0
-      messages: 
+      resultStatus: 2
+      duration: 1.2572201
+      messages: 'UnityEngine.Assertions.AssertionException : Assertion failure. Value
+        was False
+
+        Expected: True'
       output: 
-      stacktrace: 
+      stacktrace: "  at UnityEngine.Assertions.Assert.Fail (System.String message,
+        System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
+        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition,
+        System.String message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0
+        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition)
+        [0x00009] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at Tests.AttackTest+<fastStrongAttack>d__10.MoveNext
+        () [0x00099] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:100
+        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
+        in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1469,7 +1480,7 @@ MonoBehaviour:
       name: rootMotionTest
       fullName: Tests.AttackTest.rootMotionTest
       resultStatus: 1
-      duration: 0.2431916
+      duration: 0.0489514
       messages: 
       output: 
       stacktrace: 
@@ -1485,22 +1496,11 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/AttackTest/[Tests][Tests.AttackTest.strongAttackTest]
       name: strongAttackTest
       fullName: Tests.AttackTest.strongAttackTest
-      resultStatus: 0
-      duration: 2.146191
-      messages: 'UnityEngine.Assertions.AssertionException : Assertion failure. Value
-        was False
-
-        Expected: True'
+      resultStatus: 1
+      duration: 0.2138709
+      messages: 
       output: 
-      stacktrace: "  at UnityEngine.Assertions.Assert.Fail (System.String message,
-        System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
-        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition,
-        System.String message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0
-        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition)
-        [0x00009] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at Tests.AttackTest+<strongAttackTest>d__6.MoveNext
-        () [0x00084] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:61
-        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
-        in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31 "
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1513,11 +1513,22 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/AttackTest/[Tests][Tests.AttackTest.strongFastAttack]
       name: strongFastAttack
       fullName: Tests.AttackTest.strongFastAttack
-      resultStatus: 1
-      duration: 1.206009
-      messages: 
+      resultStatus: 2
+      duration: 1.3964087
+      messages: 'UnityEngine.Assertions.AssertionException : Assertion failure. Value
+        was False
+
+        Expected: True'
       output: 
-      stacktrace: 
+      stacktrace: "  at UnityEngine.Assertions.Assert.Fail (System.String message,
+        System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
+        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition,
+        System.String message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0
+        \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition)
+        [0x00009] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at Tests.AttackTest+<strongFastAttack>d__11.MoveNext
+        () [0x00099] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:110
+        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
+        in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1531,7 +1542,7 @@ MonoBehaviour:
       name: CrouchingMovementTest
       fullName: Tests.CrouchingMovementTest
       resultStatus: 1
-      duration: 1.2040476
+      duration: 1.0881466
       messages: 
       output: 
       stacktrace: 
@@ -1547,7 +1558,7 @@ MonoBehaviour:
       name: crouchTest
       fullName: Tests.CrouchingMovementTest.crouchTest
       resultStatus: 1
-      duration: 1.1678356
+      duration: 1.0734216
       messages: 
       output: 
       stacktrace: 
@@ -1564,7 +1575,7 @@ MonoBehaviour:
       name: GroundMovementTest
       fullName: Tests.GroundMovementTest
       resultStatus: 1
-      duration: 1.2804506
+      duration: 1.1670492
       messages: 
       output: 
       stacktrace: 
@@ -1580,7 +1591,7 @@ MonoBehaviour:
       name: initalizeGroundMovementTest
       fullName: Tests.GroundMovementTest.initalizeGroundMovementTest
       resultStatus: 1
-      duration: 0.1172244
+      duration: 0.0671096
       messages: 
       output: 
       stacktrace: 
@@ -1597,7 +1608,7 @@ MonoBehaviour:
       name: moveTest
       fullName: Tests.GroundMovementTest.moveTest
       resultStatus: 1
-      duration: 1.1303881
+      duration: 1.0774086
       messages: 
       output: 
       stacktrace: 
@@ -1614,7 +1625,7 @@ MonoBehaviour:
       name: MidAirMovementTest
       fullName: Tests.MidAirMovementTest
       resultStatus: 1
-      duration: 3.592209
+      duration: 3.3123653
       messages: 
       output: 
       stacktrace: 
@@ -1630,7 +1641,7 @@ MonoBehaviour:
       name: fallingTest
       fullName: Tests.MidAirMovementTest.fallingTest
       resultStatus: 1
-      duration: 1.116275
+      duration: 1.0593953
       messages: 
       output: 
       stacktrace: 
@@ -1647,7 +1658,7 @@ MonoBehaviour:
       name: initTest
       fullName: Tests.MidAirMovementTest.initTest
       resultStatus: 1
-      duration: 1.1277514
+      duration: 1.0628729
       messages: 
       output: 
       stacktrace: 
@@ -1664,7 +1675,7 @@ MonoBehaviour:
       name: landingTest
       fullName: Tests.MidAirMovementTest.landingTest
       resultStatus: 1
-      duration: 1.2655325
+      duration: 1.1681339
       messages: 
       output: 
       stacktrace: 
@@ -1681,7 +1692,7 @@ MonoBehaviour:
       name: PlayerHealthTest
       fullName: Tests.PlayerHealthTest
       resultStatus: 1
-      duration: 1.8180673
+      duration: 1.3822653
       messages: 
       output: 
       stacktrace: 
@@ -1697,7 +1708,7 @@ MonoBehaviour:
       name: die
       fullName: Tests.PlayerHealthTest.die
       resultStatus: 1
-      duration: 0.1297977
+      duration: 0.0715229
       messages: 
       output: 
       stacktrace: 
@@ -1714,7 +1725,7 @@ MonoBehaviour:
       name: playerTakeDamage
       fullName: Tests.PlayerHealthTest.playerTakeDamage
       resultStatus: 1
-      duration: 0.1211914
+      duration: 0.0630031
       messages: 
       output: 
       stacktrace: 
@@ -1731,7 +1742,7 @@ MonoBehaviour:
       name: playerTakeDamageFromProjectile
       fullName: Tests.PlayerHealthTest.playerTakeDamageFromProjectile
       resultStatus: 1
-      duration: 1.1444709
+      duration: 1.0660952
       messages: 
       output: 
       stacktrace: 
@@ -1748,7 +1759,7 @@ MonoBehaviour:
       name: playerTakeDamageWithMagicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithMagicArmour
       resultStatus: 1
-      duration: 0.1192583
+      duration: 0.0607739
       messages: 
       output: 
       stacktrace: 
@@ -1765,7 +1776,7 @@ MonoBehaviour:
       name: playerTakeDamageWithPhysicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithPhysicArmour
       resultStatus: 1
-      duration: 0.1210155
+      duration: 0.0502433
       messages: 
       output: 
       stacktrace: 
@@ -1782,7 +1793,7 @@ MonoBehaviour:
       name: playerTakeDamageWithToxicArmour
       fullName: Tests.PlayerHealthTest.playerTakeDamageWithToxicArmour
       resultStatus: 1
-      duration: 0.1449769
+      duration: 0.0503617
       messages: 
       output: 
       stacktrace: 
@@ -1799,7 +1810,7 @@ MonoBehaviour:
       name: PlayerTest
       fullName: Tests.PlayerTest
       resultStatus: 1
-      duration: 0.155169
+      duration: 0.0663066
       messages: 
       output: 
       stacktrace: 
@@ -1815,7 +1826,7 @@ MonoBehaviour:
       name: initalizePlayer
       fullName: Tests.PlayerTest.initalizePlayer
       resultStatus: 1
-      duration: 0.1223148
+      duration: 0.0526934
       messages: 
       output: 
       stacktrace: 
@@ -1832,7 +1843,7 @@ MonoBehaviour:
       name: SlidingMovementTest
       fullName: Tests.SlidingMovementTest
       resultStatus: 1
-      duration: 1.1832734
+      duration: 1.0784951
       messages: 
       output: 
       stacktrace: 
@@ -1848,7 +1859,7 @@ MonoBehaviour:
       name: slideTest
       fullName: Tests.SlidingMovementTest.slideTest
       resultStatus: 1
-      duration: 1.1501802
+      duration: 1.0587616
       messages: 
       output: 
       stacktrace: 
@@ -1865,7 +1876,7 @@ MonoBehaviour:
       name: TimerManagerTest
       fullName: Tests.TimerManagerTest
       resultStatus: 2
-      duration: 4.1660542
+      duration: 4.096194
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -1881,7 +1892,7 @@ MonoBehaviour:
       name: timerTest
       fullName: Tests.TimerManagerTest.timerTest
       resultStatus: 2
-      duration: 4.1275125
+      duration: 4.078288
       messages: "  Expected: True\r\n  But was:  False\r\n"
       output: 
       stacktrace: 'at Tests.TimerManagerTest+<timerTest>d__7.MoveNext () [0x00098]
@@ -1900,27 +1911,29 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1012
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.TimerManagerTest][suite]
-    m_ResultText: "strongAttackTest (2.146s)\n---\nUnityEngine.Assertions.AssertionException
-      : Assertion failure. Value was False\r\nExpected: True\n---\nat UnityEngine.Assertions.Assert.Fail
+    m_ResultText: "strongFastAttack (1.396s)\n---\nUnityEngine.Assertions.AssertionException
+      : Assertion failure. Value was False\nExpected: True\n---\nat UnityEngine.Assertions.Assert.Fail
       (System.String message, System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
       \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition, System.String
       message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at UnityEngine.Assertions.Assert.IsTrue
       (System.Boolean condition) [0x00009] in <a3d417b16c80486ca3272865b9417295>:0
-      \r\n  at Tests.AttackTest+<strongAttackTest>d__6.MoveNext () [0x00084] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:61
-      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
+      \r\n  at Tests.AttackTest+<strongFastAttack>d__11.MoveNext () [0x00099] in
+      O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:110 \r\n 
+      at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
       in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31"
     m_ResultStacktrace: "  at UnityEngine.Assertions.Assert.Fail (System.String message,
       System.String userMessage) [0x00043] in <a3d417b16c80486ca3272865b9417295>:0
       \r\n  at UnityEngine.Assertions.Assert.IsTrue (System.Boolean condition, System.String
       message) [0x0000f] in <a3d417b16c80486ca3272865b9417295>:0 \r\n  at UnityEngine.Assertions.Assert.IsTrue
       (System.Boolean condition) [0x00009] in <a3d417b16c80486ca3272865b9417295>:0
-      \r\n  at Tests.AttackTest+<strongAttackTest>d__6.MoveNext () [0x00084] in O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:61
-      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
+      \r\n  at Tests.AttackTest+<strongFastAttack>d__11.MoveNext () [0x00099] in
+      O:\\Projects\\Unity\\Erbium\\Erbium\\Assets\\Tests\\AttackTest.cs:110 \r\n 
+      at UnityEngine.TestTools.TestEnumerator+<Execute>d__5.MoveNext () [0x00038]
       in O:\\Projects\\Unity\\Erbium\\Erbium\\Library\\PackageCache\\com.unity.test-framework@1.1.5\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:31 "
     m_TestListState:
-      scrollPos: {x: 0, y: 70.49927}
-      m_SelectedIDs: 72e03c44
-      m_LastClickedID: 1144840306
+      scrollPos: {x: 0, y: 316}
+      m_SelectedIDs: ec1a2b63
+      m_LastClickedID: 1663769324
       m_ExpandedIDs: 12b088b1fd4c0deb39ad96ec8513a0f3583a6922b20a89253354b22638c66d3e8359db417dc7445e2c4f276393e5576cffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -2026,7 +2039,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 15408
+  m_LastSelectedObjectID: 16634
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2056,23 +2069,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a6370000
-      m_LastClickedID: 14246
-      m_ExpandedIDs: 54fbffff
+      m_SelectedIDs: a8370000
+      m_LastClickedID: 14248
+      m_ExpandedIDs: c4faffff4efbffffa8370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: mixamorig:LeftLeg
-        m_OriginalName: mixamorig:LeftLeg
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -2086
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -2132,10 +2145,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 91}
-    m_SelectedIDs: 4e3c0000
-    m_LastClickedID: 15438
-    m_ExpandedIDs: 00000000ec3b0000ee3b0000f03b0000f23b0000f43b0000f63b0000f83b0000fa3b0000fc3b0000
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 543c0000
+    m_LastClickedID: 15444
+    m_ExpandedIDs: 00000000f43b0000f63b0000f83b0000fa3b0000fc3b0000fe3b0000003c0000023c0000043c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2163,7 +2176,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec3b0000ee3b0000f03b0000f23b0000f43b0000f63b0000f83b0000fa3b0000fc3b0000
+    m_ExpandedIDs: 00000000f43b0000f63b0000f83b0000fa3b0000fc3b0000fe3b0000003c0000023c0000043c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

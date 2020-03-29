@@ -20,7 +20,7 @@ namespace Characters.Movement {
 
 
             addVelocity(
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, character.getStats().CrouchSpeed));
+                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.crouchSpeed));
             rotate(direction);
             updateAnimParameters();
         }
@@ -39,7 +39,7 @@ namespace Characters.Movement {
 
         public void jump() {
             animatorFacade.setJumping(true);
-            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
+            rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
     }
 }

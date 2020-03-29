@@ -25,10 +25,10 @@ namespace Characters.Movement {
         private Vector3 accelerateAndMove(Vector3 direction) {
             var velocity =
                 CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
-                    character.getStats().Speed);
+                    stats.speed);
             if (rbd.velocity.magnitude < velocity.magnitude) {
                 var acceleration = CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
-                    character.getStats().Acceleration);
+                    stats.acceleration);
                 rbd.AddForce(acceleration);
             }
             else {
@@ -47,7 +47,7 @@ namespace Characters.Movement {
 
         public void jump() {
             animatorFacade.setJumping(true);
-            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
+            rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
 
 

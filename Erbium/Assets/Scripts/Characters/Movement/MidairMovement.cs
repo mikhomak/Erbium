@@ -14,7 +14,7 @@ namespace Characters.Movement {
         }
 
         public override void setUp() {
-            currentJumps = character.getStats().MaxJumps;
+            currentJumps = stats.maxJumps;
         }
 
         public override void move(Vector3 direction) {
@@ -26,18 +26,18 @@ namespace Characters.Movement {
 
             updateAnimations(direction);
             addVelocity(
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, character.getStats().AirSpeed));
+                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.airSpeed));
             
             calculateVelocity();
             rotate(direction);
         }
 
         private void calculateVelocity() {
-            if (rbd.velocity.y < character.getStats().MaxDownVelocity) {
-                rbd.velocity = CommonMethods.modifyYinVector(rbd.velocity, character.getStats().MaxDownVelocity);
+            if (rbd.velocity.y < stats.maxDownVelocity) {
+                rbd.velocity = CommonMethods.modifyYinVector(rbd.velocity, stats.maxDownVelocity);
             }
             else {
-                rbd.AddForce(Vector3.down * character.getStats().AdditionalGravityForce, ForceMode.Acceleration);
+                rbd.AddForce(Vector3.down * stats.additionalGravityForce, ForceMode.Acceleration);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Characters.Movement {
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
             float yValue = rbd.velocity.y;
             if (yValue < 0 && CommonMethods.isAboutToLand(transform.position, direction,
-                    CommonMethods.normalizeValue(yValue, character.getStats().MaxDownVelocity)) != oldAboutToLand) {
+                    CommonMethods.normalizeValue(yValue, stats.maxDownVelocity)) != oldAboutToLand) {
                 oldAboutToLand = !oldAboutToLand;
                 animatorFacade.setIsAboutToLand(oldAboutToLand);
             }
@@ -60,7 +60,7 @@ namespace Characters.Movement {
 
         public void jump() {
             if (currentJumps != 0) {
-                rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
+                rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
                 currentJumps--;
             }
         }

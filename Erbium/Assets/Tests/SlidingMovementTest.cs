@@ -9,9 +9,7 @@ using static NSubstitute.Substitute;
 
 
 namespace Tests {
-    public class SlidingMovementTest: AbstractTest {
-        
-
+    public class SlidingMovementTest : AbstractTest {
         [UnityTest]
         public IEnumerator slideTest() {
             IMovementDirection moveDirection = For<IMovementDirection>();
@@ -23,7 +21,7 @@ namespace Tests {
             Assert.True(player.getMovement() is SlidingMovement);
             yield return new WaitForSeconds(1f);
 
-            Vector3 expectedPosition = playerInitPosition + direction * player.getStats().SlidingSpeed;
+            Vector3 expectedPosition = playerInitPosition + direction * player.getStats().slidingSpeed;
 
             Assert.True(Vector3.Distance(expectedPosition, playerGo.transform.position) <= 1f);
             Assert.True(player.getMovement() is SlidingMovement);

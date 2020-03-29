@@ -1,18 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Characters.Movement;
-using General;
 using NSubstitute;
 using NUnit.Framework;
-using Player;
 using Player.MovementDirection;
 using UnityEngine;
 using UnityEngine.TestTools;
 using static NSubstitute.Substitute;
 
 namespace Tests {
-    public class GroundMovementTest: AbstractTest {
-
+    public class GroundMovementTest : AbstractTest {
         [UnityTest]
         public IEnumerator initalizeGroundMovementTest() {
             yield return new WaitForEndOfFrame();
@@ -35,7 +31,7 @@ namespace Tests {
             Assert.True(player.getMovement() is GroundMovement);
             yield return new WaitForSeconds(1f);
 
-            Vector3 expectedPosition = playerInitPosition + direction * (player.getStats().Speed * 1f);
+            Vector3 expectedPosition = playerInitPosition + direction * (player.getStats().speed * 1f);
             Assert.True(Vector3.Distance(expectedPosition, playerGo.transform.position) <= 2f);
             Assert.True(player.getMovement() is GroundMovement);
         }

@@ -27,9 +27,11 @@ namespace Player {
         private IHealthComponent healthComponent;
         private IArmour armour;
         private IAttackManager attackManager;
-        [SerializeField] private Rigidbody rbd;
-        [SerializeField] private Stats stats;
+        private Rigidbody rbd;
+        private Stats stats;
+
         [SerializeField] private CameraView cameraView;
+
 
         private void Start() {
             rbd = GetComponent<Rigidbody>();

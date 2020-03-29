@@ -8,12 +8,14 @@ namespace Characters.Movement {
         protected readonly IPhysicsCharacter character;
         protected readonly Transform transform;
         protected readonly IAnimatorFacade animatorFacade;
+        protected readonly Stats stats;
 
         protected AbstractMovement(IPhysicsCharacter character) {
             this.character = character;
             rbd = character.getRigidbody();
             transform = character.getTransform();
             animatorFacade = character.getAnimatorFacade();
+            stats = character.getStats();
         }
 
         public abstract void setUp();
@@ -29,7 +31,7 @@ namespace Characters.Movement {
         protected void rotate(Vector3 direction) {
             if (direction != Vector3.zero) {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
-                    character.getStats().RotationSpeed);
+                    stats.rotationSpeed);
             }
         }
 

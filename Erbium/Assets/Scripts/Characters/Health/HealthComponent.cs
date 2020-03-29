@@ -9,15 +9,15 @@ namespace Characters.Health {
 
         public HealthComponent(ICharacter character) {
             this.character = character;
-            invincibilityTime = character.getStats().InvincibilityTime;
+            invincibilityTime = character.getStats().invincibilityTime;
         }
 
         public void takeDamage(DamageInfo damage) {
             if (invincibility) return;
-            var currentHealth = character.getStats().Health -=
+            var currentHealth = character.getStats().health -=
                 character.getArmour().applyArmour(damage.Damage, damage.DamageType);
             if (currentHealth <= 0) {
-                character.getStats().Health = 0;
+                character.getStats().health = 0;
                 character.die();
             }
 

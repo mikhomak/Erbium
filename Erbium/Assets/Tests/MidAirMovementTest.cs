@@ -1,16 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Characters.Movement;
 using General;
 using NUnit.Framework;
-using Player;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 namespace Tests {
-    public class MidAirMovementTest: AbstractTest {
-       
-
+    public class MidAirMovementTest : AbstractTest {
         [UnityTest]
         public IEnumerator initTest() {
             Assert.NotNull(player);
@@ -34,7 +30,7 @@ namespace Tests {
             playerGo.transform.position = initPos;
             yield return new WaitForSeconds(1f);
             Vector3 yPos = initPos;
-            yPos.y -= player.getStats().AdditionalGravityForce;
+            yPos.y -= player.getStats().additionalGravityForce;
             Assert.True(Vector3.Distance(playerGo.transform.position, yPos) <= 7f);
         }
 
@@ -46,7 +42,7 @@ namespace Tests {
             yield return new WaitForSeconds(0.1f);
             IMovement movement = player.getMovement();
             Assert.True(CommonMethods.isAboutToLand(playerGo.transform.position, Vector3.down,
-                CommonMethods.normalizeValue(player.getRigidbody().velocity.y, player.getStats().MaxDownVelocity)));
+                CommonMethods.normalizeValue(player.getRigidbody().velocity.y, player.getStats().maxDownVelocity)));
             Assert.True(movement is MidairMovement);
             yield return new WaitForSeconds(1f);
             movement = player.getMovement();

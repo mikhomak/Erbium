@@ -12,13 +12,13 @@ namespace Characters.Armour {
             float damageAfterApplyingArmour = damage;
             switch (damageType) {
                 case DamageType.Physical:
-                    damageAfterApplyingArmour -= character.getStats().PhysicArmour;
+                    damageAfterApplyingArmour -= character.getStats().physicArmour;
                     break;
                 case DamageType.Magical:
-                    damageAfterApplyingArmour -= character.getStats().MagicArmour;
+                    damageAfterApplyingArmour -= character.getStats().magicArmour;
                     break;
                 case DamageType.Toxic:
-                    damageAfterApplyingArmour -= character.getStats().ToxicArmour;
+                    damageAfterApplyingArmour -= character.getStats().toxicArmour;
                     break;
             }
 

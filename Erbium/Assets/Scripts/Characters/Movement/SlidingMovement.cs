@@ -22,7 +22,7 @@ namespace Characters.Movement {
             }
 
             var velocity =
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, character.getStats().SlidingSpeed);
+                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.slidingSpeed);
 
             rbd.velocity = velocity;
             rotate(direction);
@@ -46,7 +46,7 @@ namespace Characters.Movement {
 
         public void jump() {
             animatorFacade.setJumping(true);
-            rbd.AddForce(Vector3.up * character.getStats().JumpForce, ForceMode.Impulse);
+            rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
     }
 }
