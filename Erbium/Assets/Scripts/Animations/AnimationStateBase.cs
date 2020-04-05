@@ -25,15 +25,15 @@ namespace Animations {
             exitAll(animator);
         }
 
-        public void updateAll(Animator animator) {
+        private void updateAll(Animator animator) {
             animationStatesDatas.ForEach(state => state.update(this, animator));
         }
 
-        public void enterAll(Animator animator) {
+        private void enterAll(Animator animator) {
             animationStatesDatas.ForEach(state => state.enter(this, animator));
         }
 
-        public void exitAll(Animator animator) {
+        private void exitAll(Animator animator) {
             animationStatesDatas.ForEach(state => state.exit(this, animator));
         }
     }

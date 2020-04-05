@@ -37,7 +37,6 @@ namespace Player {
             rbd = GetComponent<Rigidbody>();
             stats = GetComponent<Stats>();
             movementDirection = setCameraDirection(cameraView);
-            movementDirection.setPlayerTransform(transform);
             animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>(), this);
             initMovements();
             movement = movements[MovementEnum.Ground];
@@ -135,7 +134,7 @@ namespace Player {
         }
 
         public void dealDamage(IHurtbox hurtbox) {
-            throw new System.NotImplementedException();
+            attackManager.dealDamage(hurtbox);
         }
     }
 }

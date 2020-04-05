@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Characters.Hitbox {
     public class Hitbox : MonoBehaviour, IHitbox {
-        [SerializeField] private IDamageDealer damageDealer;
+        private IDamageDealer damageDealer;
 
 
         private void Start() {

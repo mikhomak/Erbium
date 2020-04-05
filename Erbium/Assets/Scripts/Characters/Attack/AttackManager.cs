@@ -4,7 +4,7 @@ using Characters.Hurtbox;
 using Characters.Movement;
 
 namespace Characters.Attack {
-    public class AttackManager : IAttackManager, IDamageDealer {
+    public class AttackManager : IAttackManager {
         private int currentCombo;
         private bool combo;
         private DamageInfo currentDamageInfo;

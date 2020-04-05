@@ -1,7 +1,5 @@
-﻿using System;
-using Characters.Damage;
+﻿using Characters.Damage;
 using Characters.Hurtbox;
-using General;
 using UnityEngine;
 
 namespace Projectiles {
@@ -17,11 +15,10 @@ namespace Projectiles {
 
         public void move() {
             //TODO move the projectile
-            throw new NotImplementedException();
         }
 
         public void dealDamage(IHurtbox hurtbox) {
-            hurtbox.takeDamage(damageInfo);
+            hurtbox.takeDamage(this.damageInfo);
         }
     }
 }

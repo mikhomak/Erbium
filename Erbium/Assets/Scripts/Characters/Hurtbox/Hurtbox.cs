@@ -17,6 +17,7 @@ namespace Characters.Hurtbox {
 
         public void takeDamage(DamageInfo damageInfo) {
             makeSureHealthComponentIsNotNull();
+            damageInfo.Damage -= character.getStats().getBodyPartMultiplier(bodyPart);
             healthComponent.takeDamage(damageInfo);
         }
 

@@ -9,20 +9,7 @@ namespace Characters.Armour {
         }
 
         public float applyArmour(float damage, DamageType damageType) {
-            float damageAfterApplyingArmour = damage;
-            switch (damageType) {
-                case DamageType.Physical:
-                    damageAfterApplyingArmour -= character.getStats().physicArmour;
-                    break;
-                case DamageType.Magical:
-                    damageAfterApplyingArmour -= character.getStats().magicArmour;
-                    break;
-                case DamageType.Toxic:
-                    damageAfterApplyingArmour -= character.getStats().toxicArmour;
-                    break;
-            }
-
-            return damageAfterApplyingArmour;
+            return damage - character.getStats().getArmour(damageType);
         }
     }
 }
