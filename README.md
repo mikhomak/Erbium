@@ -13,7 +13,7 @@ No need of any assets from the asset store. All created in pure C#
 | **Built in damage system with armour, damage type, different hurtboxes for the charachter, etc..**  |![Attack](https://raw.githubusercontent.com/mikhomak/Images/master/Erbium/attack.png)  |
 | ![Combo](https://github.com/mikhomak/Images/blob/master/Erbium/combos.gif?raw=true)  | **Fast and strong combo attacks that could be mixed together** |
 | **Sliding & crouching and other types of movement** | ![Crouching](https://github.com/mikhomak/Images/blob/master/Erbium/crouching.png?raw=true) |
-|![Tets](https://github.com/mikhomak/Images/blob/master/Erbium/integration%20tests.PNG?raw=true)  | **Integration Tests that help you find bugs in early stages of development** |
+|![Tets](https://github.com/mikhomak/Images/blob/master/Erbium/integration%20tests.PNG?raw=true)  | **Integration Tests that help you find bugs in every stage of development** |
 | **Code was built with an idea to be expanded** | ![Code](https://github.com/mikhomak/Images/blob/master/Erbium/Abstract%20movement.PNG?raw=true) |
 
 
