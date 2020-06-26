@@ -29,7 +29,8 @@ namespace Player {
         private IAttackManager attackManager;
         private Rigidbody rbd;
         private Stats stats;
-
+        public GameObject stateGo;
+        public StateUI stateUi;
         [SerializeField] private CameraView cameraView;
 
 
@@ -43,6 +44,7 @@ namespace Player {
             healthComponent = new HealthComponent(this);
             armour = new Armour(this);
             attackManager = new AttackManager(animatorFacade, this);
+            stateUi = stateGo.GetComponent<StateUI>();
         }
 
         private void FixedUpdate() {
@@ -108,7 +110,7 @@ namespace Player {
                     movement = new SlidingMovement(this);
                     break;
             }*/
-
+            stateUi.changeColor(movementEnum);
             movement = movements[movementEnum];
             movement.setUp();
         }
