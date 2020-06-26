@@ -47,7 +47,7 @@ namespace Characters.Movement {
 
         public void jump() {
             animatorFacade.setJumping(true);
-            rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
+            rbd.AddForce(Vector3.up * stats.jumpForce + rbd.velocity.normalized * 50f, ForceMode.Impulse);
         }
 
 

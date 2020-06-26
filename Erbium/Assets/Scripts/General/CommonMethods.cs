@@ -4,7 +4,7 @@ namespace General {
     public static class CommonMethods {
         public const float GROUND_RAT_DISTANCE = 0.3f;
         public const float LANDING_RAT_DISTANCE_MIN = 1.5f;
-        public const float LANDING_RAT_DISTANCE_MAX = 2f;
+        public const float LANDING_RAT_DISTANCE_MAX = 2.5f;
         public const float TRANSFORM_RAYCAST_LIFT = 0.2f;
         public const float TRANSFORM_RAYCAST_LIFT_LANDING = TRANSFORM_RAYCAST_LIFT * 2;
         public const int GROUND_LAYER = 1 << 8;

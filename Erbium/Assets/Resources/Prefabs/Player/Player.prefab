@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &430521599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 430521600}
-  m_Layer: 0
-  m_Name: Hurtboxes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &430521600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430521599}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 919691470}
-  - {fileID: 1443903609}
-  m_Father: {fileID: 5780510845307315398}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919691469
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,12 +25,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919691469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.316, z: 0}
+  m_LocalRotation: {x: -0.014143869, y: -0.32984787, z: -0.0041778293, w: 0.94391894}
+  m_LocalPosition: {x: -0.029176429, y: -1.386255, z: 0.034009248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 430521600}
-  m_RootOrder: 0
+  m_Father: {fileID: 1337824177879556965}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &919691471
 CapsuleCollider:
@@ -116,12 +84,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443903608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.61, z: 0.127}
+  m_LocalRotation: {x: -0.12105633, y: -0.0038252324, z: 0.03171204, w: 0.9921316}
+  m_LocalPosition: {x: -0.034880653, y: 0.10405518, z: 0.009628172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 430521600}
-  m_RootOrder: 1
+  m_Father: {fileID: 8738657138452882098}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1443903610
 CapsuleCollider:
@@ -264,7 +232,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1532010240820790341}
-  - {fileID: 430521600}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -296,6 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdac7e95056deb4990bb059320defc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateGo: {fileID: 0}
+  stateUi: {fileID: 0}
   cameraView: 0
 --- !u!114 &5780510845307315400
 MonoBehaviour:
@@ -315,7 +284,6 @@ MonoBehaviour:
   rotationSpeed: 10
   crouchSpeed: 6
   slidingSpeed: 15
-  movementSpeedAttacking: 3
   jumpForce: 15
   additionalGravityForce: 20
   maxJumps: 2
@@ -509,6 +477,18 @@ Transform:
 --- !u!4 &8726135720690870083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2963660786538088476, guid: 956a930d312c44548ab061588a533269,
+    type: 3}
+  m_PrefabInstance: {fileID: 5780510846165446495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1337824177879556965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4803256113787784250, guid: 956a930d312c44548ab061588a533269,
+    type: 3}
+  m_PrefabInstance: {fileID: 5780510846165446495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8738657138452882098 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2989701457832414701, guid: 956a930d312c44548ab061588a533269,
     type: 3}
   m_PrefabInstance: {fileID: 5780510846165446495}
   m_PrefabAsset: {fileID: 0}

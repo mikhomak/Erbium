@@ -51,9 +51,9 @@ namespace Characters.Movement {
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
             float yValue = rbd.velocity.y;
             if (yValue < 0 && CommonMethods.isAboutToLand(transform.position, direction,
-                    CommonMethods.normalizeValue(yValue, stats.maxDownVelocity)) != oldAboutToLand) {
+                    CommonMethods.normalizeValue(yValue, stats.maxDownVelocity))) {
                 oldAboutToLand = !oldAboutToLand;
-                animatorFacade.setIsAboutToLand(oldAboutToLand);
+                animatorFacade.setIsAboutToLand(true);
             }
         }
 
