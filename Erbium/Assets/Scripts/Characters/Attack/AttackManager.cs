@@ -2,6 +2,7 @@
 using Characters.Damage;
 using Characters.Hurtbox;
 using Characters.Movement;
+using UnityEngine;
 
 namespace Characters.Attack {
     public class AttackManager : IAttackManager {
@@ -10,32 +11,43 @@ namespace Characters.Attack {
         private DamageInfo currentDamageInfo;
         private readonly IAnimatorFacade animatorFacade;
         private readonly ICharacter character;
+        private bool fast = false;
+        private ComboUI comboUi;
 
-        public AttackManager(IAnimatorFacade animatorFacade, ICharacter character) {
+        public AttackManager(IAnimatorFacade animatorFacade, ICharacter character, ComboUI comboUi) {
             this.animatorFacade = animatorFacade;
             this.character = character;
+            this.comboUi = comboUi;
         }
 
         public void strongAttack() {
             if (!isItPossibleToAttackWithCurrentMovement()) {
                 return;
             }
+
             makeSureItsAttackingMovement();
             animatorFacade.strongAttack(combo);
+
+            fast = false;
         }
 
         public void fastAttack() {
             if (!isItPossibleToAttackWithCurrentMovement()) {
                 return;
             }
+
             makeSureItsAttackingMovement();
             animatorFacade.fastAttack(combo);
+            fast = true;
+
         }
 
 
         public void addCombo() {
+            Debug.Log("ayo");
             combo = true;
             currentCombo++;
+            comboUi.addCombo(fast);
         }
 
 

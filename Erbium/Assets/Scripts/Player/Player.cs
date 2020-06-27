@@ -32,6 +32,7 @@ namespace Player {
         public GameObject stateGo;
         public StateUI stateUi;
         [SerializeField] private CameraView cameraView;
+        [SerializeField] private ComboUI comboUi;
 
 
         private void Start() {
@@ -43,12 +44,13 @@ namespace Player {
             movement = movements[MovementEnum.Ground];
             healthComponent = new HealthComponent(this);
             armour = new Armour(this);
-            attackManager = new AttackManager(animatorFacade, this);
+            attackManager = new AttackManager(animatorFacade, this, comboUi);
             stateUi = stateGo.GetComponent<StateUI>();
         }
 
         private void FixedUpdate() {
             movement.move(movementDirection.getDirection());
+            Debug.Log(rbd.velocity.magnitude);
         }
 
 

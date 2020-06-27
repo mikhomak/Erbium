@@ -38,6 +38,7 @@ namespace General {
 
         public void startTimer(float time, Action timerEndEvent) {
             Timer timer = timerPool.get();
+            Debug.Log(timerEndEvent.Method);
             timer.Action = timerEndEvent;
             timer.EndTime = time;
             timer.TimerManager = this;
@@ -58,7 +59,7 @@ namespace General {
             }
 
             public Action Action {
-                set => action = value;
+                set { action = value; }
             }
 
             public void updateTimer(float time) {
