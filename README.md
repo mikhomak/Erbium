@@ -1,7 +1,7 @@
 # Erbium   
 
 ![Erbium](https://raw.githubusercontent.com/mikhomak/Images/master/Erbium/erbium%20main.png)
-
+[![Video](https://raw.githubusercontent.com/mikhomak/Images/master/Erbium/VideoTrailer.PNG)](https://www.youtube.com/watch?v=PGcHKdy1b44)
 
 Highly customizable third person character for quick set up for prototyping your game  
 No need of any assets from the asset store. All created in pure C#   
