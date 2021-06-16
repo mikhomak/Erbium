@@ -1,8 +1,3 @@
-﻿namespace Characters.Hurtbox
-{
-public enum BodyPartHurtbox
-{
-    Head,
-    Body
-}
+﻿namespace Characters.Hurtbox {
+  public enum BodyPartHurtbox { Head, Body }
 }

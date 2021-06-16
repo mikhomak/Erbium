@@ -1,9 +1,5 @@
 ﻿using Characters.Damage;
 
-namespace Characters.Hurtbox
-{
-public interface IHurtbox
-{
-    void TakeDamage(DamageInfo damageInfo);
-}
+namespace Characters.Hurtbox {
+  public interface IHurtbox { void TakeDamage(DamageInfo damageInfo); }
 }

@@ -2,68 +2,45 @@
 using General;
 using UnityEngine;
 
-namespace Characters.Movement
-{
-public class AttackingMovement : AbstractMovement, IFallable, IRootMotion
-{
+namespace Characters.Movement {
+  public class AttackingMovement : AbstractMovement, IFallable, IRootMotion {
     private readonly Animator _animator;
     private Vector3 _rootMotionAdditionalPosition;
 
-    public AttackingMovement(IPhysicsCharacter character) : base(character)
-    {
-        _animator = character.getAnimatorFacade().getAnimator();
+    public AttackingMovement(IPhysicsCharacter character) : base(character) {
+      _animator = character.getAnimatorFacade().getAnimator();
     }
 
-    public override void SetUp()
-    {
-        StartRootMotion();
+    public override void SetUp() { StartRootMotion(); }
+
+    public override void Move(Vector3 direction) {
+      if (IsFalling()) {
+        ChangeMovement(MovementEnum.Midair);
+        return;
+      }
+
+      var position = rbd.position;
+      rbd.MovePosition(CommonMethods.CreateVectorWithoutLoosingY(
+          position + _rootMotionAdditionalPosition, position.y));
+
+      Rotate(direction);
+      UpdateAnimParameters();
     }
 
-    public override void Move(Vector3 direction)
-    {
-        if (IsFalling())
-        {
-            ChangeMovement(MovementEnum.Midair);
-            return;
-        }
+    private void UpdateAnimParameters() { animatorFacade.UpdateInputs(); }
 
-        var position = rbd.position;
-        rbd.MovePosition(
-            CommonMethods.CreateVectorWithoutLoosingY(position + _rootMotionAdditionalPosition, position.y));
+    public override void CleanUp() { FinishRootMotion(); }
 
-        Rotate(direction);
-        UpdateAnimParameters();
+    public bool IsFalling() {
+      return !CommonMethods.ONGround(transform.position);
     }
 
-    private void UpdateAnimParameters()
-    {
-        animatorFacade.UpdateInputs();
+    public void StartRootMotion() { _animator.applyRootMotion = true; }
+
+    public void SetRootMotionAdditionalPosition(Vector3 position) {
+      _rootMotionAdditionalPosition = position;
     }
 
-    public override void CleanUp()
-    {
-        FinishRootMotion();
-    }
-
-    public bool IsFalling()
-    {
-        return !CommonMethods.ONGround(transform.position);
-    }
-
-    public void StartRootMotion()
-    {
-        _animator.applyRootMotion = true;
-    }
-
-
-    public void SetRootMotionAdditionalPosition(Vector3 position)
-    {
-        _rootMotionAdditionalPosition = position;
-    }
-
-    public void FinishRootMotion()
-    {
-        _animator.applyRootMotion = false;
-    }
-}
+    public void FinishRootMotion() { _animator.applyRootMotion = false; }
+  }
 }

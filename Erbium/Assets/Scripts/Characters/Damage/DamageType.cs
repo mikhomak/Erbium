@@ -1,9 +1,3 @@
-﻿namespace Characters.Damage
-{
-public enum DamageType
-{
-    Physical,
-    Magical,
-    Toxic
-}
+﻿namespace Characters.Damage {
+  public enum DamageType { Physical, Magical, Toxic }
 }
