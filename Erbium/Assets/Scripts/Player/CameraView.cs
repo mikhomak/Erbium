@@ -1,9 +1,9 @@
 ﻿namespace Player
 {
-    public enum CameraView
-    {
-        AlwaysForward,
-        TopView,
-        SideView
-    }
+public enum CameraView
+{
+    AlwaysForward,
+    TopView,
+    SideView
+}
 }

@@ -1,7 +1,7 @@
 ﻿namespace Projectiles
 {
-    public interface IProjectile
-    {
-        void Move();
-    }
+public interface IProjectile
+{
+    void Move();
+}
 }

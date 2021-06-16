@@ -2,8 +2,8 @@
 
 namespace Characters.Damage
 {
-    public interface IDamageDealer
-    {
-        void DealDamage(IHurtbox hurtbox);
-    }
+public interface IDamageDealer
+{
+    void DealDamage(IHurtbox hurtbox);
+}
 }

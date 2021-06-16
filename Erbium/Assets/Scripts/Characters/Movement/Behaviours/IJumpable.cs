@@ -1,7 +1,7 @@
 ﻿namespace Characters.Movement.Behaviours
 {
-    public interface IJumpable
-    {
-        void Jump();
-    }
+public interface IJumpable
+{
+    void Jump();
+}
 }

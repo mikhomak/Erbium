@@ -2,8 +2,8 @@
 
 namespace Characters.Hurtbox
 {
-    public interface IHurtbox
-    {
-        void TakeDamage(DamageInfo damageInfo);
-    }
+public interface IHurtbox
+{
+    void TakeDamage(DamageInfo damageInfo);
+}
 }

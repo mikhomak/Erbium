@@ -2,8 +2,8 @@
 
 namespace Characters.Hitbox
 {
-    public interface IHitbox
-    {
-        void OnTriggerEnter(Collider other);
-    }
+public interface IHitbox
+{
+    void OnTriggerEnter(Collider other);
+}
 }

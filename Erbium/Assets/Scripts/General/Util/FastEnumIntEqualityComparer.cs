@@ -4,36 +4,36 @@ using System.Linq.Expressions;
 
 namespace General.Util
 {
-    internal struct FastEnumIntEqualityComparer<TEnum> : IEqualityComparer<TEnum>
-        where TEnum : struct
+internal struct FastEnumIntEqualityComparer<TEnum> : IEqualityComparer<TEnum>
+    where TEnum : struct
+{
+    private static class BoxAvoidance
     {
-        private static class BoxAvoidance
+        private static readonly Func<TEnum, int> Wrapper;
+
+        public static int ToInt(TEnum enu)
         {
-            private static readonly Func<TEnum, int> Wrapper;
-
-            public static int ToInt(TEnum enu)
-            {
-                return Wrapper(enu);
-            }
-
-            static BoxAvoidance()
-            {
-                ParameterExpression p = Expression.Parameter(typeof(TEnum), null);
-                UnaryExpression c = Expression.ConvertChecked(p, typeof(int));
-
-                Wrapper = Expression.Lambda<Func<TEnum, int>>(c, p).Compile();
-            }
+            return Wrapper(enu);
         }
 
-        public bool Equals(TEnum firstEnum, TEnum secondEnum)
+        static BoxAvoidance()
         {
-            return BoxAvoidance.ToInt(firstEnum) ==
-                   BoxAvoidance.ToInt(secondEnum);
-        }
+            ParameterExpression p = Expression.Parameter(typeof(TEnum), null);
+            UnaryExpression c = Expression.ConvertChecked(p, typeof(int));
 
-        public int GetHashCode(TEnum firstEnum)
-        {
-            return BoxAvoidance.ToInt(firstEnum);
+            Wrapper = Expression.Lambda<Func<TEnum, int>>(c, p).Compile();
         }
     }
+
+    public bool Equals(TEnum firstEnum, TEnum secondEnum)
+    {
+        return BoxAvoidance.ToInt(firstEnum) ==
+               BoxAvoidance.ToInt(secondEnum);
+    }
+
+    public int GetHashCode(TEnum firstEnum)
+    {
+        return BoxAvoidance.ToInt(firstEnum);
+    }
+}
 }

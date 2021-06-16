@@ -2,8 +2,8 @@
 
 namespace Player.MovementDirection
 {
-    public interface IMovementDirection
-    {
-        Vector3 GetDirection();
-    }
+public interface IMovementDirection
+{
+    Vector3 GetDirection();
+}
 }

@@ -1,11 +1,11 @@
 ﻿namespace Characters.Movement
 {
-    public enum MovementEnum
-    {
-        Ground,
-        Midair,
-        Crouch,
-        Slide,
-        Attack
-    }
+public enum MovementEnum
+{
+    Ground,
+    Midair,
+    Crouch,
+    Slide,
+    Attack
+}
 }

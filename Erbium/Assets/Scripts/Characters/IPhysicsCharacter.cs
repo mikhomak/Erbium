@@ -2,9 +2,9 @@
 
 namespace Characters
 {
-    public interface IPhysicsCharacter : ICharacter
-    {
-        Rigidbody getRigidbody();
-        Transform getTransform();
-    }
+public interface IPhysicsCharacter : ICharacter
+{
+    Rigidbody getRigidbody();
+    Transform getTransform();
+}
 }

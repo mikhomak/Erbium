@@ -1,7 +1,7 @@
 ﻿namespace Characters.Movement.Behaviours
 {
-    public interface IFallable
-    {
-        bool IsFalling();
-    }
+public interface IFallable
+{
+    bool IsFalling();
+}
 }
