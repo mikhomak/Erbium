@@ -11,130 +11,140 @@ using General.Util;
 using Player.MovementDirection;
 using UnityEngine;
 
-namespace Player {
+namespace Player
+{
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Stats))]
-    public class Player : MonoBehaviour, IPlayer, IDamageDealer {
+    public class Player : MonoBehaviour, IPlayer, IDamageDealer
+    {
         private static readonly FastEnumIntEqualityComparer<MovementEnum> FastEnumIntEqualityComparer =
             new FastEnumIntEqualityComparer<MovementEnum>();
 
-        private readonly Dictionary<MovementEnum, IMovement> movements =
+        private readonly Dictionary<MovementEnum, IMovement> _movements =
             new Dictionary<MovementEnum, IMovement>(FastEnumIntEqualityComparer);
 
-        private IMovement movement;
-        private IAnimatorFacade animatorFacade;
-        private IMovementDirection movementDirection;
-        private IHealthComponent healthComponent;
-        private IArmour armour;
-        private IAttackManager attackManager;
-        private Rigidbody rbd;
-        private Stats stats;
+        private IMovement _movement;
+        private IAnimatorFacade _animatorFacade;
+        private IMovementDirection _movementDirection;
+        private IHealthComponent _healthComponent;
+        private IArmour _armour;
+        private IAttackManager _attackManager;
+        private Rigidbody _rbd;
+        private Stats _stats;
 
         [SerializeField] private CameraView cameraView;
 
 
-        private void Start() {
-            rbd = GetComponent<Rigidbody>();
-            stats = GetComponent<Stats>();
-            movementDirection = setCameraDirection(cameraView);
-            animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>(), this);
-            initMovements();
-            movement = movements[MovementEnum.Ground];
-            healthComponent = new HealthComponent(this);
-            armour = new Armour(this);
-            attackManager = new AttackManager(animatorFacade, this);
+        private void Start()
+        {
+            _rbd = GetComponent<Rigidbody>();
+            _stats = GetComponent<Stats>();
+            _movementDirection = SetCameraDirection(cameraView);
+            _animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>(), this);
+            InitMovements(); // creating all movements
+            _movement = _movements[MovementEnum.Ground]; // setting the current movement as Ground One
+            _healthComponent = new HealthComponent(this);
+            _armour = new Armour(this);
+            _attackManager = new AttackManager(_animatorFacade, this);
         }
 
-        private void FixedUpdate() {
-            movement.move(movementDirection.getDirection());
+        private void FixedUpdate()
+        {
+            _movement.Move(_movementDirection.GetDirection());
         }
 
 
-        public void die() {
+        public void Die()
+        {
         }
 
 
-        private IMovementDirection setCameraDirection(CameraView cameraView) {
+        private IMovementDirection SetCameraDirection(CameraView cameraView)
+        {
             this.cameraView = cameraView;
-            switch (cameraView) {
-                case CameraView.AlwaysForward:
-                    return new ThirdPersonCameraDirection();
-                default:
-                    return new ThirdPersonCameraDirection();
-            }
+            return cameraView switch
+            {
+                CameraView.AlwaysForward => new ThirdPersonCameraDirection(),
+                _ => new ThirdPersonCameraDirection()
+            };
         }
 
-        public IHealthComponent getHealthComponent() {
-            return healthComponent;
+        public IHealthComponent getHealthComponent()
+        {
+            return _healthComponent;
         }
 
-        public IAnimatorFacade getAnimatorFacade() {
-            return animatorFacade;
+        public IAnimatorFacade getAnimatorFacade()
+        {
+            return _animatorFacade;
         }
 
-        public IArmour getArmour() {
-            return armour;
+        public IArmour getArmour()
+        {
+            return _armour;
         }
 
-        public IAttackManager getAttackManager() {
-            return attackManager;
+        public IAttackManager getAttackManager()
+        {
+            return _attackManager;
         }
 
-        public Rigidbody getRigidbody() {
-            return rbd;
+        public Rigidbody getRigidbody()
+        {
+            return _rbd;
         }
 
-        public Transform getTransform() {
+        public Transform getTransform()
+        {
             return transform;
         }
 
-        public IMovement getMovement() {
-            return movement;
+        public IMovement getMovement()
+        {
+            return _movement;
         }
 
-        public void changeMovement(MovementEnum movementEnum) {
-            movement.cleanUp();
-            /*switch (movementEnum) {
-                case MovementEnum.Crouch:
-                    movement = new CrouchingMovement(this);
-                    break;
-                case MovementEnum.Ground:
-                    movement = new GroundMovement(this);
-                    break;
-                case MovementEnum.Midair:
-                    movement = new MidairMovement(this);
-                    break;
-                case MovementEnum.Slide:
-                    movement = new SlidingMovement(this);
-                    break;
-            }*/
-
-            movement = movements[movementEnum];
-            movement.setUp();
+        public void ChangeMovement(MovementEnum movementEnum)
+        {
+            // Movement states life cycles
+            _movement.CleanUp(); // cleaning up the current movement
+            _movement = _movements[movementEnum]; // changing the current movement to the new one
+            _movement.SetUp(); // setting up new movement
         }
 
-        public Stats getStats() {
-            return stats;
+        public Stats getStats()
+        {
+            return _stats;
         }
 
-        public void changeMovementDirection(IMovementDirection movementDirection) {
-            this.movementDirection = movementDirection;
+        public void ChangeMovementDirection(IMovementDirection movementDirection)
+        {
+            this._movementDirection = movementDirection;
         }
 
-        public void changeMovementDirection(CameraView cameraView) {
-            movementDirection = setCameraDirection(cameraView);
+        public void ChangeMovementDirection(CameraView cameraView)
+        {
+            _movementDirection = SetCameraDirection(cameraView);
         }
 
-        private void initMovements() {
-            movements.Add(MovementEnum.Ground, new GroundMovement(this));
-            movements.Add(MovementEnum.Midair, new MidairMovement(this));
-            movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
-            movements.Add(MovementEnum.Slide, new SlidingMovement(this));
-            movements.Add(MovementEnum.Attack, new AttackingMovement(this));
+        /// <summary>
+        /// Creating <b>ALL POSSIBLE</b> movements at the Start
+        /// That way we don't need to create a new movement each time we change the movement state
+        /// We can just use movements[MovementEnum] to get each movement
+        /// We are using this array in changeMovement(MovementEnum)
+        /// </summary>
+        private void InitMovements()
+        {
+            _movements.Add(MovementEnum.Ground, new GroundMovement(this));
+            _movements.Add(MovementEnum.Midair, new MidairMovement(this));
+            _movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
+            _movements.Add(MovementEnum.Slide, new SlidingMovement(this));
+            _movements.Add(MovementEnum.Attack, new AttackingMovement(this));
         }
 
-        public void dealDamage(IHurtbox hurtbox) {
-            attackManager.dealDamage(hurtbox);
+        public void DealDamage(IHurtbox hurtbox)
+        {
+            _attackManager.DealDamage(hurtbox);
         }
     }
 }

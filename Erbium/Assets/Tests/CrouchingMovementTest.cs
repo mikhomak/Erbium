@@ -15,12 +15,12 @@ namespace Tests {
     public class CrouchingMovementTest: AbstractTest {
 
         [UnityTest]
-        public IEnumerator crouchTest() {
+        public IEnumerator CrouchTest() {
             IMovementDirection moveDirection = For<IMovementDirection>();
             var direction = new Vector3(0, 0, 1);
-            player.changeMovementDirection(moveDirection);
-            moveDirection.getDirection().Returns(direction);
-            player.changeMovement(MovementEnum.Crouch);
+            player.ChangeMovementDirection(moveDirection);
+            moveDirection.GetDirection().Returns(direction);
+            player.ChangeMovement(MovementEnum.Crouch);
             Vector3 playerInitPosition = playerGo.transform.position;
             Assert.True(player.getMovement() is CrouchingMovement);
             yield return new WaitForSeconds(1f);

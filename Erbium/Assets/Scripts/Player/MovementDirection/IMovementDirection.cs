@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Player.MovementDirection {
-    public interface IMovementDirection {
-        Vector3 getDirection();
+namespace Player.MovementDirection
+{
+    public interface IMovementDirection
+    {
+        Vector3 GetDirection();
     }
 }

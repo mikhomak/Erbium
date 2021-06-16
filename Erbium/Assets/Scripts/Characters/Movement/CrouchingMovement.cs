@@ -2,43 +2,53 @@
 using General;
 using UnityEngine;
 
-namespace Characters.Movement {
-    public class CrouchingMovement : AbstractMovement, IFallable, IJumpable {
-        public CrouchingMovement(IPhysicsCharacter character) : base(character) {
+namespace Characters.Movement
+{
+    public class CrouchingMovement : AbstractMovement, IFallable, IJumpable
+    {
+        public CrouchingMovement(IPhysicsCharacter character) : base(character)
+        {
         }
 
 
-        public override void setUp() {
-            animatorFacade.setCrouching(true);
+        public override void SetUp()
+        {
+            animatorFacade.SetCrouching(true);
         }
 
-        public override void move(Vector3 direction) {
-            if (isFalling()) {
-                changeMovement(MovementEnum.Midair);
+        public override void Move(Vector3 direction)
+        {
+            if (IsFalling())
+            {
+                ChangeMovement(MovementEnum.Midair);
                 return;
             }
 
 
-            addVelocity(
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.crouchSpeed));
-            rotate(direction);
-            updateAnimParameters();
+            AddVelocity(
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.crouchSpeed));
+            Rotate(direction);
+            UpdateAnimParameters();
         }
 
-        private void updateAnimParameters() {
-            animatorFacade.updateInputs();
+        private void UpdateAnimParameters()
+        {
+            animatorFacade.UpdateInputs();
         }
 
-        public override void cleanUp() {
-            animatorFacade.setCrouching(false);
+        public override void CleanUp()
+        {
+            animatorFacade.SetCrouching(false);
         }
 
-        public bool isFalling() {
-            return !CommonMethods.onGround(transform.position);
+        public bool IsFalling()
+        {
+            return !CommonMethods.ONGround(transform.position);
         }
 
-        public void jump() {
-            animatorFacade.setJumping(true);
+        public void Jump()
+        {
+            animatorFacade.SetJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
     }

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Animations {
-    public abstract class AnimationStateData : ScriptableObject {
-        public float Duration;
-        public abstract void update(AnimationStateBase animatorState, Animator animator);
-        public abstract void enter(AnimationStateBase animatorState, Animator animator);
-        public abstract void exit(AnimationStateBase animatorState, Animator animator);
+namespace Animations
+{
+    public abstract class AnimationStateData : ScriptableObject
+    {
+        [FormerlySerializedAs("Duration")] public float duration;
+        public abstract void UpdateAnimData(AnimationStateBase animatorState, Animator animator);
+        public abstract void Enter(AnimationStateBase animatorState, Animator animator);
+        public abstract void Exit(AnimationStateBase animatorState, Animator animator);
     }
 }

@@ -2,95 +2,116 @@
 using General;
 using UnityEngine;
 
-namespace Animators {
-    public class AnimatorFacade : IAnimatorFacade {
-        private readonly ICharacterAnimator characterAnimator;
-        private readonly ICharacter character;
-        private bool unskippable;
+namespace Animators
+{
+    public class AnimatorFacade : IAnimatorFacade
+    {
+        private readonly ICharacterAnimator _characterAnimator;
+        private readonly ICharacter _character;
+        private bool _unskippable;
 
-        public AnimatorFacade(ICharacterAnimator characterAnimator, ICharacter character) {
-            this.characterAnimator = characterAnimator;
-            this.character = character;
+        public AnimatorFacade(ICharacterAnimator characterAnimator, ICharacter character)
+        {
+            this._characterAnimator = characterAnimator;
+            this._character = character;
         }
 
 
-        public Animator getAnimator() {
-            return characterAnimator.getAnimator();
+        public Animator getAnimator()
+        {
+            return _characterAnimator.getAnimator();
         }
 
-        public void updateInputs() {
-            setInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getMagnitude());
+        public void UpdateInputs()
+        {
+            SetInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getMagnitude());
         }
 
-        public void setInputs(float horInput, float verInput, float inputMagnitude) {
-            characterAnimator.setHorInput(horInput);
-            characterAnimator.setVerInput(verInput);
-            characterAnimator.setInputMagnitude(inputMagnitude);
+        public void SetInputs(float horInput, float verInput, float inputMagnitude)
+        {
+            _characterAnimator.SetHorInput(horInput);
+            _characterAnimator.SetVerInput(verInput);
+            _characterAnimator.SetInputMagnitude(inputMagnitude);
         }
 
-        public void setGroundVelocity(float groundVelocity) {
-            characterAnimator.setGroundVelocity(groundVelocity);
+        public void SetGroundVelocity(float groundVelocity)
+        {
+            _characterAnimator.SetGroundVelocity(groundVelocity);
         }
 
-        public void setIsFalling(bool isFalling) {
-            characterAnimator.setIsFalling(checkIfUnskippable(isFalling));
+        public void SetIsFalling(bool isFalling)
+        {
+            _characterAnimator.SetIsFalling(CheckIfUnskippable(isFalling));
         }
 
-        public void setIsAboutToLand(bool isAboutToLand) {
-            characterAnimator.setIsAboutToLand(checkIfUnskippable(isAboutToLand));
-            if (isAboutToLand) {
-                setIsFalling(false);
+        public void SetIsAboutToLand(bool isAboutToLand)
+        {
+            _characterAnimator.SetIsAboutToLand(CheckIfUnskippable(isAboutToLand));
+            if (isAboutToLand)
+            {
+                SetIsFalling(false);
             }
         }
 
-        public void untoggleAirAnimations() {
-            setIsFalling(false);
-            setIsAboutToLand(false);
+        public void UntoggleAirAnimations()
+        {
+            SetIsFalling(false);
+            SetIsAboutToLand(false);
         }
 
-        public void setJumping(bool jumping) {
-            unskippable = jumping;
-            characterAnimator.setJumping(jumping);
+        public void SetJumping(bool jumping)
+        {
+            _unskippable = jumping;
+            _characterAnimator.SetJumping(jumping);
         }
 
-        public void setCrouching(bool crouching) {
-            characterAnimator.setCrouching(crouching);
+        public void SetCrouching(bool crouching)
+        {
+            _characterAnimator.SetCrouching(crouching);
         }
 
-        public void setSliding(bool sliding) {
-            characterAnimator.setSliding(sliding);
+        public void SetSliding(bool sliding)
+        {
+            _characterAnimator.SetSliding(sliding);
         }
 
-        public void strongAttack(bool combo) {
-            if (combo) {
-                characterAnimator.setComboAttack();
+        public void StrongAttack(bool combo)
+        {
+            if (combo)
+            {
+                _characterAnimator.SetComboAttack();
             }
 
-            characterAnimator.triggerStrongAttack();
+            _characterAnimator.TriggerStrongAttack();
         }
 
-        public void fastAttack(bool combo) {
-            if (combo) {
-                characterAnimator.setComboAttack();
+        public void FastAttack(bool combo)
+        {
+            if (combo)
+            {
+                _characterAnimator.SetComboAttack();
             }
 
-            characterAnimator.triggerFastAttack();
+            _characterAnimator.TriggerFastAttack();
         }
 
-        public void resetAttacks() {
-            characterAnimator.resetFastAttack();
-            characterAnimator.resetStrongAttack();
-            characterAnimator.resetComboAttack();
+        public void ResetAttacks()
+        {
+            _characterAnimator.ResetFastAttack();
+            _characterAnimator.ResetStrongAttack();
+            _characterAnimator.ResetComboAttack();
         }
 
-        public void setUnskippable(bool unskippable) {
-            this.unskippable = unskippable;
-            characterAnimator.setUnskippable(unskippable);
+        public void SetUnskippable(bool unskippable)
+        {
+            this._unskippable = unskippable;
+            _characterAnimator.SetUnskippable(unskippable);
         }
 
 
-        private bool checkIfUnskippable(bool stateToCheck) {
-            return !unskippable && stateToCheck;
+        private bool CheckIfUnskippable(bool stateToCheck)
+        {
+            return !_unskippable && stateToCheck;
         }
     }
 }

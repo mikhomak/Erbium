@@ -1,36 +1,44 @@
 ﻿using System.Collections.Concurrent;
 
-namespace General.Util {
-    public class ObjectPool<T> where T : new() {
-        private readonly ConcurrentBag<T> items = new ConcurrentBag<T>();
-        private int counter = 0;
-        private readonly int MAX;
+namespace General.Util
+{
+    public class ObjectPool<T> where T : new()
+    {
+        private readonly ConcurrentBag<T> _items = new ConcurrentBag<T>();
+        private int _counter = 0;
+        private readonly int _max;
 
-        public ObjectPool(int max) {
-            MAX = max;
+        public ObjectPool(int max)
+        {
+            _max = max;
         }
 
-        public void release(T item) {
-            if (counter < MAX) {
-                items.Add(item);
-                counter++;
+        public void Release(T item)
+        {
+            if (_counter < _max)
+            {
+                _items.Add(item);
+                _counter++;
             }
         }
 
-        public T get() {
-            if (items.TryTake(out var item)) {
-                counter--;
+        public T get()
+        {
+            if (_items.TryTake(out var item))
+            {
+                _counter--;
                 return item;
             }
 
             T obj = new T();
-            items.Add(obj);
-            counter++;
+            _items.Add(obj);
+            _counter++;
             return obj;
         }
 
-        public ConcurrentBag<T> getAll() {
-            return items;
+        public ConcurrentBag<T> getAll()
+        {
+            return _items;
         }
     }
 }

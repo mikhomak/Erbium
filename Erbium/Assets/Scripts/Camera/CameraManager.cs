@@ -1,33 +1,38 @@
 ﻿using UnityEngine;
 
-namespace Camera {
-    public class CameraManager : MonoBehaviour {
+namespace Camera
+{
+    public class CameraManager : MonoBehaviour
+    {
+        private static UnityEngine.Camera _camera;
 
-        private new static UnityEngine.Camera camera;
-
-        private void Start() {
-            camera = UnityEngine.Camera.main;
+        private void Start()
+        {
+            _camera = UnityEngine.Camera.main;
         }
 
-        public static Vector3 getCameraForwardDirection() {
-            return camera.transform.forward;
+        public static Vector3 getCameraForwardDirection()
+        {
+            return _camera.transform.forward;
         }
 
-        public static Vector3 getCameraRightDirection() {
-            return camera.transform.right;
+        public static Vector3 getCameraRightDirection()
+        {
+            return _camera.transform.right;
         }
 
-        public static Vector3 getCameraForwardDirectionNormalized() {
+        public static Vector3 getCameraForwardDirectionNormalized()
+        {
             Vector3 forward = getCameraForwardDirection();
             forward.y = 0;
             return forward.normalized;
         }
 
-        public static Vector3 getCameraRightDirectionNormalized() {
+        public static Vector3 getCameraRightDirectionNormalized()
+        {
             Vector3 right = getCameraRightDirection();
             right.y = 0;
             return right.normalized;
         }
-
     }
 }

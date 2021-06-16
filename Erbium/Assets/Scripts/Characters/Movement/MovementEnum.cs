@@ -1,5 +1,7 @@
-﻿namespace Characters.Movement {
-    public enum MovementEnum {
+﻿namespace Characters.Movement
+{
+    public enum MovementEnum
+    {
         Ground,
         Midair,
         Crouch,

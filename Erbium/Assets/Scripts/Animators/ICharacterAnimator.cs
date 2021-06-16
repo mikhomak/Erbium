@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
 
-namespace Animators {
-    public interface ICharacterAnimator {
+namespace Animators
+{
+    public interface ICharacterAnimator
+    {
         Animator getAnimator();
-        void setHorInput(float horInput);
-        void setVerInput(float verInput);
-        void setInputMagnitude(float inputMagnitude);
-        void setGroundVelocity(float groundVelocity);
-        void setIsFalling(bool isFalling);
-        void setIsAboutToLand(bool isAboutToLand);
-        void setJumping(bool jumping);
-        void setCrouching(bool crouching);
-        void setUnskippable(bool unskippable);
-        void setSliding(bool sliding);
-        void triggerStrongAttack();
-        void triggerFastAttack();
-        void setComboAttack();
-        void resetComboAttack();
-        void resetStrongAttack();
-        void resetFastAttack();
+        void SetHorInput(float horInput);
+        void SetVerInput(float verInput);
+        void SetInputMagnitude(float inputMagnitude);
+        void SetGroundVelocity(float groundVelocity);
+        void SetIsFalling(bool isFalling);
+        void SetIsAboutToLand(bool isAboutToLand);
+        void SetJumping(bool jumping);
+        void SetCrouching(bool crouching);
+        void SetUnskippable(bool unskippable);
+        void SetSliding(bool sliding);
+        void TriggerStrongAttack();
+        void TriggerFastAttack();
+        void SetComboAttack();
+        void ResetComboAttack();
+        void ResetStrongAttack();
+        void ResetFastAttack();
     }
 }

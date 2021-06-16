@@ -1,8 +1,10 @@
 ﻿using Characters.Damage;
 
-namespace Characters.Health {
-    public interface IHealthComponent {
-        void takeDamage(DamageInfo damage);
-        void resetInvincibility();
+namespace Characters.Health
+{
+    public interface IHealthComponent
+    {
+        void TakeDamage(DamageInfo damage);
+        void ResetInvincibility();
     }
 }

@@ -3,74 +3,96 @@ using Characters.Movement.Behaviours;
 using General;
 using UnityEngine;
 
-namespace Characters.Movement {
-    public class MidairMovement : AbstractMovement, IJumpable, IFallable {
+namespace Characters.Movement
+{
+    public class MidairMovement : AbstractMovement, IJumpable, IFallable
+    {
+        public bool oldAboutToLand { get; private set; } = false;
 
-        private bool oldAboutToLand = false;
+        private int _currentJumps;
 
-        private int currentJumps;
-
-        public MidairMovement(IPhysicsCharacter character): base(character) {
+        public MidairMovement(IPhysicsCharacter character) : base(character)
+        {
         }
 
-        public override void setUp() {
-            currentJumps = stats.maxJumps;
+        public override void SetUp()
+        {
+            _currentJumps = stats.maxJumps;
         }
 
-        public override void move(Vector3 direction) {
-            if (!isFalling()) {
-                animatorFacade.untoggleAirAnimations();
-                changeMovement(MovementEnum.Ground);
+        public override void Move(Vector3 direction)
+        {
+            // if the character is not in the air, change the movement state to ground movement
+            if (!IsFalling())
+            {
+                animatorFacade.UntoggleAirAnimations();
+                ChangeMovement(MovementEnum.Ground);
                 return;
             }
 
-            updateAnimations(direction);
-            addVelocity(
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.airSpeed));
-            
-            calculateVelocity();
-            rotate(direction);
+            UpdateAnimations(direction);
+            // updating velocity
+            // In air we usually move slower (stats.airSpeed < stats.Speed)
+            // But this should only affect X,Z axis, because Y is the gravity
+            AddVelocity(
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.airSpeed));
+
+            CalculateVelocity();
+            Rotate(direction);
         }
 
-        private void calculateVelocity() {
-            if (rbd.velocity.y < stats.maxDownVelocity) {
-                rbd.velocity = CommonMethods.modifyYinVector(rbd.velocity, stats.maxDownVelocity);
+        private void CalculateVelocity()
+        {
+            // If the character is falling too fast, clamping Y velocity to stats.maxDownVelocity
+            if (rbd.velocity.y < stats.maxDownVelocity)
+            {
+                rbd.velocity = CommonMethods.ModifyYinVector(rbd.velocity, stats.maxDownVelocity);
             }
-            else {
+            else // If not, then applying acceleration force down (gravity)
+            {
                 rbd.AddForce(Vector3.down * stats.additionalGravityForce, ForceMode.Acceleration);
             }
         }
 
-        private void updateAnimations(Vector3 direction) {
-            animatorFacade.updateInputs();
-            animatorFacade.setIsFalling(true);
-            updateLandingAnimation(direction);
+        private void UpdateAnimations(Vector3 direction)
+        {
+            animatorFacade.UpdateInputs();
+            animatorFacade.SetIsFalling(true);
+            UpdateLandingAnimation(direction);
         }
 
-        private void updateLandingAnimation(Vector3 direction) {
+        private void UpdateLandingAnimation(Vector3 direction)
+        {
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
             float yValue = rbd.velocity.y;
-            if (yValue < 0 && CommonMethods.isAboutToLand(transform.position, direction,
-                    CommonMethods.normalizeValue(yValue, stats.maxDownVelocity)) != oldAboutToLand) {
+            if (yValue < 0 && CommonMethods.IsAboutToLand(transform.position, direction,
+                CommonMethods.NormalizeValue(yValue, stats.maxDownVelocity)) != oldAboutToLand)
+            {
                 oldAboutToLand = !oldAboutToLand;
-                animatorFacade.setIsAboutToLand(oldAboutToLand);
+                animatorFacade.SetIsAboutToLand(oldAboutToLand);
             }
         }
 
 
-        public void jump() {
-            if (currentJumps != 0) {
-                rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
-                currentJumps--;
+        public void Jump()
+        {
+            if (_currentJumps == 0)
+            {
+                return;
             }
+
+            rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
+            _currentJumps--;
         }
 
-        public override void cleanUp() {
-            animatorFacade.untoggleAirAnimations();
+        public override void CleanUp()
+        {
+            animatorFacade.UntoggleAirAnimations();
         }
 
-        public bool isFalling() {
-            return !CommonMethods.onGround(transform.position);
+        public bool IsFalling()
+        {
+            return !CommonMethods.ONGround(transform.position);
         }
     }
 }

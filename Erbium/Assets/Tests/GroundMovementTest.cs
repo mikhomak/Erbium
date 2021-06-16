@@ -10,7 +10,7 @@ using static NSubstitute.Substitute;
 namespace Tests {
     public class GroundMovementTest : AbstractTest {
         [UnityTest]
-        public IEnumerator initalizeGroundMovementTest() {
+        public IEnumerator InitalizeGroundMovementTest() {
             yield return new WaitForEndOfFrame();
 
             Assert.NotNull(player);
@@ -22,11 +22,11 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator moveTest() {
+        public IEnumerator MoveTest() {
             IMovementDirection moveDirection = For<IMovementDirection>();
             var direction = new Vector3(0, 0, 1);
-            player.changeMovementDirection(moveDirection);
-            moveDirection.getDirection().Returns(direction);
+            player.ChangeMovementDirection(moveDirection);
+            moveDirection.GetDirection().Returns(direction);
             Vector3 playerInitPosition = playerGo.transform.position;
             Assert.True(player.getMovement() is GroundMovement);
             yield return new WaitForSeconds(1f);

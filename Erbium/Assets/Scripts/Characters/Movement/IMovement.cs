@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-namespace Characters.Movement {
-    public interface IMovement {
-        void setUp();
-        void move(Vector3 direction);
-        void changeMovement(MovementEnum movement);
-        void cleanUp();
+namespace Characters.Movement
+{
+    public interface IMovement
+    {
+        void SetUp();
+        void Move(Vector3 direction);
+        void ChangeMovement(MovementEnum movement);
+        void CleanUp();
     }
 }

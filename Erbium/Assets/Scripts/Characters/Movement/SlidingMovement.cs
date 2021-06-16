@@ -2,50 +2,63 @@
 using General;
 using UnityEngine;
 
-namespace Characters.Movement {
-    public class SlidingMovement : AbstractMovement, IFallable, IJumpable {
-        public SlidingMovement(IPhysicsCharacter character) : base(character) {
+namespace Characters.Movement
+{
+    public class SlidingMovement : AbstractMovement, IFallable, IJumpable
+    {
+        public SlidingMovement(IPhysicsCharacter character) : base(character)
+        {
         }
 
-        public override void setUp() {
+        public override void SetUp()
+        {
         }
 
-        public override void move(Vector3 direction) {
-            if (isFalling()) {
-                changeMovement(MovementEnum.Midair);
+        public override void Move(Vector3 direction)
+        {
+            // If the character starts falling, changing the movement state to midair
+            if (IsFalling())
+            {
+                ChangeMovement(MovementEnum.Midair);
                 return;
             }
 
-            if (direction == Vector3.zero) {
-                changeMovement(MovementEnum.Ground);
+            // If there is no direction (aka input is 0) -> changing the state to ground movement
+            if (direction == Vector3.zero)
+            {
+                ChangeMovement(MovementEnum.Ground);
                 return;
             }
 
             var velocity =
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.slidingSpeed);
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.slidingSpeed);
 
             rbd.velocity = velocity;
-            rotate(direction);
-            updateAnimParameters(velocity);
+            Rotate(direction);
+            UpdateAnimParameters(velocity);
         }
 
 
-        private void updateAnimParameters(Vector3 groundVelocity) {
-            animatorFacade.updateInputs();
-            animatorFacade.setGroundVelocity(CommonMethods.calculateGroundVelocity(groundVelocity));
-            animatorFacade.setSliding(true);
+        private void UpdateAnimParameters(Vector3 groundVelocity)
+        {
+            animatorFacade.UpdateInputs();
+            animatorFacade.SetGroundVelocity(CommonMethods.CalculateGroundVelocity(groundVelocity));
+            animatorFacade.SetSliding(true);
         }
 
-        public override void cleanUp() {
-            animatorFacade.setSliding(false);
+        public override void CleanUp()
+        {
+            animatorFacade.SetSliding(false);
         }
 
-        public bool isFalling() {
-            return !CommonMethods.onGround(transform.position);
+        public bool IsFalling()
+        {
+            return !CommonMethods.ONGround(transform.position);
         }
 
-        public void jump() {
-            animatorFacade.setJumping(true);
+        public void Jump()
+        {
+            animatorFacade.SetJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
     }

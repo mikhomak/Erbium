@@ -1,37 +1,48 @@
-﻿using Characters.Movement.Behaviours;
+﻿using System;
+using Characters.Movement.Behaviours;
 using General;
 using UnityEngine;
 
-namespace Characters.Movement {
-    public class GroundMovement : AbstractMovement, IJumpable, IFallable {
-        public GroundMovement(IPhysicsCharacter character) : base(character) {
+namespace Characters.Movement
+{
+    public class GroundMovement : AbstractMovement, IJumpable, IFallable
+    {
+        public GroundMovement(IPhysicsCharacter character) : base(character)
+        {
         }
 
-        public override void setUp() {
+        public override void SetUp()
+        {
         }
 
-        public override void move(Vector3 direction) {
-            if (isFalling()) {
-                changeMovement(MovementEnum.Midair);
+        public override void Move(Vector3 direction)
+        {
+            if (IsFalling())
+            {
+                ChangeMovement(MovementEnum.Midair);
                 return;
             }
 
-            var velocity = accelerateAndMove(direction);
+            var velocity = AccelerateAndMove(direction);
 
-            rotate(direction);
-            updateAnimParameters(velocity);
+            Rotate(direction);
+            UpdateAnimParameters(velocity);
         }
 
-        private Vector3 accelerateAndMove(Vector3 direction) {
-            var velocity =
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+        private Vector3 AccelerateAndMove(Vector3 direction)
+        {
+            Vector3 clampedDirection = Vector3.ClampMagnitude(direction,1f); // normalizing direction so we wouldn't go super fast in diagonal
+            Vector3 velocity =
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(clampedDirection, rbd.velocity.y,
                     stats.speed);
-            if (rbd.velocity.magnitude < velocity.magnitude) {
-                var acceleration = CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+            if (rbd.velocity.magnitude < velocity.magnitude)
+            {
+                var acceleration = CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(clampedDirection, rbd.velocity.y,
                     stats.acceleration);
                 rbd.AddForce(acceleration);
             }
-            else {
+            else
+            {
                 rbd.velocity = velocity;
             }
 
@@ -39,24 +50,28 @@ namespace Characters.Movement {
         }
 
 
-        private void updateAnimParameters(Vector3 groundVelocity) {
-            animatorFacade.updateInputs();
-            animatorFacade.setGroundVelocity(CommonMethods.calculateGroundVelocity(groundVelocity));
+        private void UpdateAnimParameters(Vector3 groundVelocity)
+        {
+            animatorFacade.UpdateInputs();
+            animatorFacade.SetGroundVelocity(CommonMethods.CalculateGroundVelocity(groundVelocity));
         }
 
 
-        public void jump() {
-            animatorFacade.setJumping(true);
+        public void Jump()
+        {
+            animatorFacade.SetJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
 
 
-        public override void cleanUp() {
+        public override void CleanUp()
+        {
             return;
         }
 
-        public bool isFalling() {
-            return !CommonMethods.onGround(transform.position);
+        public bool IsFalling()
+        {
+            return !CommonMethods.ONGround(transform.position);
         }
     }
 }

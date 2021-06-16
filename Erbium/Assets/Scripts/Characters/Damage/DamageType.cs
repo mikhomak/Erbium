@@ -1,5 +1,7 @@
-﻿namespace Characters.Damage {
-    public enum DamageType {
+﻿namespace Characters.Damage
+{
+    public enum DamageType
+    {
         Physical,
         Magical,
         Toxic
