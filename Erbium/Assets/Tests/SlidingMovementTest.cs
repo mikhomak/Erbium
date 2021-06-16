@@ -11,12 +11,12 @@ using static NSubstitute.Substitute;
 namespace Tests {
     public class SlidingMovementTest : AbstractTest {
         [UnityTest]
-        public IEnumerator slideTest() {
+        public IEnumerator SlideTest() {
             IMovementDirection moveDirection = For<IMovementDirection>();
             var direction = new Vector3(0, 0, 1);
-            player.changeMovementDirection(moveDirection);
-            moveDirection.getDirection().Returns(direction);
-            player.changeMovement(MovementEnum.Slide);
+            player.ChangeMovementDirection(moveDirection);
+            moveDirection.GetDirection().Returns(direction);
+            player.ChangeMovement(MovementEnum.Slide);
             Vector3 playerInitPosition = playerGo.transform.position;
             Assert.True(player.getMovement() is SlidingMovement);
             yield return new WaitForSeconds(1f);

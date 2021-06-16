@@ -6,7 +6,7 @@ namespace Player.MovementDirection
 {
     public class ThirdPersonCameraDirection : IMovementDirection
     {
-        public Vector3 getDirection()
+        public Vector3 GetDirection()
         {
             Vector3 forward = CameraManager.getCameraForwardDirectionNormalized();
             Vector3 right = CameraManager.getCameraRightDirectionNormalized();

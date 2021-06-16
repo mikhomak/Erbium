@@ -20,18 +20,18 @@ namespace Characters.Movement
             stats = character.getStats();
         }
 
-        public abstract void setUp();
+        public abstract void SetUp();
 
-        public abstract void cleanUp();
+        public abstract void CleanUp();
 
-        public abstract void move(Vector3 direction);
+        public abstract void Move(Vector3 direction);
 
-        protected void addVelocity(Vector3 movementVector)
+        protected void AddVelocity(Vector3 movementVector)
         {
             rbd.velocity = movementVector;
         }
 
-        protected void rotate(Vector3 direction)
+        protected void Rotate(Vector3 direction)
         {
             if (direction != Vector3.zero)
             {
@@ -41,9 +41,9 @@ namespace Characters.Movement
         }
 
 
-        public void changeMovement(MovementEnum movement)
+        public void ChangeMovement(MovementEnum movement)
         {
-            character.changeMovement(movement);
+            character.ChangeMovement(movement);
         }
     }
 }

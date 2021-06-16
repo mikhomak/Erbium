@@ -9,28 +9,28 @@ using Object = UnityEngine.Object;
 
 namespace Tests {
     public class PlayerHealthTest : AbstractTest {
-        private GameObject projectileGo;
-        private IProjectile projectile;
+        private GameObject _projectileGo;
+        private IProjectile _projectile;
 
         [SetUp]
-        public new void setUpTestScene() {
-            projectileGo = Object.Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/Projectile"));
-            projectileGo.transform.position = new Vector3(10, 10, 10);
-            gameObjects.Add(projectileGo);
-            projectile = projectileGo.GetComponent<IProjectile>();
+        public new void SetUpTestScene() {
+            _projectileGo = Object.Instantiate(Resources.Load<GameObject>("Prefabs/Enemies/Projectile"));
+            _projectileGo.transform.position = new Vector3(10, 10, 10);
+            gameObjects.Add(_projectileGo);
+            _projectile = _projectileGo.GetComponent<IProjectile>();
         }
 
         [TearDown]
-        public new void afterTest() {
-            projectile = null;
+        public new void AfterTest() {
+            _projectile = null;
         }
 
 
         [UnityTest]
-        public IEnumerator playerTakeDamage() {
+        public IEnumerator PlayerTakeDamage() {
             float healthBeforeTakingDamage = player.getStats().health;
             DamageInfo damageInfo = new DamageInfo(10, DamageType.Physical);
-            player.getHealthComponent().takeDamage(damageInfo);
+            player.getHealthComponent().TakeDamage(damageInfo);
 
             yield return new WaitForEndOfFrame();
 
@@ -38,9 +38,9 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator playerTakeDamageFromProjectile() {
+        public IEnumerator PlayerTakeDamageFromProjectile() {
             float healthBeforeTakingDamage = player.getStats().health;
-            projectileGo.transform.position = Vector3.zero;
+            _projectileGo.transform.position = Vector3.zero;
 
             yield return new WaitForSeconds(1f);
 
@@ -48,11 +48,11 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator die() {
+        public IEnumerator Die() {
             player.getStats().health = 10;
             player.getStats().physicArmour = 0;
             DamageInfo damageInfo = new DamageInfo(100, DamageType.Physical);
-            player.getHealthComponent().takeDamage(damageInfo);
+            player.getHealthComponent().TakeDamage(damageInfo);
 
             yield return new WaitForEndOfFrame();
 
@@ -60,10 +60,10 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator playerTakeDamageWithPhysicArmour() {
+        public IEnumerator PlayerTakeDamageWithPhysicArmour() {
             float healthBeforeTakingDamage = player.getStats().health;
             DamageInfo damageInfo = new DamageInfo(10, DamageType.Physical);
-            player.getHealthComponent().takeDamage(damageInfo);
+            player.getHealthComponent().TakeDamage(damageInfo);
 
             yield return new WaitForEndOfFrame();
 
@@ -72,10 +72,10 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator playerTakeDamageWithMagicArmour() {
+        public IEnumerator PlayerTakeDamageWithMagicArmour() {
             float healthBeforeTakingDamage = player.getStats().health;
             DamageInfo damageInfo = new DamageInfo(10, DamageType.Magical);
-            player.getHealthComponent().takeDamage(damageInfo);
+            player.getHealthComponent().TakeDamage(damageInfo);
 
             yield return new WaitForEndOfFrame();
 
@@ -84,10 +84,10 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator playerTakeDamageWithToxicArmour() {
+        public IEnumerator PlayerTakeDamageWithToxicArmour() {
             float healthBeforeTakingDamage = player.getStats().health;
             DamageInfo damageInfo = new DamageInfo(10, DamageType.Toxic);
-            player.getHealthComponent().takeDamage(damageInfo);
+            player.getHealthComponent().TakeDamage(damageInfo);
 
             yield return new WaitForEndOfFrame();
 

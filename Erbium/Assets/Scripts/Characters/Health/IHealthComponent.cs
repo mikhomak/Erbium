@@ -4,7 +4,7 @@ namespace Characters.Health
 {
     public interface IHealthComponent
     {
-        void takeDamage(DamageInfo damage);
-        void resetInvincibility();
+        void TakeDamage(DamageInfo damage);
+        void ResetInvincibility();
     }
 }

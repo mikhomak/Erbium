@@ -4,7 +4,7 @@ namespace Animators
 {
     public class CharacterAnimator : MonoBehaviour, ICharacterAnimator
     {
-        private Animator animator;
+        private Animator _animator;
         private static readonly int InputMagnitude = Animator.StringToHash("inputMagnitude");
         private static readonly int VerInput = Animator.StringToHash("verInput");
         private static readonly int HorInput = Animator.StringToHash("horInput");
@@ -20,95 +20,95 @@ namespace Animators
 
         private void OnEnable()
         {
-            animator = GetComponent<Animator>();
+            _animator = GetComponent<Animator>();
         }
 
         public Animator getAnimator()
         {
-            return animator;
+            return _animator;
         }
 
-        public void setHorInput(float horInput)
+        public void SetHorInput(float horInput)
         {
-            animator.SetFloat(HorInput, horInput);
+            _animator.SetFloat(HorInput, horInput);
         }
 
-        public void setVerInput(float verInput)
+        public void SetVerInput(float verInput)
         {
-            animator.SetFloat(VerInput, verInput);
+            _animator.SetFloat(VerInput, verInput);
         }
 
-        public void setInputMagnitude(float inputMagnitude)
+        public void SetInputMagnitude(float inputMagnitude)
         {
-            animator.SetFloat(InputMagnitude, inputMagnitude);
+            _animator.SetFloat(InputMagnitude, inputMagnitude);
         }
 
-        public void setGroundVelocity(float groundVelocity)
+        public void SetGroundVelocity(float groundVelocity)
         {
-            animator.SetFloat(GroundVelocity, groundVelocity);
+            _animator.SetFloat(GroundVelocity, groundVelocity);
         }
 
-        public void setIsFalling(bool isFalling)
+        public void SetIsFalling(bool isFalling)
         {
-            animator.SetBool(IsFalling, isFalling);
+            _animator.SetBool(IsFalling, isFalling);
         }
 
-        public void setIsAboutToLand(bool isAboutToLand)
+        public void SetIsAboutToLand(bool isAboutToLand)
         {
-            animator.SetBool(IsAboutToLand, isAboutToLand);
+            _animator.SetBool(IsAboutToLand, isAboutToLand);
         }
 
-        public void setJumping(bool jumping)
+        public void SetJumping(bool jumping)
         {
             if (jumping)
             {
-                animator.CrossFade("jump", 0.2f);
+                _animator.CrossFade("jump", 0.2f);
             }
         }
 
-        public void setCrouching(bool crouching)
+        public void SetCrouching(bool crouching)
         {
-            animator.SetBool(Crouching, crouching);
+            _animator.SetBool(Crouching, crouching);
         }
 
-        public void setUnskippable(bool unskippable)
+        public void SetUnskippable(bool unskippable)
         {
-            animator.SetBool(Unskippable, unskippable);
+            _animator.SetBool(Unskippable, unskippable);
         }
 
-        public void setSliding(bool sliding)
+        public void SetSliding(bool sliding)
         {
-            animator.SetBool(Sliding, sliding);
+            _animator.SetBool(Sliding, sliding);
         }
 
-        public void triggerStrongAttack()
+        public void TriggerStrongAttack()
         {
-            animator.SetTrigger(StrongAttack);
+            _animator.SetTrigger(StrongAttack);
         }
 
-        public void triggerFastAttack()
+        public void TriggerFastAttack()
         {
-            animator.SetTrigger(FastAttack);
+            _animator.SetTrigger(FastAttack);
         }
 
-        public void setComboAttack()
+        public void SetComboAttack()
         {
-            animator.SetTrigger(ComboAttack);
+            _animator.SetTrigger(ComboAttack);
         }
 
-        public void resetComboAttack()
+        public void ResetComboAttack()
         {
-            animator.ResetTrigger(ComboAttack);
+            _animator.ResetTrigger(ComboAttack);
         }
 
-        public void resetStrongAttack()
+        public void ResetStrongAttack()
         {
-            animator.ResetTrigger(StrongAttack);
+            _animator.ResetTrigger(StrongAttack);
         }
 
-        public void resetFastAttack()
+        public void ResetFastAttack()
         {
-            animator.ResetTrigger(FastAttack);
+            _animator.ResetTrigger(FastAttack);
         }
     }
 }

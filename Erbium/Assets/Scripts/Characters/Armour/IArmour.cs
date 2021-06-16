@@ -4,6 +4,6 @@ namespace Characters.Armour
 {
     public interface IArmour
     {
-        float applyArmour(float damage, DamageType damageType);
+        float ApplyArmour(float damage, DamageType damageType);
     }
 }

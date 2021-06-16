@@ -8,23 +8,23 @@ namespace Projectiles
     {
         [SerializeField] private float damage = 0;
         [SerializeField] private DamageType damageType = DamageType.Physical;
-        private DamageInfo damageInfo;
+        private DamageInfo _damageInfo;
 
 
         private void Start()
         {
-            damageInfo = new DamageInfo(damage, damageType);
+            _damageInfo = new DamageInfo(damage, damageType);
         }
 
-        public void move()
+        public void Move()
         {
             //TODO move the projectile
             // yeeeah right
         }
 
-        public void dealDamage(IHurtbox hurtbox)
+        public void DealDamage(IHurtbox hurtbox)
         {
-            hurtbox.takeDamage(this.damageInfo);
+            hurtbox.TakeDamage(this._damageInfo);
         }
     }
 }

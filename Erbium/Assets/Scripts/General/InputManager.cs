@@ -20,14 +20,14 @@ namespace General
         {
             if (Input.GetButtonDown("Jump"))
             {
-                (_player.getMovement() as IJumpable)?.jump();
+                (_player.getMovement() as IJumpable)?.Jump();
             }
 
             if (Input.GetButton($"Crouch"))
             {
                 if (_player.getMovement() is GroundMovement)
                 {
-                    _player.changeMovement(MovementEnum.Crouch);
+                    _player.ChangeMovement(MovementEnum.Crouch);
                 }
             }
 
@@ -35,7 +35,7 @@ namespace General
             {
                 if (_player.getMovement() is CrouchingMovement)
                 {
-                    _player.changeMovement(MovementEnum.Ground);
+                    _player.ChangeMovement(MovementEnum.Ground);
                 }
             }
 
@@ -43,7 +43,7 @@ namespace General
             {
                 if (_player.getMovement() is GroundMovement)
                 {
-                    _player.changeMovement(MovementEnum.Slide);
+                    _player.ChangeMovement(MovementEnum.Slide);
                 }
             }
 
@@ -52,7 +52,7 @@ namespace General
             {
                 if (_player.getMovement() is SlidingMovement)
                 {
-                    _player.changeMovement(MovementEnum.Ground);
+                    _player.ChangeMovement(MovementEnum.Ground);
                 }
             }
 
@@ -60,7 +60,7 @@ namespace General
             {
                 if (_player.getMovement() is GroundMovement || _player.getMovement() is AttackingMovement)
                 {
-                    _player.getAttackManager().strongAttack();
+                    _player.getAttackManager().StrongAttack();
                 }
             }
 
@@ -68,7 +68,7 @@ namespace General
             {
                 if (_player.getMovement() is GroundMovement || _player.getMovement() is AttackingMovement)
                 {
-                    _player.getAttackManager().fastAttack();
+                    _player.getAttackManager().FastAttack();
                 }
             }
         }
@@ -90,7 +90,7 @@ namespace General
 
         public static float getMagnitude()
         {
-            return CommonMethods.calculateMagnitude(getHorInput(), getVerInput());
+            return CommonMethods.CalculateMagnitude(getHorInput(), getVerInput());
         }
     }
 }

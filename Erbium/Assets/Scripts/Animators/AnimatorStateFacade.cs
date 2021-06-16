@@ -8,39 +8,39 @@ namespace Animators
 {
     public class AnimatorStateFacade : MonoBehaviour, IAnimatorStateFacade
     {
-        private IAttackManager attackManager;
-        private Animator animator;
-        private ICharacter character;
+        private IAttackManager _attackManager;
+        private Animator _animator;
+        private ICharacter _character;
 
         private void Start()
         {
-            character = GetComponentInParent<ICharacter>();
-            attackManager = character.getAttackManager();
-            animator = GetComponent<Animator>();
+            _character = GetComponentInParent<ICharacter>();
+            _attackManager = _character.getAttackManager();
+            _animator = GetComponent<Animator>();
         }
 
-        public void finishTimeForCombo()
+        public void FinishTimeForCombo()
         {
-            makeSureAttackManagerIsNotNull();
-            attackManager.resetCombo();
+            MakeSureAttackManagerIsNotNull();
+            _attackManager.ResetCombo();
         }
 
-        private void makeSureAttackManagerIsNotNull()
+        private void MakeSureAttackManagerIsNotNull()
         {
-            attackManager = attackManager ?? character.getAttackManager();
+            _attackManager = _attackManager ?? _character.getAttackManager();
         }
 
-        private void makeSureCharacterIsNotNull()
+        private void MakeSureCharacterIsNotNull()
         {
-            character = character ?? GetComponentInParent<ICharacter>();
+            _character = _character ?? GetComponentInParent<ICharacter>();
         }
 
         private void OnAnimatorMove()
         {
-            makeSureCharacterIsNotNull();
-            var movement = character.getMovement();
-            if (!animator || !(movement is AttackingMovement) || !(movement is IRootMotion)) return;
-            ((IRootMotion) movement).setRootMotionAdditionalPosition(animator.deltaPosition);
+            MakeSureCharacterIsNotNull();
+            var movement = _character.getMovement();
+            if (!_animator || !(movement is AttackingMovement) || !(movement is IRootMotion)) return;
+            ((IRootMotion) movement).SetRootMotionAdditionalPosition(_animator.deltaPosition);
         }
     }
 }

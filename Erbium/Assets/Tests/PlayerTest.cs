@@ -10,7 +10,7 @@ namespace Tests {
       
         
         [UnityTest]
-        public IEnumerator initalizePlayer() {
+        public IEnumerator InitalizePlayer() {
             GameObject player = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/Player/Player"));
             yield return new WaitForEndOfFrame();
             Assert.NotNull(player.GetComponent<ICharacter>());

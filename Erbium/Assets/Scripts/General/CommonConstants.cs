@@ -2,6 +2,6 @@
 {
     public static class CommonConstants
     {
-        public static readonly int HURTBOX_LAYER = 15;
+        public static readonly int HurtboxLayer = 15;
     }
 }

@@ -20,80 +20,78 @@ namespace Player
         private static readonly FastEnumIntEqualityComparer<MovementEnum> FastEnumIntEqualityComparer =
             new FastEnumIntEqualityComparer<MovementEnum>();
 
-        private readonly Dictionary<MovementEnum, IMovement> movements =
+        private readonly Dictionary<MovementEnum, IMovement> _movements =
             new Dictionary<MovementEnum, IMovement>(FastEnumIntEqualityComparer);
 
-        private IMovement movement;
-        private IAnimatorFacade animatorFacade;
-        private IMovementDirection movementDirection;
-        private IHealthComponent healthComponent;
-        private IArmour armour;
-        private IAttackManager attackManager;
-        private Rigidbody rbd;
-        private Stats stats;
+        private IMovement _movement;
+        private IAnimatorFacade _animatorFacade;
+        private IMovementDirection _movementDirection;
+        private IHealthComponent _healthComponent;
+        private IArmour _armour;
+        private IAttackManager _attackManager;
+        private Rigidbody _rbd;
+        private Stats _stats;
 
         [SerializeField] private CameraView cameraView;
 
 
         private void Start()
         {
-            rbd = GetComponent<Rigidbody>();
-            stats = GetComponent<Stats>();
-            movementDirection = setCameraDirection(cameraView);
-            animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>(), this);
-            initMovements(); // creating all movements
-            movement = movements[MovementEnum.Ground]; // setting the current movement as Ground One
-            healthComponent = new HealthComponent(this);
-            armour = new Armour(this);
-            attackManager = new AttackManager(animatorFacade, this);
+            _rbd = GetComponent<Rigidbody>();
+            _stats = GetComponent<Stats>();
+            _movementDirection = SetCameraDirection(cameraView);
+            _animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>(), this);
+            InitMovements(); // creating all movements
+            _movement = _movements[MovementEnum.Ground]; // setting the current movement as Ground One
+            _healthComponent = new HealthComponent(this);
+            _armour = new Armour(this);
+            _attackManager = new AttackManager(_animatorFacade, this);
         }
 
         private void FixedUpdate()
         {
-            movement.move(movementDirection.getDirection());
+            _movement.Move(_movementDirection.GetDirection());
         }
 
 
-        public void die()
+        public void Die()
         {
         }
 
 
-        private IMovementDirection setCameraDirection(CameraView cameraView)
+        private IMovementDirection SetCameraDirection(CameraView cameraView)
         {
             this.cameraView = cameraView;
-            switch (cameraView)
+            return cameraView switch
             {
-                case CameraView.AlwaysForward:
-                    return new ThirdPersonCameraDirection();
-                default:
-                    return new ThirdPersonCameraDirection();
-            }
+                CameraView.AlwaysForward => new ThirdPersonCameraDirection(),
+                _ => new ThirdPersonCameraDirection()
+            };
         }
 
         public IHealthComponent getHealthComponent()
         {
-            return healthComponent;
+            return _healthComponent;
         }
 
         public IAnimatorFacade getAnimatorFacade()
         {
-            return animatorFacade;
+            return _animatorFacade;
         }
 
         public IArmour getArmour()
         {
-            return armour;
+            return _armour;
         }
 
         public IAttackManager getAttackManager()
         {
-            return attackManager;
+            return _attackManager;
         }
 
         public Rigidbody getRigidbody()
         {
-            return rbd;
+            return _rbd;
         }
 
         public Transform getTransform()
@@ -103,30 +101,30 @@ namespace Player
 
         public IMovement getMovement()
         {
-            return movement;
+            return _movement;
         }
 
-        public void changeMovement(MovementEnum movementEnum)
+        public void ChangeMovement(MovementEnum movementEnum)
         {
             // Movement states life cycles
-            movement.cleanUp(); // cleaning up the current movement
-            movement = movements[movementEnum]; // changing the current movement to the new one
-            movement.setUp(); // setting up new movement
+            _movement.CleanUp(); // cleaning up the current movement
+            _movement = _movements[movementEnum]; // changing the current movement to the new one
+            _movement.SetUp(); // setting up new movement
         }
 
         public Stats getStats()
         {
-            return stats;
+            return _stats;
         }
 
-        public void changeMovementDirection(IMovementDirection movementDirection)
+        public void ChangeMovementDirection(IMovementDirection movementDirection)
         {
-            this.movementDirection = movementDirection;
+            this._movementDirection = movementDirection;
         }
 
-        public void changeMovementDirection(CameraView cameraView)
+        public void ChangeMovementDirection(CameraView cameraView)
         {
-            movementDirection = setCameraDirection(cameraView);
+            _movementDirection = SetCameraDirection(cameraView);
         }
 
         /// <summary>
@@ -135,18 +133,18 @@ namespace Player
         /// We can just use movements[MovementEnum] to get each movement
         /// We are using this array in changeMovement(MovementEnum)
         /// </summary>
-        private void initMovements()
+        private void InitMovements()
         {
-            movements.Add(MovementEnum.Ground, new GroundMovement(this));
-            movements.Add(MovementEnum.Midair, new MidairMovement(this));
-            movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
-            movements.Add(MovementEnum.Slide, new SlidingMovement(this));
-            movements.Add(MovementEnum.Attack, new AttackingMovement(this));
+            _movements.Add(MovementEnum.Ground, new GroundMovement(this));
+            _movements.Add(MovementEnum.Midair, new MidairMovement(this));
+            _movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
+            _movements.Add(MovementEnum.Slide, new SlidingMovement(this));
+            _movements.Add(MovementEnum.Attack, new AttackingMovement(this));
         }
 
-        public void dealDamage(IHurtbox hurtbox)
+        public void DealDamage(IHurtbox hurtbox)
         {
-            attackManager.dealDamage(hurtbox);
+            _attackManager.DealDamage(hurtbox);
         }
     }
 }

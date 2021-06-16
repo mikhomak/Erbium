@@ -10,32 +10,32 @@ namespace Characters.Movement
         {
         }
 
-        public override void setUp()
+        public override void SetUp()
         {
         }
 
-        public override void move(Vector3 direction)
+        public override void Move(Vector3 direction)
         {
-            if (isFalling())
+            if (IsFalling())
             {
-                changeMovement(MovementEnum.Midair);
+                ChangeMovement(MovementEnum.Midair);
                 return;
             }
 
-            var velocity = accelerateAndMove(direction);
+            var velocity = AccelerateAndMove(direction);
 
-            rotate(direction);
-            updateAnimParameters(velocity);
+            Rotate(direction);
+            UpdateAnimParameters(velocity);
         }
 
-        private Vector3 accelerateAndMove(Vector3 direction)
+        private Vector3 AccelerateAndMove(Vector3 direction)
         {
             var velocity =
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
                     stats.speed);
             if (rbd.velocity.magnitude < velocity.magnitude)
             {
-                var acceleration = CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+                var acceleration = CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
                     stats.acceleration);
                 rbd.AddForce(acceleration);
             }
@@ -48,28 +48,28 @@ namespace Characters.Movement
         }
 
 
-        private void updateAnimParameters(Vector3 groundVelocity)
+        private void UpdateAnimParameters(Vector3 groundVelocity)
         {
-            animatorFacade.updateInputs();
-            animatorFacade.setGroundVelocity(CommonMethods.calculateGroundVelocity(groundVelocity));
+            animatorFacade.UpdateInputs();
+            animatorFacade.SetGroundVelocity(CommonMethods.CalculateGroundVelocity(groundVelocity));
         }
 
 
-        public void jump()
+        public void Jump()
         {
-            animatorFacade.setJumping(true);
+            animatorFacade.SetJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
 
 
-        public override void cleanUp()
+        public override void CleanUp()
         {
             return;
         }
 
-        public bool isFalling()
+        public bool IsFalling()
         {
-            return !CommonMethods.onGround(transform.position);
+            return !CommonMethods.ONGround(transform.position);
         }
     }
 }

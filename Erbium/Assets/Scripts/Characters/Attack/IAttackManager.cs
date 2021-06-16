@@ -4,11 +4,11 @@ namespace Characters.Attack
 {
     public interface IAttackManager : IDamageDealer
     {
-        void strongAttack();
-        void fastAttack();
-        void addCombo();
-        void resetCombo();
+        void StrongAttack();
+        void FastAttack();
+        void AddCombo();
+        void ResetCombo();
         int getCurrentCombo();
-        void createDamageInfo(DamageInfo damageInfo);
+        void CreateDamageInfo(DamageInfo damageInfo);
     }
 }

@@ -3,35 +3,35 @@ using General;
 
 namespace Characters.Health {
     public class HealthComponent : IHealthComponent {
-        private readonly ICharacter character;
-        private readonly float invincibilityTime;
-        private bool invincibility;
+        private readonly ICharacter _character;
+        private readonly float _invincibilityTime;
+        private bool _invincibility;
 
         public HealthComponent(ICharacter character) {
-            this.character = character;
-            invincibilityTime = character.getStats().invincibilityTime;
+            this._character = character;
+            _invincibilityTime = character.getStats().invincibilityTime;
         }
 
-        public void takeDamage(DamageInfo damage) {
-            if (invincibility)
+        public void TakeDamage(DamageInfo damage) {
+            if (_invincibility)
             {
                 return;
             }
             
-            var currentHealth = character.getStats().health -=
-                character.getArmour().applyArmour(damage.damage, damage.damageType);
+            var currentHealth = _character.getStats().health -=
+                _character.getArmour().ApplyArmour(damage.damage, damage.damageType);
             if (currentHealth <= 0) {
-                character.getStats().health = 0;
-                character.die();
+                _character.getStats().health = 0;
+                _character.Die();
             }
 
-            invincibility = true;
+            _invincibility = true;
             // TODO redo this timer shit
-            TimerManager.instance.startTimer(invincibilityTime, resetInvincibility);
+            TimerManager.instance.StartTimer(_invincibilityTime, ResetInvincibility);
         }
 
-        public void resetInvincibility() {
-            invincibility = false;
+        public void ResetInvincibility() {
+            _invincibility = false;
         }
     }
 }

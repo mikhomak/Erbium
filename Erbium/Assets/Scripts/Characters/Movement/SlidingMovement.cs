@@ -10,55 +10,55 @@ namespace Characters.Movement
         {
         }
 
-        public override void setUp()
+        public override void SetUp()
         {
         }
 
-        public override void move(Vector3 direction)
+        public override void Move(Vector3 direction)
         {
             // If the character starts falling, changing the movement state to midair
-            if (isFalling())
+            if (IsFalling())
             {
-                changeMovement(MovementEnum.Midair);
+                ChangeMovement(MovementEnum.Midair);
                 return;
             }
 
             // If there is no direction (aka input is 0) -> changing the state to ground movement
             if (direction == Vector3.zero)
             {
-                changeMovement(MovementEnum.Ground);
+                ChangeMovement(MovementEnum.Ground);
                 return;
             }
 
             var velocity =
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.slidingSpeed);
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.slidingSpeed);
 
             rbd.velocity = velocity;
-            rotate(direction);
-            updateAnimParameters(velocity);
+            Rotate(direction);
+            UpdateAnimParameters(velocity);
         }
 
 
-        private void updateAnimParameters(Vector3 groundVelocity)
+        private void UpdateAnimParameters(Vector3 groundVelocity)
         {
-            animatorFacade.updateInputs();
-            animatorFacade.setGroundVelocity(CommonMethods.calculateGroundVelocity(groundVelocity));
-            animatorFacade.setSliding(true);
+            animatorFacade.UpdateInputs();
+            animatorFacade.SetGroundVelocity(CommonMethods.CalculateGroundVelocity(groundVelocity));
+            animatorFacade.SetSliding(true);
         }
 
-        public override void cleanUp()
+        public override void CleanUp()
         {
-            animatorFacade.setSliding(false);
+            animatorFacade.SetSliding(false);
         }
 
-        public bool isFalling()
+        public bool IsFalling()
         {
-            return !CommonMethods.onGround(transform.position);
+            return !CommonMethods.ONGround(transform.position);
         }
 
-        public void jump()
+        public void Jump()
         {
-            animatorFacade.setJumping(true);
+            animatorFacade.SetJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
     }

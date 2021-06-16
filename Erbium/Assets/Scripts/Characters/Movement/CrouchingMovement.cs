@@ -11,44 +11,44 @@ namespace Characters.Movement
         }
 
 
-        public override void setUp()
+        public override void SetUp()
         {
-            animatorFacade.setCrouching(true);
+            animatorFacade.SetCrouching(true);
         }
 
-        public override void move(Vector3 direction)
+        public override void Move(Vector3 direction)
         {
-            if (isFalling())
+            if (IsFalling())
             {
-                changeMovement(MovementEnum.Midair);
+                ChangeMovement(MovementEnum.Midair);
                 return;
             }
 
 
-            addVelocity(
-                CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.crouchSpeed));
-            rotate(direction);
-            updateAnimParameters();
+            AddVelocity(
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y, stats.crouchSpeed));
+            Rotate(direction);
+            UpdateAnimParameters();
         }
 
-        private void updateAnimParameters()
+        private void UpdateAnimParameters()
         {
-            animatorFacade.updateInputs();
+            animatorFacade.UpdateInputs();
         }
 
-        public override void cleanUp()
+        public override void CleanUp()
         {
-            animatorFacade.setCrouching(false);
+            animatorFacade.SetCrouching(false);
         }
 
-        public bool isFalling()
+        public bool IsFalling()
         {
-            return !CommonMethods.onGround(transform.position);
+            return !CommonMethods.ONGround(transform.position);
         }
 
-        public void jump()
+        public void Jump()
         {
-            animatorFacade.setJumping(true);
+            animatorFacade.SetJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
     }

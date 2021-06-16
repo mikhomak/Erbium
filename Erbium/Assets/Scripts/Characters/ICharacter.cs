@@ -13,8 +13,8 @@ namespace Characters
         IAnimatorFacade getAnimatorFacade();
         IArmour getArmour();
         IAttackManager getAttackManager();
-        void changeMovement(MovementEnum movementEnum);
-        void die();
+        void ChangeMovement(MovementEnum movementEnum);
+        void Die();
         Stats getStats();
     }
 }

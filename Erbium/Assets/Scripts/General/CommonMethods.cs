@@ -11,19 +11,19 @@ namespace General
         private const float TransformRaycastLiftLanding = TransformRaycastLift * 2;
         private const int GroundLayer = 1 << 8;
 
-        public static float calculateMagnitude(float value1, float value2)
+        public static float CalculateMagnitude(float value1, float value2)
         {
             return Mathf.Clamp01(new Vector2(value1, value2).magnitude);
         }
 
-        public static bool onGround(Vector3 position)
+        public static bool ONGround(Vector3 position)
         {
             var origin = getPositionRaycastLifted(position);
             Debug.DrawRay(origin, Vector3.down * GroundRatDistance);
             return Physics.Raycast(origin, Vector3.down, out _, GroundRatDistance, GroundLayer);
         }
 
-        public static bool isAboutToLand(Vector3 position, Vector3 direction, float normalizedValue)
+        public static bool IsAboutToLand(Vector3 position, Vector3 direction, float normalizedValue)
         {
             var origin = getPositionRaycastLiftedForLanding(position);
             position.y += 0.2f;
@@ -50,7 +50,7 @@ namespace General
             return res;
         }
 
-        public static Vector3 createVectorWithoutLoosingYWithMultiplier(Vector3 vector, float y, float multiplier)
+        public static Vector3 CreateVectorWithoutLoosingYWithMultiplier(Vector3 vector, float y, float multiplier)
         {
             var result = new Vector3(vector.x, 0, vector.z);
             result *= multiplier;
@@ -58,12 +58,12 @@ namespace General
             return result;
         }
 
-        public static Vector3 createVectorWithoutLoosingY(Vector3 vector, float y)
+        public static Vector3 CreateVectorWithoutLoosingY(Vector3 vector, float y)
         {
             return new Vector3(vector.x, y, vector.z);
         }
 
-        public static float calculateGroundVelocity(Vector3 velocity)
+        public static float CalculateGroundVelocity(Vector3 velocity)
         {
             Vector3 vel = velocity;
             vel.y = 0;
@@ -71,7 +71,7 @@ namespace General
         }
 
 
-        public static Vector3 modifyYinVector(Vector3 vector, float y)
+        public static Vector3 ModifyYinVector(Vector3 vector, float y)
         {
             var res = vector;
             res.y = y;
@@ -79,7 +79,7 @@ namespace General
         }
 
 
-        public static Vector3 createVectorWith0InY(Vector3 vector3)
+        public static Vector3 CreateVectorWith0InY(Vector3 vector3)
         {
             return new Vector3(vector3.x, 0, vector3.z);
         }
@@ -89,7 +89,7 @@ namespace General
             return multiplier * (max - min) + max;
         }
 
-        public static float normalizeValue(float value, float max)
+        public static float NormalizeValue(float value, float max)
         {
             return Mathf.Abs(value / max);
         }

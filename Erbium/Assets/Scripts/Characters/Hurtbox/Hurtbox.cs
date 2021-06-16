@@ -6,30 +6,30 @@ namespace Characters.Hurtbox
 {
     public class Hurtbox : MonoBehaviour, IHurtbox
     {
-        private ICharacter character;
-        private IHealthComponent healthComponent;
+        private ICharacter _character;
+        private IHealthComponent _healthComponent;
         [SerializeField] private BodyPartHurtbox bodyPart;
 
 
         private void Start()
         {
-            character = GetComponentInParent<ICharacter>();
-            healthComponent = character.getHealthComponent();
+            _character = GetComponentInParent<ICharacter>();
+            _healthComponent = _character.getHealthComponent();
         }
 
 
-        public void takeDamage(DamageInfo damageInfo)
+        public void TakeDamage(DamageInfo damageInfo)
         {
-            makeSureHealthComponentIsNotNull();
-            damageInfo.damage -= character.getStats().getBodyPartMultiplier(bodyPart);
-            healthComponent.takeDamage(damageInfo);
+            MakeSureHealthComponentIsNotNull();
+            damageInfo.damage -= _character.getStats().getBodyPartMultiplier(bodyPart);
+            _healthComponent.TakeDamage(damageInfo);
         }
 
-        private void makeSureHealthComponentIsNotNull()
+        private void MakeSureHealthComponentIsNotNull()
         {
-            if (healthComponent == null)
+            if (_healthComponent == null)
             {
-                healthComponent = character.getHealthComponent();
+                _healthComponent = _character.getHealthComponent();
             }
         }
     }

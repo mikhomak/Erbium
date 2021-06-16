@@ -11,25 +11,25 @@ namespace Tests {
         protected IPlayer player;
 
         [SetUp]
-        public void setUpTestScene() {
-            gameObjects = init();
+        public void SetUpTestScene() {
+            gameObjects = Init();
 
-            GameObject inputManagerGo = initInputManager();
+            GameObject inputManagerGo = InitInputManager();
             InputManager inputManager = inputManagerGo.GetComponent<InputManager>();
-            playerGo = initPlayer(inputManager);
+            playerGo = InitPlayer(inputManager);
             gameObjects.Add(inputManagerGo);
             gameObjects.Add(playerGo);
             player = playerGo.GetComponent<IPlayer>();
         }
 
         [TearDown]
-        public void afterTest() {
+        public void AfterTest() {
             gameObjects.ForEach(Object.Destroy);
             player = null;
         }
 
 
-        protected static List<GameObject> init() {
+        protected static List<GameObject> Init() {
             List<GameObject> gameObjects = new List<GameObject> {
                 Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Main Camera")),
                 Object.Instantiate(Resources.Load<GameObject>("Prefabs/Cameras/Always Forward Camera")),
@@ -40,11 +40,11 @@ namespace Tests {
             return gameObjects;
         }
 
-        protected static GameObject initInputManager() {
+        protected static GameObject InitInputManager() {
             return Object.Instantiate(Resources.Load<GameObject>("Prefabs/General/Input Manager"));
         }
 
-        protected static GameObject initPlayer(InputManager inputManager) {
+        protected static GameObject InitPlayer(InputManager inputManager) {
             var playerGo = Object.Instantiate(Resources.Load<GameObject>("Prefabs/Player/Player"));
             inputManager.playerGameObject = playerGo;
             return playerGo;

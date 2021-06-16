@@ -6,112 +6,112 @@ namespace Animators
 {
     public class AnimatorFacade : IAnimatorFacade
     {
-        private readonly ICharacterAnimator characterAnimator;
-        private readonly ICharacter character;
-        private bool unskippable;
+        private readonly ICharacterAnimator _characterAnimator;
+        private readonly ICharacter _character;
+        private bool _unskippable;
 
         public AnimatorFacade(ICharacterAnimator characterAnimator, ICharacter character)
         {
-            this.characterAnimator = characterAnimator;
-            this.character = character;
+            this._characterAnimator = characterAnimator;
+            this._character = character;
         }
 
 
         public Animator getAnimator()
         {
-            return characterAnimator.getAnimator();
+            return _characterAnimator.getAnimator();
         }
 
-        public void updateInputs()
+        public void UpdateInputs()
         {
-            setInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getMagnitude());
+            SetInputs(InputManager.getHorInput(), InputManager.getVerInput(), InputManager.getMagnitude());
         }
 
-        public void setInputs(float horInput, float verInput, float inputMagnitude)
+        public void SetInputs(float horInput, float verInput, float inputMagnitude)
         {
-            characterAnimator.setHorInput(horInput);
-            characterAnimator.setVerInput(verInput);
-            characterAnimator.setInputMagnitude(inputMagnitude);
+            _characterAnimator.SetHorInput(horInput);
+            _characterAnimator.SetVerInput(verInput);
+            _characterAnimator.SetInputMagnitude(inputMagnitude);
         }
 
-        public void setGroundVelocity(float groundVelocity)
+        public void SetGroundVelocity(float groundVelocity)
         {
-            characterAnimator.setGroundVelocity(groundVelocity);
+            _characterAnimator.SetGroundVelocity(groundVelocity);
         }
 
-        public void setIsFalling(bool isFalling)
+        public void SetIsFalling(bool isFalling)
         {
-            characterAnimator.setIsFalling(checkIfUnskippable(isFalling));
+            _characterAnimator.SetIsFalling(CheckIfUnskippable(isFalling));
         }
 
-        public void setIsAboutToLand(bool isAboutToLand)
+        public void SetIsAboutToLand(bool isAboutToLand)
         {
-            characterAnimator.setIsAboutToLand(checkIfUnskippable(isAboutToLand));
+            _characterAnimator.SetIsAboutToLand(CheckIfUnskippable(isAboutToLand));
             if (isAboutToLand)
             {
-                setIsFalling(false);
+                SetIsFalling(false);
             }
         }
 
-        public void untoggleAirAnimations()
+        public void UntoggleAirAnimations()
         {
-            setIsFalling(false);
-            setIsAboutToLand(false);
+            SetIsFalling(false);
+            SetIsAboutToLand(false);
         }
 
-        public void setJumping(bool jumping)
+        public void SetJumping(bool jumping)
         {
-            unskippable = jumping;
-            characterAnimator.setJumping(jumping);
+            _unskippable = jumping;
+            _characterAnimator.SetJumping(jumping);
         }
 
-        public void setCrouching(bool crouching)
+        public void SetCrouching(bool crouching)
         {
-            characterAnimator.setCrouching(crouching);
+            _characterAnimator.SetCrouching(crouching);
         }
 
-        public void setSliding(bool sliding)
+        public void SetSliding(bool sliding)
         {
-            characterAnimator.setSliding(sliding);
+            _characterAnimator.SetSliding(sliding);
         }
 
-        public void strongAttack(bool combo)
+        public void StrongAttack(bool combo)
         {
             if (combo)
             {
-                characterAnimator.setComboAttack();
+                _characterAnimator.SetComboAttack();
             }
 
-            characterAnimator.triggerStrongAttack();
+            _characterAnimator.TriggerStrongAttack();
         }
 
-        public void fastAttack(bool combo)
+        public void FastAttack(bool combo)
         {
             if (combo)
             {
-                characterAnimator.setComboAttack();
+                _characterAnimator.SetComboAttack();
             }
 
-            characterAnimator.triggerFastAttack();
+            _characterAnimator.TriggerFastAttack();
         }
 
-        public void resetAttacks()
+        public void ResetAttacks()
         {
-            characterAnimator.resetFastAttack();
-            characterAnimator.resetStrongAttack();
-            characterAnimator.resetComboAttack();
+            _characterAnimator.ResetFastAttack();
+            _characterAnimator.ResetStrongAttack();
+            _characterAnimator.ResetComboAttack();
         }
 
-        public void setUnskippable(bool unskippable)
+        public void SetUnskippable(bool unskippable)
         {
-            this.unskippable = unskippable;
-            characterAnimator.setUnskippable(unskippable);
+            this._unskippable = unskippable;
+            _characterAnimator.SetUnskippable(unskippable);
         }
 
 
-        private bool checkIfUnskippable(bool stateToCheck)
+        private bool CheckIfUnskippable(bool stateToCheck)
         {
-            return !unskippable && stateToCheck;
+            return !_unskippable && stateToCheck;
         }
     }
 }

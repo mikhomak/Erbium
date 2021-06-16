@@ -11,15 +11,15 @@ namespace General.Util
         {
             private static readonly Func<TEnum, int> Wrapper;
 
-            public static int toInt(TEnum enu)
+            public static int ToInt(TEnum enu)
             {
                 return Wrapper(enu);
             }
 
             static BoxAvoidance()
             {
-                var p = Expression.Parameter(typeof(TEnum), null);
-                var c = Expression.ConvertChecked(p, typeof(int));
+                ParameterExpression p = Expression.Parameter(typeof(TEnum), null);
+                UnaryExpression c = Expression.ConvertChecked(p, typeof(int));
 
                 Wrapper = Expression.Lambda<Func<TEnum, int>>(c, p).Compile();
             }
@@ -27,13 +27,13 @@ namespace General.Util
 
         public bool Equals(TEnum firstEnum, TEnum secondEnum)
         {
-            return BoxAvoidance.toInt(firstEnum) ==
-                   BoxAvoidance.toInt(secondEnum);
+            return BoxAvoidance.ToInt(firstEnum) ==
+                   BoxAvoidance.ToInt(secondEnum);
         }
 
         public int GetHashCode(TEnum firstEnum)
         {
-            return BoxAvoidance.toInt(firstEnum);
+            return BoxAvoidance.ToInt(firstEnum);
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IProjectile
     {
-        void move();
+        void Move();
     }
 }

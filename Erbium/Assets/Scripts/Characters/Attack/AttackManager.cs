@@ -7,82 +7,82 @@ namespace Characters.Attack
 {
     public class AttackManager : IAttackManager
     {
-        private int currentCombo;
-        private bool combo;
-        private DamageInfo currentDamageInfo;
-        private readonly IAnimatorFacade animatorFacade;
-        private readonly ICharacter character;
+        private int _currentCombo;
+        private bool _combo;
+        private DamageInfo _currentDamageInfo;
+        private readonly IAnimatorFacade _animatorFacade;
+        private readonly ICharacter _character;
 
         public AttackManager(IAnimatorFacade animatorFacade, ICharacter character)
         {
-            this.animatorFacade = animatorFacade;
-            this.character = character;
+            this._animatorFacade = animatorFacade;
+            this._character = character;
         }
 
-        public void strongAttack()
+        public void StrongAttack()
         {
-            if (!isItPossibleToAttackWithCurrentMovement())
+            if (!IsItPossibleToAttackWithCurrentMovement())
             {
                 return;
             }
 
-            makeSureItsAttackingMovement();
-            animatorFacade.strongAttack(combo);
+            MakeSureItsAttackingMovement();
+            _animatorFacade.StrongAttack(_combo);
         }
 
-        public void fastAttack()
+        public void FastAttack()
         {
-            if (!isItPossibleToAttackWithCurrentMovement())
+            if (!IsItPossibleToAttackWithCurrentMovement())
             {
                 return;
             }
 
-            makeSureItsAttackingMovement();
-            animatorFacade.fastAttack(combo);
+            MakeSureItsAttackingMovement();
+            _animatorFacade.FastAttack(_combo);
         }
 
 
-        public void addCombo()
+        public void AddCombo()
         {
-            combo = true;
-            currentCombo++;
+            _combo = true;
+            _currentCombo++;
         }
 
 
-        public void resetCombo()
+        public void ResetCombo()
         {
-            combo = false;
-            currentCombo = 0;
-            animatorFacade.resetAttacks();
-            character.changeMovement(MovementEnum.Ground);
+            _combo = false;
+            _currentCombo = 0;
+            _animatorFacade.ResetAttacks();
+            _character.ChangeMovement(MovementEnum.Ground);
         }
 
         public int getCurrentCombo()
         {
-            return currentCombo;
+            return _currentCombo;
         }
 
-        private void makeSureItsAttackingMovement()
+        private void MakeSureItsAttackingMovement()
         {
-            if (character.getMovement() is GroundMovement)
+            if (_character.getMovement() is GroundMovement)
             {
-                character.changeMovement(MovementEnum.Attack);
+                _character.ChangeMovement(MovementEnum.Attack);
             }
         }
 
-        private bool isItPossibleToAttackWithCurrentMovement()
+        private bool IsItPossibleToAttackWithCurrentMovement()
         {
-            return character.getMovement() is GroundMovement || character.getMovement() is AttackingMovement;
+            return _character.getMovement() is GroundMovement || _character.getMovement() is AttackingMovement;
         }
 
-        public void createDamageInfo(DamageInfo damageInfo)
+        public void CreateDamageInfo(DamageInfo damageInfo)
         {
-            currentDamageInfo = damageInfo;
+            _currentDamageInfo = damageInfo;
         }
 
-        public void dealDamage(IHurtbox hurtbox)
+        public void DealDamage(IHurtbox hurtbox)
         {
-            hurtbox.takeDamage(currentDamageInfo);
+            hurtbox.TakeDamage(_currentDamageInfo);
         }
     }
 }

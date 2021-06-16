@@ -4,16 +4,16 @@ namespace Characters.Armour
 {
     public class Armour : IArmour
     {
-        private readonly ICharacter character;
+        private readonly ICharacter _character;
 
         public Armour(ICharacter character)
         {
-            this.character = character;
+            this._character = character;
         }
 
-        public float applyArmour(float damage, DamageType damageType)
+        public float ApplyArmour(float damage, DamageType damageType)
         {
-            return damage - character.getStats().getArmour(damageType);
+            return damage - _character.getStats().getArmour(damageType);
         }
     }
 }

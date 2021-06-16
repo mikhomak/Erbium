@@ -7,20 +7,20 @@ namespace Characters.Hitbox
 {
     public class Hitbox : MonoBehaviour, IHitbox
     {
-        private IDamageDealer damageDealer;
+        private IDamageDealer _damageDealer;
 
 
         private void Start()
         {
-            damageDealer = GetComponentInParent<IDamageDealer>();
+            _damageDealer = GetComponentInParent<IDamageDealer>();
         }
 
         public void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.layer.Equals(CommonConstants.HURTBOX_LAYER))
+            if (other.gameObject.layer.Equals(CommonConstants.HurtboxLayer))
             {
                 var hurtbox = other.GetComponent<IHurtbox>();
-                damageDealer.dealDamage(hurtbox);
+                _damageDealer.DealDamage(hurtbox);
             }
         }
     }

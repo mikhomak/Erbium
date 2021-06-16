@@ -2,6 +2,6 @@
 {
     public interface IFallable
     {
-        bool isFalling();
+        bool IsFalling();
     }
 }

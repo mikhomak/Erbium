@@ -4,6 +4,6 @@ namespace Characters.Damage
 {
     public interface IDamageDealer
     {
-        void dealDamage(IHurtbox hurtbox);
+        void DealDamage(IHurtbox hurtbox);
     }
 }

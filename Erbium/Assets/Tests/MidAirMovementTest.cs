@@ -8,7 +8,7 @@ using UnityEngine.TestTools;
 namespace Tests {
     public class MidAirMovementTest : AbstractTest {
         [UnityTest]
-        public IEnumerator initTest() {
+        public IEnumerator InitTest() {
             Assert.NotNull(player);
             var transformPosition = playerGo.transform.position;
             transformPosition.y = 100f;
@@ -24,7 +24,7 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator fallingTest() {
+        public IEnumerator FallingTest() {
             var initPos = playerGo.transform.position;
             initPos.y = 100f;
             playerGo.transform.position = initPos;
@@ -35,14 +35,14 @@ namespace Tests {
         }
 
         [UnityTest]
-        public IEnumerator landingTest() {
+        public IEnumerator LandingTest() {
             var initPos = playerGo.transform.position;
             initPos.y += CommonMethods.LandingRatDistanceMIN;
             playerGo.transform.position = initPos;
             yield return new WaitForSeconds(0.1f);
             IMovement movement = player.getMovement();
-            Assert.True(CommonMethods.isAboutToLand(playerGo.transform.position, Vector3.down,
-                CommonMethods.normalizeValue(player.getRigidbody().velocity.y, player.getStats().maxDownVelocity)));
+            Assert.True(CommonMethods.IsAboutToLand(playerGo.transform.position, Vector3.down,
+                CommonMethods.NormalizeValue(player.getRigidbody().velocity.y, player.getStats().maxDownVelocity)));
             //Assert.True(movement is MidairMovement);
             yield return new WaitForSeconds(1f);
             movement = player.getMovement();

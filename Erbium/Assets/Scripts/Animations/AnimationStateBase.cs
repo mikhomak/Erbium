@@ -7,43 +7,43 @@ namespace Animations
 {
     public class AnimationStateBase : StateMachineBehaviour
     {
-        private IAnimatorFacade animatorFacade;
+        private IAnimatorFacade _animatorFacade;
         [SerializeField] private List<AnimationStateData> animationStatesDatas = new List<AnimationStateData>();
 
 
         public IAnimatorFacade getAnimatorFacade(Animator animator)
         {
-            return animatorFacade ?? (animatorFacade = animator.GetComponentInParent<ICharacter>().getAnimatorFacade());
+            return _animatorFacade ?? (_animatorFacade = animator.GetComponentInParent<ICharacter>().getAnimatorFacade());
         }
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            enterAll(animator);
+            EnterAll(animator);
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            updateAll(animator);
+            UpdateAll(animator);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            exitAll(animator);
+            ExitAll(animator);
         }
 
-        private void updateAll(Animator animator)
+        private void UpdateAll(Animator animator)
         {
-            animationStatesDatas.ForEach(state => state.update(this, animator));
+            animationStatesDatas.ForEach(state => state.Update(this, animator));
         }
 
-        private void enterAll(Animator animator)
+        private void EnterAll(Animator animator)
         {
-            animationStatesDatas.ForEach(state => state.enter(this, animator));
+            animationStatesDatas.ForEach(state => state.Enter(this, animator));
         }
 
-        private void exitAll(Animator animator)
+        private void ExitAll(Animator animator)
         {
-            animationStatesDatas.ForEach(state => state.exit(this, animator));
+            animationStatesDatas.ForEach(state => state.Exit(this, animator));
         }
     }
 }

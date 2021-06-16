@@ -7,24 +7,24 @@ namespace Animations.States {
     [CreateAssetMenu(fileName = "New Animation State", menuName = "AnimationStates/Combo Attack")]
     public class StateComboAttacking : AnimationStateData {
 
-        private IAttackManager attackManager;
+        private IAttackManager _attackManager;
         [SerializeField] private float damage;
         [SerializeField] private DamageType damageType;
 
 
         private IAttackManager getAttackManager(Animator animator) {
-            return attackManager ?? (attackManager = animator.GetComponentInParent<ICharacter>().getAttackManager());
+            return _attackManager ?? (_attackManager = animator.GetComponentInParent<ICharacter>().getAttackManager());
         }
         
-        public override void update(AnimationStateBase animatorState, Animator animator) {
+        public override void Update(AnimationStateBase animatorState, Animator animator) {
         }
 
-        public override void enter(AnimationStateBase animatorState, Animator animator) {
-            getAttackManager(animator).addCombo();
-            getAttackManager(animator).createDamageInfo(new DamageInfo(damage,damageType));
+        public override void Enter(AnimationStateBase animatorState, Animator animator) {
+            getAttackManager(animator).AddCombo();
+            getAttackManager(animator).CreateDamageInfo(new DamageInfo(damage,damageType));
         }
 
-        public override void exit(AnimationStateBase animatorState, Animator animator) {
+        public override void Exit(AnimationStateBase animatorState, Animator animator) {
         }
     }
 }

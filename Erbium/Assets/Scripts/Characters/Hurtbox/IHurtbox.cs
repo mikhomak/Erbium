@@ -4,6 +4,6 @@ namespace Characters.Hurtbox
 {
     public interface IHurtbox
     {
-        void takeDamage(DamageInfo damageInfo);
+        void TakeDamage(DamageInfo damageInfo);
     }
 }

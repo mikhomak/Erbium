@@ -2,6 +2,6 @@
 {
     public interface IJumpable
     {
-        void jump();
+        void Jump();
     }
 }
