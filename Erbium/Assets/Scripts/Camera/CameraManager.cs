@@ -4,7 +4,7 @@ namespace Camera
 {
     public class CameraManager : MonoBehaviour
     {
-        private new static UnityEngine.Camera _camera;
+        private static UnityEngine.Camera _camera;
 
         private void Start()
         {

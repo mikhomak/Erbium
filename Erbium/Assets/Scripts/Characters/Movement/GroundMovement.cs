@@ -1,4 +1,5 @@
-﻿using Characters.Movement.Behaviours;
+﻿using System;
+using Characters.Movement.Behaviours;
 using General;
 using UnityEngine;
 
@@ -30,12 +31,13 @@ namespace Characters.Movement
 
         private Vector3 AccelerateAndMove(Vector3 direction)
         {
-            var velocity =
-                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+            Vector3 clampedDirection = Vector3.ClampMagnitude(direction,1f); // normalizing direction so we wouldn't go super fast in diagonal
+            Vector3 velocity =
+                CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(clampedDirection, rbd.velocity.y,
                     stats.speed);
             if (rbd.velocity.magnitude < velocity.magnitude)
             {
-                var acceleration = CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
+                var acceleration = CommonMethods.CreateVectorWithoutLoosingYWithMultiplier(clampedDirection, rbd.velocity.y,
                     stats.acceleration);
                 rbd.AddForce(acceleration);
             }

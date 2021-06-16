@@ -7,7 +7,7 @@ namespace Characters.Movement
 {
     public class MidairMovement : AbstractMovement, IJumpable, IFallable
     {
-        private bool _oldAboutToLand = false;
+        public bool oldAboutToLand { get; private set; } = false;
 
         private int _currentJumps;
 
@@ -66,10 +66,10 @@ namespace Characters.Movement
             // Caching the variable, so we only invoking setIsAboutToLand when the value of oldAboutToLand has changed
             float yValue = rbd.velocity.y;
             if (yValue < 0 && CommonMethods.IsAboutToLand(transform.position, direction,
-                CommonMethods.NormalizeValue(yValue, stats.maxDownVelocity)) != _oldAboutToLand)
+                CommonMethods.NormalizeValue(yValue, stats.maxDownVelocity)) != oldAboutToLand)
             {
-                _oldAboutToLand = !_oldAboutToLand;
-                animatorFacade.SetIsAboutToLand(_oldAboutToLand);
+                oldAboutToLand = !oldAboutToLand;
+                animatorFacade.SetIsAboutToLand(oldAboutToLand);
             }
         }
 

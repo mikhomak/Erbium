@@ -72,7 +72,10 @@ namespace Characters.Attack
 
         private bool IsItPossibleToAttackWithCurrentMovement()
         {
-            return _character.getMovement() is GroundMovement || _character.getMovement() is AttackingMovement;
+            IMovement currentMovement = _character.getMovement();
+            
+            return currentMovement is GroundMovement || currentMovement is AttackingMovement || 
+                   currentMovement is MidairMovement {oldAboutToLand: true};
         }
 
         public void CreateDamageInfo(DamageInfo damageInfo)

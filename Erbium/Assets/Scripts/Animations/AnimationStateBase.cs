@@ -33,7 +33,7 @@ namespace Animations
 
         private void UpdateAll(Animator animator)
         {
-            animationStatesDatas.ForEach(state => state.Update(this, animator));
+            animationStatesDatas.ForEach(state => state.UpdateAnimData(this, animator));
         }
 
         private void EnterAll(Animator animator)

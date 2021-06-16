@@ -6,7 +6,7 @@ namespace Animations
     public abstract class AnimationStateData : ScriptableObject
     {
         [FormerlySerializedAs("Duration")] public float duration;
-        public abstract void Update(AnimationStateBase animatorState, Animator animator);
+        public abstract void UpdateAnimData(AnimationStateBase animatorState, Animator animator);
         public abstract void Enter(AnimationStateBase animatorState, Animator animator);
         public abstract void Exit(AnimationStateBase animatorState, Animator animator);
     }

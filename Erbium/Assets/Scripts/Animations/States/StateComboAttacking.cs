@@ -16,7 +16,7 @@ namespace Animations.States {
             return _attackManager ?? (_attackManager = animator.GetComponentInParent<ICharacter>().getAttackManager());
         }
         
-        public override void Update(AnimationStateBase animatorState, Animator animator) {
+        public override void UpdateAnimData(AnimationStateBase animatorState, Animator animator) {
         }
 
         public override void Enter(AnimationStateBase animatorState, Animator animator) {
