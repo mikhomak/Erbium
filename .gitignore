@@ -3,8 +3,9 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 Erbium/.idea
-Erbium/Library/*
+Erbium/Library/
 Erbium/Temp/
+Erbium/Logs/
 Erbium/[Tt]emp/
 Erbium/[Ll]ibrary/
 Erbium/[Oo]bj/
