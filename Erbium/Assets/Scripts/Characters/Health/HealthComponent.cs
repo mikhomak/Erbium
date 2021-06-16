@@ -13,16 +13,21 @@ namespace Characters.Health {
         }
 
         public void takeDamage(DamageInfo damage) {
-            if (invincibility) return;
+            if (invincibility)
+            {
+                return;
+            }
+            
             var currentHealth = character.getStats().health -=
-                character.getArmour().applyArmour(damage.Damage, damage.DamageType);
+                character.getArmour().applyArmour(damage.damage, damage.damageType);
             if (currentHealth <= 0) {
                 character.getStats().health = 0;
                 character.die();
             }
 
             invincibility = true;
-            TimerManager.Instance.startTimer(invincibilityTime, resetInvincibility);
+            // TODO redo this timer shit
+            TimerManager.instance.startTimer(invincibilityTime, resetInvincibility);
         }
 
         public void resetInvincibility() {

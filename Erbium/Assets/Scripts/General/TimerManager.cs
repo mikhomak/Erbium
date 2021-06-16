@@ -2,76 +2,94 @@
 using General.Util;
 using UnityEngine;
 
-namespace General {
-    public class TimerManager : MonoBehaviour {
+namespace General
+{
+    public class TimerManager : MonoBehaviour
+    {
         private ObjectPool<Timer> timerPool;
 
-        public static TimerManager Instance;
+        public static TimerManager instance;
 
-        private void Awake() {
-            if (Instance == null) {
-                Instance = this;
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
             }
-            else if (Instance != this) {
+            else if (instance != this)
+            {
                 Destroy(gameObject);
             }
 
             DontDestroyOnLoad(gameObject);
         }
 
-        private void Start() {
+        private void Start()
+        {
             timerPool = new ObjectPool<Timer>(10);
         }
 
 
-        void FixedUpdate() {
-            foreach (var timer in timerPool.getAll()) {
+        void FixedUpdate()
+        {
+            foreach (var timer in timerPool.getAll())
+            {
                 timer.updateTimer(Time.deltaTime);
             }
         }
 
 
-        private void releaseFromPool(Timer timer) {
+        private void releaseFromPool(Timer timer)
+        {
             timer.resetTimer();
             timerPool.release(timer);
         }
 
-        public void startTimer(float time, Action timerEndEvent) {
+        public void startTimer(float time, Action timerEndEvent)
+        {
             Timer timer = timerPool.get();
             timer.Action = timerEndEvent;
             timer.EndTime = time;
             timer.TimerManager = this;
         }
 
-        private struct Timer {
+        private struct Timer
+        {
             private float endTime;
             private Action action;
             private TimerManager timerManager;
 
 
-            public TimerManager TimerManager {
+            public TimerManager TimerManager
+            {
                 set => timerManager = value;
             }
 
-            public float EndTime {
+            public float EndTime
+            {
                 set => endTime = value;
             }
 
-            public Action Action {
+            public Action Action
+            {
                 set => action = value;
             }
 
-            public void updateTimer(float time) {
+            public void updateTimer(float time)
+            {
                 endTime -= time;
-                if (endTime < 0) {
+                if (endTime < 0)
+                {
                     action?.Invoke();
-                    if (timerManager != null) {
+                    if (timerManager != null)
+                    {
                         timerManager.releaseFromPool(this);
                     }
                 }
             }
 
-            public void resetTimer() {
+            public void resetTimer()
+            {
                 endTime = 0;
                 action = null;
                 timerManager = null;

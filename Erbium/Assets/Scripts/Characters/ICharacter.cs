@@ -4,8 +4,10 @@ using Characters.Attack;
 using Characters.Health;
 using Characters.Movement;
 
-namespace Characters {
-    public interface ICharacter {
+namespace Characters
+{
+    public interface ICharacter
+    {
         IMovement getMovement();
         IHealthComponent getHealthComponent();
         IAnimatorFacade getAnimatorFacade();

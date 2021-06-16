@@ -3,17 +3,22 @@ using Characters.Hurtbox;
 using General;
 using UnityEngine;
 
-namespace Characters.Hitbox {
-    public class Hitbox : MonoBehaviour, IHitbox {
+namespace Characters.Hitbox
+{
+    public class Hitbox : MonoBehaviour, IHitbox
+    {
         private IDamageDealer damageDealer;
 
 
-        private void Start() {
+        private void Start()
+        {
             damageDealer = GetComponentInParent<IDamageDealer>();
         }
 
-        public void OnTriggerEnter(Collider other) {
-            if (other.gameObject.layer.Equals(CommonConstants.HURTBOX_LAYER)) {
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.layer.Equals(CommonConstants.HURTBOX_LAYER))
+            {
                 var hurtbox = other.GetComponent<IHurtbox>();
                 damageDealer.dealDamage(hurtbox);
             }

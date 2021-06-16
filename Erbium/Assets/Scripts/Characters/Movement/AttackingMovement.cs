@@ -2,21 +2,27 @@
 using General;
 using UnityEngine;
 
-namespace Characters.Movement {
-    public class AttackingMovement : AbstractMovement, IFallable, IRootMotion {
+namespace Characters.Movement
+{
+    public class AttackingMovement : AbstractMovement, IFallable, IRootMotion
+    {
         private readonly Animator animator;
         private Vector3 rootMotionAdditionalPosition;
 
-        public AttackingMovement(IPhysicsCharacter character) : base(character) {
+        public AttackingMovement(IPhysicsCharacter character) : base(character)
+        {
             animator = character.getAnimatorFacade().getAnimator();
         }
 
-        public override void setUp() {
+        public override void setUp()
+        {
             startRootMotion();
         }
 
-        public override void move(Vector3 direction) {
-            if (isFalling()) {
+        public override void move(Vector3 direction)
+        {
+            if (isFalling())
+            {
                 changeMovement(MovementEnum.Midair);
                 return;
             }
@@ -29,28 +35,34 @@ namespace Characters.Movement {
             updateAnimParameters();
         }
 
-        private void updateAnimParameters() {
+        private void updateAnimParameters()
+        {
             animatorFacade.updateInputs();
         }
 
-        public override void cleanUp() {
+        public override void cleanUp()
+        {
             finishRootMotion();
         }
 
-        public bool isFalling() {
+        public bool isFalling()
+        {
             return !CommonMethods.onGround(transform.position);
         }
 
-        public void startRootMotion() {
+        public void startRootMotion()
+        {
             animator.applyRootMotion = true;
         }
 
 
-        public void setRootMotionAdditionalPosition(Vector3 position) {
+        public void setRootMotionAdditionalPosition(Vector3 position)
+        {
             rootMotionAdditionalPosition = position;
         }
 
-        public void finishRootMotion() {
+        public void finishRootMotion()
+        {
             animator.applyRootMotion = false;
         }
     }

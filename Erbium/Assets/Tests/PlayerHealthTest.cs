@@ -67,7 +67,7 @@ namespace Tests {
 
             yield return new WaitForEndOfFrame();
 
-            Assert.True(Math.Abs(healthBeforeTakingDamage - damageInfo.Damage + player.getStats().physicArmour -
+            Assert.True(Math.Abs(healthBeforeTakingDamage - damageInfo.damage + player.getStats().physicArmour -
                                  player.getStats().health) < 0.2f);
         }
 
@@ -79,7 +79,7 @@ namespace Tests {
 
             yield return new WaitForEndOfFrame();
 
-            Assert.True(Math.Abs(healthBeforeTakingDamage - damageInfo.Damage + player.getStats().magicArmour -
+            Assert.True(Math.Abs(healthBeforeTakingDamage - damageInfo.damage + player.getStats().magicArmour -
                                  player.getStats().health) < 0.2f);
         }
 
@@ -91,7 +91,7 @@ namespace Tests {
 
             yield return new WaitForEndOfFrame();
 
-            Assert.True(Math.Abs(healthBeforeTakingDamage - damageInfo.Damage + player.getStats().toxicArmour -
+            Assert.True(Math.Abs(healthBeforeTakingDamage - damageInfo.damage + player.getStats().toxicArmour -
                                  player.getStats().health) < 0.2f);
         }
     }

@@ -2,18 +2,24 @@
 using General;
 using UnityEngine;
 
-namespace Characters.Movement {
-    public class CrouchingMovement : AbstractMovement, IFallable, IJumpable {
-        public CrouchingMovement(IPhysicsCharacter character) : base(character) {
+namespace Characters.Movement
+{
+    public class CrouchingMovement : AbstractMovement, IFallable, IJumpable
+    {
+        public CrouchingMovement(IPhysicsCharacter character) : base(character)
+        {
         }
 
 
-        public override void setUp() {
+        public override void setUp()
+        {
             animatorFacade.setCrouching(true);
         }
 
-        public override void move(Vector3 direction) {
-            if (isFalling()) {
+        public override void move(Vector3 direction)
+        {
+            if (isFalling())
+            {
                 changeMovement(MovementEnum.Midair);
                 return;
             }
@@ -25,19 +31,23 @@ namespace Characters.Movement {
             updateAnimParameters();
         }
 
-        private void updateAnimParameters() {
+        private void updateAnimParameters()
+        {
             animatorFacade.updateInputs();
         }
 
-        public override void cleanUp() {
+        public override void cleanUp()
+        {
             animatorFacade.setCrouching(false);
         }
 
-        public bool isFalling() {
+        public bool isFalling()
+        {
             return !CommonMethods.onGround(transform.position);
         }
 
-        public void jump() {
+        public void jump()
+        {
             animatorFacade.setJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }

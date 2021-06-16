@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Animators {
-    public class CharacterAnimator : MonoBehaviour, ICharacterAnimator {
+namespace Animators
+{
+    public class CharacterAnimator : MonoBehaviour, ICharacterAnimator
+    {
         private Animator animator;
         private static readonly int InputMagnitude = Animator.StringToHash("inputMagnitude");
         private static readonly int VerInput = Animator.StringToHash("verInput");
@@ -16,80 +18,97 @@ namespace Animators {
         private static readonly int ComboAttack = Animator.StringToHash("comboAttack");
         private static readonly int FastAttack = Animator.StringToHash("fastAttack");
 
-        private void OnEnable() {
+        private void OnEnable()
+        {
             animator = GetComponent<Animator>();
         }
 
-        public Animator getAnimator() {
+        public Animator getAnimator()
+        {
             return animator;
         }
 
-        public void setHorInput(float horInput) {
+        public void setHorInput(float horInput)
+        {
             animator.SetFloat(HorInput, horInput);
         }
 
-        public void setVerInput(float verInput) {
+        public void setVerInput(float verInput)
+        {
             animator.SetFloat(VerInput, verInput);
         }
 
-        public void setInputMagnitude(float inputMagnitude) {
+        public void setInputMagnitude(float inputMagnitude)
+        {
             animator.SetFloat(InputMagnitude, inputMagnitude);
         }
 
-        public void setGroundVelocity(float groundVelocity) {
+        public void setGroundVelocity(float groundVelocity)
+        {
             animator.SetFloat(GroundVelocity, groundVelocity);
         }
 
-        public void setIsFalling(bool isFalling) {
+        public void setIsFalling(bool isFalling)
+        {
             animator.SetBool(IsFalling, isFalling);
         }
 
-        public void setIsAboutToLand(bool isAboutToLand) {
+        public void setIsAboutToLand(bool isAboutToLand)
+        {
             animator.SetBool(IsAboutToLand, isAboutToLand);
         }
 
-        public void setJumping(bool jumping) {
-            if (jumping) {
+        public void setJumping(bool jumping)
+        {
+            if (jumping)
+            {
                 animator.CrossFade("jump", 0.2f);
             }
         }
 
-        public void setCrouching(bool crouching) {
+        public void setCrouching(bool crouching)
+        {
             animator.SetBool(Crouching, crouching);
         }
 
-        public void setUnskippable(bool unskippable) {
+        public void setUnskippable(bool unskippable)
+        {
             animator.SetBool(Unskippable, unskippable);
         }
 
-        public void setSliding(bool sliding) {
+        public void setSliding(bool sliding)
+        {
             animator.SetBool(Sliding, sliding);
         }
 
-        public void triggerStrongAttack() {
+        public void triggerStrongAttack()
+        {
             animator.SetTrigger(StrongAttack);
         }
 
-        public void triggerFastAttack() {
+        public void triggerFastAttack()
+        {
             animator.SetTrigger(FastAttack);
         }
 
-        public void setComboAttack() {
+        public void setComboAttack()
+        {
             animator.SetTrigger(ComboAttack);
         }
 
-        public void resetComboAttack() {
+        public void resetComboAttack()
+        {
             animator.ResetTrigger(ComboAttack);
         }
 
-        public void resetStrongAttack() {
+        public void resetStrongAttack()
+        {
             animator.ResetTrigger(StrongAttack);
         }
 
-        public void resetFastAttack() {
+        public void resetFastAttack()
+        {
             animator.ResetTrigger(FastAttack);
         }
-
-
     }
 }

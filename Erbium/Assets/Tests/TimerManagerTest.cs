@@ -35,8 +35,8 @@ namespace Tests {
         public IEnumerator timerTest() {
             Assert.True(firstAtt == 1f);
             Assert.True(secondAtt == 2f);
-            TimerManager.Instance.startTimer(0.5f, changeFirst);
-            TimerManager.Instance.startTimer(1f, changeSecond);
+            TimerManager.instance.startTimer(0.5f, changeFirst);
+            TimerManager.instance.startTimer(1f, changeSecond);
             yield return new WaitForSecondsRealtime(4);
             Assert.True(firstAtt == 10f);
             Assert.True(secondAtt == 20f);

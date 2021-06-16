@@ -11,10 +11,12 @@ using General.Util;
 using Player.MovementDirection;
 using UnityEngine;
 
-namespace Player {
+namespace Player
+{
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Stats))]
-    public class Player : MonoBehaviour, IPlayer, IDamageDealer {
+    public class Player : MonoBehaviour, IPlayer, IDamageDealer
+    {
         private static readonly FastEnumIntEqualityComparer<MovementEnum> FastEnumIntEqualityComparer =
             new FastEnumIntEqualityComparer<MovementEnum>();
 
@@ -33,30 +35,35 @@ namespace Player {
         [SerializeField] private CameraView cameraView;
 
 
-        private void Start() {
+        private void Start()
+        {
             rbd = GetComponent<Rigidbody>();
             stats = GetComponent<Stats>();
             movementDirection = setCameraDirection(cameraView);
             animatorFacade = new AnimatorFacade(GetComponentInChildren<ICharacterAnimator>(), this);
-            initMovements();
-            movement = movements[MovementEnum.Ground];
+            initMovements(); // creating all movements
+            movement = movements[MovementEnum.Ground]; // setting the current movement as Ground One
             healthComponent = new HealthComponent(this);
             armour = new Armour(this);
             attackManager = new AttackManager(animatorFacade, this);
         }
 
-        private void FixedUpdate() {
+        private void FixedUpdate()
+        {
             movement.move(movementDirection.getDirection());
         }
 
 
-        public void die() {
+        public void die()
+        {
         }
 
 
-        private IMovementDirection setCameraDirection(CameraView cameraView) {
+        private IMovementDirection setCameraDirection(CameraView cameraView)
+        {
             this.cameraView = cameraView;
-            switch (cameraView) {
+            switch (cameraView)
+            {
                 case CameraView.AlwaysForward:
                     return new ThirdPersonCameraDirection();
                 default:
@@ -64,68 +71,72 @@ namespace Player {
             }
         }
 
-        public IHealthComponent getHealthComponent() {
+        public IHealthComponent getHealthComponent()
+        {
             return healthComponent;
         }
 
-        public IAnimatorFacade getAnimatorFacade() {
+        public IAnimatorFacade getAnimatorFacade()
+        {
             return animatorFacade;
         }
 
-        public IArmour getArmour() {
+        public IArmour getArmour()
+        {
             return armour;
         }
 
-        public IAttackManager getAttackManager() {
+        public IAttackManager getAttackManager()
+        {
             return attackManager;
         }
 
-        public Rigidbody getRigidbody() {
+        public Rigidbody getRigidbody()
+        {
             return rbd;
         }
 
-        public Transform getTransform() {
+        public Transform getTransform()
+        {
             return transform;
         }
 
-        public IMovement getMovement() {
+        public IMovement getMovement()
+        {
             return movement;
         }
 
-        public void changeMovement(MovementEnum movementEnum) {
-            movement.cleanUp();
-            /*switch (movementEnum) {
-                case MovementEnum.Crouch:
-                    movement = new CrouchingMovement(this);
-                    break;
-                case MovementEnum.Ground:
-                    movement = new GroundMovement(this);
-                    break;
-                case MovementEnum.Midair:
-                    movement = new MidairMovement(this);
-                    break;
-                case MovementEnum.Slide:
-                    movement = new SlidingMovement(this);
-                    break;
-            }*/
-
-            movement = movements[movementEnum];
-            movement.setUp();
+        public void changeMovement(MovementEnum movementEnum)
+        {
+            // Movement states life cycles
+            movement.cleanUp(); // cleaning up the current movement
+            movement = movements[movementEnum]; // changing the current movement to the new one
+            movement.setUp(); // setting up new movement
         }
 
-        public Stats getStats() {
+        public Stats getStats()
+        {
             return stats;
         }
 
-        public void changeMovementDirection(IMovementDirection movementDirection) {
+        public void changeMovementDirection(IMovementDirection movementDirection)
+        {
             this.movementDirection = movementDirection;
         }
 
-        public void changeMovementDirection(CameraView cameraView) {
+        public void changeMovementDirection(CameraView cameraView)
+        {
             movementDirection = setCameraDirection(cameraView);
         }
 
-        private void initMovements() {
+        /// <summary>
+        /// Creating <b>ALL POSSIBLE</b> movements at the Start
+        /// That way we don't need to create a new movement each time we change the movement state
+        /// We can just use movements[MovementEnum] to get each movement
+        /// We are using this array in changeMovement(MovementEnum)
+        /// </summary>
+        private void initMovements()
+        {
             movements.Add(MovementEnum.Ground, new GroundMovement(this));
             movements.Add(MovementEnum.Midair, new MidairMovement(this));
             movements.Add(MovementEnum.Crouch, new CrouchingMovement(this));
@@ -133,7 +144,8 @@ namespace Player {
             movements.Add(MovementEnum.Attack, new AttackingMovement(this));
         }
 
-        public void dealDamage(IHurtbox hurtbox) {
+        public void dealDamage(IHurtbox hurtbox)
+        {
             attackManager.dealDamage(hurtbox);
         }
     }

@@ -1,5 +1,7 @@
-﻿namespace Animators {
-    public interface IAnimatorStateFacade {
+﻿namespace Animators
+{
+    public interface IAnimatorStateFacade
+    {
         void finishTimeForCombo();
     }
 }

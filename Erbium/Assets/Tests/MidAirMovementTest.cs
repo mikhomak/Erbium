@@ -37,7 +37,7 @@ namespace Tests {
         [UnityTest]
         public IEnumerator landingTest() {
             var initPos = playerGo.transform.position;
-            initPos.y += CommonMethods.LANDING_RAT_DISTANCE_MIN;
+            initPos.y += CommonMethods.LandingRatDistanceMIN;
             playerGo.transform.position = initPos;
             yield return new WaitForSeconds(0.1f);
             IMovement movement = player.getMovement();

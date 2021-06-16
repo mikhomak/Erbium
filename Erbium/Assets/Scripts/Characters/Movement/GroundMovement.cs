@@ -2,16 +2,22 @@
 using General;
 using UnityEngine;
 
-namespace Characters.Movement {
-    public class GroundMovement : AbstractMovement, IJumpable, IFallable {
-        public GroundMovement(IPhysicsCharacter character) : base(character) {
+namespace Characters.Movement
+{
+    public class GroundMovement : AbstractMovement, IJumpable, IFallable
+    {
+        public GroundMovement(IPhysicsCharacter character) : base(character)
+        {
         }
 
-        public override void setUp() {
+        public override void setUp()
+        {
         }
 
-        public override void move(Vector3 direction) {
-            if (isFalling()) {
+        public override void move(Vector3 direction)
+        {
+            if (isFalling())
+            {
                 changeMovement(MovementEnum.Midair);
                 return;
             }
@@ -22,16 +28,19 @@ namespace Characters.Movement {
             updateAnimParameters(velocity);
         }
 
-        private Vector3 accelerateAndMove(Vector3 direction) {
+        private Vector3 accelerateAndMove(Vector3 direction)
+        {
             var velocity =
                 CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
                     stats.speed);
-            if (rbd.velocity.magnitude < velocity.magnitude) {
+            if (rbd.velocity.magnitude < velocity.magnitude)
+            {
                 var acceleration = CommonMethods.createVectorWithoutLoosingYWithMultiplier(direction, rbd.velocity.y,
                     stats.acceleration);
                 rbd.AddForce(acceleration);
             }
-            else {
+            else
+            {
                 rbd.velocity = velocity;
             }
 
@@ -39,23 +48,27 @@ namespace Characters.Movement {
         }
 
 
-        private void updateAnimParameters(Vector3 groundVelocity) {
+        private void updateAnimParameters(Vector3 groundVelocity)
+        {
             animatorFacade.updateInputs();
             animatorFacade.setGroundVelocity(CommonMethods.calculateGroundVelocity(groundVelocity));
         }
 
 
-        public void jump() {
+        public void jump()
+        {
             animatorFacade.setJumping(true);
             rbd.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
         }
 
 
-        public override void cleanUp() {
+        public override void cleanUp()
+        {
             return;
         }
 
-        public bool isFalling() {
+        public bool isFalling()
+        {
             return !CommonMethods.onGround(transform.position);
         }
     }

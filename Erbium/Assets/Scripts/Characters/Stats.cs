@@ -2,8 +2,10 @@
 using Characters.Hurtbox;
 using UnityEngine;
 
-namespace Characters {
-    public class Stats : MonoBehaviour {
+namespace Characters
+{
+    public class Stats : MonoBehaviour
+    {
         [Header("Movement speed")] public float speed = 10f;
         public float acceleration = 30f;
         public float airSpeed = 5f;
@@ -22,39 +24,27 @@ namespace Characters {
         public float headDamageMultiplier = 2f;
         public float bodyDamageMultiplier = 1f;
 
-        public float getArmour(DamageType damageType) {
-            float result = 0.0f;
-            switch (damageType) {
-                case DamageType.Physical:
-                    result = physicArmour;
-                    break;
-                case DamageType.Magical:
-                    result = magicArmour;
-                    break;
-                case DamageType.Toxic:
-                    result = toxicArmour;
-                    break;
-                default:
-                    result = 0.0f;
-                    break;
-            }
+        public float getArmour(DamageType damageType)
+        {
+            float result = damageType switch
+            {
+                DamageType.Physical => physicArmour,
+                DamageType.Magical => magicArmour,
+                DamageType.Toxic => toxicArmour,
+                _ => 0.0f
+            };
 
             return result;
         }
 
-        public float getBodyPartMultiplier(BodyPartHurtbox bodyPart) {
-            float result = 0.0f;
-            switch (bodyPart) {
-                case BodyPartHurtbox.Body:
-                    result = bodyDamageMultiplier;
-                    break;
-                case BodyPartHurtbox.Head:
-                    result = headDamageMultiplier;
-                    break;
-                default:
-                    result = 0.0f;
-                    break;
-            }
+        public float getBodyPartMultiplier(BodyPartHurtbox bodyPart)
+        {
+            float result = bodyPart switch
+            {
+                BodyPartHurtbox.Body => bodyDamageMultiplier,
+                BodyPartHurtbox.Head => headDamageMultiplier,
+                _ => 0.0f
+            };
 
             return result;
         }

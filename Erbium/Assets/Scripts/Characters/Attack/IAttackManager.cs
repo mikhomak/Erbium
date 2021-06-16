@@ -1,7 +1,9 @@
 ﻿using Characters.Damage;
 
-namespace Characters.Attack {
-    public interface IAttackManager : IDamageDealer {
+namespace Characters.Attack
+{
+    public interface IAttackManager : IDamageDealer
+    {
         void strongAttack();
         void fastAttack();
         void addCombo();

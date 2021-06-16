@@ -1,7 +1,9 @@
 ﻿using Characters.Hurtbox;
 
-namespace Characters.Damage {
-    public interface IDamageDealer {
+namespace Characters.Damage
+{
+    public interface IDamageDealer
+    {
         void dealDamage(IHurtbox hurtbox);
     }
 }
