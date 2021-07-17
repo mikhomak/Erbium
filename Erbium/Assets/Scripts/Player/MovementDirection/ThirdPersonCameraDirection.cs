@@ -1,4 +1,4 @@
-﻿using Camera;
+﻿using ErbiumCamera;
 using General;
 using UnityEngine;
 
