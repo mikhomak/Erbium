@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Camera
+namespace ErbiumCamera
 {
     public class CameraManager : MonoBehaviour
     {
